@@ -8,21 +8,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'orange': {
-          light: '#FFB934',
-          DEFAULT: '#FF8A36',
-          dark: '#FC6820',
+        orange: {
+          light: "#FFB934",
+          DEFAULT: "#FF8A36",
+          dark: "#FC6820",
         },
-        'blue': {
-          light: '#1253a4',
-          DEFAULT: '#05193D',
-          dark: '#002855',
+        blue: {
+          light: "#1253a4",
+          DEFAULT: "#05193D",
+          dark: "#002855",
         },
-        'white': '#FFFFFF',
-        'black': '#000000',
-        'off-white': '#FAF9F6',
+        white: "#FFFFFF",
+        black: "#000000",
+        "off-white": "#FAF9F6",
+        gray: {
+          light: "#D3D3D3",
+          DEFAULT: "#808080",
+          dark: '#5A5A5A',
+        },
       },
     },
   },
   plugins: [],
-}
+};

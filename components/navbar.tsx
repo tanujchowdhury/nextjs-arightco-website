@@ -164,8 +164,8 @@ export default function Navbar({}) {
       </div>
 
       {/* Mobile Menu */}
-      <div className={nav ? "lg:hidden block" : "hidden"}>
-        <div className="absolute flex-col justify-center items-center w-full text-center bg-white font-medium text-blue-dark drop-shadow-lg rounded-b-lg">
+      <div className={nav ? "sticky top-20 left-0 transition-all lg:scale-0" : "scale-0"}>
+        <div className="flex-col justify-center items-center w-full text-center bg-white font-medium text-blue-dark drop-shadow-lg rounded-b-lg">
           <div
             className="flex justify-center items-center p-3 hover:bg-orange-dark cursor-pointer"
             onClick={handleAbout}
