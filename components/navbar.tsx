@@ -72,6 +72,12 @@ export default function Navbar({}) {
             </Link>
           </div>
 
+          <div className="mx-2 px-3">
+            <Link className="hover:text-orange-dark" href="/testimonials">
+              Testimonials
+            </Link>
+          </div>
+
           <div className="mx-2 group px-3">
             <div className="hover:text-orange-dark flex items-center cursor-pointer">
               Contact&nbsp;
@@ -203,8 +209,12 @@ export default function Navbar({}) {
             </div>
           </Link>
 
-          <Link href="">
+          <Link href="/blog">
             <div className="p-3 hover:bg-orange-dark">Blog</div>
+          </Link>
+
+          <Link href="/testimonials">
+            <div className="p-3 hover:bg-orange-dark">Testimonials</div>
           </Link>
 
           <div
