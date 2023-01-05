@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function SignUp({}) {
   return (
     <div className="bg-blue-lightest py-32">
@@ -30,7 +28,7 @@ export default function SignUp({}) {
           <div>
             <input
               className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="Industry"
+              id="industry"
               type="text"
               placeholder="Industry"
             />
@@ -39,7 +37,7 @@ export default function SignUp({}) {
             <input
               className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="emailaddress"
-              type="text"
+              type="email"
               placeholder="Email Address"
             />
           </div>

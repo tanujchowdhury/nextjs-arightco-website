@@ -1,12 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { ComponentType, useState } from "react";
+import QuoteModal from "./getaquote";
+import AnimatePresence from "framer-motion";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
+
   const handleNav = () => {
     setNav(!nav);
   };
+
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const closeQuoteModal = () => setQuoteModalOpen(false);
+  const openQuoteModal = () => setQuoteModalOpen(true);
 
   return (
     <>
@@ -142,8 +149,13 @@ export default function Navbar({}) {
           </div>
 
           <div className="mx-2">
-            <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark">
-              <Link href="">LET'S TALK</Link>
+            <button
+              className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark cursor-pointer"
+              onClick={() =>
+                quoteModalOpen ? closeQuoteModal() : openQuoteModal()
+              }
+            >
+              LET'S TALK
             </button>
           </div>
         </div>
@@ -228,6 +240,8 @@ export default function Navbar({}) {
           </Link>
         </div>
       </div>
+
+      {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
     </>
   );
 }

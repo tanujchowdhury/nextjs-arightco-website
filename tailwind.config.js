@@ -27,6 +27,7 @@ module.exports = {
           DEFAULT: "#808080",
           dark: '#5A5A5A',
         },
+        backdrop: "#000000e1",
       },
     },
   },

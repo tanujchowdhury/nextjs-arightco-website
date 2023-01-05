@@ -2,8 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import QuoteModal from "./getaquote";
+import { useState } from "react";
 
 export default function Footer({}) {
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const closeQuoteModal = () => setQuoteModalOpen(false);
+  const openQuoteModal = () => setQuoteModalOpen(true);
   return (
     <>
       <div className="flex flex-col justify-center items-center bg-blue-dark">
@@ -62,10 +67,17 @@ export default function Footer({}) {
               </Link>
             </div>
             <div className="text-sm py-1 lg:text-base">
-              <Link href="" className="hover:text-orange">
+              <p
+                className="hover:text-orange cursor-pointer"
+                onClick={() =>
+                  quoteModalOpen ? closeQuoteModal() : openQuoteModal()
+                }
+              >
                 Get A Quote
-              </Link>
+              </p>
             </div>
+            {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+
             <div className="text-sm py-1 lg:text-base">
               <Link href="/faqs" className="hover:text-orange">
                 FAQ
@@ -139,7 +151,7 @@ export default function Footer({}) {
         </div>
         <div className="flex flex-col justify-center items-center text-white pt-4 pb-10 border-t border-gray-dark/50 w-11/12">
           <div className="text-sm">
-            Copyright © 2022 ArightCo. All Rights Reserved.
+            Copyright © 2023 ArightCo. All Rights Reserved.
           </div>
         </div>
       </div>
