@@ -4,22 +4,14 @@ import { useState } from "react";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
-  const [about, setAbout] = useState(false);
-  const [contact, setContact] = useState(false);
   const handleNav = () => {
     setNav(!nav);
-  };
-  const handleAbout = () => {
-    setAbout(!about);
-  };
-  const handleContact = () => {
-    setContact(!contact);
   };
 
   return (
     <>
       <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark sticky top-0 left-0">
-        <div className="ml-3 xl:ml-32">
+        <div className="ml-3 shrink-0 min-[1350px]:ml-32">
           <Link href="/">
             <Image
               src="/logo-blue.png"
@@ -32,7 +24,7 @@ export default function Navbar({}) {
 
         <div className="hidden lg:flex text-lg">
           <div className="group px-3">
-            <div className="hover:text-orange-dark flex items-center cursor-pointer">
+            <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               About Us&nbsp;
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,20 +58,43 @@ export default function Navbar({}) {
             </div>
           </div>
 
-          <div className="mx-2 px-3">
-            <Link className="hover:text-orange-dark" href="/blog">
-              Blog
-            </Link>
-          </div>
+          <div className="group px-3">
+            <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
+              Success Stories&nbsp;
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
 
-          <div className="mx-2 px-3">
-            <Link className="hover:text-orange-dark" href="/testimonials">
-              Testimonials
-            </Link>
+            <div className="scale-0 group-hover:scale-100 absolute flex flex-col justify-around bg-white shadow rounded-lg transition-all">
+              <Link
+                className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
+                href="/case-studies"
+              >
+                Case Studies
+              </Link>
+              <Link
+                className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
+                href="/testimonials"
+              >
+                Testimonials
+              </Link>
+            </div>
           </div>
 
           <div className="mx-2 group px-3">
-            <div className="hover:text-orange-dark flex items-center cursor-pointer">
+            <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               Contact&nbsp;
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,14 +127,14 @@ export default function Navbar({}) {
             </div>
           </div>
 
-          <div className="mx-2 px-3">
+          <div className="mx-2 px-3 max-[1100px]:text-sm">
             <Link className="hover:text-orange-dark" href="/careers">
               Careers
             </Link>
           </div>
         </div>
 
-        <div className="hidden md:flex xl:mr-32">
+        <div className="hidden md:flex min-[1350px]:mr-32">
           <div className="mx-2">
             <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark">
               <Link href="/pricing">PRICING</Link>
@@ -170,88 +185,34 @@ export default function Navbar({}) {
       </div>
 
       {/* Mobile Menu */}
-      <div className={nav ? "sticky top-20 left-0 transition-all lg:scale-0" : "scale-0"}>
+      <div
+        className={
+          nav ? "sticky top-20 left-0 transition-all lg:scale-0" : "scale-0"
+        }
+      >
         <div className="flex-col justify-center items-center w-full text-center bg-white font-medium text-blue-dark drop-shadow-lg rounded-b-lg">
-          <div
-            className="flex justify-center items-center p-3 hover:bg-orange-dark cursor-pointer"
-            onClick={handleAbout}
-          >
-            About Us&nbsp;
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-4 h-4"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </div>
-
           <Link href="/company-overview">
-            <div
-              className={about ? "block p-3 hover:bg-orange-dark" : "hidden"}
-            >
-              Company Overview
-            </div>
+            <div className="p-3 hover:bg-orange-dark">Company Overview</div>
           </Link>
 
           <Link href="/meet-our-team">
-            <div
-              className={about ? "block p-3 hover:bg-orange-dark" : "hidden"}
-            >
-              Meet Our Team
-            </div>
+            <div className="p-3 hover:bg-orange-dark">Meet Our Team</div>
           </Link>
 
-          <Link href="/blog">
-            <div className="p-3 hover:bg-orange-dark">Blog</div>
+          <Link href="/case-studies">
+            <div className="p-3 hover:bg-orange-dark">Case Studies</div>
           </Link>
 
           <Link href="/testimonials">
             <div className="p-3 hover:bg-orange-dark">Testimonials</div>
           </Link>
 
-          <div
-            className="flex justify-center items-center p-3 hover:bg-orange-dark cursor-pointer"
-            onClick={handleContact}
-          >
-            Contact&nbsp;
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-4 h-4"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </div>
-
           <Link href="/contact-us">
-            <div
-              className={contact ? "block p-3 hover:bg-orange-dark" : "hidden"}
-            >
-              Contact Us
-            </div>
+            <div className="p-3 hover:bg-orange-dark">Contact Us</div>
           </Link>
 
           <Link href="/faqs">
-            <div
-              className={contact ? "block p-3 hover:bg-orange-dark" : "hidden"}
-            >
-              FAQ's
-            </div>
+            <div className="p-3 hover:bg-orange-dark">FAQ's</div>
           </Link>
 
           <Link href="/careers">

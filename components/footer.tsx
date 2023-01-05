@@ -125,6 +125,16 @@ export default function Footer({}) {
                 Meet Our Team
               </Link>
             </div>
+            <div className="text-sm py-1 lg:text-base">
+              <Link href="/case-studies" className="hover:text-orange">
+                Case Studies
+              </Link>
+            </div>
+            <div className="text-sm py-1 lg:text-base">
+              <Link href="/testimonials" className="hover:text-orange">
+                Testimonials
+              </Link>
+            </div>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center text-white pt-4 pb-10 border-t border-gray-dark/50 w-11/12">
