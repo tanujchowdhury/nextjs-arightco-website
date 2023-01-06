@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ComponentType, useState } from "react";
+import { useState } from "react";
 import QuoteModal from "./getaquote";
-import AnimatePresence from "framer-motion";
+import {AnimatePresence} from "framer-motion";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
@@ -240,8 +240,11 @@ export default function Navbar({}) {
           </Link>
         </div>
       </div>
-
-      {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+      <AnimatePresence
+      initial={false}
+      >
+         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+      </AnimatePresence>
     </>
   );
 }

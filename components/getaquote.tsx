@@ -44,7 +44,7 @@ export default function QuoteModal({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 absolute top-5 right-5 hover:text-orange-dark"
+            className="w-10 h-10 absolute top-5 right-5 text-white hover:text-orange-dark"
           >
             <path
               strokeLinecap="round"
