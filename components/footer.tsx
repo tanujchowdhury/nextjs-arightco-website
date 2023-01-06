@@ -45,7 +45,7 @@ export default function Footer({}) {
               Professional business consulting firm, providing integrated
               finance, accounting, and HR solutions since 2008
             </div>
-            <div className="hover:text-orange py-3 hover:-translate-y-2 duration-300">
+            <div className="hover:text-orange py-3 hover:-translate-y-2 duration-300 w-6 h-6">
               <Link
                 href="https://www.linkedin.com/company/arightco-inc./"
                 target="_blank"
@@ -149,7 +149,7 @@ export default function Footer({}) {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center text-white pt-4 pb-10 border-t border-gray-dark/50 w-11/12">
+        <div className="flex flex-col justify-center items-center text-white pt-4 pb-5 border-t border-gray-dark/50 w-11/12">
           <div className="text-sm">
             Copyright © 2023 ArightCo. All Rights Reserved.
           </div>

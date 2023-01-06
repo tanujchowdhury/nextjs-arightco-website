@@ -2,22 +2,75 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import QuoteModal from "./getaquote";
-import {AnimatePresence} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
-
   const handleNav = () => {
     setNav(!nav);
+  };
+  const [about, setAbout] = useState(false);
+  const handleAbout = () => {
+    setAbout(!about);
+  };
+  const [story, setStory] = useState(false);
+  const handleStory = () => {
+    setStory(!story);
+  };
+  const [contact, setContact] = useState(false);
+  const handleContact = () => {
+    setContact(!contact);
   };
 
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
 
+  const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      y: -6,
+      transition: {
+        duration: 0.3,
+      },
+      display: "block",
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.3,
+      },
+      transitionEnd: {
+        display: "none",
+      },
+    },
+  };
+
+  const hoverMenuAnimate = {
+    enter: {
+      opacity: 1,
+      y: 5,
+      transition: {
+        duration: 0.3,
+      },
+      display: "block",
+    },
+    exit: {
+      opacity: 0,
+      y: 15,
+      transition: {
+        duration: 0.3,
+      },
+      transitionEnd: {
+        display: "none",
+      },
+    },
+  };
+
   return (
     <>
-      <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark sticky top-0 left-0">
+      <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark sticky top-0 left-0 z-20">
         <div className="ml-3 shrink-0 min-[1350px]:ml-32">
           <Link href="/">
             <Image
@@ -30,7 +83,11 @@ export default function Navbar({}) {
         </div>
 
         <div className="hidden lg:flex text-lg">
-          <div className="group px-3">
+          <motion.div
+            className="px-3"
+            onHoverStart={handleAbout}
+            onHoverEnd={handleAbout}
+          >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               About Us&nbsp;
               <svg
@@ -49,23 +106,33 @@ export default function Navbar({}) {
               </svg>
             </div>
 
-            <div className="scale-0 group-hover:scale-100 absolute flex flex-col justify-around bg-white shadow rounded-lg transition-all">
-              <Link
-                className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
-                href="/company-overview"
-              >
-                Company Overview
-              </Link>
-              <Link
-                className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
-                href="/meet-our-team"
-              >
-                Meet Our Team
-              </Link>
-            </div>
-          </div>
+            <motion.div
+              initial="exit"
+              animate={about ? "enter" : "exit"}
+              variants={hoverMenuAnimate}
+            >
+              <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-48">
+                <Link
+                  className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
+                  href="/company-overview"
+                >
+                  Company Overview
+                </Link>
+                <Link
+                  className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
+                  href="/meet-our-team"
+                >
+                  Meet Our Team
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="group px-3">
+          <motion.div
+            className="px-3"
+            onHoverStart={handleStory}
+            onHoverEnd={handleStory}
+          >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               Success Stories&nbsp;
               <svg
@@ -83,24 +150,33 @@ export default function Navbar({}) {
                 />
               </svg>
             </div>
+            <motion.div
+              initial="exit"
+              animate={story ? "enter" : "exit"}
+              variants={hoverMenuAnimate}
+            >
+              <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-36">
+                <Link
+                  className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
+                  href="/case-studies"
+                >
+                  Case Studies
+                </Link>
+                <Link
+                  className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
+                  href="/testimonials"
+                >
+                  Testimonials
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
 
-            <div className="scale-0 group-hover:scale-100 absolute flex flex-col justify-around bg-white shadow rounded-lg transition-all">
-              <Link
-                className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
-                href="/case-studies"
-              >
-                Case Studies
-              </Link>
-              <Link
-                className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
-                href="/testimonials"
-              >
-                Testimonials
-              </Link>
-            </div>
-          </div>
-
-          <div className="mx-2 group px-3">
+          <motion.div
+            className="px-3"
+            onHoverStart={handleContact}
+            onHoverEnd={handleContact}
+          >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               Contact&nbsp;
               <svg
@@ -118,21 +194,27 @@ export default function Navbar({}) {
                 />
               </svg>
             </div>
-            <div className="scale-0 group-hover:scale-100 absolute flex flex-col justify-around bg-white shadow rounded-lg transition-all">
-              <Link
-                className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
-                href="/contact-us"
-              >
-                Contact Us
-              </Link>
-              <Link
-                className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
-                href="/faqs"
-              >
-                FAQ's
-              </Link>
-            </div>
-          </div>
+            <motion.div
+              initial="exit"
+              animate={contact ? "enter" : "exit"}
+              variants={hoverMenuAnimate}
+            >
+              <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-32">
+                <Link
+                  className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
+                  href="/contact-us"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
+                  href="/faqs"
+                >
+                  FAQ's
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
 
           <div className="mx-2 px-3 max-[1100px]:text-sm">
             <Link className="hover:text-orange-dark" href="/careers">
@@ -161,7 +243,10 @@ export default function Navbar({}) {
         </div>
 
         {/* Mobile Button*/}
-        <div onClick={handleNav} className="block lg:hidden mr-3">
+        <div
+          onClick={handleNav}
+          className="block lg:hidden mr-3 cursor-pointer"
+        >
           {nav ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -197,10 +282,12 @@ export default function Navbar({}) {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={
-          nav ? "sticky top-20 left-0 transition-all lg:scale-0" : "scale-0"
-        }
+
+      <motion.div
+        initial="exit"
+        animate={nav ? "enter" : "exit"}
+        variants={subMenuAnimate}
+        className="sticky top-20 z-10"
       >
         <div className="flex-col justify-center items-center w-full text-center bg-white font-medium text-blue-dark drop-shadow-lg rounded-b-lg">
           <Link href="/company-overview">
@@ -239,11 +326,10 @@ export default function Navbar({}) {
             </div>
           </Link>
         </div>
-      </div>
-      <AnimatePresence
-      initial={false}
-      >
-         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+      </motion.div>
+
+      <AnimatePresence>
+        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
       </AnimatePresence>
     </>
   );

@@ -9,7 +9,7 @@ export default function Backdrop({
 }) {
   return (
     <motion.div
-      className="fixed top-0 left-0 h-full w-full bg-backdrop flex justify-center items-center"
+      className="fixed top-0 left-0 h-full w-full bg-backdrop flex justify-center items-center z-30"
       onClick={onClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
