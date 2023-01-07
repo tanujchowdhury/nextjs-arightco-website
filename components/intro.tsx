@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import QuoteModal from "./getaquote";
+import QuoteModal from "./modal";
 import Section from "./section";
 
 export default function Intro({}) {
@@ -23,10 +23,6 @@ export default function Intro({}) {
         stiffness: "100",
         delay: 0.4,
       },
-      exit: {
-        y: "100vh",
-        opacity: 0,
-      },
     },
   };
   const sweepLeft = {
@@ -47,7 +43,7 @@ export default function Intro({}) {
   };
   return (
     <>
-      <div className="py-32 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32">
+      <div className="py-32 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32 ">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -65,7 +61,7 @@ export default function Intro({}) {
             Reduce costs and give your business predictability with ArightCo’s
             integrated Finance, Accounting, & Advisory teams.
           </div>
-          <div className="flex flex-row justify-center items-center py-5 lg:justify-start">
+          <div className="flex flex-col sm:flex-row justify-center items-center py-5 lg:justify-start gap-5">
             <div className="mx-2">
               <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark">
                 <Link href="/pricing">PRICING</Link>
@@ -101,7 +97,7 @@ export default function Intro({}) {
         </motion.div>
       </div>
       <AnimatePresence>
-        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} type="quote" />}
       </AnimatePresence>
     </>
   );

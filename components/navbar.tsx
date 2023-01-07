@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import QuoteModal from "./getaquote";
+import QuoteModal from "./modal";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navbar({}) {
@@ -70,11 +70,11 @@ export default function Navbar({}) {
 
   return (
     <>
-      <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark sticky top-0 left-0 z-20">
+      <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark fixed top-0 left-0 right-0 z-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{duration: 2}}
+          transition={{duration: 1}}
           className="ml-3 shrink-0 min-[1350px]:ml-32"
         >
           <Link href="/">
@@ -334,7 +334,7 @@ export default function Navbar({}) {
       </motion.div>
 
       <AnimatePresence>
-        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} type="quote"/>}
       </AnimatePresence>
     </>
   );
