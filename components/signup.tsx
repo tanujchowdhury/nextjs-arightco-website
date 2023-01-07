@@ -5,7 +5,7 @@ export default function SignUp({}) {
         <div className="font-bold text-white text-xl mt-10">
           NEWSLETTER SIGNUP
         </div>
-        <div className="text-white text-medium">
+        <div className="text-white text-medium text-center px-3">
           Stay up-to-date on industry news and ArightCo offerings
         </div>
         <form
@@ -17,7 +17,7 @@ export default function SignUp({}) {
           <div className="flex flex-col justify-center items-center gap-3">
             <div>
               <input
-                className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="fullname"
                 type="text"
                 placeholder="Full Name"
@@ -26,7 +26,7 @@ export default function SignUp({}) {
             </div>
             <div>
               <input
-                className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="companyname"
                 type="text"
                 placeholder="Company Name"
@@ -35,7 +35,7 @@ export default function SignUp({}) {
             </div>
             <div>
               <input
-                className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="industry"
                 type="text"
                 placeholder="Industry"
@@ -44,7 +44,7 @@ export default function SignUp({}) {
             </div>
             <div>
               <input
-                className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="emailaddress"
                 type="email"
                 placeholder="Email Address"

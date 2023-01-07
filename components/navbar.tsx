@@ -71,7 +71,12 @@ export default function Navbar({}) {
   return (
     <>
       <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark sticky top-0 left-0 z-20">
-        <div className="ml-3 shrink-0 min-[1350px]:ml-32">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{duration: 2}}
+          className="ml-3 shrink-0 min-[1350px]:ml-32"
+        >
           <Link href="/">
             <Image
               src="/logo-blue.png"
@@ -80,7 +85,7 @@ export default function Navbar({}) {
               height={100}
             />
           </Link>
-        </div>
+        </motion.div>
 
         <div className="hidden lg:flex text-lg">
           <motion.div
@@ -287,7 +292,7 @@ export default function Navbar({}) {
         initial="exit"
         animate={nav ? "enter" : "exit"}
         variants={subMenuAnimate}
-        className="sticky top-20 z-10"
+        className="fixed top-20 z-10 w-full"
       >
         <div className="flex-col justify-center items-center w-full text-center bg-white font-medium text-blue-dark drop-shadow-lg rounded-b-lg">
           <Link href="/company-overview">
