@@ -74,7 +74,7 @@ export default function QuoteModal({
             <div className="flex flex-col justify-center items-center gap-3">
               <div>
                 <input
-                  className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   id="fname"
                   type="text"
                   placeholder="Full Name"
@@ -83,7 +83,7 @@ export default function QuoteModal({
               </div>
               <div>
                 <input
-                  className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
                   placeholder="Email Address"
@@ -93,7 +93,7 @@ export default function QuoteModal({
               </div>
               <div>
                 <input
-                  className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   id="number"
                   type="text"
                   placeholder="Contact Number"
@@ -103,7 +103,7 @@ export default function QuoteModal({
               </div>
               <div>
                 <input
-                  className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   id="cname"
                   type="text"
                   placeholder="Company Name"
@@ -112,7 +112,7 @@ export default function QuoteModal({
               </div>
               <div>
                 <input
-                  className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   id="website"
                   type="text"
                   placeholder="Company Website"
@@ -121,7 +121,7 @@ export default function QuoteModal({
               </div>
               <div>
                 <textarea
-                  className="shadow appearance-none border rounded w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-none"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-none"
                   id="specs"
                   placeholder="Project Specifications"
                   name="Project Specifications"
