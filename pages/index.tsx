@@ -194,7 +194,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center m-5 mt-0 md:flex-row min-[1350px]:px-32 md:h-[40vh] md:mt-10">
           <Card
             title="Budget Creation"
-            text="Partner with an experienced cempany that has processed thousands of transactions for their clients while providing greater operational efficiency"
+            text="Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency"
             type={2}
           >
             <FontAwesomeIcon icon={faScroll} />
