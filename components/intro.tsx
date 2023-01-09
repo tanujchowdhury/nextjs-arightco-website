@@ -79,7 +79,7 @@ export default function Intro({}) {
             src="/thumbnail.jpeg"
             alt="ArightCo Thumbnail"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
           />
         </motion.div>
       </div>
