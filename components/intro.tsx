@@ -76,7 +76,7 @@ export default function Intro({}) {
           className="mx-auto w-[50vh] h-[25vh] sm:w-[80vh] sm:h-[50vh] mt-20 lg:mt-5 lg:w-[60vh] lg:h-[60vh] lg:basis-1/2 py-10 relative "
         >
           <Image
-            src="/thumbnail.jpeg"
+            src="/thumbnail.jpg"
             alt="ArightCo Thumbnail"
             fill
             style={{ objectFit: "contain" }}
