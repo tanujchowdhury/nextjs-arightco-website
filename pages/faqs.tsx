@@ -5,9 +5,9 @@ export default function FAQs() {
   return (
     <Layout>
       <Head>
-        <title>FAQ's</title>
+        <title>FAQ&apos;s</title>
       </Head>
-      <h1>FAQ's Content</h1>
+      <h1>FAQ&apos;s Content</h1>
     </Layout>
   )
 }
