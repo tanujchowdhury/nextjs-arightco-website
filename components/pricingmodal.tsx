@@ -75,7 +75,7 @@ export default function PricingModal({
             Pricing Estimate
           </div>
           <div className="pt-2 pb-5 px-3 text-white">Get a Quote Now</div>
-          <div className="pt-2 pb-5 px-3 text-white">
+          <div className="pt-2 pb-5 px-3 text-white hidden sm:block">
             Get a quote based on the number of your monthly transactions. <br />
             Our minimum price is $750.
           </div>
