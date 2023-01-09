@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import QuoteModal from "./modal";
 import { AnimatePresence, motion } from "framer-motion";
+import QuoteModal from "./quotemodal";
+import PricingModal from "./pricingmodal";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
@@ -25,6 +26,10 @@ export default function Navbar({}) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
+
+  const [pricingModalOpen, setPricingModalOpen] = useState(false);
+  const closePricingModal = () => setPricingModalOpen(false);
+  const openPricingModal = () => setPricingModalOpen(true);
 
   const subMenuAnimate = {
     enter: {
@@ -74,7 +79,7 @@ export default function Navbar({}) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{duration: 1}}
+          transition={{ duration: 1 }}
           className="ml-3 shrink-0 min-[1350px]:ml-32"
         >
           <Link href="/">
@@ -215,7 +220,7 @@ export default function Navbar({}) {
                   className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
                   href="/faqs"
                 >
-                  FAQ's
+                  FAQ&apos;s
                 </Link>
               </div>
             </motion.div>
@@ -230,8 +235,13 @@ export default function Navbar({}) {
 
         <div className="hidden md:flex min-[1350px]:mr-32">
           <div className="mx-2">
-            <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark">
-              <Link href="/pricing">PRICING</Link>
+            <button
+              className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+              onClick={() =>
+                pricingModalOpen ? closePricingModal() : openPricingModal()
+              }
+            >
+              PRICING
             </button>
           </div>
 
@@ -242,7 +252,7 @@ export default function Navbar({}) {
                 quoteModalOpen ? closeQuoteModal() : openQuoteModal()
               }
             >
-              LET'S TALK
+              LET&apos;S TALK
             </button>
           </div>
         </div>
@@ -316,7 +326,7 @@ export default function Navbar({}) {
           </Link>
 
           <Link href="/faqs">
-            <div className="p-3 hover:bg-orange-dark">FAQ's</div>
+            <div className="p-3 hover:bg-orange-dark">FAQ&apos;s</div>
           </Link>
 
           <Link href="/careers">
@@ -334,7 +344,8 @@ export default function Navbar({}) {
       </motion.div>
 
       <AnimatePresence>
-        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} type="quote"/>}
+        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+        {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
       </AnimatePresence>
     </>
   );

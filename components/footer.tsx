@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import QuoteModal from "./modal";
+import QuoteModal from "./quotemodal";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 export default function Footer({}) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -76,11 +77,10 @@ export default function Footer({}) {
                 Get A Quote
               </p>
             </div>
-            {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} type="quote" />}
 
             <div className="text-sm py-1 lg:text-base">
               <Link href="/faqs" className="hover:text-orange">
-                FAQ
+                FAQ&apos;s
               </Link>
             </div>
             <div className="text-sm py-1 lg:text-base">
@@ -155,6 +155,9 @@ export default function Footer({}) {
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+      </AnimatePresence>
     </>
   );
 }

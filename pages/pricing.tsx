@@ -7,7 +7,10 @@ export default function Pricing() {
       <Head>
         <title>Pricing</title>
       </Head>
-      <h1>Pricing Content</h1>
+      <div className='py-64'>Cost Estimate</div>
+      <div>
+        
+      </div>
     </Layout>
   )
 }

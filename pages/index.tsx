@@ -32,6 +32,7 @@ export default function Home() {
         damping: "50",
         stiffness: "200",
         duration: 2,
+        delay: 0.2,
       },
     },
   };
@@ -48,6 +49,41 @@ export default function Home() {
         damping: "50",
         stiffness: "200",
         duration: 2,
+        delay: 0.2,
+      },
+    },
+  };
+  const sweepUp = {
+    hidden: {
+      y: "50vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: "50",
+        stiffness: "200",
+        duration: 2,
+        delay: 0.2,
+      },
+    },
+  };
+  const sweepDown = {
+    hidden: {
+      y: "-100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: "50",
+        stiffness: "200",
+        duration: 2,
+        delay: .5,
       },
     },
   };
@@ -62,6 +98,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sweepRight}
+        
       >
         <Section
           title1={"THE PROBLEM"}
@@ -178,14 +215,22 @@ export default function Home() {
           </Card>
         </div>
       </motion.div>
-      <Section
-        title1={"OUR VALUE PROPOSITION"}
-        title2={"Why You Need Us"}
-        text={
-          "ArightCo teams add shareholder value, while allowing business owners to focus on what matters most."
-        }
-        blueBackground={true}
-      />
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "700px 0px -700px 0px" }}
+        variants={sweepDown}
+      >
+        <Section
+          title1={"OUR VALUE PROPOSITION"}
+          title2={"Why You Need Us"}
+          text={
+            "ArightCo teams add shareholder value, while allowing business owners to focus on what matters most."
+          }
+          blueBackground={true}
+        />
+        <motion.div></motion.div>
+      </motion.div>
     </Layout>
   );
 }
