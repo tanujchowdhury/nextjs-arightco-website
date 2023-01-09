@@ -9,12 +9,16 @@ export default function PricingModal({
 }) {
   const [transactions, setTransactions] = useState("200");
 
-  console.log("Transactions: ", transactions);
+  const [detail, setDetail] = useState(false);
+  const openDetail = () => setDetail(true);
+  const closeDetail = () => setDetail(false);
 
-  const result = Math.max(
-    Math.trunc(3.0225 * parseInt(transactions) + 465),
-    750
-  );
+  const time = Math.round(0.065 * parseInt(transactions) + 10);
+  const junior = Math.round(0.7 * time * 35);
+  const senior = Math.round(0.2 * time * 60);
+  const controller = Math.round(0.1 * time * 100);
+  const total = junior + senior + controller;
+  const result = Math.max(total, 750);
 
   const dropIn = {
     hidden: {
@@ -75,36 +79,87 @@ export default function PricingModal({
             Get a quote based on the number of your monthly transactions. <br />
             Our minimum price is $750.
           </div>
-          <form>
-            <div className="flex flex-col justify-center items-center gap-3">
-              <div>
-                <label
-                  className="text-gray-light self-start"
-                  htmlFor="transactions"
-                >
-                  Transactions:&nbsp;&nbsp;
-                </label>
-                <input
-                  className="shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="transactions"
-                  type="number"
-                  placeholder="1000"
-                  name="transactions"
-                  value={transactions}
-                  onChange={({ target }) => setTransactions(target.value)}
-                />
+
+          <div>
+            <label
+              className="text-gray-light self-start"
+              htmlFor="transactions"
+            >
+              Transactions:&nbsp;&nbsp;
+            </label>
+            <input
+              className="shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="transactions"
+              type="number"
+              placeholder="1000"
+              name="transactions"
+              value={transactions}
+              onChange={({ target }) => setTransactions(target.value)}
+            />
+          </div>
+
+          {detail ? (
+            <div className="">
+              <div className="text-gray-light pt-5 text-xl underline">
+                Cost Estimation
               </div>
-              {result ? (
-                <div className="m-5 p-3 text-xl text-white border-4 border-orange-dark rounded-xl">
-                  Estimated Monthly Payment: ${result}
-                </div>
-              ) : (
-                <div className="m-5 p-3 text-xl text-white border-4 border-orange-light rounded-xl">
-                  Please enter a number
-                </div>
-              )}
+              <table className="table-fixed">
+                <tbody className="text-white">
+                  <tr>
+                    <td className="p-3">Total Time Taken:</td>
+                    <td className="p-3">
+                      {time ? <>{time} hours</> : <>N/A</>}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border p-3">Junior Resource</td>
+                    <td className="border p-3">
+                      {junior ? <>${junior}</> : <>N/A</>}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border p-3">Senior Resource</td>
+                    <td className="border p-3">
+                      {junior ? <>${senior}</> : <>N/A</>}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border p-3">Controller Resource</td>
+                    <td className="border p-3">
+                      {junior ? <>${controller}</> : <>N/A</>}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </form>
+          ) : (
+            <div></div>
+          )}
+
+          {result ? (
+            <div className="m-5 p-3 text-xl text-white border-4 border-orange-dark rounded-xl">
+              Estimated Monthly Payment: ${result}
+            </div>
+          ) : (
+            <div className="m-5 p-3 text-xl text-white border-4 border-orange-light rounded-xl">
+              Please enter a number
+            </div>
+          )}
+          {detail ? (
+            <div
+              className="text-white underline text-orange-light cursor-pointer"
+              onClick={closeDetail}
+            >
+              ← Simple View
+            </div>
+          ) : (
+            <div
+              className="text-white underline text-orange-light cursor-pointer"
+              onClick={openDetail}
+            >
+              Detailed View →
+            </div>
+          )}
         </div>
       </motion.div>
     </Backdrop>
