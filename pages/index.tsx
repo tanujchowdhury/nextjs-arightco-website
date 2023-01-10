@@ -31,9 +31,9 @@ export default function Home() {
       opacity: 1,
       transition: {
         type: "spring",
-        damping: "50",
-        stiffness: "200",
-        duration: 2,
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
         delay: 0.2,
       },
     },
@@ -48,9 +48,9 @@ export default function Home() {
       opacity: 1,
       transition: {
         type: "spring",
-        damping: "50",
-        stiffness: "200",
-        duration: 2,
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
         delay: 0.2,
       },
     },
@@ -65,9 +65,9 @@ export default function Home() {
       opacity: 1,
       transition: {
         type: "spring",
-        damping: "50",
-        stiffness: "200",
-        duration: 2,
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
         delay: 0.2,
       },
     },
@@ -82,9 +82,9 @@ export default function Home() {
       opacity: 1,
       transition: {
         type: "spring",
-        damping: "50",
-        stiffness: "200",
-        duration: 2,
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
         delay: 0.5,
       },
     },
@@ -242,44 +242,54 @@ export default function Home() {
           }
           blueBackground={true}
         />
-        <motion.div>
-          <div className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
-            <Card
-              title={"Minimize Cost and Overhead"}
-              text={[
-                "Cut expenses associated with hiring, managing, and retaining in-house teams. We provide better solutions at ",
-                "30-50% savings",
-                " of what it would cost to maintain these resources internally.",
-              ]}
-              type={3}
-            >
-              <FontAwesomeIcon icon={faSackDollar} />
-            </Card>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "700px 0px -700px 0px" }}
+        variants={sweepDown}
+        className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
+      >
+        <motion.div className="px-2">
+          <Card
+            title={"Minimize Cost and Overhead"}
+            text={[
+              "Cut expenses associated with hiring, managing, and retaining in-house teams. We provide better solutions at ",
+              "30-50% savings",
+              " of what it would cost to maintain these resources internally.",
+            ]}
+            type={3}
+          >
+            <FontAwesomeIcon icon={faSackDollar} />
+          </Card>
+        </motion.div>
 
-            <Card
-              title={"Streamlined Workflow"}
-              text={[
-                "You can concentrate on core business areas and company growth, knowing you have a ",
-                "a team of industry experts working with you",
-                " and others in your organization.",
-              ]}
-              type={3}
-            >
-              <FontAwesomeIcon icon={faChartLine} />
-            </Card>
+        <motion.div className="px-2">
+          <Card
+            title={"Streamlined Workflow"}
+            text={[
+              "You can concentrate on core business areas and company growth, knowing you have a ",
+              "a team of industry experts working with you",
+              " and others in your organization.",
+            ]}
+            type={3}
+          >
+            <FontAwesomeIcon icon={faChartLine} />
+          </Card>
+        </motion.div>
 
-            <Card
-              title={"One Point of Contact"}
-              text={[
-                "Ensure ease of communication via our ",
-                "one point-of-contact",
-                " communication model, connecting you with a dedicated client partner with direct knowledge of operating within your industry."
-              ]}
-              type={3}
-            >
-              <FontAwesomeIcon icon={faFaceLaughBeam} />
-            </Card>
-          </div>
+        <motion.div className="px-2">
+          <Card
+            title={"One Point of Contact"}
+            text={[
+              "Ensure ease of communication via our ",
+              "one point-of-contact",
+              " communication model, connecting you with a dedicated client partner with direct knowledge of operating within your industry.",
+            ]}
+            type={3}
+          >
+            <FontAwesomeIcon icon={faFaceLaughBeam} />
+          </Card>
         </motion.div>
       </motion.div>
     </Layout>

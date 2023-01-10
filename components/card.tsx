@@ -61,20 +61,15 @@ export default function Card({
   if (type == 3) {
     return (
       <motion.div
-        whileHover={{
-          
-        }}
         transition={{
           duration: 0.2,
         }}
-        className="flex flex-col items-center justify-center rounded-lg shadow-md text-center p-5 m-1 gap-3 w-full h-full group bg-white -translate-y-32"
+        className="flex flex-col items-center justify-center rounded-lg shadow-md text-center p-5 m-1 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96"
       >
         <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
           {children}
         </div>
-        <div className="text-blue-dark font-bold lg:text-2xl">
-          {title}
-        </div>
+        <div className="text-blue-dark font-bold lg:text-2xl">{title}</div>
         <div className="text-sm lg:text-base">
           <p>
             {text[0]}
