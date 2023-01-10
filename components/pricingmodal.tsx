@@ -137,11 +137,11 @@ export default function PricingModal({
           )}
 
           {result ? (
-            <div className="m-5 p-3 text-xl text-white border-4 border-orange-dark rounded-xl">
+            <div className="m-5 p-3 sm:text-xl text-white border-4 border-orange-dark rounded-xl">
               Estimated Monthly Payment: ${result}
             </div>
           ) : (
-            <div className="m-5 p-3 text-xl text-white border-4 border-orange-light rounded-xl">
+            <div className="m-5 p-3 sm:text-xl text-white border-4 border-orange-light rounded-xl">
               Please enter a number
             </div>
           )}
