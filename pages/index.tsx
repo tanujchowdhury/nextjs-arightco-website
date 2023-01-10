@@ -1,12 +1,14 @@
 import {
   faBullseye,
+  faChartLine,
   faChartPie,
   faChartSimple,
-  faCircle,
   faComputer,
   faCreditCard,
+  faFaceLaughBeam,
   faLayerGroup,
   faPeopleGroup,
+  faSackDollar,
   faScroll,
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
@@ -83,7 +85,7 @@ export default function Home() {
         damping: "50",
         stiffness: "200",
         duration: 2,
-        delay: .5,
+        delay: 0.5,
       },
     },
   };
@@ -98,7 +100,6 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sweepRight}
-        
       >
         <Section
           title1={"THE PROBLEM"}
@@ -118,9 +119,9 @@ export default function Home() {
         <div className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
           <Card
             title={"Retaining In-House Teams"}
-            text={
-              "Companies are faced with the task of recruiting, training and retaining in-house finance and accounting resources."
-            }
+            text={[
+              "Companies are faced with the task of recruiting, training and retaining in-house finance and accounting resources.",
+            ]}
             type={1}
           >
             <FontAwesomeIcon icon={faPeopleGroup} />
@@ -128,9 +129,9 @@ export default function Home() {
 
           <Card
             title={"Best Practices"}
-            text={
-              "Many companies lack the expertise to ensure financial statements are being prepared in accordance with proper practices."
-            }
+            text={[
+              "Many companies lack the expertise to ensure financial statements are being prepared in accordance with proper practices.",
+            ]}
             type={1}
           >
             <FontAwesomeIcon icon={faBullseye} />
@@ -138,9 +139,9 @@ export default function Home() {
 
           <Card
             title={"Reporting Packages"}
-            text={
-              "Most businesses do not have experience developing a comprehensive reporting package for investors."
-            }
+            text={[
+              "Most businesses do not have experience developing a comprehensive reporting package for investors.",
+            ]}
             type={1}
           >
             <FontAwesomeIcon icon={faLayerGroup} />
@@ -171,21 +172,27 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center m-5 mb-0 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
           <Card
             title="Transactional Entry"
-            text="Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency"
+            text={[
+              "Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency",
+            ]}
             type={2}
           >
             <FontAwesomeIcon icon={faCreditCard} />
           </Card>
           <Card
             title="KPI Preparation"
-            text="Create a KPI-driven culture and boost financial literacy across all of your teams"
+            text={[
+              "Create a KPI-driven culture and boost financial literacy across all of your teams",
+            ]}
             type={2}
           >
             <FontAwesomeIcon icon={faChartSimple} />
           </Card>
           <Card
             title="Client Invoicing"
-            text="If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid"
+            text={[
+              "If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid",
+            ]}
             type={2}
           >
             <FontAwesomeIcon icon={faChartPie} />
@@ -194,21 +201,27 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center m-5 mt-0 md:flex-row min-[1350px]:px-32 md:h-[40vh] md:mt-10">
           <Card
             title="Budget Creation"
-            text="Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency"
+            text={[
+              "Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency",
+            ]}
             type={2}
           >
             <FontAwesomeIcon icon={faScroll} />
           </Card>
           <Card
             title="Cash Flow Planning"
-            text="Create a KPI-driven culture and boost financial literacy across all of your teams"
+            text={[
+              "Create a KPI-driven culture and boost financial literacy across all of your teams",
+            ]}
             type={2}
           >
             <FontAwesomeIcon icon={faComputer} />
           </Card>
           <Card
             title="Controller Services"
-            text="If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid"
+            text={[
+              "If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid",
+            ]}
             type={2}
           >
             <FontAwesomeIcon icon={faShieldHalved} />
@@ -229,7 +242,45 @@ export default function Home() {
           }
           blueBackground={true}
         />
-        <motion.div></motion.div>
+        <motion.div>
+          <div className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
+            <Card
+              title={"Minimize Cost and Overhead"}
+              text={[
+                "Cut expenses associated with hiring, managing, and retaining in-house teams. We provide better solutions at ",
+                "30-50% savings",
+                " of what it would cost to maintain these resources internally.",
+              ]}
+              type={3}
+            >
+              <FontAwesomeIcon icon={faSackDollar} />
+            </Card>
+
+            <Card
+              title={"Streamlined Workflow"}
+              text={[
+                "You can concentrate on core business areas and company growth, knowing you have a ",
+                "a team of industry experts working with you",
+                " and others in your organization.",
+              ]}
+              type={3}
+            >
+              <FontAwesomeIcon icon={faChartLine} />
+            </Card>
+
+            <Card
+              title={"One Point of Contact"}
+              text={[
+                "Ensure ease of communication via our ",
+                "one point-of-contact",
+                " communication model, connecting you with a dedicated client partner with direct knowledge of operating within your industry."
+              ]}
+              type={3}
+            >
+              <FontAwesomeIcon icon={faFaceLaughBeam} />
+            </Card>
+          </div>
+        </motion.div>
       </motion.div>
     </Layout>
   );
