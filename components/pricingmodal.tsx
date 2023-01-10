@@ -85,7 +85,7 @@ export default function PricingModal({
               className="text-gray-light self-start"
               htmlFor="transactions"
             >
-              Transactions:&nbsp;&nbsp;
+              Monthly Transactions:&nbsp;&nbsp;
             </label>
             <input
               className="shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
