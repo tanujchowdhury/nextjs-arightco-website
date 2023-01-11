@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
+import BlogCard from "../components/blogcard";
 import Card from "../components/card";
 import Carousel from "../components/carousel";
 import InfoModal from "../components/infomodal";
@@ -350,7 +351,7 @@ export default function Home() {
         blueBackground={false}
       />
       <Carousel />
-      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20">
+      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20 min-[1350px]:mx-32">
         <div className="text-center md:text-start">
           <div className="text-orange font-semibold">Blog Spot</div>
           <div className="text-blue-dark text-2xl py-3 md:text-4xl lg:text-5xl font-bold">
@@ -364,8 +365,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center">
-          
+      <div className="flex flex-col items-center justify-center lg:flex-row min-[1350px]:mx-32">
+        <BlogCard src={"/casestudies/images/nex.png"} alt={"Nexient NTT Data"} title={"Nexient NTT Data"} href={"/nexient-ntt-data"} date={"March 1, 2022"} />
+        <BlogCard src={"/casestudies/images/49ers.png"} alt={"49ers Academy"} title={"49ers Academy"} href={"/49ers-academy"} date={"March 1, 2022"} />
+        <BlogCard src={"/casestudies/images/sage.png"} alt={"Sagetech"} title={"Sagetech"} href={"/sagetech"} date={"March 1, 2022"} />
       </div>
       <AnimatePresence>
         {modal1 && (
