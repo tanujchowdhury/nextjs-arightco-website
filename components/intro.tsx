@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import QuoteModal from "./quotemodal";
 import PricingModal from "./pricingmodal";
+import VideoModal from "./videomodal";
 
 export default function Intro({}) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -13,6 +14,10 @@ export default function Intro({}) {
   const [pricingModalOpen, setPricingModalOpen] = useState(false);
   const closePricingModal = () => setPricingModalOpen(false);
   const openPricingModal = () => setPricingModalOpen(true);
+
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const closeVideoModal = () => setVideoModalOpen(false);
+  const openVideoModal = () => setVideoModalOpen(true);
 
   return (
     <>
@@ -74,6 +79,8 @@ export default function Intro({}) {
             damping: 10,
           }}
           className="mx-5 w-[50vh] h-[25vh] sm:w-[80vh] sm:h-[50vh] mt-20 lg:mt-5 lg:h-[50vh] lg:basis-1/2 py-10 relative group"
+          onClick={() =>
+            videoModalOpen ? closeVideoModal() : openVideoModal()}
         >
           <Image
             src="/thumbnail.jpg"
@@ -105,6 +112,7 @@ export default function Intro({}) {
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
         {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
+        {videoModalOpen && <VideoModal handleClose={closeVideoModal} />}
       </AnimatePresence>
     </>
   );

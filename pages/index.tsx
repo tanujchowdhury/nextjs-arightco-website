@@ -266,7 +266,7 @@ export default function Home() {
         variants={sweepDown}
         className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
       >
-        <div className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96">
+        <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
           <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
             <FontAwesomeIcon icon={faSackDollar} />
           </div>
@@ -292,7 +292,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96">
+        <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
           <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
             <FontAwesomeIcon icon={faChartLine} />
           </div>
@@ -318,7 +318,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96">
+        <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
           <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
             <FontAwesomeIcon icon={faFaceLaughBeam} />
           </div>
