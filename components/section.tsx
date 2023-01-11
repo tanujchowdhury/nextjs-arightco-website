@@ -11,7 +11,7 @@ export default function Section({
 }) {
   return !blueBackground ? (
     <div className="text-center py-10 px-2">
-      <div className="text-orange font-semibold ">{title1}</div>
+      <div className="text-orange font-semibold">{title1}</div>
       <div className="text-blue-dark text-2xl py-3 md:py-10 md:text-4xl lg:text-5xl font-bold">
         {title2}
       </div>
@@ -19,7 +19,7 @@ export default function Section({
     </div>
   ) : (
     <div className="text-center py-10 px-2 bg-gradient-to-r from-blue to-blue-light md:py-32 lg:py-44">
-      <div className="text-orange font-semibold ">{title1}</div>
+      <div className="text-orange font-semibold">{title1}</div>
       <div className="text-white text-2xl py-3 md:py-10 md:text-4xl lg:text-5xl font-bold">
         {title2}
       </div>

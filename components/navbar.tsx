@@ -11,17 +11,11 @@ export default function Navbar({}) {
     setNav(!nav);
   };
   const [about, setAbout] = useState(false);
-  const handleAbout = () => {
-    setAbout(!about);
-  };
+
   const [story, setStory] = useState(false);
-  const handleStory = () => {
-    setStory(!story);
-  };
+
   const [contact, setContact] = useState(false);
-  const handleContact = () => {
-    setContact(!contact);
-  };
+
 
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
@@ -95,8 +89,8 @@ export default function Navbar({}) {
         <div className="hidden lg:flex text-lg">
           <motion.div
             className="px-3"
-            onHoverStart={handleAbout}
-            onHoverEnd={handleAbout}
+            onHoverStart={() => setAbout(true)}
+            onHoverEnd={() => setAbout(false)}
           >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               About Us&nbsp;
@@ -140,8 +134,8 @@ export default function Navbar({}) {
 
           <motion.div
             className="px-3"
-            onHoverStart={handleStory}
-            onHoverEnd={handleStory}
+            onHoverStart={() => setStory(true)}
+            onHoverEnd={() => setStory(false)}
           >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               Success Stories&nbsp;
@@ -184,8 +178,8 @@ export default function Navbar({}) {
 
           <motion.div
             className="px-3"
-            onHoverStart={handleContact}
-            onHoverEnd={handleContact}
+            onHoverStart={() => setContact(true)}
+            onHoverEnd={() => setContact(false)}
           >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
               Contact&nbsp;

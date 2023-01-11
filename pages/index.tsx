@@ -350,7 +350,23 @@ export default function Home() {
         blueBackground={false}
       />
       <Carousel />
+      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20">
+        <div className="text-center md:text-start">
+          <div className="text-orange font-semibold">Blog Spot</div>
+          <div className="text-blue-dark text-2xl py-3 md:text-4xl lg:text-5xl font-bold">
+            Latest Posts
+          </div>
+        </div>
+        <div className="mx-2">
+          <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+            More Articles
+          </button>
+        </div>
+      </div>
 
+      <div className="flex flex-col items-center justify-center">
+          
+      </div>
       <AnimatePresence>
         {modal1 && (
           <InfoModal

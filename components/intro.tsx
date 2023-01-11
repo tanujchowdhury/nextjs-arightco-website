@@ -80,6 +80,7 @@ export default function Intro({}) {
             alt="ArightCo Thumbnail"
             fill
             style={{ objectFit: "contain" }}
+            className="border-radius: 20px"
           />
         </motion.div>
       </div>
