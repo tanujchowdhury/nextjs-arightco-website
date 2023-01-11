@@ -13,14 +13,28 @@ import {
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
+import { useState } from "react";
 import Card from "../components/card";
+import InfoModal from "../components/infomodal";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import Section from "../components/section";
 
 export default function Home() {
+  const [modal1, setModal1] = useState(false);
+  const closeModal1 = () => setModal1(false);
+  const openModal1 = () => setModal1(true);
+
+  const [modal2, setModal2] = useState(false);
+  const closeModal2 = () => setModal2(false);
+  const openModal2 = () => setModal2(true);
+
+  const [modal3, setModal3] = useState(false);
+  const closeModal3 = () => setModal3(false);
+  const openModal3 = () => setModal3(true);
+
   const sweepLeft = {
     hidden: {
       x: "50vh",
@@ -268,7 +282,10 @@ export default function Home() {
               of what it would cost to maintain these resources internally.
             </p>
           </div>
-          <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer">
+          <button
+            className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
+            onClick={() => (modal1 ? closeModal1() : openModal1())}
+          >
             LEARN MORE
           </button>
         </div>
@@ -291,7 +308,10 @@ export default function Home() {
               and others in your organization.
             </p>
           </div>
-          <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer">
+          <button
+            className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
+            onClick={() => (modal2 ? closeModal2() : openModal2())}
+          >
             LEARN MORE
           </button>
         </div>
@@ -314,13 +334,44 @@ export default function Home() {
               partner with direct knowledge of operating within your industry.
             </p>
           </div>
-          <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer">
+          <button
+            className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
+            onClick={() => (modal3 ? closeModal3() : openModal3())}
+          >
             LEARN MORE
           </button>
         </div>
-
-        
       </motion.div>
+
+      <AnimatePresence>
+        {modal1 && (
+          <InfoModal
+            handleClose={closeModal1}
+            content={[
+              "Minimize Cost and Overhead",
+              "By partnering with ArightCo, your business eliminates the time-consuming and expensive process of hiring, onboarding, training, and retaining employees. You can concentrate on core business areas and company growth, knowing you have a team of industry experts working with you and others in your organization",
+            ]}
+          />
+        )}
+        {modal2 && (
+          <InfoModal
+            handleClose={closeModal2}
+            content={[
+              "Streamlined Workflow",
+              "Take advantage of ArightCo’s team of seasoned industry professionals, including CPAs, MBAs, and CAs. Our team has knowledge & experience ranging from transactional accounting and financial modeling to company incorporation and equity financing. As your trusted financial partner, we work with you every step of the way",
+            ]}
+          />
+        )}
+        {modal3 && (
+          <InfoModal
+            handleClose={closeModal3}
+            content={[
+              "One Point of Contact",
+              "Our team of professionals will craft and execute a back-office solution tailored to your unique business goals",
+            ]}
+          />
+        )}
+      </AnimatePresence>
     </Layout>
   );
 }

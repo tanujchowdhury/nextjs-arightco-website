@@ -51,7 +51,7 @@ export default function PricingModal({
         animate="visible"
         exit="exit"
       >
-        <div className="flex flex-row-reverse pr-8 text-white hover:text-orange-dark">
+        <div className="flex flex-row-reverse pr-8 text-white">
           <button onClick={handleClose}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export default function PricingModal({
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-10 h-10"
+              className="w-10 h-10 hover:text-orange-dark"
             >
               <path
                 strokeLinecap="round"
