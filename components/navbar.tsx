@@ -75,7 +75,7 @@ export default function Navbar({}) {
 
   return (
     <>
-      <div className="h-20 flex justify-between items-center bg-off-white font-medium text-blue-dark fixed top-0 left-0 right-0 z-20">
+      <div className="h-20 flex justify-between items-center bg-white font-medium text-blue-dark fixed top-0 left-0 right-0 z-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

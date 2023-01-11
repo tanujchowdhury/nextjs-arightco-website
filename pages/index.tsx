@@ -250,47 +250,76 @@ export default function Home() {
         variants={sweepDown}
         className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
       >
-        <motion.div className="px-2">
-          <Card
-            title={"Minimize Cost and Overhead"}
-            text={[
-              "Cut expenses associated with hiring, managing, and retaining in-house teams. We provide better solutions at ",
-              "30-50% savings",
-              " of what it would cost to maintain these resources internally.",
-            ]}
-            type={3}
-          >
+        <div className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96">
+          <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
             <FontAwesomeIcon icon={faSackDollar} />
-          </Card>
-        </motion.div>
+          </div>
+          <div className="text-blue-dark font-bold lg:text-2xl">
+            Minimize Cost and Overhead
+          </div>
+          <div className="text-sm lg:text-base">
+            <p>
+              Cut expenses associated with hiring, managing, and retaining
+              in-house teams. We provide better solutions at
+              <span className="text-orange-dark font-bold">
+                {" "}
+                30-50% savings{" "}
+              </span>
+              of what it would cost to maintain these resources internally.
+            </p>
+          </div>
+          <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer">
+            LEARN MORE
+          </button>
+        </div>
 
-        <motion.div className="px-2">
-          <Card
-            title={"Streamlined Workflow"}
-            text={[
-              "You can concentrate on core business areas and company growth, knowing you have a ",
-              "a team of industry experts working with you",
-              " and others in your organization.",
-            ]}
-            type={3}
-          >
+        <div className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96">
+          <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
             <FontAwesomeIcon icon={faChartLine} />
-          </Card>
-        </motion.div>
+          </div>
+          <div className="text-blue-dark font-bold lg:text-2xl">
+            Streamlined Workflow
+          </div>
+          <div className="text-sm lg:text-base">
+            <p>
+              You can concentrate on core business areas and company growth,
+              knowing you have
+              <span className="text-orange-dark font-bold">
+                {" "}
+                a team of industry experts working with you{" "}
+              </span>
+              and others in your organization.
+            </p>
+          </div>
+          <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer">
+            LEARN MORE
+          </button>
+        </div>
 
-        <motion.div className="px-2">
-          <Card
-            title={"One Point of Contact"}
-            text={[
-              "Ensure ease of communication via our ",
-              "one point-of-contact",
-              " communication model, connecting you with a dedicated client partner with direct knowledge of operating within your industry.",
-            ]}
-            type={3}
-          >
+        <div className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96">
+          <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
             <FontAwesomeIcon icon={faFaceLaughBeam} />
-          </Card>
-        </motion.div>
+          </div>
+          <div className="text-blue-dark font-bold lg:text-2xl">
+            One Point of Contact
+          </div>
+          <div className="text-sm lg:text-base">
+            <p>
+              Ensure ease of communication via our
+              <span className="text-orange-dark font-bold">
+                {" "}
+                one point-of-contact{" "}
+              </span>
+              communication model, connecting you with a dedicated client
+              partner with direct knowledge of operating within your industry.
+            </p>
+          </div>
+          <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer">
+            LEARN MORE
+          </button>
+        </div>
+
+        
       </motion.div>
     </Layout>
   );
