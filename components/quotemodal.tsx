@@ -74,10 +74,10 @@ export default function QuoteModal({
               <div>
                 <input
                   className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="fname"
+                  id="fullname"
                   type="text"
                   placeholder="Full Name"
-                  name="fname"
+                  name="fullname"
                 />
               </div>
               <div>

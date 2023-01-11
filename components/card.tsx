@@ -44,7 +44,7 @@ export default function Card({
         transition={{
           duration: 0.2,
         }}
-        className="flex flex-col items-start justify-start rounded-2xl shadow-md p-5 m-5 w-full h-full group hover:bg-gradient-to-r hover:from-blue hover:to-blue-light"
+        className="flex flex-col items-start justify-start rounded-2xl shadow-md p-5 m-5 w-full h-full group bg-white hover:bg-gradient-to-r hover:from-blue hover:to-blue-light"
       >
         <div className="w-[8vh] h-[8vh] text-orange-dark group-hover:text-orange pl-3">
           {children}

@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import Backdrop from "./backdrop";
 
 export default function InfoModal({
@@ -6,9 +7,8 @@ export default function InfoModal({
   content,
 }: {
   handleClose: React.MouseEventHandler;
-  content: string[]
+  content: string[];
 }) {
-
   const dropIn = {
     hidden: {
       y: "-100vh",
@@ -60,16 +60,15 @@ export default function InfoModal({
         </div>
 
         <div className="flex flex-col justify-center items-center text-center text-black">
-          <div className="pt-5 text-2xl font-bold text-white">
-            {content[0]}
-          </div>
+          <div className="pt-5 text-2xl font-bold text-white">{content[0]}</div>
           <div className="pt-2 pb-5 px-10 md:px-32 text-white">
             {content[1]}
           </div>
           <div>
-            <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">PRICING</button>
+            <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+              <Link href="/pricing">PRICING</Link> 
+            </button>
           </div>
-          
         </div>
       </motion.div>
     </Backdrop>

@@ -17,6 +17,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/card";
+import Carousel from "../components/carousel";
 import InfoModal from "../components/infomodal";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
@@ -342,6 +343,13 @@ export default function Home() {
           </button>
         </div>
       </motion.div>
+      <Section
+        title1="TESTIMONIALS"
+        title2="What They Say"
+        text="A reputation for delivering"
+        blueBackground={false}
+      />
+      <Carousel />
 
       <AnimatePresence>
         {modal1 && (

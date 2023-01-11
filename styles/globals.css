@@ -2,7 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    overflow-x: hidden;
-    background-color: whitesmoke;
+html,
+body {
+  overflow-x: hidden;
+  background-color: whitesmoke;
+}
+
+.content-tests {
+  max-width: 600px;
+  height: auto;
+  margin: auto;
+}
+
+.testimonial blockquote {
+  margin: 10px 10px 0;
+  background: white;
+  padding: 20px 60px;
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.testimonial blockquote:before,
+.testimonial blockquote:after {
+  content: "\201C";
+  position: absolute;
+  font-size: 80px;
+  line-height: 1;
+  color: #757f9a;
+  font-style: normal;
+}
+
+.testimonial blockquote:before {
+  top: 0;
+  left: 10px;
+}
+
+.testimonial blockquote:after {
+  content: "\201D";
+  right: 10px;
+  bottom: -0.5em;
+}
+
+.testimonial div {
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid white;
+  margin: 0 0 0 60px;
+}
+
+.testimonial p {
+  margin: 8px 0 0 20px;
+  text-align: left;
 }
