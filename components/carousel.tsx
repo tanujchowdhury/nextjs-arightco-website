@@ -53,12 +53,13 @@ export default function Carousel() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
+          adaptiveHeight: true,   
         },
       },
     ],
   };
   return (
-    <div className="py-14 mx-16">
+    <div className="py-14 mx-1 lg:mx-16">
       <Slider {...settings}>
         <div>
           <Slide
