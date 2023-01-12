@@ -10,7 +10,7 @@ function SampleNextArrow(props: { className: any; style: any; onClick: any }) {
       style={{
         ...style,
         display: "block",
-        background: "black",
+        background: "#FC6820",
         borderRadius: "100%",
       }}
       onClick={onClick}
@@ -26,7 +26,7 @@ function SamplePrevArrow(props: { className: any; style: any; onClick: any }) {
       style={{
         ...style,
         display: "block",
-        background: "black",
+        background: "#FC6820",
         borderRadius: "100%",
       }}
       onClick={onClick}
@@ -34,7 +34,7 @@ function SamplePrevArrow(props: { className: any; style: any; onClick: any }) {
   );
 }
 
-export default function TestimonialCarousel() {
+export default function ExitCarousel() {
   const settings = {
     dots: true,
     infinite: true,
@@ -59,6 +59,7 @@ export default function TestimonialCarousel() {
         onClick={undefined}
       />
     ),
+    
     responsive: [
       {
         breakpoint: 1280,
@@ -75,7 +76,7 @@ export default function TestimonialCarousel() {
           adaptiveHeight: true,
           autoplay: false,
         },
-      }
+      },
     ],
   };
   return (
