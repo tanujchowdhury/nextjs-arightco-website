@@ -18,6 +18,7 @@ import Head from "next/head";
 import { useState } from "react";
 import BlogCard from "../components/blogcard";
 import Card from "../components/card";
+import CardModal from "../components/cardmodal";
 import Carousel from "../components/carousel";
 import InfoModal from "../components/infomodal";
 import Intro from "../components/intro";
@@ -266,83 +267,56 @@ export default function Home() {
         variants={sweepDown}
         className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
       >
-        <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
-          <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
-            <FontAwesomeIcon icon={faSackDollar} />
-          </div>
-          <div className="text-blue-dark font-bold lg:text-2xl">
-            Minimize Cost and Overhead
-          </div>
-          <div className="text-sm lg:text-base">
-            <p>
-              Cut expenses associated with hiring, managing, and retaining
-              in-house teams. We provide better solutions at
-              <span className="text-orange-dark font-bold">
-                {" "}
-                30-50% savings{" "}
-              </span>
-              of what it would cost to maintain these resources internally.
-            </p>
-          </div>
+        <CardModal
+          icon={<FontAwesomeIcon icon={faSackDollar} />}
+          title={"Minimize Cost and Overhead"}
+          text={[
+            "Cut expenses associated with hiring, managing, and retaining in-house teams. We provide better solutions at",
+            "30-50% savings",
+            "of what it would cost to maintain these resources internally.",
+          ]}
+        >
           <button
             className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
             onClick={() => (modal1 ? closeModal1() : openModal1())}
           >
             LEARN MORE
           </button>
-        </div>
+        </CardModal>
 
-        <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
-          <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
-            <FontAwesomeIcon icon={faChartLine} />
-          </div>
-          <div className="text-blue-dark font-bold lg:text-2xl">
-            Streamlined Workflow
-          </div>
-          <div className="text-sm lg:text-base">
-            <p>
-              You can concentrate on core business areas and company growth,
-              knowing you have
-              <span className="text-orange-dark font-bold">
-                {" "}
-                a team of industry experts working with you{" "}
-              </span>
-              and others in your organization.
-            </p>
-          </div>
+        <CardModal
+          icon={<FontAwesomeIcon icon={faChartLine} />}
+          title={"Streamlined Workflow"}
+          text={[
+            "You can concentrate on core business areas and company growth, knowing you have",
+            "a team of industry experts working with you",
+            "and others in your organization.",
+          ]}
+        >
           <button
             className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
             onClick={() => (modal2 ? closeModal2() : openModal2())}
           >
             LEARN MORE
           </button>
-        </div>
+        </CardModal>
 
-        <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
-          <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
-            <FontAwesomeIcon icon={faFaceLaughBeam} />
-          </div>
-          <div className="text-blue-dark font-bold lg:text-2xl">
-            One Point of Contact
-          </div>
-          <div className="text-sm lg:text-base">
-            <p>
-              Ensure ease of communication via our
-              <span className="text-orange-dark font-bold">
-                {" "}
-                one point-of-contact{" "}
-              </span>
-              communication model, connecting you with a dedicated client
-              partner with direct knowledge of operating within your industry.
-            </p>
-          </div>
+        <CardModal
+          icon={<FontAwesomeIcon icon={faFaceLaughBeam} />}
+          title={"One Point of Contact"}
+          text={[
+            "Ensure ease of communication via our",
+            "one point-of-contact",
+            "communication model, connecting you with a dedicated client partner with direct knowledge of operating within your industry.",
+          ]}
+        >
           <button
             className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
             onClick={() => (modal3 ? closeModal3() : openModal3())}
           >
             LEARN MORE
           </button>
-        </div>
+        </CardModal>
       </motion.div>
       <Section
         title1="TESTIMONIALS"
@@ -366,9 +340,27 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center justify-center lg:flex-row min-[1350px]:mx-32">
-        <BlogCard src={"/casestudies/images/nex.png"} alt={"Nexient NTT Data"} title={"Nexient NTT Data"} href={"/nexient-ntt-data"} date={"March 1, 2022"} />
-        <BlogCard src={"/casestudies/images/49ers.png"} alt={"49ers Academy"} title={"49ers Academy"} href={"/49ers-academy"} date={"March 1, 2022"} />
-        <BlogCard src={"/casestudies/images/sage.png"} alt={"Sagetech"} title={"Sagetech"} href={"/sagetech"} date={"March 1, 2022"} />
+        <BlogCard
+          src={"/casestudies/images/nex.png"}
+          alt={"Nexient NTT Data"}
+          title={"Nexient NTT Data"}
+          href={"/nexient-ntt-data"}
+          date={"March 1, 2022"}
+        />
+        <BlogCard
+          src={"/casestudies/images/49ers.png"}
+          alt={"49ers Academy"}
+          title={"49ers Academy"}
+          href={"/49ers-academy"}
+          date={"March 1, 2022"}
+        />
+        <BlogCard
+          src={"/casestudies/images/sage.png"}
+          alt={"Sagetech"}
+          title={"Sagetech"}
+          href={"/sagetech"}
+          date={"March 1, 2022"}
+        />
       </div>
       <AnimatePresence>
         {modal1 && (
