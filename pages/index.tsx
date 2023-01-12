@@ -19,11 +19,11 @@ import { useState } from "react";
 import BlogCard from "../components/blogcard";
 import Card from "../components/card";
 import CardModal from "../components/cardmodal";
-import Carousel from "../components/carousel";
 import InfoModal from "../components/infomodal";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import Section from "../components/section";
+import TestimonialCarousel from "../components/testimonialcarousel";
 
 export default function Home() {
   const [modal1, setModal1] = useState(false);
@@ -324,7 +324,7 @@ export default function Home() {
         text="A reputation for delivering"
         blueBackground={false}
       />
-      <Carousel />
+      <TestimonialCarousel />
       <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20 min-[1350px]:mx-32">
         <div className="text-center md:text-start">
           <div className="text-orange font-semibold">Blog Spot</div>

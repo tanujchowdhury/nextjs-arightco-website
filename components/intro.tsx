@@ -21,7 +21,7 @@ export default function Intro({}) {
 
   return (
     <>
-      <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32 ">
+      <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32">
         <motion.div
           className="text-center text-white lg:basis-1/2 lg:text-left"
           initial={{ x: "-100%", opacity: 1 }}

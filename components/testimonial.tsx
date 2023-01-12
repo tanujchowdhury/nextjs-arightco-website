@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Slide({
+export default function Testimonial({
     logo,
     logo_alt,
     quote,
