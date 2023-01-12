@@ -54,6 +54,7 @@ export default function TestimonialCarousel() {
         settings: {
           slidesToShow: 1,
           adaptiveHeight: true,
+          autoplay: false,
         },
       },
     ],

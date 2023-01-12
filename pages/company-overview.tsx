@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/card";
+import ExitCarousel from "../components/exitcarousel";
 import Layout from "../components/layout";
 import QuoteModal from "../components/quotemodal";
 import Section from "../components/section";
@@ -100,6 +101,7 @@ export default function CompanyOverview() {
           blueBackground={false}
         />
       </div>
+      <ExitCarousel />
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
       </AnimatePresence>
