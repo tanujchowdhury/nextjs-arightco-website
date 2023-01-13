@@ -1,17 +1,25 @@
+import Image from "next/image";
+
 export default function SignUp({}) {
   return (
     <div className="bg-blue-lightest py-32">
-      <div className="w-11/12 max-w-lg bg-[url('../public/typing.png')] bg-no-repeat bg-cover bg-center mx-auto rounded-lg flex flex-col justify-center items-center gap-5">
-        <div className="font-bold text-white text-xl mt-10">
+      <div className="w-11/12 max-w-lg mx-auto rounded-lg flex flex-col justify-center items-center gap-5 relative overflow-hidden">
+        <Image src={"/typing.png"}
+        alt={"Typing image"}
+        fill
+        className="object-cover"
+         />
+        <div className="font-bold text-white text-xl mt-10 z-10">
           NEWSLETTER SIGNUP
         </div>
-        <div className="text-white text-medium text-center px-3">
+        <div className="text-white text-medium text-center px-3 z-10">
           Stay up-to-date on industry news and ArightCo offerings
         </div>
         <form
           target="_blank"
           action="https://formsubmit.co/chowdhury.tanuj@gmail.com"
           method="POST"
+          className="z-10"
         >
           <input type="hidden" name="_subject" value="New Subscriber!" />
           <div className="flex flex-col justify-center items-center gap-3">
