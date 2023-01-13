@@ -1,13 +1,16 @@
-import Head from 'next/head';
-import Layout from '../components/layout';
+import CaseStudyLayout from "../components/casestudylayout";
+import Layout from "../components/layout";
 
 export default function FortyNinersAcademy() {
   return (
     <Layout>
-      <Head>
-        <title>49ers Academy</title>
-      </Head>
-      <h1>49ers Academy Content</h1>
+      <CaseStudyLayout
+        title={"49ers Academy"}
+        industry={"NON-PROFIT"}
+        date={"March 1, 2022"}
+        imagesrc={"/casestudies/images/49ers.png"}
+        pdfsrc={"/casestudies/pdfs/49ers.pdf"}
+      />
     </Layout>
-  )
+  );
 }

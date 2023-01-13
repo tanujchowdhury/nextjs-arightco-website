@@ -3,12 +3,13 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import Image from "next/image";
 import BlogCard from "../components/blogcard";
+import RecentArticles from "../components/recentarticles";
 
 export default function CaseStudies() {
   return (
     <Layout>
       <Head>
-        <title>Case Studies</title>
+        <title>Case Studies | Solutions for IT and SaaS | ArightCo </title>
       </Head>
       <div className="text-center text-white bg-gradient-to-r from-blue to-blue-light px-3 py-32 lg:py-44 lg:text-xl lg:px-32">
         <div className="font-bold text-6xl">Case Studies</div>
@@ -31,34 +32,15 @@ export default function CaseStudies() {
           </div>
           <div className="mt-5 lg:text-start lg:basis-1/2 ml-16">
             <div className="font-bold text-2xl lg:text-4xl">
-              <Link href="/nexient-ntt-data">Nexient NTT Data</Link>{" "}
+              <Link href="/nexient-ntt-data">Nexient NTT Data</Link>
             </div>
             <div className="text-orange">March 1, 2022</div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center lg:flex-row min-[1350px]:mx-32 mt-24">
-        <BlogCard
-          src={"/casestudies/images/nex.png"}
-          alt={"Nexient NTT Data"}
-          title={"Nexient NTT Data"}
-          href={"/nexient-ntt-data"}
-          date={"March 1, 2022"}
-        />
-        <BlogCard
-          src={"/casestudies/images/49ers.png"}
-          alt={"49ers Academy"}
-          title={"49ers Academy"}
-          href={"/49ers-academy"}
-          date={"March 1, 2022"}
-        />
-        <BlogCard
-          src={"/casestudies/images/sage.png"}
-          alt={"Sagetech"}
-          title={"Sagetech"}
-          href={"/sagetech"}
-          date={"March 1, 2022"}
-        />
+      <div className="mt-20">
+
+      <RecentArticles />
       </div>
     </Layout>
   );

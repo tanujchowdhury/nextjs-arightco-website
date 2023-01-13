@@ -16,12 +16,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
-import BlogCard from "../components/blogcard";
 import Card from "../components/card";
 import CardModal from "../components/cardmodal";
 import InfoModal from "../components/infomodal";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
+import RecentArticles from "../components/recentarticles";
 import Section from "../components/section";
 import TestimonialCarousel from "../components/testimonialcarousel";
 
@@ -338,30 +338,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-
-      <div className="flex flex-col items-center justify-center lg:flex-row min-[1350px]:mx-32">
-        <BlogCard
-          src={"/casestudies/images/nex.png"}
-          alt={"Nexient NTT Data"}
-          title={"Nexient NTT Data"}
-          href={"/nexient-ntt-data"}
-          date={"March 1, 2022"}
-        />
-        <BlogCard
-          src={"/casestudies/images/49ers.png"}
-          alt={"49ers Academy"}
-          title={"49ers Academy"}
-          href={"/49ers-academy"}
-          date={"March 1, 2022"}
-        />
-        <BlogCard
-          src={"/casestudies/images/sage.png"}
-          alt={"Sagetech"}
-          title={"Sagetech"}
-          href={"/sagetech"}
-          date={"March 1, 2022"}
-        />
-      </div>
+      <RecentArticles />
+      
       <AnimatePresence>
         {modal1 && (
           <InfoModal
