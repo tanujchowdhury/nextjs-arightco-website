@@ -103,7 +103,7 @@ export default function Navbar({}) {
                 className="w-4 h-4"
               >
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
@@ -148,7 +148,7 @@ export default function Navbar({}) {
                 className="w-4 h-4"
               >
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
@@ -192,7 +192,7 @@ export default function Navbar({}) {
                 className="w-4 h-4"
               >
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
@@ -266,7 +266,7 @@ export default function Navbar({}) {
               className="w-10 h-10"
             >
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 stroke-linejoin="round"
                 d="M6 18L18 6M6 6l12 12"
               />
@@ -281,7 +281,7 @@ export default function Navbar({}) {
               className="w-10 h-10"
             >
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 stroke-linejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />

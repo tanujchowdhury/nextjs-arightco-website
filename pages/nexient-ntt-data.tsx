@@ -7,7 +7,10 @@ export default function NexientNTTData() {
       <Head>
         <title>Nexient NTT Data</title>
       </Head>
-      <h1>Nexient NTT Data Content</h1>
+      <h1 className='pt-52 bg-gray-light'>Nexient NTT Data Content</h1>
+      
+
+
     </Layout>
   )
 }
