@@ -7,6 +7,7 @@ export default function Testimonial({
     avatar,
     avatar_alt,
     name,
+    title,
 
 }:{
     logo: string;
@@ -15,6 +16,7 @@ export default function Testimonial({
     avatar: string;
     avatar_alt: string;
     name: string;
+    title: string;
 }) {
   return (
     <div className="carousel-item active">
@@ -37,7 +39,8 @@ export default function Testimonial({
             height={60}
             className="rounded-full"
           />
-          <p>{name}</p>
+          <p className="font-bold mt-2">{name}</p>
+          <p className="text-orange-dark mb-5">{title}</p>
         </div>
       </div>
     </div>
