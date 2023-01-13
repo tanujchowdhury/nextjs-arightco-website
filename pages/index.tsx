@@ -215,7 +215,7 @@ export default function Home() {
             <FontAwesomeIcon icon={faChartPie} />
           </Card>
         </div>
-        <div className="flex flex-col items-center justify-center m-5 mt-0 md:flex-row min-[1350px]:px-32 md:h-[40vh] md:mt-10">
+        <div className="flex flex-col items-center justify-center mx-5 mt-0 md:flex-row min-[1350px]:px-32 md:h-[40vh] md:mt-10 mb-10">
           <Card
             title="Budget Creation"
             text={[
