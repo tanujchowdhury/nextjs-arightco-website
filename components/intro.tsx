@@ -88,6 +88,7 @@ export default function Intro({}) {
             width={800}
             height={800}
             className="object-cover rounded-3xl"
+            priority={true}
           />
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"

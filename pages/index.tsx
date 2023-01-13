@@ -109,7 +109,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>ArightCo</title>
+        <title>ArightCo | Full Service Finance & Accounting Solutions</title>
       </Head>
       <Intro />
       <motion.div

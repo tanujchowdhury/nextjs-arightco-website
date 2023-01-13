@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-to-b-white-transparent':
+          "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,1))",
+      },
       colors: {
         orange: {
           light: "#FFB934",
@@ -25,7 +29,7 @@ module.exports = {
         gray: {
           light: "#D3D3D3",
           DEFAULT: "#808080",
-          dark: '#5A5A5A',
+          dark: "#5A5A5A",
         },
         backdrop: "#000000e1",
       },

@@ -51,7 +51,7 @@ export default function Footer({}) {
                 href="https://www.linkedin.com/company/arightco-inc./"
                 target="_blank"
               >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                <FontAwesomeIcon icon={faLinkedin} />
               </Link>
             </div>
           </div>

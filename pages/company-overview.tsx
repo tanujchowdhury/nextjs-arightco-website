@@ -18,7 +18,7 @@ export default function CompanyOverview() {
   return (
     <Layout>
       <Head>
-        <title>Company Overview</title>
+        <title>Company Overview | Solutions for IT and SaaS</title>
       </Head>
       <div className="text-center px-2 bg-gradient-to-r from-blue to-blue-light py-32 lg:py-44">
         <div className="text-orange font-semibold">ABOUT US</div>
