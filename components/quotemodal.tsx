@@ -120,10 +120,11 @@ export default function QuoteModal({
               </div>
               <div>
                 <textarea
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-none"
+                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-y"
                   id="specs"
                   placeholder="Project Specifications"
                   name="Project Specifications"
+                  rows={4}
                 />
               </div>
               <button
