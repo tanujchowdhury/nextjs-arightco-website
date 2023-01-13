@@ -8,6 +8,7 @@ import ExitCarousel from "../components/exitcarousel";
 import Layout from "../components/layout";
 import QuoteModal from "../components/quotemodal";
 import Section from "../components/section";
+import Image from "next/image";
 
 export default function CompanyOverview() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -102,6 +103,32 @@ export default function CompanyOverview() {
         />
       </div>
       <ExitCarousel />
+      <div className="text-center pt-24 px-2">
+        <div className="text-orange font-semibold">TRUSTED BY</div>
+        <div className="text-blue-dark text-2xl py-3 md:py-5 md:text-4xl lg:text-5xl font-bold">
+          Over 85 Clients
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 mx-3 xl:mx-32 py-10">
+          <Image src={"/clientlogos/nex.png"} alt={"Nexient logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/truss.png"} alt={"Truss logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/bungee.png"} alt={"Bungee logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/punchh.png"} alt={"Punchh logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/cloudapp.png"} alt={"CloudApp logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/ark.png"} alt={"Arkestro logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/blink.png"} alt={"Blink logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/armor.png"} alt={"ArmorCode logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/aifi.png"} alt={"Aifi logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/metadata.png"} alt={"Metadata.io logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/sv.png"} alt={"SV Academy logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+          <Image src={"/clientlogos/unfold.png"} alt={"Unfold logo"} width={200} height={100} className="rounded-xl justify-self-center" />
+        </div>
+        <div className="text-gray-dark md:text-lg max-w-2xl mx-auto">
+          Although ArightCo specializes in serving companies in the Technology &
+          IT sectors, we have the capability and significant experience in
+          operating across a multitude of other industries, including
+          Manufacturing, Non-Profit, Retail, and more
+        </div>
+      </div>
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
       </AnimatePresence>

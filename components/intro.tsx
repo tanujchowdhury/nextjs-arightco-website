@@ -78,7 +78,7 @@ export default function Intro({}) {
             mass: 0.5,
             damping: 10,
           }}
-          className="mx-5 w-[50vh] h-[25vh] sm:w-[80vh] sm:h-[50vh] mt-20 lg:mt-5 lg:h-[50vh] lg:basis-1/2 py-10 relative group"
+          className="thumbnail-wrapper"
           onClick={() =>
             videoModalOpen ? closeVideoModal() : openVideoModal()}
         >
@@ -86,7 +86,7 @@ export default function Intro({}) {
             src="/thumbnail.jpg"
             alt="ArightCo Thumbnail"
             fill
-            className="rounded-3xl"
+            className="responsive-thumbnail"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
