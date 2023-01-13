@@ -296,7 +296,7 @@ export default function Navbar({}) {
         initial="exit"
         animate={nav ? "enter" : "exit"}
         variants={subMenuAnimate}
-        className="fixed top-20 z-10 w-full"
+        className="fixed top-20 z-100 w-full"
       >
         <div className="flex-col justify-center items-center w-full text-center bg-white font-medium text-blue-dark drop-shadow-lg rounded-b-lg">
           <Link href="/company-overview">
