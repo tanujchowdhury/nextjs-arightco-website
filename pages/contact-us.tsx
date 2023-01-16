@@ -39,41 +39,41 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <div>VISIT US</div>
-          <div>Office Support</div>
-          <div>
+      <div className="px-10">
+        <div className="pt-10">
+          <div className="text-sm text-orange font-bold">VISIT US</div>
+          <div className="text-xl text-blue font-bold pt-5">Office Support</div>
+          <div className="text-sm text-gray-dark py-5 border-b border-blue-light">
             Have any questions for us? Reach out here and you will receive a
             prompt response from an ArightCo team member.
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center pt-5">
             <span className="bg-blue rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faLocationDot} className="w-6 h-6" />
+              <FontAwesomeIcon icon={faLocationDot} className="w-10 h-10" />
             </span>
-            <div>
-              <div>Visit Us</div>
-              <div>
+            <div className="pl-3">
+              <div className="text-2xl text-blue font-bold">Visit Us</div>
+              <div className="text-gray-dark">
                 US office: 1754 Technology Drive Suite 212, San Jose, CA 95110
               </div>
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center pt-5">
             <div className="bg-blue rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faEnvelope} className="w-6 h-6" />
+              <FontAwesomeIcon icon={faEnvelope} className="w-10 h-10" />
             </div>
-            <div>
-              <div>Email Us</div>
-              <div>info@arightco.com</div>
+            <div className="pl-3">
+              <div className="text-2xl text-blue font-bold">Email Us</div>
+              <div className="text-gray-dark">info@arightco.com</div>
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center pt-5">
             <div className="bg-blue rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faPhone} className="w-6 h-6" />
+              <FontAwesomeIcon icon={faPhone} className="w-10 h-10" />
             </div>
-            <div>
-              <div>Call Us</div>
-              <div>(408) 837-0029</div>
+            <div className="pl-3">
+              <div className="text-2xl text-blue font-bold">Call Us</div>
+              <div className="text-gray-dark">(408) 837-0029</div>
             </div>
           </div>
         </div>
