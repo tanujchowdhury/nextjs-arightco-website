@@ -9,7 +9,7 @@ export default function CaseStudies() {
   return (
     <Layout>
       <Head>
-        <title>Case Studies | Solutions for IT and SaaS | ArightCo </title>
+        <title>Case Studies | Solutions for IT and SaaS | ArightCo</title>
       </Head>
       <div className="text-center text-white bg-gradient-to-r from-blue to-blue-light px-3 py-32 lg:py-44 lg:text-xl lg:px-32">
         <div className="font-bold text-6xl">Case Studies</div>
