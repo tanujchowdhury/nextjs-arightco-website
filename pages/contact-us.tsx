@@ -14,7 +14,7 @@ export default function ContactUs() {
   return (
     <Layout>
       <Head>
-        <title>Contact Us</title>
+        <title>Contact Us | Finance and Accounting Solutions | ArightCo</title>
       </Head>
       <div className="py-32 lg:py-44 xl:py-52  bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center text-white lg:flex-row px-3 sm:px-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex flex-col items-center justify-center lg:basis-1/2 lg:items-start">
@@ -40,11 +40,15 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-      <div className="px-10">
-        <div className="pt-10">
-          <div className="text-sm text-orange font-bold">VISIT US</div>
-          <div className="text-xl text-blue font-bold pt-5">Office Support</div>
-          <div className="text-sm text-gray-dark py-5 border-b border-blue-light">
+      <div className="flex flex-col lg:flex-row min-[1350px]:mx-28">
+        <div className="pt-10 px-10 lg:basis-1/2 lg:order-2">
+          <div className="text-sm md:text-base text-orange font-bold">
+            VISIT US
+          </div>
+          <div className="text-2xl md:text-4xl text-blue font-bold pt-5">
+            Office Support
+          </div>
+          <div className="md:text-lg text-gray-dark py-5 border-b border-blue-light">
             Have any questions for us? Reach out here and you will receive a
             prompt response from an ArightCo team member.
           </div>
@@ -68,6 +72,91 @@ export default function ContactUs() {
             title={"Call Us"}
             text={"(408) 837-0029"}
           />
+        </div>
+        <div className="mt-10 mx-5 p-5 bg-white rounded-3xl shadow-lg lg:basis-1/2 lg:order-1 lg:shadow-2xl">
+          <div className="text-sm md:text-base text-orange font-bold">
+            SEND US A MESSAGE
+          </div>
+          <div className="text-2xl md:text-4xl text-blue font-bold pt-5">
+            Can't find the answer you're looking for?
+          </div>
+          <div className="md:text-lg text-gray-dark py-5 border-b border-blue-light">
+            Tell us a little bit about your company and we will reach out to
+            curate your custom back-office solution.
+          </div>
+          <form
+            target="_blank"
+            action="https://formsubmit.co/chowdhury.tanuj@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New Quote Request!" />
+            <div className="grid md:grid-cols-2 gap-4 pt-7">
+              <input
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
+                id="fullname"
+                type="text"
+                placeholder="Name"
+                name="Name"
+              />
+
+              <input
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
+                id="email"
+                type="email"
+                placeholder="Email"
+                name="Email"
+                required
+              />
+
+              <input
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
+                id="number"
+                type="text"
+                placeholder="Phone Number"
+                name="Phone Number"
+                required
+              />
+
+              <input
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
+                id="cname"
+                type="text"
+                placeholder="Company Name"
+                name="Company Name"
+              />
+
+              <input
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest md:col-span-2"
+                id="website"
+                type="text"
+                placeholder="Company Website Link"
+                name="Company Website Link"
+              />
+
+              <input
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest md:col-span-2"
+                id="subject"
+                type="text"
+                placeholder="Subject"
+                name="Subject"
+              />
+
+              <textarea
+                className="shadow appearance-none border rounded-3xl p-3 leading-tight focus:outline-none focus:shadow-outline resize-y bg-blue-lightest md:col-span-2"
+                id="message"
+                placeholder="Message"
+                name="Message"
+                rows={4}
+              />
+
+              <button
+                className="h-10 mt-5 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange  hover:bg-blue-dark md:col-span-2"
+                type="submit"
+              >
+                SUBMIT
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </Layout>

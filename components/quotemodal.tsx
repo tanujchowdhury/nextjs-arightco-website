@@ -6,7 +6,6 @@ export default function QuoteModal({
 }: {
   handleClose: React.MouseEventHandler;
 }) {
-
   const dropIn = {
     hidden: {
       y: "-100vh",
@@ -58,9 +57,7 @@ export default function QuoteModal({
         </div>
 
         <div className="flex flex-col justify-center items-center text-center text-black">
-          <div className="pt-5 text-2xl font-bold text-white">
-            Get A Quote
-          </div>
+          <div className="pt-5 text-2xl font-bold text-white">Get A Quote</div>
           <div className="pt-2 pb-5 px-3 text-white">
             Our Professionals Will Reach Out to Curate Your Tailored Solution
           </div>
@@ -71,62 +68,56 @@ export default function QuoteModal({
           >
             <input type="hidden" name="_subject" value="New Quote Request!" />
             <div className="flex flex-col justify-center items-center gap-3">
-              <div>
-                <input
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="fullname"
-                  type="text"
-                  placeholder="Full Name"
-                  name="fullname"
-                />
-              </div>
-              <div>
-                <input
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="email"
-                  placeholder="Email Address"
-                  name="Email Address"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="number"
-                  type="text"
-                  placeholder="Contact Number"
-                  name="Contact Number"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="cname"
-                  type="text"
-                  placeholder="Company Name"
-                  name="Company Name"
-                />
-              </div>
-              <div>
-                <input
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="website"
-                  type="text"
-                  placeholder="Company Website"
-                  name="Company Website"
-                />
-              </div>
-              <div>
-                <textarea
-                  className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-y"
-                  id="specs"
-                  placeholder="Project Specifications"
-                  name="Project Specifications"
-                  rows={4}
-                />
-              </div>
+              <input
+                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="fullname"
+                type="text"
+                placeholder="Full Name"
+                name="fullname"
+              />
+
+              <input
+                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Email Address"
+                name="Email Address"
+                required
+              />
+
+              <input
+                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="number"
+                type="text"
+                placeholder="Contact Number"
+                name="Contact Number"
+                required
+              />
+
+              <input
+                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="cname"
+                type="text"
+                placeholder="Company Name"
+                name="Company Name"
+              />
+
+              <input
+                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="website"
+                type="text"
+                placeholder="Company Website"
+                name="Company Website"
+              />
+
+              <textarea
+                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-y"
+                id="specs"
+                placeholder="Project Specifications"
+                name="Project Specifications"
+                rows={4}
+              />
+
               <button
                 className="h-10 w-40 mt-5 rounded-full text-white font-bold bg-orange-dark hover:bg-blue-dark"
                 type="submit"

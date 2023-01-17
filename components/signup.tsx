@@ -4,11 +4,12 @@ export default function SignUp({}) {
   return (
     <div className="bg-blue-lightest py-32">
       <div className="w-11/12 max-w-lg mx-auto rounded-lg flex flex-col justify-center items-center gap-5 relative overflow-hidden">
-        <Image src={"/typing.png"}
-        alt={"Typing image"}
-        fill
-        className="object-cover"
-         />
+        <Image
+          src={"/typing.png"}
+          alt={"Typing image"}
+          fill
+          className="object-cover"
+        />
         <div className="font-bold text-white text-xl mt-10 z-10">
           NEWSLETTER SIGNUP
         </div>
@@ -23,51 +24,45 @@ export default function SignUp({}) {
         >
           <input type="hidden" name="_subject" value="New Subscriber!" />
           <div className="flex flex-col justify-center items-center gap-3">
-            <div>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="fullname"
-                type="text"
-                placeholder="Full Name"
-                name="Full Name"
-              />
-            </div>
-            <div>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="companyname"
-                type="text"
-                placeholder="Company Name"
-                name="Company Name"
-              />
-            </div>
-            <div>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="industry"
-                type="text"
-                placeholder="Industry"
-                name="Industry"
-              />
-            </div>
-            <div>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="emailaddress"
-                type="email"
-                placeholder="Email Address"
-                name="Email Address"
-                required
-              />
-            </div>
-            <div className="my-10">
-              <button
-                className="h-10 w-40 rounded-full text-white font-bold bg-orange-dark hover:bg-blue-light"
-                type="submit"
-              >
-                SUBSCRIBE
-              </button>
-            </div>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="fullname"
+              type="text"
+              placeholder="Full Name"
+              name="Full Name"
+            />
+
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="companyname"
+              type="text"
+              placeholder="Company Name"
+              name="Company Name"
+            />
+
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="industry"
+              type="text"
+              placeholder="Industry"
+              name="Industry"
+            />
+
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="emailaddress"
+              type="email"
+              placeholder="Email Address"
+              name="Email Address"
+              required
+            />
+
+            <button
+              className="h-10 w-40 rounded-full text-white font-bold bg-orange-dark hover:bg-blue-light my-5"
+              type="submit"
+            >
+              SUBSCRIBE
+            </button>
           </div>
         </form>
       </div>
