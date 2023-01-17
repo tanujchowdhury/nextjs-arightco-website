@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
+import IconGroup from "../components/icongroup";
 
 export default function ContactUs() {
   return (
@@ -47,35 +48,26 @@ export default function ContactUs() {
             Have any questions for us? Reach out here and you will receive a
             prompt response from an ArightCo team member.
           </div>
-          <div className="flex flex-row items-center pt-5">
-            <span className="bg-blue rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faLocationDot} className="w-10 h-10" />
-            </span>
-            <div className="pl-3">
-              <div className="text-2xl text-blue font-bold">Visit Us</div>
-              <div className="text-gray-dark">
-                US office: 1754 Technology Drive Suite 212, San Jose, CA 95110
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-row items-center pt-5">
-            <div className="bg-blue rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faEnvelope} className="w-10 h-10" />
-            </div>
-            <div className="pl-3">
-              <div className="text-2xl text-blue font-bold">Email Us</div>
-              <div className="text-gray-dark">info@arightco.com</div>
-            </div>
-          </div>
-          <div className="flex flex-row items-center pt-5">
-            <div className="bg-blue rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faPhone} className="w-10 h-10" />
-            </div>
-            <div className="pl-3">
-              <div className="text-2xl text-blue font-bold">Call Us</div>
-              <div className="text-gray-dark">(408) 837-0029</div>
-            </div>
-          </div>
+
+          <IconGroup
+            icon={<FontAwesomeIcon icon={faLocationDot} className="w-6 h-6" />}
+            title={"Visit Us"}
+            text={
+              "US office: 1754 Technology Drive Suite 212, San Jose, CA 95110"
+            }
+          />
+
+          <IconGroup
+            icon={<FontAwesomeIcon icon={faEnvelope} className="w-6 h-6" />}
+            title={"Email Us"}
+            text={"info@arightco.com"}
+          />
+
+          <IconGroup
+            icon={<FontAwesomeIcon icon={faPhone} className="w-6 h-6" />}
+            title={"Call Us"}
+            text={"(408) 837-0029"}
+          />
         </div>
       </div>
     </Layout>

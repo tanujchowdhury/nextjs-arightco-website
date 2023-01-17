@@ -1,9 +1,5 @@
-import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
-import { faSackDollar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import InfoModal from "./infomodal";
+
 
 export default function CardModal({
   icon,
