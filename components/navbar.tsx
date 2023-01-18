@@ -228,14 +228,11 @@ export default function Navbar({}) {
 
         <div className="hidden md:flex min-[1350px]:mr-32">
           <div className="mx-2">
-            <button
-              className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
-              onClick={() =>
-                pricingModalOpen ? closePricingModal() : openPricingModal()
-              }
-            >
-              PRICING
-            </button>
+            <Link href="/pricing">
+              <button className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+                PRICING
+              </button>
+            </Link>
           </div>
 
           <div className="mx-2">
