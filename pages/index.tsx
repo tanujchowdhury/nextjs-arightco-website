@@ -40,7 +40,7 @@ export default function Home() {
 
   const sweepLeft = {
     hidden: {
-      x: "50vh",
+      x: "10vh",
       opacity: 0,
     },
     visible: {
@@ -57,7 +57,7 @@ export default function Home() {
   };
   const sweepRight = {
     hidden: {
-      x: "-50vh",
+      x: "-10vh",
       opacity: 0,
     },
     visible: {
