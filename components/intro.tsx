@@ -4,6 +4,7 @@ import Image from "next/image";
 import QuoteModal from "./quotemodal";
 import PricingModal from "./pricingmodal";
 import VideoModal from "./videomodal";
+import Link from "next/link";
 
 export default function Intro({}) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -45,14 +46,11 @@ export default function Intro({}) {
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center py-5 lg:justify-start gap-5">
             <div className="mx-2">
-              <button
-                className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
-                onClick={() =>
-                  pricingModalOpen ? closePricingModal() : openPricingModal()
-                }
-              >
-                PRICING
-              </button>
+              <Link href="/pricing">
+                <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+                  PRICING
+                </button>
+              </Link>
             </div>
 
             <div className="mx-2">
@@ -79,7 +77,8 @@ export default function Intro({}) {
           }}
           className="cursor-pointer group"
           onClick={() =>
-            videoModalOpen ? closeVideoModal() : openVideoModal()}
+            videoModalOpen ? closeVideoModal() : openVideoModal()
+          }
         >
           <Image
             src="/thumbnail.jpg"
@@ -96,9 +95,9 @@ export default function Intro({}) {
             stroke-width="1.5"
             stroke="currentColor"
             className="w-1/2 h-1/2 absolute top-1/4 right-1/4 text-orange-dark group-hover:text-orange"
-            initial={{ opacity: 0}}
-            animate={{ opacity: 1}}
-            transition={{ delay: 1.5}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
           >
             <path
               strokeLinecap="round"

@@ -20,7 +20,7 @@ export default function PricingModel({
       <div className="text-sm text-orange-dark font-bold">
         SERVICES AND PRICING
       </div>
-      <div className="text-2xl text-blue font-bold">{title}</div>
+      <div className="text-2xl md:text-4xl lg:text-5xl text-blue font-bold">{title}</div>
       <table className="text-center p-20 shadow-xl w-4/5">
         <thead>
           <tr className="bg-gradient-to-r from-blue-dark to-blue-light text-white text-xl">
@@ -80,7 +80,7 @@ export default function PricingModel({
           <div className="flex flex-col items-center jusitfy-center bg-white p-5 m-3 shadow-lg w-full gap-3">
             <div className="text-xl font-bold">{items[0]}</div>    
             <div className="text-gray-dark">{items[1]}</div>
-            <button className="bg-gradient-to-r from-orange-dark to-orange-light rounded-full text-white font-bold text-sm h-10 w-20">SELECT</button>
+            <button className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20">SELECT</button>
           </div>
         ))}
       </div>
