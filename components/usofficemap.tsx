@@ -15,8 +15,10 @@ export default function USOfficeMap() {
   return (
     <GoogleMap
       zoom={10}
-      center={{ lat: 44, lng: -80 }}
+      center={{ lat: 37.369616519260816, lng: -121.91899865996622 }}
       mapContainerClassName="bg-white p-10 m-5 mt-20 rounded-3xl h-96 w-auto"
-    ></GoogleMap>
+    >
+        <Marker position={{ lat: 37.369616519260816, lng: -121.91899865996622 }} />
+    </GoogleMap>
   );
 }
