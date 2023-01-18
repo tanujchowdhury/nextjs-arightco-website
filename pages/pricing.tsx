@@ -2,10 +2,16 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import Layout from "../components/layout";
 import PricingModel from "../components/pricingmodel";
+import PricingModal from "../components/pricingmodal";
+import { AnimatePresence } from "framer-motion";
 
 export default function Pricing() {
+  const [pricingModalOpen, setPricingModalOpen] = useState(false);
+  const closePricingModal = () => setPricingModalOpen(false);
+  const openPricingModal = () => setPricingModalOpen(true);
   return (
     <Layout>
       <Head>
@@ -38,7 +44,7 @@ export default function Pricing() {
       <div className="flex flex-col items-center justify-center gap-4 pt-20 lg:flex-row">
         <Link href="#Technology">
           <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
-            TECHNOLOGY
+            SAAS
           </button>
         </Link>
         <Link href="#IT">
@@ -56,9 +62,17 @@ export default function Pricing() {
             NON-PROFIT
           </button>
         </Link>
+        <button
+          onClick={() =>
+            pricingModalOpen ? closePricingModal() : openPricingModal()
+          }
+          className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+        >
+          OTHERS
+        </button>
       </div>
       <PricingModel
-        title={"Technology"}
+        title={"SAAS"}
         services={[
           "Transactional Entry",
           "Monthly Financial Statement & KPI Preparation",
@@ -130,6 +144,9 @@ export default function Pricing() {
           ["Complex", "$8,000+/month"],
         ]}
       ></PricingModel>
+      <AnimatePresence>
+        {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
+      </AnimatePresence>
     </Layout>
   );
 }

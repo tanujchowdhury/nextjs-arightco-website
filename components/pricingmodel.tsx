@@ -1,5 +1,6 @@
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 export default function PricingModel({
   title,
@@ -77,10 +78,12 @@ export default function PricingModel({
       </div>
       <div className="flex flex-col items-center justify-center w-4/5 lg:flex-row">
         {planinfo.map((items: string[]) => (
-          <div className="flex flex-col items-center jusitfy-center bg-white p-5 m-3 shadow-lg w-full gap-3">
+          <div className="flex flex-col items-center justify-center bg-white p-5 m-3 shadow-lg w-full gap-3">
             <div className="text-xl font-bold">{items[0]}</div>    
             <div className="text-gray-dark">{items[1]}</div>
-            <button className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20">SELECT</button>
+            <button
+            onClick={() => {}}
+             className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20">SELECT</button>
           </div>
         ))}
       </div>
