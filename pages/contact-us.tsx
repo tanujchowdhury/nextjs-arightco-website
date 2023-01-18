@@ -9,8 +9,12 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
 import IconGroup from "../components/icongroup";
+import USOfficeMap from "../components/usofficemap";
 
 export default function ContactUs() {
+  
+
+  
   return (
     <Layout>
       <Head>
@@ -159,6 +163,8 @@ export default function ContactUs() {
           </form>
         </div>
       </div>
+    
+      <USOfficeMap />
     </Layout>
   );
 }
