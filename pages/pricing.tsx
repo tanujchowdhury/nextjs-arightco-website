@@ -7,11 +7,17 @@ import Layout from "../components/layout";
 import PricingModel from "../components/pricingmodel";
 import PricingModal from "../components/pricingmodal";
 import { AnimatePresence } from "framer-motion";
+import QuoteModal from "../components/quotemodal";
 
 export default function Pricing() {
   const [pricingModalOpen, setPricingModalOpen] = useState(false);
   const closePricingModal = () => setPricingModalOpen(false);
   const openPricingModal = () => setPricingModalOpen(true);
+
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const closeQuoteModal = () => setQuoteModalOpen(false);
+  const openQuoteModal = () => setQuoteModalOpen(true);
+
   return (
     <Layout>
       <Head>
@@ -88,7 +94,16 @@ export default function Pricing() {
           ["Series A", "$5,000+/month"],
           ["Series B", "Custom Pricing"],
         ]}
-      ></PricingModel>
+      >
+        <button
+          onClick={() =>
+            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
+          }
+          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
+        >
+          SELECT
+        </button>
+      </PricingModel>
       <PricingModel
         title={"IT"}
         services={[
@@ -107,7 +122,16 @@ export default function Pricing() {
           ["Headcount 20-49", "$5,000+/month"],
           ["Headcount 49+", "Custom Pricing"],
         ]}
-      ></PricingModel>
+      >
+        <button
+          onClick={() =>
+            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
+          }
+          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
+        >
+          SELECT
+        </button>
+      </PricingModel>
       <PricingModel
         title={"Manufacturing"}
         services={[
@@ -125,7 +149,16 @@ export default function Pricing() {
           ["Pro", "$5,000+/month"],
           ["Premium", "Custom Pricing"],
         ]}
-      ></PricingModel>
+      >
+        <button
+          onClick={() =>
+            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
+          }
+          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
+        >
+          SELECT
+        </button>
+      </PricingModel>
       <PricingModel
         title={"Non-Profit"}
         services={[
@@ -143,9 +176,19 @@ export default function Pricing() {
           ["Starter Plus", "$5,000+/month"],
           ["Complex", "$8,000+/month"],
         ]}
-      ></PricingModel>
+      >
+        <button
+          onClick={() =>
+            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
+          }
+          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
+        >
+          SELECT
+        </button>
+      </PricingModel>
       <AnimatePresence>
         {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
+        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
       </AnimatePresence>
     </Layout>
   );

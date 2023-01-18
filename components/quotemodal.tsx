@@ -57,7 +57,7 @@ export default function QuoteModal({
         </div>
 
         <div className="flex flex-col justify-center items-center text-center text-black">
-          <div className="pt-5 text-2xl font-bold text-white">Get A Quote</div>
+          <div className="text-2xl font-bold text-white">Contact Us</div>
           <div className="pt-2 pb-5 px-3 text-white">
             Our Professionals Will Reach Out to Curate Your Tailored Solution
           </div>
@@ -67,35 +67,35 @@ export default function QuoteModal({
             method="POST"
           >
             <input type="hidden" name="_subject" value="New Quote Request!" />
-            <div className="flex flex-col justify-center items-center gap-3">
+            <div className="grid md:grid-cols-2 gap-4 md:pt-7">
               <input
-                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
                 id="fullname"
                 type="text"
-                placeholder="Full Name"
-                name="fullname"
+                placeholder="Name"
+                name="Name"
               />
 
               <input
-                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
                 id="email"
                 type="email"
-                placeholder="Email Address"
-                name="Email Address"
+                placeholder="Email"
+                name="Email"
                 required
               />
 
               <input
-                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
                 id="number"
                 type="text"
-                placeholder="Contact Number"
-                name="Contact Number"
+                placeholder="Phone Number"
+                name="Phone Number"
                 required
               />
 
               <input
-                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
                 id="cname"
                 type="text"
                 placeholder="Company Name"
@@ -103,23 +103,31 @@ export default function QuoteModal({
               />
 
               <input
-                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest md:col-span-2"
                 id="website"
                 type="text"
-                placeholder="Company Website"
-                name="Company Website"
+                placeholder="Company Website Link"
+                name="Company Website Link"
+              />
+
+              <input
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest md:col-span-2"
+                id="subject"
+                type="text"
+                placeholder="Subject"
+                name="Subject"
               />
 
               <textarea
-                className="shadow appearance-none border rounded sm:w-96 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline resize-y"
-                id="specs"
-                placeholder="Project Specifications"
-                name="Project Specifications"
+                className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline resize-y bg-blue-lightest md:col-span-2"
+                id="message"
+                placeholder="Message"
+                name="Message"
                 rows={4}
               />
 
               <button
-                className="h-10 w-40 mt-5 rounded-full text-white font-bold bg-orange-dark hover:bg-blue-dark"
+                className="h-10 mt-5 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange  hover:bg-blue-dark md:col-span-2"
                 type="submit"
               >
                 SUBMIT

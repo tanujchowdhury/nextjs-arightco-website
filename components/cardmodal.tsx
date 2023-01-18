@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 export default function CardModal({
   icon,
   title,
@@ -10,12 +9,8 @@ export default function CardModal({
   icon: React.ReactNode;
   title: string;
   text: string[];
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const [modal, setModal] = useState(false);
-  const closeModal = () => setModal(false);
-  const openModal = () => setModal(true);
-
   return (
     <div className="flex flex-col items-center justify-center rounded-2xl text-center p-5 m-3 gap-3 w-full h-full group bg-white md:-translate-y-32 md:h-96 drop-shadow-md hover:drop-shadow-xl">
       <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">

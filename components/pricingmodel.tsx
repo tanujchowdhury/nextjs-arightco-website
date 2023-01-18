@@ -7,11 +7,13 @@ export default function PricingModel({
   services,
   plans,
   planinfo,
+  children,
 }: {
   title: string;
   services: string[];
   plans: number;
   planinfo: string[][];
+  children: React.ReactNode;
 }) {
   return (
     <div
@@ -81,9 +83,7 @@ export default function PricingModel({
           <div className="flex flex-col items-center justify-center bg-white p-5 m-3 shadow-lg w-full gap-3">
             <div className="text-xl font-bold">{items[0]}</div>    
             <div className="text-gray-dark">{items[1]}</div>
-            <button
-            onClick={() => {}}
-             className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20">SELECT</button>
+            {children}
           </div>
         ))}
       </div>
