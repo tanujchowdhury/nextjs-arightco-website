@@ -16,7 +16,6 @@ export default function Navbar({}) {
 
   const [contact, setContact] = useState(false);
 
-
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
