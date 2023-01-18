@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { useMemo, useState } from "react";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 
 export default function USOfficeMap() {
   const { isLoaded } = useLoadScript({
@@ -7,6 +7,8 @@ export default function USOfficeMap() {
       ? process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
       : "",
   });
+
+  const [marker] = useState();
 
   if (!isLoaded)
     return (
@@ -18,7 +20,7 @@ export default function USOfficeMap() {
       center={{ lat: 37.369616519260816, lng: -121.91899865996622 }}
       mapContainerClassName="bg-white p-10 m-5 mt-20 rounded-3xl h-96 w-auto"
     >
-        <Marker position={{ lat: 37.369616519260816, lng: -121.91899865996622 }} />
+        <MarkerF key={marker} position={{ lat: 37.369616519260816, lng: -121.91899865996622 }} />
     </GoogleMap>
   );
 }
