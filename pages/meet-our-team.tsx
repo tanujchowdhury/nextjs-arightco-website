@@ -6,6 +6,7 @@ import QuoteModal from "../components/quotemodal";
 import TeamCard from "../components/teamcard";
 import TeamModal from "../components/teammodal";
 import PricingModal from "../components/pricingmodal";
+import Link from "next/link";
 
 export default function MeetOurTeam() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -129,14 +130,11 @@ export default function MeetOurTeam() {
         </div>
         <div className="flex flex-row">
           <div className="mx-2">
-            <button
-              className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
-              onClick={() =>
-                pricingModalOpen ? closePricingModal() : openPricingModal()
-              }
-            >
-              PRICING
-            </button>
+            <Link href="/pricing">
+              <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+                PRICING
+              </button>
+            </Link>
           </div>
 
           <div className="mx-2">

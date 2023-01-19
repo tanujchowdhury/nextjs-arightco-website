@@ -8,6 +8,7 @@ import PricingModel from "../components/pricingmodel";
 import PricingModal from "../components/pricingmodal";
 import { AnimatePresence } from "framer-motion";
 import QuoteModal from "../components/quotemodal";
+import ServiceCard from "../components/servicecard";
 
 export default function Pricing() {
   const [pricingModalOpen, setPricingModalOpen] = useState(false);
@@ -186,6 +187,19 @@ export default function Pricing() {
           SELECT
         </button>
       </PricingModel>
+      <div className="flex flex-col items-center justify-center gap-4 pt-20">
+        <div className="text-sm text-orange-dark font-bold">SERVICES</div>
+        <div className="text-2xl md:text-4xl lg:text-5xl text-blue font-bold">
+          Additional Services
+        </div>
+        <div className="flex flex-col items-center justify-center lg:flex-row gap-4 px-3 xl:px-10">
+          <ServiceCard title={"Financial Services"} content={["Financial Scenario Modeling", "Cash Flow Forecasting", "Audit Preparation Services", "Custom Solutions"]} />
+          <ServiceCard title={"Human Resources"} content={["Employee Handbook", "Sexual Harassment Training", "Compliance & State Posters", "Benefits Management"]} />
+          <ServiceCard title={"Operational Services"} content={["Business Support", "System Implementation", "Process flow mapping", "International Services"]} />
+          <ServiceCard title={"Strategic Advisory (CFO Services)"} content={["Investor Financial Advisement", "Cap Table Modeling", "Board Level Deck Creation/Participation", "Due Diligence Preparation"]} />
+        </div>
+      </div>
+
       <AnimatePresence>
         {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}

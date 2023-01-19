@@ -31,7 +31,7 @@ export default function QuoteModal({
     <Backdrop onClick={handleClose}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="w-11/12 min-[763px]:w-[700px] min-[1400px]:w-1/2 min-h-[50%] min m-auto px-0 py-8 rounded-xl bg-gradient-to-br from-blue to-blue-light"
+        className="w-11/12 min-[763px]:w-[700px] min-[1400px]:w-1/2 min-h-1/2 max-h-full min m-auto px-0 py-8 rounded-xl bg-gradient-to-br from-blue to-blue-light overflow-auto"
         variants={dropIn}
         initial="hidden"
         animate="visible"
