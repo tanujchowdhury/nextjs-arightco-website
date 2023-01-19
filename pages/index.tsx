@@ -124,7 +124,7 @@ export default function Home() {
           text={
             "As a business leader, creating, managing, and facilitating in-house teams is time-consuming and extremely expensive."
           }
-          type={2}
+          type={1}
         />
       </motion.div>
       <motion.div
@@ -257,7 +257,7 @@ export default function Home() {
           text={
             "ArightCo teams add shareholder value, while allowing business owners to focus on what matters most."
           }
-          type={1}
+          type={2}
         />
       </motion.div>
       <motion.div
@@ -322,7 +322,7 @@ export default function Home() {
         title1="TESTIMONIALS"
         title2="What They Say"
         text="A reputation for delivering"
-        type={2}
+        type={1}
       />
       <TestimonialCarousel />
       <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20 min-[1350px]:mx-32">
