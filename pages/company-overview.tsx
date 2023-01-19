@@ -99,7 +99,7 @@ export default function CompanyOverview() {
           text={
             "ArightCo’s team of industry experts provides comprehensive strategic support in fundraising, merger dealings, acquisitions, equity financing, and more."
           }
-          blueBackground={false}
+          type={2}
         />
       </div>
       <ExitCarousel />
