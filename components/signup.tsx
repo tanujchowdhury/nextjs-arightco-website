@@ -9,6 +9,7 @@ export default function SignUp({}) {
           alt={"Typing image"}
           fill
           className="object-cover"
+          priority
         />
         <div className="font-bold text-white text-xl mt-10 z-10">
           NEWSLETTER SIGNUP

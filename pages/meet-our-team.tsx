@@ -30,7 +30,7 @@ export default function MeetOurTeam() {
       <Head>
         <title>Meet Our Team | Solutions for IT and SaaS | ArightCo</title>
       </Head>
-      <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center lg:flex-row px-3 min-[1350px]:px-32">
+      <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center lg:flex-row px-3 min-[1350px]:px-32 min-[1610px]:px-44">
         <div className="text-center text-white lg:basis-1/2 lg:text-left">
           <div className="text-orange font-semibold">OUR TEAM</div>
           <div className="text-white text-4xl py-3 md:py-10 md:text-5xl lg:text-6xl font-bold">

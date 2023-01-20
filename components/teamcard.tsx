@@ -55,7 +55,7 @@ export default function TeamCard({
       <motion.div
         initial="initial"
         whileHover="hover"
-        className="mx-3 relative flex flex-col items-center justify-center rounded-3xl overflow-hidden m-5"
+        className="mx-3 relative flex flex-col items-center justify-center rounded-3xl m-5"
       >
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b-white-transparent rounded-3xl" />
         <Image
