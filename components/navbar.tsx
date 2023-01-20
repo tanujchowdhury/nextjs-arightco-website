@@ -75,7 +75,7 @@ export default function Navbar({}) {
               src="/logo-blue.png"
               alt="ArightCo Logo"
               width={200}
-              height={100}
+              height={64}
               priority
             />
           </Link>
