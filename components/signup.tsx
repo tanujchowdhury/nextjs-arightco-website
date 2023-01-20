@@ -1,8 +1,32 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function SignUp({}) {
+  const sweepUp = {
+    hidden: {
+      y: "10vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
+        delay: 0.2,
+      },
+    },
+  };
   return (
-    <div className="bg-blue-lightest py-32">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={sweepUp}
+      className="bg-blue-lightest py-32"
+    >
       <div className="w-11/12 max-w-lg mx-auto rounded-lg flex flex-col justify-center items-center gap-5 relative overflow-hidden">
         <Image
           src={"/typing.png"}
@@ -67,6 +91,6 @@ export default function SignUp({}) {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }

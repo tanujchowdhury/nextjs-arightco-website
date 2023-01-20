@@ -72,26 +72,9 @@ export default function Home() {
       },
     },
   };
-  const sweepUp = {
-    hidden: {
-      y: "50vh",
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
   const sweepDown = {
     hidden: {
-      y: "-100vh",
+      y: "-10vh",
       opacity: 0,
     },
     visible: {
@@ -248,7 +231,7 @@ export default function Home() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "700px 0px -700px 0px" }}
+        viewport={{ once: true }}
         variants={sweepDown}
       >
         <Section
@@ -263,7 +246,7 @@ export default function Home() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "700px 0px -700px 0px" }}
+        viewport={{ once: true }}
         variants={sweepDown}
         className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
       >
@@ -318,28 +301,43 @@ export default function Home() {
           </button>
         </CardModal>
       </motion.div>
-      <Section
-        title1="TESTIMONIALS"
-        title2="What They Say"
-        text="A reputation for delivering"
-        type={1}
-      />
-      <TestimonialCarousel />
-      <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20 min-[1350px]:mx-32">
-        <div className="text-center md:text-start">
-          <div className="text-orange font-semibold">Blog Spot</div>
-          <div className="text-blue-dark text-2xl py-3 md:text-4xl lg:text-5xl font-bold">
-            Latest Posts
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepRight}
+      >
+        <Section
+          title1="TESTIMONIALS"
+          title2="What They Say"
+          text="A reputation for delivering"
+          type={1}
+        />
+        <TestimonialCarousel />
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepLeft}
+      >
+        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between mx-10 mt-20 min-[1350px]:mx-32">
+          <div className="text-center md:text-start">
+            <div className="text-orange font-semibold">Blog Spot</div>
+            <div className="text-blue-dark text-2xl py-3 md:text-4xl lg:text-5xl font-bold">
+              Latest Posts
+            </div>
+          </div>
+          <div className="mx-2">
+            <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+              More Articles
+            </button>
           </div>
         </div>
-        <div className="mx-2">
-          <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
-            More Articles
-          </button>
-        </div>
-      </div>
-      <RecentArticles />
-      
+        <RecentArticles />
+      </motion.div>
+
       <AnimatePresence>
         {modal1 && (
           <InfoModal
