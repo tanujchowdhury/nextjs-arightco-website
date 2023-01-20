@@ -13,7 +13,7 @@ export default function FAQ({ q, a }: { q: string; a: string }) {
         onClick={handleAns}
         className={
           ans
-            ? "flex flex-row items-center justify-between border-b cursor-pointer rounded-t-xl p-5 md:text-xl bg-blue text-white"
+            ? "flex flex-row items-center justify-between border-b cursor-pointer rounded-t-xl p-5 md:text-xl bg-blue-dark text-white"
             : "flex flex-row items-center justify-between border-b cursor-pointer rounded-t-xl p-5 md:text-xl"
         }
       >
