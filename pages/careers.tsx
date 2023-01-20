@@ -13,7 +13,7 @@ export default function Careers() {
         title1={"Careers"}
         title2={"Interested in Joining Our Team?"}
         text={"Reach out to "}
-        linktext={"hr@atarightco.com"}
+        linktext={"hr@arightco.com"}
         href={"mailto:hr@arightco.com"}
       />
     </Layout>
