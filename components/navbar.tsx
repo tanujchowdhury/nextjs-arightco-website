@@ -69,21 +69,17 @@ export default function Navbar({}) {
   return (
     <>
       <div className="h-20 flex justify-between items-center bg-white font-medium text-blue-dark fixed top-0 left-0 right-0 z-20">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="ml-3 shrink-0 min-[1350px]:ml-32"
-        >
+        <div className="ml-3 shrink-0 min-[1350px]:ml-32">
           <Link href="/">
             <Image
               src="/logo-blue.png"
               alt="ArightCo Logo"
               width={200}
               height={100}
+              priority
             />
           </Link>
-        </motion.div>
+        </div>
 
         <div className="hidden lg:flex text-lg">
           <motion.div
