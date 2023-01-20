@@ -40,7 +40,7 @@ export default function Testimonial({
             className="rounded-full"
           />
           <p className="font-bold mt-2">{name}</p>
-          <p className="text-orange-dark mb-5">{title}</p>
+          <p className="text-orange-dark">{title}</p>
         </div>
       </div>
     </div>
