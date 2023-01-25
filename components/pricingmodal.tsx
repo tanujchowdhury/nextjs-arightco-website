@@ -7,7 +7,7 @@ export default function PricingModal({
 }: {
   handleClose: React.MouseEventHandler;
 }) {
-  const [transactions, setTransactions] = useState("200");
+  const [transactions, setTransactions] = useState("700");
 
   const [detail, setDetail] = useState(false);
   const openDetail = () => setDetail(true);
@@ -18,7 +18,7 @@ export default function PricingModal({
   const senior = Math.round(0.2 * time * 60);
   const controller = Math.round(0.1 * time * 100);
   const total = junior + senior + controller;
-  const result = Math.max(total, 750);
+  const result = Math.max(total, 2500);
 
   const dropIn = {
     hidden: {
@@ -77,7 +77,7 @@ export default function PricingModal({
           <div className="pt-2 pb-5 px-3 text-white">Get a Quote Now</div>
           <div className="pt-2 pb-5 px-3 text-white hidden sm:block">
             Get a quote based on the number of your monthly transactions. <br />
-            Our minimum price is $750.
+            Our minimum price is $2500.
           </div>
 
           <div>
@@ -91,7 +91,7 @@ export default function PricingModal({
               className="shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="transactions"
               type="number"
-              placeholder="1000"
+              placeholder="700"
               name="transactions"
               value={transactions}
               onChange={({ target }) => setTransactions(target.value)}
