@@ -9,6 +9,7 @@ import PricingModal from "../components/pricingmodal";
 import { AnimatePresence } from "framer-motion";
 import QuoteModal from "../components/quotemodal";
 import ServiceCard from "../components/servicecard";
+import BackToTopButton from "../components/backtotopbutton";
 
 export default function Pricing() {
   const [pricingModalOpen, setPricingModalOpen] = useState(false);
@@ -49,22 +50,22 @@ export default function Pricing() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 pt-20 lg:flex-row">
-        <Link href="#Technology">
+        <Link href="#SAAS" scroll={false}>
           <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
             SAAS
           </button>
         </Link>
-        <Link href="#IT">
+        <Link href="#IT" scroll={false}>
           <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
             IT
           </button>
         </Link>
-        <Link href="#Manufacturing">
+        <Link href="#Manufacturing" scroll={false}>
           <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
             MANUFACTURING
           </button>
         </Link>
-        <Link href="#Non-Profit">
+        <Link href="#Non-Profit" scroll={false}>
           <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
             NON-PROFIT
           </button>
@@ -199,6 +200,7 @@ export default function Pricing() {
           <ServiceCard title={"Strategic Advisory (CFO Services)"} content={["Investor Financial Advisement", "Cap Table Modeling", "Board Level Deck Creation/Participation", "Due Diligence Preparation"]} />
         </div>
       </div>
+      <BackToTopButton />
 
       <AnimatePresence>
         {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
