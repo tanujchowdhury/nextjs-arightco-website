@@ -1,4 +1,4 @@
-export default function CardModal({
+export default function CardWithButton({
   icon,
   title,
   text,

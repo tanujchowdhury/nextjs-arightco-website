@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
-import Card from "../components/card";
-import ExitCarousel from "../components/exitcarousel";
+import Card from "../components/cards/card";
+import ExitCarousel from "../components/carousels/exitcarousel";
 import Layout from "../components/layout";
-import QuoteModal from "../components/quotemodal";
-import Section from "../components/section";
+import QuoteModal from "../components/modals/quotemodal";
+import Section from "../components/sections/section";
 import Image from "next/image";
 
 export default function CompanyOverview() {

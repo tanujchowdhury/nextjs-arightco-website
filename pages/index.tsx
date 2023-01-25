@@ -16,14 +16,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
-import Card from "../components/card";
-import CardModal from "../components/cardmodal";
-import InfoModal from "../components/infomodal";
-import Intro from "../components/intro";
+import Card from "../components/cards/card";
+import CardWithButton from "../components/cards/cardwithbutton";
+import InfoModal from "../components/modals/infomodal";
+import Intro from "../components/sections/intro";
 import Layout from "../components/layout";
-import RecentArticles from "../components/recentarticles";
-import Section from "../components/section";
-import TestimonialCarousel from "../components/testimonialcarousel";
+import RecentArticles from "../components/sections/recentarticles";
+import Section from "../components/sections/section";
+import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 
 export default function Home() {
   const [modal1, setModal1] = useState(false);
@@ -250,7 +250,7 @@ export default function Home() {
         variants={sweepDown}
         className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
       >
-        <CardModal
+        <CardWithButton
           icon={<FontAwesomeIcon icon={faSackDollar} />}
           title={"Minimize Cost and Overhead"}
           text={[
@@ -265,9 +265,9 @@ export default function Home() {
           >
             LEARN MORE
           </button>
-        </CardModal>
+        </CardWithButton>
 
-        <CardModal
+        <CardWithButton
           icon={<FontAwesomeIcon icon={faChartLine} />}
           title={"Streamlined Workflow"}
           text={[
@@ -282,9 +282,9 @@ export default function Home() {
           >
             LEARN MORE
           </button>
-        </CardModal>
+        </CardWithButton>
 
-        <CardModal
+        <CardWithButton
           icon={<FontAwesomeIcon icon={faFaceLaughBeam} />}
           title={"One Point of Contact"}
           text={[
@@ -299,7 +299,7 @@ export default function Home() {
           >
             LEARN MORE
           </button>
-        </CardModal>
+        </CardWithButton>
       </motion.div>
       <motion.div
         initial="hidden"

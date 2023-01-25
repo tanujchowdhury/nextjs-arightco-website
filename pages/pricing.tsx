@@ -4,11 +4,11 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import Layout from "../components/layout";
-import PricingModel from "../components/pricingmodel";
-import PricingModal from "../components/pricingmodal";
+import PricingModel from "../components/sections/pricingmodel";
+import PricingModal from "../components/modals/pricingmodal";
 import { AnimatePresence } from "framer-motion";
-import QuoteModal from "../components/quotemodal";
-import ServiceCard from "../components/servicecard";
+import QuoteModal from "../components/modals/quotemodal";
+import ServiceCard from "../components/cards/servicecard";
 import BackToTopButton from "../components/backtotopbutton";
 
 export default function Pricing() {

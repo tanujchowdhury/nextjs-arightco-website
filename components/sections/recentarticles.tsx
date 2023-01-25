@@ -1,4 +1,4 @@
-import BlogCard from "./blogcard";
+import BlogCard from "../cards/blogcard";
 
 export default function RecentArticles() {
     return (

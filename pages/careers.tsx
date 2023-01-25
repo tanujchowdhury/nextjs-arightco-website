@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import Section from "../components/section";
+import Section from "../components/sections/section";
 
 export default function Careers() {
   return (

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import Testimonial from "../components/testimonial";
+import Testimonial from "../components/carousels/testimonial";
 
 export default function Testimonials() {
   return (

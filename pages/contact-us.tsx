@@ -9,8 +9,8 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
 import IconGroup from "../components/icongroup";
-import OfficeMap from "../components/officemap";
-import Section from "../components/section";
+import OfficeMap from "../components/sections/officemap";
+import Section from "../components/sections/section";
 
 export default function ContactUs() {
   return (

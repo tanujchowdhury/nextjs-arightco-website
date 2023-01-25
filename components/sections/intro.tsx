@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import QuoteModal from "./quotemodal";
-import PricingModal from "./pricingmodal";
-import VideoModal from "./videomodal";
+import QuoteModal from "../modals/quotemodal";
+import PricingModal from "../modals/pricingmodal";
+import VideoModal from "../modals/videomodal";
 import Link from "next/link";
 
 export default function Intro({}) {

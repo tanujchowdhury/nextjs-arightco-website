@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import QuoteModal from "./quotemodal";
-import PricingModal from "./pricingmodal";
+import QuoteModal from "../modals/quotemodal";
+import PricingModal from "../modals/pricingmodal";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);

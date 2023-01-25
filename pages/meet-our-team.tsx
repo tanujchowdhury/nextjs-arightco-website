@@ -2,10 +2,10 @@ import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
 import Layout from "../components/layout";
-import QuoteModal from "../components/quotemodal";
-import TeamCard from "../components/teamcard";
-import TeamModal from "../components/teammodal";
-import PricingModal from "../components/pricingmodal";
+import QuoteModal from "../components/modals/quotemodal";
+import TeamCard from "../components/cards/teamcard";
+import TeamModal from "../components/modals/teammodal";
+import PricingModal from "../components/modals/pricingmodal";
 import Link from "next/link";
 
 export default function MeetOurTeam() {

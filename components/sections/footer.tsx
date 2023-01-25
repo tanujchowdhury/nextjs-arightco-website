@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import QuoteModal from "./quotemodal";
+import QuoteModal from "../modals/quotemodal";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
