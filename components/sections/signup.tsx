@@ -43,10 +43,11 @@ export default function SignUp({}) {
         </div>
         <form
           target="_blank"
-          action="https://formsubmit.co/chowdhury.tanuj@gmail.com"
+          action="https://formsubmit.co/3ae90ad237ce2eaf204d4b7c8779b16c"
           method="POST"
           className="z-10"
         >
+          <input type="hidden" name="_next" value="https://arightco.vercel.app/thanks" />
           <input type="hidden" name="_subject" value="New Subscriber!" />
           <div className="flex flex-col justify-center items-center gap-3">
             <input

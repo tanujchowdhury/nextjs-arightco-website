@@ -8,7 +8,7 @@ export default function Thanks() {
       <Head>
         <title></title>
       </Head>
-      <Section title1={"THANK YOU"} text={"Thanks for filling out our form. Our team will get back to you ASAP."} type={0} />
+      <Section title1={"Thank You"} text={"Thanks for filling out our form. Our team will get back to you ASAP."} type={3} />
     </Layout>
   );
 }

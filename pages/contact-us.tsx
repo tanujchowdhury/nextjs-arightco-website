@@ -85,6 +85,7 @@ export default function ContactUs() {
             action="https://formsubmit.co/3ae90ad237ce2eaf204d4b7c8779b16c"
             method="POST"
           >
+            <input type="hidden" name="_next" value="https://arightco.vercel.app/thanks" />
             <input type="hidden" name="_subject" value="New Quote Request!" />
             <div className="grid md:grid-cols-2 gap-4 pt-7">
               <input
