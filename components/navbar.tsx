@@ -110,7 +110,7 @@ export default function Navbar({}) {
               animate={about ? "enter" : "exit"}
               variants={hoverMenuAnimate}
             >
-              <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-48">
+              <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-52">
                 <Link
                   className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
                   href="/company-overview"
