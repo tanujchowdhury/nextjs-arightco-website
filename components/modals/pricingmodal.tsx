@@ -67,7 +67,7 @@ export default function PricingModal({
               </div>
               <form
                 target="_blank"
-                action="https://formsubmit.co/chowdhury.tanuj@gmail.com"
+                action="https://formsubmit.co/3ae90ad237ce2eaf204d4b7c8779b16c"
                 method="POST"
               >
                 <input type="hidden" name="_subject" value={value} />
