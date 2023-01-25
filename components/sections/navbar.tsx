@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import QuoteModal from "../modals/quotemodal";
-import PricingModal from "../modals/pricingmodal";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
@@ -331,7 +330,6 @@ export default function Navbar({}) {
 
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
-        {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
       </AnimatePresence>
     </>
   );

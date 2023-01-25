@@ -5,7 +5,6 @@ import Layout from "../components/layout";
 import QuoteModal from "../components/modals/quotemodal";
 import TeamCard from "../components/cards/teamcard";
 import TeamModal from "../components/modals/teammodal";
-import PricingModal from "../components/modals/pricingmodal";
 import Link from "next/link";
 
 export default function MeetOurTeam() {
@@ -151,7 +150,6 @@ export default function MeetOurTeam() {
       </div>
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
-        {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
         {sushamaModalOpen && (
           <TeamModal
             handleClose={closeSushamaModal}

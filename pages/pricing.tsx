@@ -5,20 +5,15 @@ import Link from "next/link";
 import { useState } from "react";
 import Layout from "../components/layout";
 import PricingModel from "../components/sections/pricingmodel";
-import PricingModal from "../components/modals/pricingmodal";
+import EstimateModal from "../components/modals/estimatemodal";
 import { AnimatePresence } from "framer-motion";
-import QuoteModal from "../components/modals/quotemodal";
 import ServiceCard from "../components/cards/servicecard";
 import BackToTopButton from "../components/backtotopbutton";
 
 export default function Pricing() {
-  const [pricingModalOpen, setPricingModalOpen] = useState(false);
-  const closePricingModal = () => setPricingModalOpen(false);
-  const openPricingModal = () => setPricingModalOpen(true);
-
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const closeQuoteModal = () => setQuoteModalOpen(false);
-  const openQuoteModal = () => setQuoteModalOpen(true);
+  const [estimateModalOpen, setEstimateModalOpen] = useState(false);
+  const closeEstimateModal = () => setEstimateModalOpen(false);
+  const openEstimateModal = () => setEstimateModalOpen(true);
 
   return (
     <Layout>
@@ -72,7 +67,7 @@ export default function Pricing() {
         </Link>
         <button
           onClick={() =>
-            pricingModalOpen ? closePricingModal() : openPricingModal()
+            estimateModalOpen ? closeEstimateModal() : openEstimateModal()
           }
           className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
         >
@@ -96,16 +91,8 @@ export default function Pricing() {
           ["Series A", "$5,000+/month"],
           ["Series B", "Custom Pricing"],
         ]}
-      >
-        <button
-          onClick={() =>
-            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
-          }
-          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
-        >
-          SELECT
-        </button>
-      </PricingModel>
+      />
+
       <PricingModel
         title={"IT"}
         services={[
@@ -124,16 +111,7 @@ export default function Pricing() {
           ["Headcount 20-49", "$5,000+/month"],
           ["Headcount 49+", "Custom Pricing"],
         ]}
-      >
-        <button
-          onClick={() =>
-            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
-          }
-          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
-        >
-          SELECT
-        </button>
-      </PricingModel>
+      />
       <PricingModel
         title={"Manufacturing"}
         services={[
@@ -151,16 +129,8 @@ export default function Pricing() {
           ["Pro", "$5,000+/month"],
           ["Premium", "Custom Pricing"],
         ]}
-      >
-        <button
-          onClick={() =>
-            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
-          }
-          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
-        >
-          SELECT
-        </button>
-      </PricingModel>
+      />
+
       <PricingModel
         title={"Non-Profit"}
         services={[
@@ -178,33 +148,56 @@ export default function Pricing() {
           ["Starter Plus", "$5,000+/month"],
           ["Complex", "$8,000+/month"],
         ]}
-      >
-        <button
-          onClick={() =>
-            quoteModalOpen ? closeQuoteModal() : openQuoteModal()
-          }
-          className="bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark rounded-full text-white font-bold text-sm h-10 w-20"
-        >
-          SELECT
-        </button>
-      </PricingModel>
+      />
+
       <div className="flex flex-col items-center justify-center gap-4 pt-20">
         <div className="text-sm text-orange-dark font-bold">SERVICES</div>
         <div className="text-2xl md:text-4xl lg:text-5xl text-blue font-bold">
           Additional Services
         </div>
         <div className="flex flex-col items-center justify-center lg:flex-row gap-4 px-3 xl:px-10">
-          <ServiceCard title={"Financial Services"} content={["Financial Scenario Modeling", "Cash Flow Forecasting", "Audit Preparation Services", "Custom Solutions"]} />
-          <ServiceCard title={"Human Resources"} content={["Employee Handbook", "Sexual Harassment Training", "Compliance & State Posters", "Benefits Management"]} />
-          <ServiceCard title={"Operational Services"} content={["Business Support", "System Implementation", "Process flow mapping", "International Services"]} />
-          <ServiceCard title={"Strategic Advisory (CFO Services)"} content={["Investor Financial Advisement", "Cap Table Modeling", "Board Level Deck Creation/Participation", "Due Diligence Preparation"]} />
+          <ServiceCard
+            title={"Financial Services"}
+            content={[
+              "Financial Scenario Modeling",
+              "Cash Flow Forecasting",
+              "Audit Preparation Services",
+              "Custom Solutions",
+            ]}
+          />
+          <ServiceCard
+            title={"Human Resources"}
+            content={[
+              "Employee Handbook",
+              "Sexual Harassment Training",
+              "Compliance & State Posters",
+              "Benefits Management",
+            ]}
+          />
+          <ServiceCard
+            title={"Operational Services"}
+            content={[
+              "Business Support",
+              "System Implementation",
+              "Process flow mapping",
+              "International Services",
+            ]}
+          />
+          <ServiceCard
+            title={"Strategic Advisory (CFO Services)"}
+            content={[
+              "Investor Financial Advisement",
+              "Cap Table Modeling",
+              "Board Level Deck Creation/Participation",
+              "Due Diligence Preparation",
+            ]}
+          />
         </div>
       </div>
       <BackToTopButton />
 
       <AnimatePresence>
-        {pricingModalOpen && <PricingModal handleClose={closePricingModal} />}
-        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
+        {estimateModalOpen && <EstimateModal handleClose={closeEstimateModal} />}
       </AnimatePresence>
     </Layout>
   );
