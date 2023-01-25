@@ -84,8 +84,8 @@ export default function PricingModel({
             <PricingCard
               title={items[0]}
               price={items[1]}
-              modalTitle={title + " : " + items[0]}
-              value={"New " + title + " : " + items[0] + " Quote Request"}
+              modalTitle={title + ": " + items[0]}
+              value={"New " + title + ": " + items[0] + " Quote Request"}
             />
           ))}
         </div>
