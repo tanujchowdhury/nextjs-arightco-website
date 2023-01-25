@@ -94,7 +94,7 @@ export default function Intro({}) {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            className="w-1/2 h-1/2 absolute top-1/4 right-1/4 text-orange-dark group-hover:text-orange"
+            className="w-24 h-24 absolute bottom-5 right-5 text-orange-dark group-hover:text-orange"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
