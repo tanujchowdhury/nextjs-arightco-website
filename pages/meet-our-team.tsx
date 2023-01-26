@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
 import Layout from "../components/layout";
@@ -12,10 +12,6 @@ export default function MeetOurTeam() {
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
 
-  const [pricingModalOpen, setPricingModalOpen] = useState(false);
-  const closePricingModal = () => setPricingModalOpen(false);
-  const openPricingModal = () => setPricingModalOpen(true);
-
   const [sushamaModalOpen, setSushamaModalOpen] = useState(false);
   const closeSushamaModal = () => setSushamaModalOpen(false);
   const openSushamaModal = () => setSushamaModalOpen(true);
@@ -24,13 +20,71 @@ export default function MeetOurTeam() {
   const closeTanmoyModal = () => setTanmoyModalOpen(false);
   const openTanmoyModal = () => setTanmoyModalOpen(true);
 
+  const sweepLeft = {
+    hidden: {
+      x: "10vh",
+      opacity: 0,
+    },
+    visible: {
+      x: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
+        delay: 0.2,
+      },
+    },
+  };
+  const sweepRight = {
+    hidden: {
+      x: "-10vh",
+      opacity: 0,
+    },
+    visible: {
+      x: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
+        delay: 0.2,
+      },
+    },
+  };
+  const sweepDown = {
+    hidden: {
+      y: "-10vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
+        delay: 0.5,
+      },
+    },
+  };
+
   return (
     <Layout>
       <Head>
         <title>Meet Our Team | Solutions for IT and SaaS | ArightCo</title>
       </Head>
       <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center lg:flex-row px-3 min-[1350px]:px-32 min-[1610px]:px-44">
-        <div className="text-center text-white lg:basis-1/2 lg:text-left">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="text-center text-white lg:basis-1/2 lg:text-left"
+        >
           <div className="text-orange font-semibold">OUR TEAM</div>
           <div className="text-white text-4xl py-3 md:py-10 md:text-5xl lg:text-6xl font-bold">
             Meet our Founders
@@ -51,8 +105,12 @@ export default function MeetOurTeam() {
               GET STARTED
             </button>
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepLeft}
           className="lg:basis-1/4 lg:ml-10 cursor-pointer"
           onClick={() =>
             sushamaModalOpen ? closeSushamaModal() : openSushamaModal()
@@ -65,8 +123,12 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/in/sushama-chowdhury-b7748b159/"}
             type={1}
           />
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepLeft}
           className="lg:basis-1/4 cursor-pointer"
           onClick={() =>
             tanmoyModalOpen ? closeTanmoyModal() : openTanmoyModal()
@@ -79,10 +141,16 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/in/tanmoychowdhury/"}
             type={1}
           />
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center justify-center lg:flex-row xl:mx-24 my-24">
-        <div className="text-center p-10 lg:basis-2/5 lg:text-start lg:order-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepLeft}
+          className="text-center p-10 lg:basis-2/5 lg:text-start lg:order-4"
+        >
           <div className="text-orange font-semibold">LEADERSHIP</div>
           <div className="text-blue-dark text-2xl py-3 md:py-5 md:text-4xl lg:text-5xl font-bold">
             Meet The Team
@@ -92,8 +160,14 @@ export default function MeetOurTeam() {
             financial expertise to our clients, with fluency in every aspect of
             back-office operations.
           </div>
-        </div>
-        <div className="lg:basis-1/5">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="lg:basis-1/5"
+        >
           <TeamCard
             src={"/team/Katie-Nelson.png"}
             name={"Katie Nelson"}
@@ -101,8 +175,14 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/in/katie-nelson-finance/"}
             type={1}
           />
-        </div>
-        <div className="lg:basis-1/5">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="lg:basis-1/5"
+        >
           <TeamCard
             src={"/team/Biju-Mathew.png"}
             name={"Biju Mathew"}
@@ -110,8 +190,14 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/in/biju-mathew-b9988639/"}
             type={1}
           />
-        </div>
-        <div className="lg:basis-1/5">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="lg:basis-1/5"
+        >
           <TeamCard
             src={"/team/Thomas-Stier.png"}
             name={"Thomas Stier"}
@@ -119,9 +205,15 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/in/thomas-stier-cpa-cgma-b32626/"}
             type={2}
           />
-        </div>
+        </motion.div>
       </div>
-      <div className="flex flex-col items-center justify-center text-center text-white bg-gradient-to-r from-blue-dark to-blue-light m-3 px-3 py-6 rounded-xl gap-6 sm:mx-16 sm:mx-24 lg:mx-32 xl:mx-44">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepDown}
+        className="flex flex-col items-center justify-center text-center text-white bg-gradient-to-r from-blue-dark to-blue-light m-3 px-3 py-6 rounded-xl gap-6 sm:mx-16 sm:mx-24 lg:mx-32 xl:mx-44"
+      >
         <div className="text-3xl font-bold">Let's Find a Solution</div>
         <div className="mx-1">
           Have any questions for us? Reach out here and you will receive a
@@ -147,7 +239,7 @@ export default function MeetOurTeam() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
         {sushamaModalOpen && (

@@ -18,19 +18,50 @@ export default function Intro({}) {
   const closeVideoModal = () => setVideoModalOpen(false);
   const openVideoModal = () => setVideoModalOpen(true);
 
+  const sweepLeft = {
+    hidden: {
+      x: "10vh",
+      opacity: 0,
+    },
+    visible: {
+      x: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
+        delay: 0.2,
+      },
+    },
+  };
+  const sweepRight = {
+    hidden: {
+      x: "-10vh",
+      opacity: 0,
+    },
+    visible: {
+      x: "0",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        mass: 0.5,
+        damping: 10,
+        delay: 0.2,
+      },
+    },
+  }
+
   return (
     <>
       <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32">
         <motion.div
-          className="text-center text-white lg:basis-1/2 lg:text-left"
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{ x: "0", opacity: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            mass: 0.5,
-            damping: 10,
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="text-white"
         >
           <div className="text-orange font-semibold p-3">
             WELCOME TO ARIGHTCO
@@ -66,14 +97,10 @@ export default function Intro({}) {
           <div className="text-sm p-3">Business Optimization Starts Here</div>
         </motion.div>
         <motion.div
-          initial={{ x: "122%", opacity: 0 }}
-          animate={{ x: "0", opacity: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            mass: 0.5,
-            damping: 10,
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepLeft}
           className="cursor-pointer group"
           onClick={() =>
             videoModalOpen ? closeVideoModal() : openVideoModal()
