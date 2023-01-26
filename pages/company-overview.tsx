@@ -1,21 +1,16 @@
 import { faCrosshairs, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Head from "next/head";
-import { useState } from "react";
 import Card from "../components/cards/card";
 import ExitCarousel from "../components/carousels/exitcarousel";
 import Layout from "../components/layout";
-import QuoteModal from "../components/modals/quotemodal";
 import Section from "../components/sections/section";
 import Image from "next/image";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
+import QuoteButton from "../components/quotebutton";
 
 export default function CompanyOverview() {
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const closeQuoteModal = () => setQuoteModalOpen(false);
-  const openQuoteModal = () => setQuoteModalOpen(true);
-
   return (
     <Layout>
       <Head>
@@ -38,17 +33,14 @@ export default function CompanyOverview() {
             endless scalability, allowing our services to grow with you from
             inception to exit.
           </div>
-          <div className="m-10">
-            <button
-              className="h-12 w-52 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
-              onClick={() =>
-                quoteModalOpen ? closeQuoteModal() : openQuoteModal()
-              }
-            >
-              GET STARTED
-            </button>
-          </div>
         </motion.div>
+        <QuoteButton
+          className={
+            "m-10 h-12 w-52 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          }
+          buttonText={"GET STARTED"}
+          variants={sweepRight}
+        />
       </div>
       <div className="py-10 px-2">
         <motion.div
@@ -152,11 +144,12 @@ export default function CompanyOverview() {
           </div>
         </motion.div>
         <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepLeft}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 mx-3 xl:mx-32 py-10">
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepLeft}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 mx-3 xl:mx-32 py-10"
+        >
           <Image
             src={"/clientlogos/nex.png"}
             alt={"Nexient logo"}
@@ -243,20 +236,18 @@ export default function CompanyOverview() {
           />
         </motion.div>
         <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepRight}
-         className="text-gray-dark md:text-lg max-w-2xl mx-auto">
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="text-gray-dark md:text-lg max-w-2xl mx-auto"
+        >
           Although ArightCo specializes in serving companies in the Technology &
           IT sectors, we have the capability and significant experience in
           operating across a multitude of other industries, including
           Manufacturing, Non-Profit, Retail, and more
         </motion.div>
       </div>
-      <AnimatePresence>
-        {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
-      </AnimatePresence>
     </Layout>
   );
 }

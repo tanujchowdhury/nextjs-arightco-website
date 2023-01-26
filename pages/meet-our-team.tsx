@@ -7,6 +7,7 @@ import TeamCard from "../components/cards/teamcard";
 import TeamModal from "../components/modals/teammodal";
 import Link from "next/link";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
+import QuoteButton from "../components/quotebutton";
 
 export default function MeetOurTeam() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -44,17 +45,14 @@ export default function MeetOurTeam() {
             quality finance & accounting solutiuons to small & medium sized
             businesses.
           </div>
-          <div className="my-10">
-            <button
-              className="h-12 w-52 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
-              onClick={() =>
-                quoteModalOpen ? closeQuoteModal() : openQuoteModal()
-              }
-            >
-              GET STARTED
-            </button>
-          </div>
         </motion.div>
+        <QuoteButton
+          className={
+            "my-10 h-12 w-52 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          }
+          buttonText={"GET STARTED"}
+          variants={sweepRight}
+        />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -168,7 +166,7 @@ export default function MeetOurTeam() {
           Have any questions for us? Reach out here and you will receive a
           prompt response from an ArightCo team member.
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-col gap-3 md:flex-row">
           <div className="mx-2">
             <Link href="/pricing">
               <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
