@@ -28,31 +28,32 @@ export default function MeetOurTeam() {
         <title>Meet Our Team | Solutions for IT and SaaS | ArightCo</title>
       </Head>
       <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center lg:flex-row px-3 min-[1350px]:px-32 min-[1610px]:px-44">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepRight}
-          className="text-center text-white lg:basis-1/2 lg:text-left"
-        >
-          <div className="text-orange font-semibold">OUR TEAM</div>
-          <div className="text-white text-4xl py-3 md:py-10 md:text-5xl lg:text-6xl font-bold">
-            Meet our Founders
-          </div>
-          <div className="text-white md:text-lg max-w-2xl">
-            Sushama and Tanmoy Chowdhury founded ArightCo, Inc. in 2008 with a
-            mission to provide outstanding customer service and professional
-            quality finance & accounting solutiuons to small & medium sized
-            businesses.
-          </div>
-        </motion.div>
-        <QuoteButton
-          className={
-            "my-10 h-12 w-52 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
-          }
-          buttonText={"GET STARTED"}
-          variants={sweepRight}
-        />
+        <div className="text-center text-white lg:basis-1/2 lg:text-left">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={sweepRight}
+          >
+            <div className="text-orange font-semibold">OUR TEAM</div>
+            <div className="text-white text-4xl py-3 md:py-10 md:text-5xl lg:text-6xl font-bold">
+              Meet our Founders
+            </div>
+            <div className="text-white md:text-lg max-w-2xl">
+              Sushama and Tanmoy Chowdhury founded ArightCo, Inc. in 2008 with a
+              mission to provide outstanding customer service and professional
+              quality finance & accounting solutiuons to small & medium sized
+              businesses.
+            </div>
+          </motion.div>
+          <QuoteButton
+            className={
+              "my-10 h-12 w-52 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+            }
+            buttonText={"GET STARTED"}
+            variants={sweepRight}
+          />
+        </div>
         <motion.div
           initial="hidden"
           whileInView="visible"
