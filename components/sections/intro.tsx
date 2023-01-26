@@ -18,7 +18,7 @@ export default function Intro({}) {
 
   return (
     <>
-      <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32">
+      <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32 text-center lg:text-start">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -83,7 +83,7 @@ export default function Intro({}) {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            className="w-24 h-24 absolute bottom-5 right-5 text-orange-dark group-hover:text-orange"
+            className="w-12 h-12 md:w-16 md:h-16 xl:w-24 xl:h-24 absolute bottom-1 right-1 text-orange-dark group-hover:text-orange"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}

@@ -17,8 +17,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/cards/card";
-import CardWithButton from "../components/cards/cardwithbutton";
-import InfoModal from "../components/modals/infomodal";
+import { InfoCard } from "../components/cards/infocard";
 import Intro from "../components/sections/intro";
 import Layout from "../components/layout";
 import RecentArticles from "../components/sections/recentarticles";
@@ -27,17 +26,6 @@ import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
 
 export default function Home() {
-  const [modal1, setModal1] = useState(false);
-  const closeModal1 = () => setModal1(false);
-  const openModal1 = () => setModal1(true);
-
-  const [modal2, setModal2] = useState(false);
-  const closeModal2 = () => setModal2(false);
-  const openModal2 = () => setModal2(true);
-
-  const [modal3, setModal3] = useState(false);
-  const closeModal3 = () => setModal3(false);
-  const openModal3 = () => setModal3(true);
 
   return (
     <Layout>
@@ -193,14 +181,8 @@ export default function Home() {
           type={2}
         />
       </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepDown}
-        className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
-      >
-        <CardWithButton
+      <div className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32">
+        <InfoCard
           icon={<FontAwesomeIcon icon={faSackDollar} />}
           title={"Minimize Cost and Overhead"}
           text={[
@@ -208,16 +190,13 @@ export default function Home() {
             "30-50% savings",
             "of what it would cost to maintain these resources internally.",
           ]}
-        >
-          <button
-            className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
-            onClick={() => (modal1 ? closeModal1() : openModal1())}
-          >
-            LEARN MORE
-          </button>
-        </CardWithButton>
+          infoModalContent={[
+            "Minimize Cost and Overhead",
+            "By partnering with ArightCo, your business eliminates the time-consuming and expensive process of hiring, onboarding, training, and retaining employees. You can concentrate on core business areas and company growth, knowing you have a team of industry experts working with you and others in your organization",
+          ]}
+        />
 
-        <CardWithButton
+        <InfoCard
           icon={<FontAwesomeIcon icon={faChartLine} />}
           title={"Streamlined Workflow"}
           text={[
@@ -225,16 +204,13 @@ export default function Home() {
             "a team of industry experts working with you",
             "and others in your organization.",
           ]}
-        >
-          <button
-            className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
-            onClick={() => (modal2 ? closeModal2() : openModal2())}
-          >
-            LEARN MORE
-          </button>
-        </CardWithButton>
+          infoModalContent={[
+            "Streamlined Workflow",
+            "Take advantage of ArightCo’s team of seasoned industry professionals, including CPAs, MBAs, and CAs. Our team has knowledge & experience ranging from transactional accounting and financial modeling to company incorporation and equity financing. As your trusted financial partner, we work with you every step of the way",
+          ]}
+        />
 
-        <CardWithButton
+        <InfoCard
           icon={<FontAwesomeIcon icon={faFaceLaughBeam} />}
           title={"One Point of Contact"}
           text={[
@@ -242,15 +218,12 @@ export default function Home() {
             "one point-of-contact",
             "communication model, connecting you with a dedicated client partner with direct knowledge of operating within your industry.",
           ]}
-        >
-          <button
-            className="h-12 w-40 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-blue-dark hover:to-blue-light cursor-pointer"
-            onClick={() => (modal3 ? closeModal3() : openModal3())}
-          >
-            LEARN MORE
-          </button>
-        </CardWithButton>
-      </motion.div>
+          infoModalContent={[
+            "One Point of Contact",
+            "Our team of professionals will craft and execute a back-office solution tailored to your unique business goals",
+          ]}
+        />
+      </div>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -287,36 +260,6 @@ export default function Home() {
         </div>
         <RecentArticles />
       </motion.div>
-
-      <AnimatePresence>
-        {modal1 && (
-          <InfoModal
-            handleClose={closeModal1}
-            content={[
-              "Minimize Cost and Overhead",
-              "By partnering with ArightCo, your business eliminates the time-consuming and expensive process of hiring, onboarding, training, and retaining employees. You can concentrate on core business areas and company growth, knowing you have a team of industry experts working with you and others in your organization",
-            ]}
-          />
-        )}
-        {modal2 && (
-          <InfoModal
-            handleClose={closeModal2}
-            content={[
-              "Streamlined Workflow",
-              "Take advantage of ArightCo’s team of seasoned industry professionals, including CPAs, MBAs, and CAs. Our team has knowledge & experience ranging from transactional accounting and financial modeling to company incorporation and equity financing. As your trusted financial partner, we work with you every step of the way",
-            ]}
-          />
-        )}
-        {modal3 && (
-          <InfoModal
-            handleClose={closeModal3}
-            content={[
-              "One Point of Contact",
-              "Our team of professionals will craft and execute a back-office solution tailored to your unique business goals",
-            ]}
-          />
-        )}
-      </AnimatePresence>
     </Layout>
   );
 }
