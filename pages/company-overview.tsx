@@ -9,79 +9,12 @@ import Layout from "../components/layout";
 import QuoteModal from "../components/modals/quotemodal";
 import Section from "../components/sections/section";
 import Image from "next/image";
+import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
 
 export default function CompanyOverview() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
-  const sweepLeft = {
-    hidden: {
-      x: "10vh",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
-  const sweepRight = {
-    hidden: {
-      x: "-10vh",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
-  const sweepDown = {
-    hidden: {
-      y: "-10vh",
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.5,
-      },
-    },
-  };
-  const sweepUp = {
-    hidden: {
-      y: "10vh",
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.5,
-      },
-    },
-  };
 
   return (
     <Layout>
@@ -159,7 +92,7 @@ export default function CompanyOverview() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={sweepUp}
+        variants={sweepDown}
         className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]"
       >
         <Card

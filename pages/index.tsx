@@ -24,6 +24,7 @@ import Layout from "../components/layout";
 import RecentArticles from "../components/sections/recentarticles";
 import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";
+import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
 
 export default function Home() {
   const [modal1, setModal1] = useState(false);
@@ -38,57 +39,6 @@ export default function Home() {
   const closeModal3 = () => setModal3(false);
   const openModal3 = () => setModal3(true);
 
-  const sweepLeft = {
-    hidden: {
-      x: "10vh",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
-  const sweepRight = {
-    hidden: {
-      x: "-10vh",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
-  const sweepDown = {
-    hidden: {
-      y: "-10vh",
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.5,
-      },
-    },
-  };
   return (
     <Layout>
       <Head>

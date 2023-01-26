@@ -6,6 +6,7 @@ import QuoteModal from "../components/modals/quotemodal";
 import TeamCard from "../components/cards/teamcard";
 import TeamModal from "../components/modals/teammodal";
 import Link from "next/link";
+import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
 
 export default function MeetOurTeam() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -19,58 +20,6 @@ export default function MeetOurTeam() {
   const [tanmoyModalOpen, setTanmoyModalOpen] = useState(false);
   const closeTanmoyModal = () => setTanmoyModalOpen(false);
   const openTanmoyModal = () => setTanmoyModalOpen(true);
-
-  const sweepLeft = {
-    hidden: {
-      x: "10vh",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
-  const sweepRight = {
-    hidden: {
-      x: "-10vh",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.2,
-      },
-    },
-  };
-  const sweepDown = {
-    hidden: {
-      y: "-10vh",
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        mass: 0.5,
-        damping: 10,
-        delay: 0.5,
-      },
-    },
-  };
 
   return (
     <Layout>
