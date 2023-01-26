@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { dropIn } from "../animations";
 
 export default function TeamModal({
   handleClose,
@@ -20,26 +21,6 @@ export default function TeamModal({
   text: string;
   href: string;
 }) {
-  const dropIn = {
-    hidden: {
-      y: "-100vh",
-      opacity: 0,
-    },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: "spring",
-        damping: 25,
-        stiffness: 1000,
-      },
-    },
-    exit: {
-      y: "100vh",
-      opacity: 0,
-    },
-  };
 
   return (
     <Backdrop onClick={handleClose}>
