@@ -32,39 +32,13 @@ export default function PricingModel({
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="px-20 py-5 border-b border-gray-light bg-white">
-                {services[0]}
-              </td>
-            </tr>
-            <tr>
-              <td className="px-20 py-5 border-b border-gray-light bg-white">
-                {services[1]}
-              </td>
-            </tr>
-            <tr>
-              <td className="px-20 py-5 border-b border-gray-light bg-white">
-                {services[2]}
-              </td>
-            </tr>
-            <tr>
-              <td className="px-20 py-5 border-b border-gray-light bg-white">
-                {services[3]}
-              </td>
-            </tr>
-            <tr>
-              <td className="px-20 py-5 border-b border-gray-light bg-white">
-                {services[4]}
-              </td>
-            </tr>
-            <tr>
-              <td className="px-20 py-5 border-b border-gray-light bg-white">
-                {services[5]}
-              </td>
-            </tr>
-            <tr>
-              <td className="px-20 py-5 bg-white">{services[6]}</td>
-            </tr>
+            {services.map((service: string) => (
+              <tr>
+                <td className="px-20 py-5 border-b border-gray-light bg-white">
+                  {service}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <div className="flex flex-row w-4/5 justify-around text-orange-dark">
@@ -84,8 +58,8 @@ export default function PricingModel({
             <PricingCard
               title={items[0]}
               price={items[1]}
-              modalTitle={title + ": " + items[0]}
-              value={"New " + title + ": " + items[0] + " Quote Request"}
+              modalTitle={`${title}: ${items[0]}`}
+              value={`New ${title}: ${items[0]} Quote Request!`}
             />
           ))}
         </div>
