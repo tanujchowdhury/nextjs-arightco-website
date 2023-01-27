@@ -12,7 +12,7 @@ export default function BackToTopButton({startPosition, target,}:{startPosition:
         setButton(false);
       }
     });
-  }, []);
+  }, [startPosition]);
   const scrollUp = () => {
     window.scrollTo({
       top: target,
