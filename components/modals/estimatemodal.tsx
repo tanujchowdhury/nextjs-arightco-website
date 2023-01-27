@@ -25,7 +25,7 @@ export default function EstimateModal({
     <Backdrop onClick={handleClose}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="w-11/12 min-[763px]:w-[700px] min-[1400px]:w-1/2 min-h-[50%] min m-auto px-0 py-8 rounded-xl bg-gradient-to-br from-blue to-blue-light"
+        className="w-11/12 min-[763px]:w-[700px] min-[1400px]:w-1/2 min-h-1/2 max-h-full min m-auto px-0 py-8 rounded-xl bg-gradient-to-br from-blue to-blue-light overflow-auto"
         variants={dropIn}
         initial="hidden"
         animate="visible"
@@ -55,7 +55,7 @@ export default function EstimateModal({
             Pricing Estimate
           </div>
           <div className="pt-2 pb-5 px-3 text-white">Get a Quote Now</div>
-          <div className="pt-2 pb-5 px-3 text-white hidden sm:block">
+          <div className="pt-2 pb-5 px-3 text-white">
             Get a quote based on the number of your monthly transactions. <br />
             Our minimum price is $2500.
           </div>
@@ -78,7 +78,7 @@ export default function EstimateModal({
             />
           </div>
 
-          {detail ? (
+          {detail && total >= 2500 ? (
             <div className="">
               <div className="text-gray-light pt-5 text-xl underline">
                 Cost Estimation
@@ -125,7 +125,8 @@ export default function EstimateModal({
               Please enter a number
             </div>
           )}
-          {detail ? (
+
+          {total >= 2500 ? (detail ? (
             <div
               className="text-white underline text-orange-light cursor-pointer"
               onClick={closeDetail}
@@ -139,7 +140,10 @@ export default function EstimateModal({
             >
               Detailed View →
             </div>
+          )) : (
+            <></>
           )}
+          {}
         </div>
       </motion.div>
     </Backdrop>
