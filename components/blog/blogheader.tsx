@@ -60,7 +60,7 @@ const BlogHeader: React.FC = () => {
     right = (
       <div>
         <div>
-          {session.user.name} ({session.user.email})
+          {session.user!.name} {session.user!.email}
         </div>
         <Link href="/blog/create">
           <button>
