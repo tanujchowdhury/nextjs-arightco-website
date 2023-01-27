@@ -90,3 +90,37 @@ export const dropIn = {
     opacity: 0,
   },
 };
+
+export const nameVariant = {
+  initial: {
+    y: 0,
+  },
+  hover: {
+    y: -10,
+  },
+};
+export const titleVariant = {
+  initial: {
+    y: 0,
+    opacity: 1,
+  },
+  hover: {
+    y: -15,
+    opacity: 0,
+  },
+};
+export const iconVariant = {
+  initial: {
+    y: 0,
+    opacity: 0,
+    scale: 0,
+  },
+  hover: {
+    y: -15,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.1,
+    },
+  },
+};

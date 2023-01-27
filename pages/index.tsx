@@ -24,6 +24,7 @@ import RecentArticles from "../components/sections/recentarticles";
 import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
+import BackToTopButton from "../components/backtotopbutton";
 
 export default function Home() {
 
@@ -260,6 +261,7 @@ export default function Home() {
         </div>
         <RecentArticles />
       </motion.div>
+      <BackToTopButton startPosition={700} target={0} />
     </Layout>
   );
 }

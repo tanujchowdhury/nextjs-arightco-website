@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { iconVariant, nameVariant, titleVariant } from "../animations";
 
 export default function TeamCard({
   src,
@@ -17,39 +18,7 @@ export default function TeamCard({
   href: string;
   type: number;
 }) {
-  const nameVariant = {
-    initial: {
-      y: 0,
-    },
-    hover: {
-      y: -10,
-    },
-  };
-  const titleVariant = {
-    initial: {
-      y: 0,
-      opacity: 1,
-    },
-    hover: {
-      y: -15,
-      opacity: 0,
-    },
-  };
-  const iconVariant = {
-    initial: {
-      y: 0,
-      opacity: 0,
-      scale: 0,
-    },
-    hover: {
-      y: -15,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: 0.1,
-      },
-    },
-  };
+
   if (type == 1) {
     return (
       <motion.div
