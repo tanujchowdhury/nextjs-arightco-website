@@ -74,7 +74,7 @@ export default function PricingModal({
                   <input
                     className="shadow appearance-none border rounded-xl p-1 md:p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest"
                     id="number"
-                    type="text"
+                    type="tel"
                     placeholder="Phone Number"
                     name="Phone Number"
                     required
