@@ -20,7 +20,7 @@ export default function BlogCard({
         <div className="w-full basis-1/2">
           <Image src={src} alt={alt} width={500} height={500} className="rounded-t-md" />
         </div>
-        <div className="absolute top-0 right-0 m-3 p-2 bg-orange rounded-full text-sm text-white">CASE STUDY</div>
+        <div className="absolute top-0 right-0 mt-2 mr-2 p-1 bg-orange rounded-full text-sm text-white">CASE STUDY</div>
         <div className="basis-1/3 border-b-[1px]">
           <div className="text-xl font-bold text-blue p-3 pb-0 group-hover:text-orange-dark">{title}</div>
           <div className="text-sm font-bold text-orange-dark p-3">READ MORE...</div>
