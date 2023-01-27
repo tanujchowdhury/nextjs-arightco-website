@@ -54,27 +54,27 @@ export default function JobPostLayout({
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:items-start items-center pt-8 mx-3 lg:mx-32">
+      <div className="flex flex-col md:flex-row md:items-start items-center pt-8 mx-3 xl:mx-32">
         <div className="flex flex-col p-4 gap-2 text-lg md:basis-1/2">
-          <div className="flex flex-row items-center gap-1 font-bold">
+          <div className="flex flex-row items-center gap-1 font-bold flex-wrap">
             <FontAwesomeIcon icon={faBriefcase} className="w-6 h-6" />
             Job Category:&nbsp;
             <div className="font-normal">{jobCategory}</div>
           </div>
-          <div className="flex flex-row items-center gap-1 font-bold">
+          <div className="flex flex-row items-center gap-1 font-bold flex-wrap">
             <FontAwesomeIcon icon={faBullhorn} className="w-6 h-6" />
             Job Type:&nbsp;
             <div className="font-normal">{jobType}</div>
           </div>
-          <div className="flex flex-row items-center gap-1 font-bold">
+          <div className="flex flex-row items-center gap-1 font-bold flex-wrap">
             <FontAwesomeIcon icon={faLocationDot} className="w-6 h-6" />
             Job Location:&nbsp;
             <div className="font-normal">{jobLocation}</div>
           </div>
         </div>
-        <div className="flex flex-col text-black border p-8 bg-white w-full md:basis-1/2    ">
+        <div className="flex flex-col text-black border p-8 bg-white w-full md:basis-1/2 mt-8 md:mt-0">
           <div className="text-2xl font-bold">Apply for this position</div>
-          <div className="text-sm text-gray pt-">All fields are required</div>
+          <div className="text-sm text-gray mb-4 md:mb-0">All fields are required</div>
           <form
             target="_blank"
             action="https://formsubmit.co/3ae90ad237ce2eaf204d4b7c8779b16c"
