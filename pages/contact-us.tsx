@@ -74,7 +74,7 @@ export default function ContactUs() {
             SEND US A MESSAGE
           </div>
           <div className="text-2xl md:text-4xl text-blue font-bold pt-5">
-            Can't find the answer you're looking for?
+            Can&apos;t find the answer you&apos;re looking for?
           </div>
           <div className="md:text-lg text-gray-dark py-5 border-b border-blue-light">
             Tell us a little bit about your company and we will reach out to

@@ -33,7 +33,7 @@ export default function PricingModel({
           </thead>
           <tbody>
             {services.map((service: string) => (
-              <tr>
+              <tr key={service}>
                 <td className="px-20 py-5 border-b border-gray-light bg-white">
                   {service}
                 </td>
@@ -50,6 +50,7 @@ export default function PricingModel({
             <FontAwesomeIcon
               icon={faCaretDown}
               className="w-16 h-16 hidden lg:block"
+              key={plans}
             />
           ))}
         </div>
@@ -60,6 +61,7 @@ export default function PricingModel({
               price={items[1]}
               modalTitle={`${title}: ${items[0]}`}
               value={`New ${title}: ${items[0]} Quote Request!`}
+              key={items[0]}
             />
           ))}
         </div>

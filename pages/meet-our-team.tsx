@@ -162,7 +162,7 @@ export default function MeetOurTeam() {
         variants={sweepDown}
         className="flex flex-col items-center justify-center text-center text-white bg-gradient-to-r from-blue-dark to-blue-light m-3 px-3 py-6 rounded-xl gap-6 sm:mx-16 sm:mx-24 lg:mx-32 xl:mx-44"
       >
-        <div className="text-3xl font-bold">Let's Find a Solution</div>
+        <div className="text-3xl font-bold">Let&apos;s Find a Solution</div>
         <div className="mx-1">
           Have any questions for us? Reach out here and you will receive a
           prompt response from an ArightCo team member.

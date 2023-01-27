@@ -10,7 +10,7 @@ export default function Testimonials() {
       </Head>
       <div className="text-center text-white bg-gradient-to-r from-blue to-blue-light px-3 pt-32 lg:pt-44 lg:text-xl lg:px-32 pb-24">
         <div className="font-bold text-6xl">Testimonials</div>
-        <div className="px-20 py-6">See what they're saying</div>
+        <div className="px-20 py-6">See what they&apos;re saying</div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-3 xl:mx-32 pt-24">

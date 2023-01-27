@@ -18,7 +18,7 @@ export default function OfficeMap({
   const center = useMemo(
     
     () => ({ lat: lat, lng: lng }),
-    []
+    [lat, lng]
   );
 
   if (!isLoaded)
