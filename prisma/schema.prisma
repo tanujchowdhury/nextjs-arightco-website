@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,34 +7,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Inquiries {
-  id             Int      @id @default(autoincrement())
-  fullName       String?
-  emailAddress   String
-  contactNumber  String
-  companyName    String?
-  companyWebsite String?
-  subject        String?
-  projectSpecs   String?
-  type           String?
-  createdAt      DateTime @default(now()) @map(name: "created_at")
-}
-
-model Subscribers {
-  id           Int      @id @default(autoincrement())
-  fullName     String?
-  companyName  String?
-  industry     String?
-  emailAddress String   @unique
-  createdAt    DateTime @default(now()) @map(name: "created_at")
+model Post {
+  id        String  @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  String?
 }
 
 model User {
-  id        Int   @id @default(autoincrement())
+  id        String   @id @default(cuid())
   name      String?
   email     String?  @unique
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @updatedAt @map(name: "updated_at")
+  posts     Post[]
 
   @@map(name: "users")
 }
