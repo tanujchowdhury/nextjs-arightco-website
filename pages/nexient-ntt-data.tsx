@@ -1,6 +1,6 @@
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 
-import CaseStudyLayout from "../components/casestudylayout";
+import CaseStudyLayout from "../components/layouts/casestudylayout";
 
 export default function NexientNTTData() {
   return (

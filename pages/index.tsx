@@ -19,7 +19,7 @@ import { useState } from "react";
 import Card from "../components/cards/card";
 import { InfoCard } from "../components/cards/infocard";
 import Intro from "../components/sections/intro";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import RecentArticles from "../components/sections/recentarticles";
 import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";

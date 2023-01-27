@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import Link from "next/link";
 import IconGroup from "../components/icongroup";
 import OfficeMap from "../components/sections/officemap";

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import Section from "../components/sections/section";
 import FAQ from "../components/faq";
 import Link from "next/link";

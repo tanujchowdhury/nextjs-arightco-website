@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Card from "../components/cards/card";
 import ExitCarousel from "../components/carousels/exitcarousel";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import Section from "../components/sections/section";
 import Image from "next/image";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";

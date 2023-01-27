@@ -1,6 +1,6 @@
-import Navbar from "./sections/navbar";
-import Footer from "./sections/footer";
-import SignUp from "./sections/signup";
+import Navbar from "../sections/navbar";
+import Footer from "../sections/footer";
+import SignUp from "../sections/signup";
 import Head from "next/head";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

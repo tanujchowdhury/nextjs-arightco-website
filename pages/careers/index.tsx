@@ -1,7 +1,7 @@
 import Head from "next/head";
-import JobCard from "../components/cards/jobcard";
-import Layout from "../components/layout";
-import Section from "../components/sections/section";
+import JobCard from "../../components/cards/jobcard";
+import Layout from "../../components/layouts/layout";
+import Section from "../../components/sections/section";
 
 export default function Careers() {
   return (
@@ -19,9 +19,9 @@ export default function Careers() {
       />
       <div className="flex flex-col items-start justify-start bg-white my-20 mx-3 xl:mx-32 p-8 rounded-3xl">
         <div className="border-b border-gray-light w-full text-5xl py-4 font-bold">Job Postings</div>
-        <div>
-          <JobCard jobTitle={"Accountant"} jobCategory={"Finance & Accounting"} jobType={"Freelance, Full Time, Part Time"} jobLocation={"San Jose"} href={"/jobs/accountant"} />
-          <JobCard jobTitle={"Human Resources"} jobCategory={"Human Resources"} jobType={"Freelance, Full Time, Part Time"} jobLocation={"San Jose"} href={"/jobs/human-resources"} />
+        <div className="pt-8 grid md:grid-cols-3 gap-4">
+          <JobCard jobTitle={"Accountant"} jobCategory={"Finance & Accounting"} jobType={"Freelance, Full Time, Part Time"} jobLocation={"San Jose"} href={"/careers/accountant"} />
+          <JobCard jobTitle={"Human Resources"} jobCategory={"Human Resources"} jobType={"Freelance, Full Time, Part Time"} jobLocation={"San Jose"} href={"/careers/human-resources"} />
         </div>
       </div>
     </Layout>

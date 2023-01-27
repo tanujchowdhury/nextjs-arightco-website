@@ -1,5 +1,5 @@
-import CaseStudyLayout from "../components/casestudylayout";
-import Layout from "../components/layout";
+import CaseStudyLayout from "../components/layouts/casestudylayout";
+import Layout from "../components/layouts/layout";
 
 export default function Sagetech() {
   return (

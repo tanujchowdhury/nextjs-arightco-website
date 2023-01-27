@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import QuoteModal from "../components/modals/quotemodal";
 import TeamCard from "../components/cards/teamcard";
 import TeamModal from "../components/modals/teammodal";

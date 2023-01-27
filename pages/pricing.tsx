@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import PricingModel from "../components/sections/pricingmodel";
 import EstimateModal from "../components/modals/estimatemodal";
 import { AnimatePresence } from "framer-motion";

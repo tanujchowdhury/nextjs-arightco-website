@@ -1,5 +1,5 @@
 import Image from "next/image";
-import RecentArticles from "./sections/recentarticles";
+import RecentArticles from "../sections/recentarticles";
 import Head from "next/head";
 
 export default function CaseStudyLayout({
