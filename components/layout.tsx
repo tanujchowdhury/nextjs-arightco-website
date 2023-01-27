@@ -9,6 +9,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Head>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta name="robots" content="all" />
+        <meta
+          name="description"
+          content="Full-Service Finance & Accounting Solutions | Reduce costs and give your business predictability with ArightCo’s integrated Finance, Accounting, & Advisory teams."
+        />
       </Head>
       <Navbar />
       <main>{children}</main>
