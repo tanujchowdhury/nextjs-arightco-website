@@ -1,15 +1,15 @@
 import JobPostLayout from "../../components/layouts/jobpostlayout";
 import Layout from "../../components/layouts/layout";
 
-export default function AssociateAccountantUS() {
+export default function ControllerUS() {
   return (
     <Layout>
       <JobPostLayout
-        jobTitle={"Associate Accountant"}
+        jobTitle={"Controller"}
         jobCategory={"Finance and Accounting"}
         jobType={"Full Time"}
         jobLocation={"US"}
-        value={"New Associate Accountant US Job Application!"}
+        value={"New Controller US Job Application!"}
       />
     </Layout>
   );

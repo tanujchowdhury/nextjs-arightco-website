@@ -23,11 +23,11 @@ export default function Careers() {
         </div>
         <div className="pt-8 grid md:grid-cols-3 gap-4 w-full">
           <JobCard
-            jobTitle={"Associate Accountant"}
+            jobTitle={"Controller"}
             jobCategory={"Finance & Accounting"}
             jobType={"Full Time"}
             jobLocation={"US"}
-            href={"/careers/associate-accountant-us"}
+            href={"/careers/controller-us"}
           />
 
           <JobCard
