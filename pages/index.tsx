@@ -141,7 +141,7 @@ export default function Home() {
           <Card
             title="Budget Creation"
             text={[
-              "Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency",
+              "ArightCo's budget creation services will give your business predictability, tracking & monitoring your organization's progress",
             ]}
             type={2}
           >
@@ -150,7 +150,7 @@ export default function Home() {
           <Card
             title="Cash Flow Planning"
             text={[
-              "Create a KPI-driven culture and boost financial literacy across all of your teams",
+              "Without a viable cash flow plan, it's easy to lose track of capital flows over time, which leads to investment mistakes. Identify future income, expenses, and major expenditures",
             ]}
             type={2}
           >
@@ -159,7 +159,7 @@ export default function Home() {
           <Card
             title="Controller Services"
             text={[
-              "If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid",
+              "Without a viable cash flow plan, it's easy to lose track of capital flows over time, which leads to investment mistakes. Identify future income, expenses, and major expenditures",
             ]}
             type={2}
           >
