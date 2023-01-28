@@ -1,15 +1,15 @@
 import JobPostLayout from "../../components/layouts/jobpostlayout";
 import Layout from "../../components/layouts/layout";
 
-export default function HumanResources() {
+export default function HRGeneralistUS() {
   return (
     <Layout>
       <JobPostLayout
-        jobTitle={"Human Resources"}
+        jobTitle={"HR Generalist"}
         jobCategory={"Human Resources"}
-        jobType={"Freelance, Full Time, Part Time"}
-        jobLocation={"San Jose"}
-        value={"New HR Job Application!"}
+        jobType={"Full Time"}
+        jobLocation={"US"}
+        value={"New HR Generalist US Job Application!"}
       />
     </Layout>
   );
