@@ -194,7 +194,6 @@ export default function Pricing() {
           />
         </div>
       </div>
-      <BackToTopButton startPosition={700} target={400} />
 
       <AnimatePresence>
         {estimateModalOpen && <EstimateModal handleClose={closeEstimateModal} />}

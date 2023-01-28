@@ -263,7 +263,6 @@ export default function Home() {
         </div>
         <RecentArticles />
       </motion.div>
-      <BackToTopButton startPosition={700} target={0} />
     </Layout>
   );
 }
