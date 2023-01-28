@@ -1,10 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import Layout from "../components/layouts/layout";
 import QuoteModal from "../components/modals/quotemodal";
 import TeamCard from "../components/cards/teamcard";
-import TeamModal from "../components/modals/teammodal";
 import Link from "next/link";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
 import QuoteButton from "../components/quotebutton";
@@ -13,14 +12,6 @@ export default function MeetOurTeam() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
-
-  const [sushamaModalOpen, setSushamaModalOpen] = useState(false);
-  const closeSushamaModal = () => setSushamaModalOpen(false);
-  const openSushamaModal = () => setSushamaModalOpen(true);
-
-  const [tanmoyModalOpen, setTanmoyModalOpen] = useState(false);
-  const closeTanmoyModal = () => setTanmoyModalOpen(false);
-  const openTanmoyModal = () => setTanmoyModalOpen(true);
 
   return (
     <Layout>
@@ -54,42 +45,28 @@ export default function MeetOurTeam() {
             variants={sweepRight}
           />
         </div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepLeft}
-          className="lg:basis-1/4 lg:ml-10 cursor-pointer"
-          onClick={() =>
-            sushamaModalOpen ? closeSushamaModal() : openSushamaModal()
-          }
-        >
+        <div className="lg:basis-1/4 lg:ml-10">
           <TeamCard
             src={"/team/Sushama-Chowdhury.png"}
             name={"Sushama Chowdhury"}
             title={"Co-Founder"}
             href={"https://www.linkedin.com/in/sushama-chowdhury-b7748b159/"}
-            type={1}
+            text={
+              "Sushama Chowdhury has 20+ years experience in finance and accounting functions, mainly in a Controller position. She is conversant with every area of Accounting, from company set up to dissolution. Sushama founded ArightCo in 2009 and has since expanded the company to around 50 employees, maintaining consistent profits while growing every year."
+            }
           />
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepLeft}
-          className="lg:basis-1/4 cursor-pointer"
-          onClick={() =>
-            tanmoyModalOpen ? closeTanmoyModal() : openTanmoyModal()
-          }
-        >
+        </div>
+        <div className="lg:basis-1/4">
           <TeamCard
             src={"/team/Tanmoy-Chowdhury.png"}
             name={"Tanmoy Chowdhury"}
             title={"Co-Founder"}
             href={"https://www.linkedin.com/in/tanmoychowdhury/"}
-            type={1}
+            text={
+              "Tanmoy Chowdhury is a seasoned Finance Executive with 25+ years experience in providing financial expertise to a wide variety of companies in technology and related sectors. Tanmoy has been involved in multiple M&A activities and is an advisor to several clients. He is the co-founder of ArightCo, along with Sushama Chowdhury."
+            }
           />
-        </motion.div>
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center lg:flex-row xl:mx-24 my-24">
         <motion.div
@@ -109,51 +86,30 @@ export default function MeetOurTeam() {
             back-office operations.
           </div>
         </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepRight}
-          className="lg:basis-1/5"
-        >
+        <div className="lg:basis-1/5">
           <TeamCard
             src={"/team/Katie-Nelson.png"}
             name={"Katie Nelson"}
             title={"Sr Vice President"}
             href={"https://www.linkedin.com/in/katie-nelson-finance/"}
-            type={1}
           />
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepRight}
-          className="lg:basis-1/5"
-        >
+        </div>
+        <div className="lg:basis-1/5">
           <TeamCard
             src={"/team/Biju-Mathew.png"}
             name={"Biju Mathew"}
             title={"Sr Client Partner"}
             href={"https://www.linkedin.com/in/biju-mathew-b9988639/"}
-            type={1}
           />
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepRight}
-          className="lg:basis-1/5"
-        >
+        </div>
+        <div className="lg:basis-1/5">
           <TeamCard
             src={"/team/Thomas-Stier.png"}
             name={"Thomas Stier"}
             title={"Sr Client Partner and Executive Consultant"}
             href={"https://www.linkedin.com/in/thomas-stier-cpa-cgma-b32626/"}
-            type={2}
           />
-        </motion.div>
+        </div>
       </div>
       <motion.div
         initial="hidden"
@@ -190,30 +146,6 @@ export default function MeetOurTeam() {
       </motion.div>
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
-        {sushamaModalOpen && (
-          <TeamModal
-            handleClose={closeSushamaModal}
-            name={"Sushama Chowdhury"}
-            title={"CO-FOUNDER"}
-            src={"/team/Sushama-Chowdhury.png"}
-            text={
-              "Sushama Chowdhury has 20+ years experience in finance and accounting functions, mainly in a Controller position. She is conversant with every area of Accounting, from company set up to dissolution. Sushama founded ArightCo in 2009 and has since expanded the company to around 50 employees, maintaining consistent profits while growing every year."
-            }
-            href={"https://www.linkedin.com/in/sushama-chowdhury-b7748b159/"}
-          />
-        )}
-        {tanmoyModalOpen && (
-          <TeamModal
-            handleClose={closeTanmoyModal}
-            name={"Tanmoy Chowdhury"}
-            title={"CO-FOUNDER"}
-            src={"/team/Tanmoy-Chowdhury.png"}
-            text={
-              "Tanmoy Chowdhury is a seasoned Finance Executive with 25+ years experience in providing financial expertise to a wide variety of companies in technology and related sectors. Tanmoy has been involved in multiple M&A activities and is an advisor to several clients. He is the co-founder of ArightCo, along with Sushama Chowdhury."
-            }
-            href={"https://www.linkedin.com/in/tanmoychowdhury/"}
-          />
-        )}
       </AnimatePresence>
     </Layout>
   );
