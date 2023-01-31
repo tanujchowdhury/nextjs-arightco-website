@@ -17,7 +17,7 @@ export default function Pricing() {
   return (
     <Layout>
       <Head>
-        <title>Pricing</title>
+        <title>Pricing | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <div className="py-32 lg:py-44 xl:py-52  bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center text-white lg:flex-row px-3 sm:px-6 md:px-12 lg:px-24 xl:px-32">
         <div className="flex flex-col items-center justify-center lg:basis-1/2 lg:items-start">

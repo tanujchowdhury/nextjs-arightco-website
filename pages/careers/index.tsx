@@ -7,7 +7,7 @@ export default function Careers() {
   return (
     <Layout>
       <Head>
-        <title>Careers</title>
+        <title>Careers | Join Our Team | ArightCo</title>
       </Head>
       <Section
         type={3}

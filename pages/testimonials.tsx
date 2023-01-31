@@ -6,7 +6,7 @@ export default function Testimonials() {
   return (
     <Layout>
       <Head>
-        <title>Case Studies | Solutions for IT and SaaS | ArightCo </title>
+        <title>Testimonials | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <div className="text-center text-white bg-gradient-to-r from-blue to-blue-light px-3 pt-32 lg:pt-44 lg:text-xl lg:px-32 pb-24">
         <div className="font-bold text-6xl">Testimonials</div>

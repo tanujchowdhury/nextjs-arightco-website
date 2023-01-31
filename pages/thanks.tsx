@@ -6,7 +6,7 @@ export default function Thanks() {
   return (
     <Layout>
       <Head>
-        <title></title>
+        <title>Thank You! | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <Section title1={"Thank You"} text={"Thanks for filling out our form. Our team will get back to you ASAP."} type={3} />
     </Layout>

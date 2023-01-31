@@ -8,7 +8,7 @@ export default function FAQs() {
   return (
     <Layout>
       <Head>
-        <title>FAQ&apos;s</title>
+        <title>FAQ&apos;s | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <Section
         title1={"FAQ's"}

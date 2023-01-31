@@ -16,7 +16,7 @@ export default function MeetOurTeam() {
   return (
     <Layout>
       <Head>
-        <title>Meet Our Team | Solutions for IT and SaaS | ArightCo</title>
+        <title>Meet Our Team | Solutions for IT & SaaS | ArightCo</title>
       </Head>
       <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center lg:flex-row px-3 min-[1350px]:px-32 min-[1610px]:px-44">
         <div className="text-center text-white lg:basis-1/2 lg:text-left">

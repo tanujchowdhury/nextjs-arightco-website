@@ -16,7 +16,7 @@ export default function ContactUs() {
   return (
     <Layout>
       <Head>
-        <title>Contact Us | Finance and Accounting Solutions | ArightCo</title>
+        <title>Contact Us | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <Section
         type={3}
