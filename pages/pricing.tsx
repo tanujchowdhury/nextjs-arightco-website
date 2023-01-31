@@ -8,7 +8,6 @@ import PricingModel from "../components/sections/pricingmodel";
 import EstimateModal from "../components/modals/estimatemodal";
 import { AnimatePresence } from "framer-motion";
 import ServiceCard from "../components/cards/servicecard";
-import BackToTopButton from "../components/backtotopbutton";
 
 export default function Pricing() {
   const [estimateModalOpen, setEstimateModalOpen] = useState(false);

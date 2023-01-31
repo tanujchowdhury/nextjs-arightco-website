@@ -17,25 +17,6 @@ export default function CaseStudies() {
           key resources and checklists, and get a better grasp of your business
           finances.
         </div>
-        <div className="flex flex-col items-center justify-center mt-16 mx-3 lg:flex-row lg:ml-32">
-          <div className="lg:basis-1/2">
-            <Link href="/nexient-ntt-data">
-              <Image
-                src="/casestudies/images/nex.png"
-                height={500}
-                width={600}
-                alt={"Nexient NTT Data"}
-                className="rounded-3xl"
-              ></Image>
-            </Link>
-          </div>
-          <div className="mt-5 lg:text-start lg:basis-1/2 ml-16">
-            <div className="font-bold text-2xl lg:text-4xl">
-              <Link href="/nexient-ntt-data">Nexient NTT Data</Link>
-            </div>
-            <div className="text-orange">March 1, 2022</div>
-          </div>
-        </div>
       </div>
       <div className="mt-20">
 

@@ -12,7 +12,7 @@ export default function Section({
 }: {
   title1: string;
   title2?: string;
-  text: string;
+  text?: string;
   type: number;
   linktext?: string;
   href?: string
@@ -54,8 +54,7 @@ export default function Section({
             </div>
             <div className="pl-2 hover:text-orange-dark">{title1}</div>
           </div>
-
-          <div className="text-6xl font-bold pt-6">{title1}</div>
+          <div className="text-6xl font-bold pt-6 text-center">{title1}</div>
         </div>
         <div className="flex flex-col items-center justify-center pt-10 lg:basis-1/2 lg:items-start">
         <div className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">

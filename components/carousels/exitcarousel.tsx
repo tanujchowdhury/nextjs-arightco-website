@@ -89,7 +89,7 @@ export default function ExitCarousel() {
         }
       />
       <Exit
-        title={"SpeakToIt Google"}
+        title={"SpeakToIt to Google"}
         year={2016}
         text={
           "ArightCo handled financial due diligence and was an integral part of financial management, accounting, and HR. Client partner, Katie Nelson, provided CFO-level services throughout SpeakToIt's lifetime."
@@ -152,7 +152,7 @@ export default function ExitCarousel() {
         }
       />
       <Exit
-        title={"QuanticMind exited to Centro"}
+        title={"QuanticMind to Centro"}
         year={2020}
         text={
           "ArightCo provided QuanticMind with CFO, Controller, payroll, accounting, and financial services throughout the acquisition process."
