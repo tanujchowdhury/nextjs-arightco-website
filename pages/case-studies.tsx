@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../components/layouts/layout";
-import Image from "next/image";
 import RecentArticles from "../components/sections/recentarticles";
 
 export default function CaseStudies() {
