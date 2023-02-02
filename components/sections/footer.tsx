@@ -159,7 +159,6 @@ export default function Footer({}) {
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
       </AnimatePresence>
-      
     </>
   );
 }

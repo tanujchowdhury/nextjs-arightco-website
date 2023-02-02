@@ -108,7 +108,7 @@ export default function Pricing() {
           ["Headcount 0-9", "$2,500+/month"],
           ["Headcount 10-19", "$3,500+/month"],
           ["Headcount 20-49", "$5,000+/month"],
-          ["Headcount 49+", "Custom Pricing"],
+          ["Headcount 50+", "Custom Pricing"],
         ]}
       />
       <PricingModel
