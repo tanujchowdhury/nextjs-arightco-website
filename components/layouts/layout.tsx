@@ -4,9 +4,17 @@ import SignUp from "../sections/signup";
 import Head from "next/head";
 import BackToTopButton from "../backtotopbutton";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+  backToTopButtonStartPosition,
+  backToTopButtonTarget,
+}: {
+  children: React.ReactNode;
+  backToTopButtonStartPosition?: number;
+  backToTopButtonTarget?: number;
+}) {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta name="robots" content="all" />
@@ -19,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
       <SignUp />
       <Footer />
-      <BackToTopButton />
-    </div>
+      <BackToTopButton startPosition={backToTopButtonStartPosition} target={backToTopButtonTarget} />
+    </>
   );
 }

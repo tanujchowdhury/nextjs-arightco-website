@@ -8,6 +8,7 @@ import PricingModel from "../components/sections/pricingmodel";
 import EstimateModal from "../components/modals/estimatemodal";
 import { AnimatePresence } from "framer-motion";
 import ServiceCard from "../components/cards/servicecard";
+import BackToTopButton from "../components/backtotopbutton";
 
 export default function Pricing() {
   const [estimateModalOpen, setEstimateModalOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Pricing() {
   const openEstimateModal = () => setEstimateModalOpen(true);
 
   return (
-    <Layout>
+    <Layout backToTopButtonStartPosition={700} backToTopButtonTarget={400}>
       <Head>
         <title>Pricing | Finance & Accounting Solutions | ArightCo</title>
       </Head>
