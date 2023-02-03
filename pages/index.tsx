@@ -159,7 +159,7 @@ export default function Home() {
           <Card
             title="Controller Services"
             text={[
-              "Without a viable cash flow plan, it's easy to lose track of capital flows over time, which leads to investment mistakes. Identify future income, expenses, and major expenditures",
+              "ArightCo controllers provide critical oversight and account management, ensuring policies and procedures are implemented and accurate financials are produced",
             ]}
             type={2}
           >
