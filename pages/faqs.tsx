@@ -94,7 +94,7 @@ export default function FAQs() {
             }
           />
           <FAQ
-            q={"How does ArightCo prevent your financial data?"}
+            q={"How does ArightCo protect your financial data?"}
             a={"ArightCo uses data-encrypted, secure file sharing platforms."}
           />
           <FAQ
