@@ -77,7 +77,7 @@ export default function JobPostLayout({
           <div className="text-sm text-gray mb-4 md:mb-0">All fields are required</div>
           <form
             target="_blank"
-            action="https://formsubmit.co/3ae90ad237ce2eaf204d4b7c8779b16c"
+            action="https://formsubmit.co/71bf94915cca9b128e6c9fbb3de5f642"
             method="POST"
             encType="multipart/form-data"
           >
