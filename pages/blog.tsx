@@ -4,7 +4,6 @@ export default function Blog() {
     return (
         <Layout>
             <div className="m-96">
-
             Enter
             </div>
         </Layout>
