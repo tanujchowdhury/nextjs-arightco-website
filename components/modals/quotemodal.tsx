@@ -44,7 +44,7 @@ export default function QuoteModal({
           </div>
           <form
             target="_blank"
-            action="https://formsubmit.co/3ae90ad237ce2eaf204d4b7c8779b16c"
+            action="https://formsubmit.co/62490fb5a4309c0a244d0936b1752f3a"
             method="POST"
           >
             <input type="hidden" name="_next" value="https://arightco.vercel.app/thanks" />

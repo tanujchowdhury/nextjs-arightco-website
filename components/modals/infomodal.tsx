@@ -10,7 +10,6 @@ export default function InfoModal({
   handleClose: React.MouseEventHandler;
   content: string[];
 }) {
-
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
@@ -46,9 +45,11 @@ export default function InfoModal({
             {content[1]}
           </div>
           <div>
-            <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
-              <Link href="/pricing">PRICING</Link> 
-            </button>
+            <Link href="/pricing">
+              <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
+                PRICING
+              </button>
+            </Link>
           </div>
         </div>
       </motion.div>
