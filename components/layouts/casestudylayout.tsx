@@ -1,6 +1,7 @@
 import Image from "next/image";
-import RecentArticles from "../sections/recentarticles";
+import RecentCaseStudies from "../sections/recentposts";
 import Head from "next/head";
+import CaseStudyCard from "../cards/casestudycard";
 
 export default function CaseStudyLayout({
   title,
@@ -9,23 +10,22 @@ export default function CaseStudyLayout({
   imagesrc,
   pdfsrc,
 }: {
-    title: string;
-    industry: string;
-    date: string;
-    imagesrc: string;
-    pdfsrc: string;
+  title: string;
+  industry: string;
+  date: string;
+  imagesrc: string;
+  pdfsrc: string;
 }) {
   return (
     <>
-        <Head>
-            <title>{title + " | Case Study | ArightCo"}</title>
-        </Head>
+      <Head>
+        <title>{title + " | Case Study | ArightCo"}</title>
+      </Head>
       <div className="text-center bg-gray-lighter px-3 py-32 lg:py-44 lg:text-xl lg:px-32 font-bold">
         <div className="text-sm">{"CASE STUDY | " + industry}</div>
         <div className="text-6xl">{title}</div>
         <div className="text-sm font-normal">{"Published on " + date}</div>
       </div>
-      <div className="m-3">
         <Image
           src={imagesrc}
           alt={title + "case study"}
@@ -33,7 +33,6 @@ export default function CaseStudyLayout({
           width={800}
           className="mx-auto rounded-3xl my-10"
         ></Image>
-      </div>
 
       <iframe
         src={pdfsrc}
@@ -45,7 +44,29 @@ export default function CaseStudyLayout({
       <div className="text-2xl lg:text-4xl lg:ml-32 mt-20 m-3 font-bold">
         Related Articles
       </div>
-      <RecentArticles />
+      <RecentCaseStudies>
+        <CaseStudyCard
+          src={"/casestudies/images/nex.png"}
+          alt={"Nexient NTT Data"}
+          title={"Nexient NTT Data"}
+          href={"/nexient-ntt-data"}
+          date={"March 1, 2022"}
+        />
+        <CaseStudyCard
+          src={"/casestudies/images/49ers.png"}
+          alt={"49ers Academy"}
+          title={"49ers Academy"}
+          href={"/49ers-academy"}
+          date={"March 1, 2022"}
+        />
+        <CaseStudyCard
+          src={"/casestudies/images/sage.png"}
+          alt={"Sagetech"}
+          title={"Sagetech"}
+          href={"/sagetech"}
+          date={"March 1, 2022"}
+        />
+      </RecentCaseStudies>
     </>
   );
 }

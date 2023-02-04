@@ -124,3 +124,45 @@ export const iconVariant = {
     },
   },
 };
+
+export const subMenuAnimate = {
+  enter: {
+    opacity: 1,
+    y: -6,
+    transition: {
+      duration: 0.3,
+    },
+    display: "block",
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: {
+      duration: 0.3,
+    },
+    transitionEnd: {
+      display: "none",
+    },
+  },
+};
+
+export const hoverMenuAnimate = {
+  enter: {
+    opacity: 1,
+    y: 5,
+    transition: {
+      duration: 0.3,
+    },
+    display: "block",
+  },
+  exit: {
+    opacity: 0,
+    y: 15,
+    transition: {
+      duration: 0.3,
+    },
+    transitionEnd: {
+      display: "none",
+    },
+  },
+};

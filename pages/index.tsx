@@ -13,19 +13,19 @@ import {
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Head from "next/head";
-import { useState } from "react";
 import Card from "../components/cards/card";
 import { InfoCard } from "../components/cards/infocard";
 import Intro from "../components/sections/intro";
 import Layout from "../components/layouts/layout";
-import RecentArticles from "../components/sections/recentarticles";
+import RecentPosts from "../components/sections/recentposts";
 import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
-import BackToTopButton from "../components/backtotopbutton";
 import Link from "next/link";
+import CaseStudyCard from "../components/cards/casestudycard";
+import ArticleCard from "../components/cards/articlecard";
 
 export default function Home() {
   return (
@@ -261,7 +261,29 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <RecentArticles />
+        <RecentPosts>
+          <ArticleCard
+            src={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"}
+            alt={"Leverage Outsourced CFO Services to Achieve Business Goals"}
+            title={"Leverage Outsourced CFO Services to Achieve Business Goals"}
+            href={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals"}
+            date={"February 3, 2023"}
+          ></ArticleCard>
+          <CaseStudyCard
+            src={"/casestudies/images/nex.png"}
+            alt={"Nexient NTT Data"}
+            title={"Nexient NTT Data"}
+            href={"/nexient-ntt-data"}
+            date={"March 1, 2022"}
+          />
+          <CaseStudyCard
+            src={"/casestudies/images/49ers.png"}
+            alt={"49ers Academy"}
+            title={"49ers Academy"}
+            href={"/49ers-academy"}
+            date={"March 1, 2022"}
+          />
+        </RecentPosts>
       </motion.div>
     </Layout>
   );

@@ -1,6 +1,7 @@
 import Head from "next/head";
+import CaseStudyCard from "../components/cards/casestudycard";
 import Layout from "../components/layouts/layout";
-import RecentArticles from "../components/sections/recentarticles";
+import RecentCaseStudies from "../components/sections/recentposts";
 
 export default function CaseStudies() {
   return (
@@ -17,8 +18,29 @@ export default function CaseStudies() {
         </div>
       </div>
       <div className="mt-20">
-
-      <RecentArticles />
+        <RecentCaseStudies>
+          <CaseStudyCard
+            src={"/casestudies/images/nex.png"}
+            alt={"Nexient NTT Data"}
+            title={"Nexient NTT Data"}
+            href={"/nexient-ntt-data"}
+            date={"March 1, 2022"}
+          />
+          <CaseStudyCard
+            src={"/casestudies/images/49ers.png"}
+            alt={"49ers Academy"}
+            title={"49ers Academy"}
+            href={"/49ers-academy"}
+            date={"March 1, 2022"}
+          />
+          <CaseStudyCard
+            src={"/casestudies/images/sage.png"}
+            alt={"Sagetech"}
+            title={"Sagetech"}
+            href={"/sagetech"}
+            date={"March 1, 2022"}
+          />
+        </RecentCaseStudies>
       </div>
     </Layout>
   );

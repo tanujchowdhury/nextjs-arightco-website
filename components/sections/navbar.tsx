@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import QuoteModal from "../modals/quotemodal";
+import { hoverMenuAnimate, subMenuAnimate } from "../animations";
 
 export default function Navbar({}) {
   const [nav, setNav] = useState(false);
@@ -18,52 +19,6 @@ export default function Navbar({}) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
-
-  const [pricingModalOpen, setPricingModalOpen] = useState(false);
-  const closePricingModal = () => setPricingModalOpen(false);
-  const openPricingModal = () => setPricingModalOpen(true);
-
-  const subMenuAnimate = {
-    enter: {
-      opacity: 1,
-      y: -6,
-      transition: {
-        duration: 0.3,
-      },
-      display: "block",
-    },
-    exit: {
-      opacity: 0,
-      y: -20,
-      transition: {
-        duration: 0.3,
-      },
-      transitionEnd: {
-        display: "none",
-      },
-    },
-  };
-
-  const hoverMenuAnimate = {
-    enter: {
-      opacity: 1,
-      y: 5,
-      transition: {
-        duration: 0.3,
-      },
-      display: "block",
-    },
-    exit: {
-      opacity: 0,
-      y: 15,
-      transition: {
-        duration: 0.3,
-      },
-      transitionEnd: {
-        display: "none",
-      },
-    },
-  };
 
   return (
     <>
@@ -154,8 +109,14 @@ export default function Navbar({}) {
               variants={hoverMenuAnimate}
             >
               <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-36">
-                <Link
+              <Link
                   className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
+                  href="/blog"
+                >
+                  Blog
+                </Link>
+                <Link
+                  className="pt-2 px-4 pb-2 hover:bg-orange-dark"
                   href="/case-studies"
                 >
                   Case Studies
@@ -296,6 +257,10 @@ export default function Navbar({}) {
 
           <Link href="/meet-our-team">
             <div className="p-3 hover:bg-orange-dark">Meet Our Team</div>
+          </Link>
+
+          <Link href="/blog">
+            <div className="p-3 hover:bg-orange-dark">Blog</div>
           </Link>
 
           <Link href="/case-studies">
