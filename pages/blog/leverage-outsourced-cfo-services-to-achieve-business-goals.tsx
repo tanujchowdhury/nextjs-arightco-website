@@ -24,7 +24,7 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
               As a business owner or CEO, it is your responsibility to ensure
               you are utilizing all the resources at your disposal. One of the
               best ways to ensure that you are on track and maximizing your
-              business's potential is outsourcing CFO services. Let's explore
+              business&apos;s potential is outsourcing CFO services. Let&apos;s explore
               why outsourcing a CFO can be beneficial for your organization.
             </div>
             <div className="text-xl">The Benefits of Outsourcing a CFO:</div>
@@ -49,7 +49,7 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
                   </span>
                   An experienced CFO will have a background in creating
                   financial reports that accurately reflect the current state of
-                  your company's finances. This knowledge is invaluable when
+                  your company&apos;s finances. This knowledge is invaluable when
                   making strategic decisions or setting future goals.
                 </li>
                 <li>
@@ -74,7 +74,7 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
               Outsourcing a CFO is an effective way for businesses to access
               specialized knowledge, improve their financial reporting systems,
               streamline processes, and receive strategic advice from an
-              experienced professional. If you're looking for ways to optimize
+              experienced professional. If you&apos;re looking for ways to optimize
               operations within your organization, outsourced CFO services
               should be considered as part of your plan going forward!
             </div>
@@ -82,7 +82,7 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
               Consider hiring a CFO team to help you reach your business goals.
               With the proper guidance and support, you will be well on your way
               to achieving greater success. Plus, having a partner who
-              understands your organization's financials and strategy will give
+              understands your organization&apos;s financials and strategy will give
               you the confidence and peace of mind to move forward with
               confidence.
             </div>
