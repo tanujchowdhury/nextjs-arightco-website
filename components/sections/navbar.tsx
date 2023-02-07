@@ -34,7 +34,6 @@ export default function Navbar({}) {
             />
           </Link>
         </div>
-
         <div className="hidden lg:flex text-lg">
           <motion.div
             className="px-3"
