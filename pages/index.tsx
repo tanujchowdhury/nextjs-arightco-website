@@ -263,7 +263,7 @@ export default function Home() {
         </div>
         <RecentPosts>
           <ArticleCard
-            src={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"}
+            src={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg.jpg"}
             alt={"Leverage Outsourced CFO Services to Achieve Business Goals"}
             title={"Leverage Outsourced CFO Services to Achieve Business Goals"}
             href={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals"}
