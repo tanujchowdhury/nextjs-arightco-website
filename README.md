@@ -16,7 +16,7 @@ Vercel made deploying the website very simple. I can share preview links with th
 
 ### Services Used
 
-* [Tailwind CSS](https://tailwindcss.com/) - made styling a website of this scale straightfoward. Some custom CSS was used here and there.
+* [Tailwind CSS](https://tailwindcss.com/) - made styling a website of this scale straightfoward
 * [Framer Motion](https://www.framer.com/motion/) - animations for cards, modals, and scroll
 * [Form Submit](https://formsubmit.co/) - emails the content of contact forms to ArightCo
 * [React-Slick](https://react-slick.neostack.com/) - testimonial and successful exits carousels
