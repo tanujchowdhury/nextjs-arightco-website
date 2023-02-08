@@ -23,8 +23,8 @@ Vercel made deploying the website very simple. I can share preview links with th
 
 ### Upcoming Features
 
-Blog - will use [Supabase](https://supabase.com/) and [Prisma](https://www.prisma.io/)
-Pricing page UI - make the page more intuitive to use
-Add more team members
+* Blog - will use [Supabase](https://supabase.com/) and [Prisma](https://www.prisma.io/)
+* Pricing page UI - make the page more intuitive to use
+* Add more team members
 
 
