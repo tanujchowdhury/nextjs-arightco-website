@@ -13,9 +13,8 @@ import {
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Head from "next/head";
-import { useState } from "react";
 import Card from "../components/cards/card";
 import { InfoCard } from "../components/cards/infocard";
 import Intro from "../components/sections/intro";
@@ -24,7 +23,6 @@ import RecentArticles from "../components/sections/recentarticles";
 import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
-import BackToTopButton from "../components/backtotopbutton";
 import Link from "next/link";
 
 export default function Home() {
@@ -49,44 +47,38 @@ export default function Home() {
           type={1}
         />
       </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepLeft}
-      >
-        <div className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
-          <Card
-            title={"Retaining In-House Teams"}
-            text={[
-              "Companies are faced with the task of recruiting, training and retaining in-house finance and accounting resources.",
-            ]}
-            type={1}
-          >
-            <FontAwesomeIcon icon={faPeopleGroup} />
-          </Card>
 
-          <Card
-            title={"Best Practices"}
-            text={[
-              "Many companies lack the expertise to ensure financial statements are being prepared in accordance with proper practices.",
-            ]}
-            type={1}
-          >
-            <FontAwesomeIcon icon={faBullseye} />
-          </Card>
+      <div className="flex flex-col items-center md:items-stretch justify-center m-5 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
+        <Card
+          title={"Retaining In-House Teams"}
+          text={[
+            "Companies are faced with the task of recruiting, training and retaining in-house finance and accounting resources.",
+          ]}
+          type={1}
+        >
+          <FontAwesomeIcon icon={faPeopleGroup} />
+        </Card>
 
-          <Card
-            title={"Reporting Packages"}
-            text={[
-              "Most businesses do not have experience developing a comprehensive reporting package for investors.",
-            ]}
-            type={1}
-          >
-            <FontAwesomeIcon icon={faLayerGroup} />
-          </Card>
-        </div>
-      </motion.div>
+        <Card
+          title={"Best Practices"}
+          text={[
+            "Many companies lack the expertise to ensure financial statements are being prepared in accordance with proper practices.",
+          ]}
+          type={1}
+        >
+          <FontAwesomeIcon icon={faBullseye} />
+        </Card>
+
+        <Card
+          title={"Reporting Packages"}
+          text={[
+            "Most businesses do not have experience developing a comprehensive reporting package for investors.",
+          ]}
+          type={1}
+        >
+          <FontAwesomeIcon icon={faLayerGroup} />
+        </Card>
+      </div>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -102,71 +94,66 @@ export default function Home() {
           type={1}
         />
       </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepLeft}
-      >
-        <div className="flex flex-col items-center justify-center m-5 mb-0 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
-          <Card
-            title="Transactional Entry"
-            text={[
-              "Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency",
-            ]}
-            type={2}
-          >
-            <FontAwesomeIcon icon={faCreditCard} />
-          </Card>
-          <Card
-            title="KPI Preparation"
-            text={[
-              "Create a KPI-driven culture and boost financial literacy across all of your teams",
-            ]}
-            type={2}
-          >
-            <FontAwesomeIcon icon={faChartSimple} />
-          </Card>
-          <Card
-            title="Client Invoicing"
-            text={[
-              "If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid",
-            ]}
-            type={2}
-          >
-            <FontAwesomeIcon icon={faChartPie} />
-          </Card>
-        </div>
-        <div className="flex flex-col items-center justify-center mx-5 mt-0 md:flex-row min-[1350px]:px-32 md:h-[40vh] md:mt-10 mb-10">
-          <Card
-            title="Budget Creation"
-            text={[
-              "ArightCo's budget creation services will give your business predictability, tracking & monitoring your organization's progress",
-            ]}
-            type={2}
-          >
-            <FontAwesomeIcon icon={faScroll} />
-          </Card>
-          <Card
-            title="Cash Flow Planning"
-            text={[
-              "Without a viable cash flow plan, it's easy to lose track of capital flows over time, which leads to investment mistakes. Identify future income, expenses, and major expenditures",
-            ]}
-            type={2}
-          >
-            <FontAwesomeIcon icon={faComputer} />
-          </Card>
-          <Card
-            title="Controller Services"
-            text={[
-              "ArightCo controllers provide critical oversight and account management, ensuring policies and procedures are implemented and accurate financials are produced",
-            ]}
-            type={2}
-          >
-            <FontAwesomeIcon icon={faShieldHalved} />
-          </Card>
-        </div>
-      </motion.div>
+
+      <div className="flex flex-col items-center justify-center m-5 mb-0 md:flex-row min-[1350px]:px-32 md:h-[40vh]">
+        <Card
+          title="Transactional Entry"
+          text={[
+            "Partner with an experienced company that has processed thousands of transactions for their clients while providing greater operational efficiency",
+          ]}
+          type={2}
+        >
+          <FontAwesomeIcon icon={faCreditCard} />
+        </Card>
+        <Card
+          title="KPI Preparation"
+          text={[
+            "Create a KPI-driven culture and boost financial literacy across all of your teams",
+          ]}
+          type={2}
+        >
+          <FontAwesomeIcon icon={faChartSimple} />
+        </Card>
+        <Card
+          title="Client Invoicing"
+          text={[
+            "If you don't invoice clients, how are you going to get paid? ArightCo ensures you can manage projects, bill clients, send invoices, and get paid",
+          ]}
+          type={2}
+        >
+          <FontAwesomeIcon icon={faChartPie} />
+        </Card>
+      </div>
+      <div className="flex flex-col items-center justify-center mx-5 mt-0 md:flex-row min-[1350px]:px-32 md:h-[40vh] md:mt-10 mb-10">
+        <Card
+          title="Budget Creation"
+          text={[
+            "ArightCo's budget creation services will give your business predictability, tracking & monitoring your organization's progress",
+          ]}
+          type={2}
+        >
+          <FontAwesomeIcon icon={faScroll} />
+        </Card>
+        <Card
+          title="Cash Flow Planning"
+          text={[
+            "Without a viable cash flow plan, it's easy to lose track of capital flows over time, which leads to investment mistakes. Identify future income, expenses, and major expenditures",
+          ]}
+          type={2}
+        >
+          <FontAwesomeIcon icon={faComputer} />
+        </Card>
+        <Card
+          title="Controller Services"
+          text={[
+            "ArightCo controllers provide critical oversight and account management, ensuring policies and procedures are implemented and accurate financials are produced",
+          ]}
+          type={2}
+        >
+          <FontAwesomeIcon icon={faShieldHalved} />
+        </Card>
+      </div>
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -261,8 +248,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <RecentArticles />
       </motion.div>
+      <RecentArticles />
     </Layout>
   );
 }

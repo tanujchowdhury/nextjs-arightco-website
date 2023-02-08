@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { sweepRight } from "../animations";
 
 export default function BlogCard({
   src,
@@ -16,7 +18,12 @@ export default function BlogCard({
 }) {
   return (
     <Link href={href}>
-      <div className="relative flex flex-col drop-shadow-sm transition duration-300 rounded-md m-5 hover:drop-shadow-xl bg-white group">
+      <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={sweepRight}
+      className="relative flex flex-col drop-shadow-sm transition duration-300 rounded-md m-5 hover:drop-shadow-xl bg-white group">
         <div className="w-full basis-1/2">
           <Image src={src} alt={alt} width={500} height={500} className="rounded-t-md" />
         </div>
@@ -26,7 +33,7 @@ export default function BlogCard({
           <div className="text-sm font-bold text-orange-dark p-3">READ MORE...</div>
         </div>
         <div className="basis-1/4 text-sm p-2 pl-3">{date}</div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { sweepLeft } from "../animations";
+
 export default function Card({
   children,
   title,
@@ -11,7 +14,11 @@ export default function Card({
 }) {
   if (type == 1) {
     return (
-      <div
+      <motion.div
+      initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepLeft}
         className="flex flex-col items-center justify-center rounded-2xl shadow-md text-center p-5 m-5 gap-3 w-full h-full group bg-white"
       >
         <div className="w-[10vh] h-[10vh] text-orange-dark">
@@ -23,12 +30,16 @@ export default function Card({
         <div className="text-sm lg:text-base">
           {text[0]}
         </div>
-      </div>
+      </motion.div>
     );
   }
   if (type == 2) {
     return (
-      <div
+      <motion.div
+      initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepLeft}
         className="flex flex-col items-start justify-start rounded-2xl shadow-md p-5 m-5 w-full h-full group bg-white"
       >
         <div className="w-[8vh] h-[8vh] text-orange-dark pl-3">
@@ -40,7 +51,7 @@ export default function Card({
         <div className="text-sm lg:text-base pl-3">
           {text[0]}
         </div>
-      </div>
+      </motion.div>
     );
   }
   return <></>;
