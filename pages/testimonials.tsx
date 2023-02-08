@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Layout from "../components/layouts/layout";
 import Testimonial from "../components/carousels/testimonial";
+import { motion } from "framer-motion";
+import { sweepRight } from "../components/animations";
 
 export default function Testimonials() {
   return (
@@ -9,8 +11,15 @@ export default function Testimonials() {
         <title>Testimonials | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <div className="text-center text-white bg-gradient-to-r from-blue to-blue-light px-3 pt-32 lg:pt-44 lg:text-xl lg:px-32 pb-24">
-        <div className="font-bold text-6xl">Testimonials</div>
-        <div className="px-20 py-6">See what they&apos;re saying</div>
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepRight}
+        >
+          <div className="font-bold text-6xl">Testimonials</div>
+          <div className="px-20 py-6">See what they&apos;re saying</div>
+        </motion.div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-3 xl:mx-32 pt-24">
