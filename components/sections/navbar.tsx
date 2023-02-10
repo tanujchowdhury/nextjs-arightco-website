@@ -108,14 +108,8 @@ export default function Navbar({}) {
               variants={hoverMenuAnimate}
             >
               <div className="absolute flex flex-col justify-around bg-white shadow rounded-lg w-36">
-              <Link
-                  className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
-                  href="/blog"
-                >
-                  Blog
-                </Link>
                 <Link
-                  className="pt-2 px-4 pb-2 hover:bg-orange-dark"
+                  className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
                   href="/case-studies"
                 >
                   Case Studies
@@ -136,7 +130,7 @@ export default function Navbar({}) {
             onHoverEnd={() => setContact(false)}
           >
             <div className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm">
-              Contact&nbsp;
+              Contact Us
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -162,7 +156,13 @@ export default function Navbar({}) {
                   className="pt-2 px-4 pb-2 rounded-t-lg hover:bg-orange-dark"
                   href="/contact-us"
                 >
-                  Contact Us
+                  Contact
+                </Link>
+                <Link
+                  className="pt-2 px-4 pb-2 hover:bg-orange-dark"
+                  href="/careers"
+                >
+                  Careers
                 </Link>
                 <Link
                   className="pt-2 px-4 pb-2 rounded-b-lg hover:bg-orange-dark"
@@ -175,8 +175,8 @@ export default function Navbar({}) {
           </motion.div>
 
           <div className="mx-2 px-3 max-[1100px]:text-sm">
-            <Link className="hover:text-orange-dark" href="/careers">
-              Careers
+            <Link className="hover:text-orange-dark" href="/blog">
+              Blog
             </Link>
           </div>
         </div>
