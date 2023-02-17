@@ -30,14 +30,14 @@ export default function CaseStudies() {
       <div className="mt-20">
         <RecentCaseStudies>
           <CaseStudyCard
-            src={"/casestudies/images/nex.png"}
+            src={"/case-studies/images/nex.png"}
             alt={"Nexient NTT Data"}
             title={"Nexient NTT Data"}
             href={"/case-studies/nexient-ntt-data"}
             date={"March 1, 2022"}
           />
           <CaseStudyCard
-            src={"/casestudies/images/49ers.png"}
+            src={"/case-studies/images/49ers.png"}
             alt={"49ers Academy"}
             title={"49ers Academy"}
             href={"/case-studies/49ers-academy"}
