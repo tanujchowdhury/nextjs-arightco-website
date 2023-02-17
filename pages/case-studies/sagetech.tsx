@@ -13,7 +13,7 @@ export default function Sagetech() {
         industry={"MANUFACTURING"}
         date={"March 1, 2022"}
         imagesrc={"/case-studies/images/sage.png"}
-        pdfsrc={"/case-studies/pdfs/sage.pdf"}
+        pdfsrc={"/case-studies/pdfs/sage.pdf#toolbar=0"}
       />
     </Layout>
   );

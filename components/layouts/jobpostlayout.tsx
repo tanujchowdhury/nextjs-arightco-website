@@ -13,12 +13,14 @@ export default function JobPostLayout({
   jobType,
   jobLocation,
   value,
+  pdf,
 }: {
   jobTitle: string;
   jobCategory: string;
   jobType: string;
   jobLocation: string;
   value: string;
+  pdf?: string;
 }) {
   return (
     <>
@@ -71,10 +73,17 @@ export default function JobPostLayout({
             Job Location:&nbsp;
             <div className="font-normal">{jobLocation}</div>
           </div>
+          <iframe
+            src={pdf}
+            width="100%"
+            height="719px"
+          ></iframe>
         </div>
         <div className="flex flex-col text-black border p-8 bg-white w-full md:basis-1/2 mt-8 md:mt-0">
           <div className="text-2xl font-bold">Apply for this position</div>
-          <div className="text-sm text-gray mb-4 md:mb-0">All fields are required</div>
+          <div className="text-sm text-gray mb-4 md:mb-0">
+            All fields are required
+          </div>
           <form
             target="_blank"
             action="https://formsubmit.co/71bf94915cca9b128e6c9fbb3de5f642"
@@ -124,7 +133,12 @@ export default function JobPostLayout({
               <label className="text-xl font-bold" htmlFor="experience">
                 Select Experience
               </label>
-              <select id="experience" name="Experience" className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest mb-4" required>
+              <select
+                id="experience"
+                name="Experience"
+                className="shadow appearance-none border rounded-full p-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-lightest mb-4"
+                required
+              >
                 <option value="0-3 Years">0-3 Years</option>
                 <option value="3-6 Years">3-6 Years</option>
                 <option value="6-9 Years">6-9 Years</option>
@@ -153,7 +167,7 @@ export default function JobPostLayout({
                 required
               />
               <label className="text-gray" htmlFor="resume">
-              Allowed Types: .pdf, .doc, .docx
+                Allowed Types: .pdf, .doc, .docx
               </label>
 
               <button

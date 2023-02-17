@@ -14,6 +14,7 @@ export default function ControllerUS() {
         jobType={"Full Time"}
         jobLocation={"US"}
         value={"New Controller US Job Application!"}
+        pdf={"/careers/Controller- Sr Level- Job Profile-2022.pdf#toolbar=0"}
       />
     </Layout>
   );

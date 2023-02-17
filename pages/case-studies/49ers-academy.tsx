@@ -13,7 +13,7 @@ export default function FortyNinersAcademy() {
         industry={"NON-PROFIT"}
         date={"March 1, 2022"}
         imagesrc={"/case-studies/images/49ers.png"}
-        pdfsrc={"/case-studies/pdfs/49ers.pdf"}
+        pdfsrc={"/case-studies/pdfs/49ers.pdf#toolbar=0"}
       />
     </Layout>
   );
