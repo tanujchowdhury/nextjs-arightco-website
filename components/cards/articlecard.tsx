@@ -3,15 +3,13 @@ import Link from "next/link";
 
 export default function ArticleCard({
   src,
-  alt,
-  title,
   href,
+  title,
   date,
 }: {
   src: string;
-  alt: string;
-  title: string;
   href: string;
+  title: string;
   date: string;
 }) {
   //to make {title} wrap, add this to className: whitespace-nowrap text-ellipsis overflow-hidden
@@ -19,7 +17,7 @@ export default function ArticleCard({
     <Link href={href}>
       <div className="relative flex flex-col drop-shadow-sm transition duration-300 rounded-md hover:drop-shadow-xl bg-white group">
         <div className="w-full">
-          <Image src={src} alt={alt} width={500} height={500} className="rounded-t-md" />
+          <Image src={src} alt={title} width={500} height={500} className="rounded-t-md" />
         </div>
         <div className="absolute top-0 right-0 mt-2 mr-2 p-1 bg-orange rounded-full text-sm text-white">ARTICLE</div>
         <div className="basis-4/12 border-b-[1px]">

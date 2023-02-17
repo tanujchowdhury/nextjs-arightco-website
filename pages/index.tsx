@@ -263,10 +263,9 @@ export default function Home() {
         </div>
         <RecentPosts>
           <ArticleCard
-            src={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"}
-            alt={"Leverage Outsourced CFO Services to Achieve Business Goals"}
-            title={"Leverage Outsourced CFO Services to Achieve Business Goals"}
-            href={"/blog/leverage-outsourced-cfo-services-to-achieve-business-goals"}
+            src={"/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"}
+            href={"/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"}
+            title={"You Should Leverage Outsourced CFO Services to Achieve Business Goals"}
             date={"February 3, 2023"}
           ></ArticleCard>
           <CaseStudyCard

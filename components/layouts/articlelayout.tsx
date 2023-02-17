@@ -37,12 +37,11 @@ export default function ArticleLayout({
       <RecentArticles>
         <ArticleCard
           src={
-            "/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
+            "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
           }
-          alt={"Leverage Outsourced CFO Services to Achieve Business Goals"}
-          title={"Leverage Outsourced CFO Services to Achieve Business Goals"}
+          title={"You Should Leverage Outsourced CFO Services to Achieve Business Goals"}
           href={
-            "/blog/leverage-outsourced-cfo-services-to-achieve-business-goals"
+            "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"
           }
           date={"February 3, 2023"}
         />

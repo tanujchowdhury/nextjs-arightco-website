@@ -7,16 +7,16 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
   return (
     <Layout>
       <ArticleLayout
-        title={"Leverage Outsourced CFO Services to Achieve Business Goals"}
+        title={"You Should Leverage Outsourced CFO Services to Achieve Business Goals"}
         industry={"Finance"}
         date={"February 3, 2023"}
         content={
           <div className="flex flex-col gap-4 pt-4">
             <Image
               src={
-                "/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
+                "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
               }
-              alt={"Leverage Outsourced CFO Services to Achieve Business Goals"}
+              alt={"You Should Leverage Outsourced CFO Services to Achieve Business Goals"}
               width={500}
               height={500}
               className="rounded-lg"
@@ -108,7 +108,7 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
           </div>
         }
         src={
-          "/blog/leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
+          "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
         }
       />
     </Layout>
