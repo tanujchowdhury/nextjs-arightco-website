@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { sweepRight } from "../components/animations";
 import CaseStudyCard from "../components/cards/casestudycard";
 import Layout from "../components/layouts/layout";
 import RecentCaseStudies from "../components/sections/recentposts";

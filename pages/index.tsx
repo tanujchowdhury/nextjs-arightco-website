@@ -14,7 +14,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { motion } from "framer-motion";
 import Head from "next/head";
 import Card from "../components/cards/card";
 import { InfoCard } from "../components/cards/infocard";
@@ -244,37 +243,42 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-2">
-            <Link href="/case-studies">
+            <Link href="/blog">
               <button className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer">
                 More Articles
               </button>
             </Link>
           </div>
         </div>
-        <RecentPosts>
-          <ArticleCard
-            src={"/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"}
-            href={"/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"}
-            title={"You Should Leverage Outsourced CFO Services to Achieve Business Goals"}
-            date={"February 3, 2023"}
-          ></ArticleCard>
-          <CaseStudyCard
-            src={"/casestudies/images/nex.png"}
-            alt={"Nexient NTT Data"}
-            title={"Nexient NTT Data"}
-            href={"/nexient-ntt-data"}
-            date={"March 1, 2022"}
-          />
-          <CaseStudyCard
-            src={"/casestudies/images/49ers.png"}
-            alt={"49ers Academy"}
-            title={"49ers Academy"}
-            href={"/49ers-academy"}
-            date={"March 1, 2022"}
-          />
-        </RecentPosts>
       </motion.div>
-      <RecentArticles />
+      <RecentPosts>
+        <ArticleCard
+          src={
+            "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
+          }
+          href={
+            "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"
+          }
+          title={
+            "You Should Leverage Outsourced CFO Services to Achieve Business Goals"
+          }
+          date={"February 3, 2023"}
+        ></ArticleCard>
+        <CaseStudyCard
+          src={"/casestudies/images/nex.png"}
+          alt={"Nexient NTT Data"}
+          title={"Nexient NTT Data"}
+          href={"/nexient-ntt-data"}
+          date={"March 1, 2022"}
+        />
+        <CaseStudyCard
+          src={"/casestudies/images/49ers.png"}
+          alt={"49ers Academy"}
+          title={"49ers Academy"}
+          href={"/49ers-academy"}
+          date={"March 1, 2022"}
+        />
+      </RecentPosts>
     </Layout>
   );
 }
