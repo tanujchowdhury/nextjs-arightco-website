@@ -265,17 +265,17 @@ export default function Home() {
           date={"February 3, 2023"}
         ></ArticleCard>
         <CaseStudyCard
-          src={"/casestudies/images/nex.png"}
+          src={"/case-studies/images/nex.png"}
           alt={"Nexient NTT Data"}
           title={"Nexient NTT Data"}
-          href={"/nexient-ntt-data"}
+          href={"/case-studies/nexient-ntt-data"}
           date={"March 1, 2022"}
         />
         <CaseStudyCard
-          src={"/casestudies/images/49ers.png"}
+          src={"/case-studies/images/49ers.png"}
           alt={"49ers Academy"}
           title={"49ers Academy"}
-          href={"/49ers-academy"}
+          href={"/case-studies/49ers-academy"}
           date={"March 1, 2022"}
         />
       </RecentPosts>

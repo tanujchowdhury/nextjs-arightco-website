@@ -36,9 +36,9 @@ export default function CaseStudyLayout({
 
       <iframe
         src={pdfsrc}
-        width="80%"
+        width="100%"
         height="1000px"
-        className="mx-auto p-3"
+        className="mx-auto p-3 lg:px-32"
       ></iframe>
 
       <div className="text-2xl lg:text-4xl lg:ml-32 mt-20 m-3 font-bold">
@@ -46,24 +46,24 @@ export default function CaseStudyLayout({
       </div>
       <RecentCaseStudies>
         <CaseStudyCard
-          src={"/casestudies/images/nex.png"}
+          src={"/case-studies/images/nex.png"}
           alt={"Nexient NTT Data"}
           title={"Nexient NTT Data"}
-          href={"/nexient-ntt-data"}
+          href={"/case-studies/nexient-ntt-data"}
           date={"March 1, 2022"}
         />
         <CaseStudyCard
-          src={"/casestudies/images/49ers.png"}
+          src={"/case-studies/images/49ers.png"}
           alt={"49ers Academy"}
           title={"49ers Academy"}
-          href={"/49ers-academy"}
+          href={"/case-studies/49ers-academy"}
           date={"March 1, 2022"}
         />
         <CaseStudyCard
-          src={"/casestudies/images/sage.png"}
+          src={"/case-studies/images/sage.png"}
           alt={"Sagetech"}
           title={"Sagetech"}
-          href={"/sagetech"}
+          href={"/case-studies/sagetech"}
           date={"March 1, 2022"}
         />
       </RecentCaseStudies>

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { sweepRight } from "../components/animations";
-import CaseStudyCard from "../components/cards/casestudycard";
-import Layout from "../components/layouts/layout";
-import RecentCaseStudies from "../components/sections/recentposts";
+import { sweepRight } from "../../components/animations";
+import CaseStudyCard from "../../components/cards/casestudycard";
+import Layout from "../../components/layouts/layout";
+import RecentCaseStudies from "../../components/sections/recentposts";
 
 export default function CaseStudies() {
   return (
@@ -33,21 +33,21 @@ export default function CaseStudies() {
             src={"/casestudies/images/nex.png"}
             alt={"Nexient NTT Data"}
             title={"Nexient NTT Data"}
-            href={"/nexient-ntt-data"}
+            href={"/case-studies/nexient-ntt-data"}
             date={"March 1, 2022"}
           />
           <CaseStudyCard
             src={"/casestudies/images/49ers.png"}
             alt={"49ers Academy"}
             title={"49ers Academy"}
-            href={"/49ers-academy"}
+            href={"/case-studies/49ers-academy"}
             date={"March 1, 2022"}
           />
           <CaseStudyCard
-            src={"/casestudies/images/sage.png"}
+            src={"/case-studies/images/sage.png"}
             alt={"Sagetech"}
             title={"Sagetech"}
-            href={"/sagetech"}
+            href={"/case-studies/sagetech"}
             date={"March 1, 2022"}
           />
         </RecentCaseStudies>
