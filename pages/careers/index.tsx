@@ -45,13 +45,6 @@ export default function Careers() {
             jobLocation={"India"}
             href={"/careers/sr-associate-accountant-india"}
           />
-          <JobCard
-            jobTitle={"HR Generalist"}
-            jobCategory={"Human Resources"}
-            jobType={"Full Time"}
-            jobLocation={"US"}
-            href={"/careers/hr-generalist-us"}
-          />
         </div>
       </div>
     </Layout>

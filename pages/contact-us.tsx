@@ -11,6 +11,8 @@ import Link from "next/link";
 import IconGroup from "../components/icongroup";
 import OfficeMap from "../components/sections/officemap";
 import Section from "../components/sections/section";
+import { motion } from "framer-motion";
+import { sweepLeft, sweepRight } from "../components/animations";
 
 export default function ContactUs() {
   return (
@@ -28,7 +30,13 @@ export default function ContactUs() {
       />
 
       <div className="flex flex-col lg:flex-row min-[1350px]:mx-28">
-        <div className="pt-10 px-10 lg:basis-1/2 lg:order-2">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepLeft}
+          className="pt-10 px-10 lg:basis-1/2 lg:order-2"
+        >
           <div className="text-sm md:text-base text-orange font-bold">
             VISIT US
           </div>
@@ -68,8 +76,13 @@ export default function ContactUs() {
             text={["(408) 837-0029"]}
             href1={"tel:+1(408)8370029"}
           />
-        </div>
-        <div className="mt-10 mx-5 p-5 bg-white rounded-3xl shadow-lg lg:basis-1/2 lg:order-1 lg:shadow-2xl">
+        </motion.div>
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepRight}
+         className="mt-10 mx-5 p-5 bg-white rounded-3xl shadow-lg lg:basis-1/2 lg:order-1 lg:shadow-2xl">
           <div className="text-sm md:text-base text-orange font-bold">
             SEND US A MESSAGE
           </div>
@@ -85,7 +98,11 @@ export default function ContactUs() {
             action="https://formsubmit.co/62490fb5a4309c0a244d0936b1752f3a"
             method="POST"
           >
-            <input type="hidden" name="_next" value="https://arightco.vercel.app/thanks" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://arightco.vercel.app/thanks"
+            />
             <input type="hidden" name="_subject" value="New Quote Request!" />
             <div className="grid md:grid-cols-2 gap-4 pt-7">
               <input
@@ -154,7 +171,7 @@ export default function ContactUs() {
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
       <div className="text-xl md:text-2xl text-blue font-bold mx-5 xl:mx-32 mt-20">
         <Link

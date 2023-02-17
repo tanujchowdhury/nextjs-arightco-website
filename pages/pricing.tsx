@@ -6,8 +6,9 @@ import { useState } from "react";
 import Layout from "../components/layouts/layout";
 import PricingModel from "../components/sections/pricingmodel";
 import EstimateModal from "../components/modals/estimatemodal";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ServiceCard from "../components/cards/servicecard";
+import { sweepLeft, sweepRight } from "../components/animations";
 
 export default function Pricing() {
   const [estimateModalOpen, setEstimateModalOpen] = useState(false);
@@ -20,7 +21,12 @@ export default function Pricing() {
         <title>Pricing | Finance & Accounting Solutions | ArightCo</title>
       </Head>
       <div className="py-32 lg:py-44 xl:py-52  bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center justify-center text-white lg:flex-row px-3 sm:px-6 md:px-12 lg:px-24 xl:px-32">
-        <div className="flex flex-col items-center justify-center lg:basis-1/2 lg:items-start">
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepRight}
+         className="flex flex-col items-center justify-center lg:basis-1/2 lg:items-start">
           <div className="flex flex-row items-center justify-center font-bold">
             <div className="pr-2 hover:text-orange-dark">
               <Link href="/">Home</Link>
@@ -32,8 +38,13 @@ export default function Pricing() {
           </div>
 
           <div className="text-6xl font-bold pt-6">Pricing</div>
-        </div>
-        <div className="flex flex-col items-center justify-center pt-10 lg:basis-1/2 lg:items-start">
+        </motion.div>
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sweepLeft}
+         className="flex flex-col items-center justify-center pt-10 lg:basis-1/2 lg:items-start">
           <div className="pt-5 text-center lg:text-start lg:text-lg">
             Our pricing models are based on the industry in which you operate
             and the stage of growth your business is currently in. Each tier
@@ -41,7 +52,7 @@ export default function Pricing() {
             ensure your specific needs are met. Our services offer endless
             scalability, growing with you
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 pt-20 lg:flex-row">
         <Link href="#SAAS" scroll={false}>
