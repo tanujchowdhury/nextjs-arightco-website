@@ -8,7 +8,7 @@ The UI was replicated from a previous version from a different team of developer
 
 ## Review
 
-I worked with the leadership and marketing teams to get feedback. Upcoming features include a blog page with CRUD functionallity and the Pricing page's UI overhaul.
+I worked with the leadership and marketing teams to get feedback. Upcoming features include a blog page with CRUD functionallity and a UI overhaul for the pricing page.
 
 ## Ship
 
