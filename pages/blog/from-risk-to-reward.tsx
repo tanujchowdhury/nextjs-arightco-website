@@ -8,7 +8,7 @@ export default function FromRiskToReward() {
     <Layout>
       <ArticleLayout
         title={
-          "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
+          "From Risk to Reward: 4 Ways to Mitigate Your Start-Up&apos;s Financial Risks"
         }
         industry={"Banking"}
         date={"April 6, 2023"}
@@ -31,7 +31,7 @@ export default function FromRiskToReward() {
               team of experienced certified public accountants and chartered
               accountants are committed to helping new start-ups navigate
               financial uncertainties with ease. We understand that financial
-              management can be intimidating, and we're here to guide you every
+              management can be intimidating, and we&apos;re here to guide you every
               step of the way. With ArightCo you can turn financial risks into
               rewards and achieve your business goals.
             </div>
@@ -41,17 +41,17 @@ export default function FromRiskToReward() {
               right bank for your business. This is an essential decision, as
               your bank will be your financial partner throughout your business
               journey. At ArightCo, we help you choose a reputable bank that has
-              a history of providing excellent service to small businesses. It's
+              a history of providing excellent service to small businesses. It&apos;s
               also important to look for a bank that offers stability in the
               marketplace as well as other such features including online
               banking, low fees, access to live customer service, up to date
               banking technology, and small business loans to help you manage
               your finances effectively. We find the best banking options that
-              suit your business's unique needs.
+              suit your business&apos;s unique needs.
             </div>
             <div className="text-xl font-bold">Manage Cash Flow</div>
             <div>
-              Once you&apos;ve found the right bank, it's time to focus on cash
+              Once you&apos;ve found the right bank, it&apos;s time to focus on cash
               flow management. This is an area that many new business owners
               overlook, but it is crucial to keeping your business running
               smoothly. Our team at ArightCo will help you monitor your cash
@@ -101,7 +101,7 @@ export default function FromRiskToReward() {
               a customized financial plan that meets your unique needs and
               goals. We&apos;ll work with you every step of the way to assess
               risks effectively, so you can focus on growing your business. Let
-              us get you ready to take control of your business's financial
+              us get you ready to take control of your business&apos;s financial
               risks and turn them into rewards, connect with an ArightCo expert
               today to&nbsp;
               <span>
