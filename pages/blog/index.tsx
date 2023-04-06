@@ -28,6 +28,14 @@ export default function Blog() {
       </div>
       <div className="mt-20">
         <RecentArticles>
+        <ArticleCard
+            src={"/blog/from-risk-to-reward.png"}
+            title={
+              "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
+            }
+            href={"/blog/from-risk-to-reward"}
+            date={"April 6, 2023"}
+          />
           <ArticleCard
             src={
               "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
@@ -40,6 +48,7 @@ export default function Blog() {
             }
             date={"February 3, 2023"}
           />
+
         </RecentArticles>
       </div>
     </Layout>

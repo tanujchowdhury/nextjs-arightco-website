@@ -253,6 +253,14 @@ export default function Home() {
       </motion.div>
       <RecentPosts>
         <ArticleCard
+          src={"/blog/from-risk-to-reward.png"}
+          title={
+            "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
+          }
+          href={"/blog/from-risk-to-reward"}
+          date={"April 6, 2023"}
+        />
+        <ArticleCard
           src={
             "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
           }
@@ -269,13 +277,6 @@ export default function Home() {
           alt={"Nexient NTT Data"}
           title={"Nexient NTT Data"}
           href={"/case-studies/nexient-ntt-data"}
-          date={"March 1, 2022"}
-        />
-        <CaseStudyCard
-          src={"/case-studies/images/49ers.png"}
-          alt={"49ers Academy"}
-          title={"49ers Academy"}
-          href={"/case-studies/49ers-academy"}
           date={"March 1, 2022"}
         />
       </RecentPosts>
