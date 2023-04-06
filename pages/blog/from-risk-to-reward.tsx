@@ -8,7 +8,7 @@ export default function FromRiskToReward() {
     <Layout>
       <ArticleLayout
         title={
-          "From Risk to Reward: 4 Ways to Mitigate Your Start-Up&apos;s Financial Risks"
+          "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
         }
         industry={"Banking"}
         date={"April 6, 2023"}
