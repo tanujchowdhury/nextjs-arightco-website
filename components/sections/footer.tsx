@@ -56,7 +56,7 @@ export default function Footer({}) {
               </Link>
             </div>
           </div>
-          <div className="text-white text-center lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
+          <div className="flex flex-col text-white text-center lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Useful Links</div>
             <div className="text-sm py-1 lg:text-base">
               <Link href="/contact-us" className="hover:text-orange">
@@ -90,43 +90,56 @@ export default function Footer({}) {
               </Link>
             </div>
           </div>
-          <div className="text-white text-center pt-8 lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
+          <div className="flex flex-col text-white text-center pt-8 lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Latest Posts</div>
             <div className="py-1">
               <div className="pt-1 lg:text-base">
-                <Link href="/nexient-ntt-data" className="hover:text-orange">
+                <Link
+                  href="/blog/from-risk-to-reward"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                >
+                  From Risk to Reward: 4 Ways to Mitigate Your Start-Up's
+                  Financial Risks
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">April 6, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/from-risk-to-reward">Read More...</Link>
+              </div>
+            </div>
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
+                  href="/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                >
+                  You Should Leverage Outsourced CFO Services to Achieve
+                  Business Goals
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">February 3, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals">
+                  Read More...
+                </Link>
+              </div>
+            </div>
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
+                  href="/case-studies/nexient-ntt-data"
+                  className="hover:text-orange"
+                >
                   Nexient NTT Data
                 </Link>
               </div>
               <div className="text-gray-light text-sm">March 1, 2022</div>
               <div className="text-orange text-sm">
-                <Link href="/nexient-ntt-data">Read More...</Link>
-              </div>
-            </div>
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link href="/49ers-academy" className="hover:text-orange">
-                  49ers Academy
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">March 1, 2022</div>
-              <div className="text-orange text-sm">
-                <Link href="/49ers-academy">Read More...</Link>
-              </div>
-            </div>
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link href="/sagetech" className="hover:text-orange">
-                  Sagetech
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">March 1, 2022</div>
-              <div className="text-orange text-sm">
-                <Link href="/sagetech">Read More...</Link>
+                <Link href="/case-studies/nexient-ntt-data">Read More...</Link>
               </div>
             </div>
           </div>
-          <div className="text-white text-center pt-8 pb-5 lg:pl-10 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
+          <div className="flex flex-col text-white text-center pt-8 pb-5 lg:pl-10 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Company</div>
             <div className="text-sm py-1 lg:text-base">
               <Link href="/company-overview" className="hover:text-orange">
