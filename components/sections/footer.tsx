@@ -98,7 +98,7 @@ export default function Footer({}) {
                   href="/blog/from-risk-to-reward"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
                 >
-                  From Risk to Reward: 4 Ways to Mitigate Your Start-Up's
+                  From Risk to Reward: 4 Ways to Mitigate Your Start-Up&apos;s
                   Financial Risks
                 </Link>
               </div>
