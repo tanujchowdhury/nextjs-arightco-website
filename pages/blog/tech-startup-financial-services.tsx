@@ -85,11 +85,11 @@ export default function TechStartupFinancialServices() {
             </div>
             <div>
               Don&apos;t just take our word for it, Tom Furey, CEO of Sagetech
-              Avionics, said, "Utilizing ArightCo&apos;s accounting and human
+              Avionics, said, &ldquo;Utilizing ArightCo&apos;s accounting and human
               resource services has created value for Sagetech Avionics in
               multiple dimensions: reducing costs, improving the breadth of
               skills available to our leadership team, and eliminating non-core
-              tasks from our daily calendars."
+              tasks from our daily calendars.&rdquo;
             </div>
             <div>
               At ArightCo, we are passionate about helping tech-based start-ups
