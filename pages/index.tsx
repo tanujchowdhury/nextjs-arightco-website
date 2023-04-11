@@ -19,7 +19,7 @@ import Card from "../components/cards/card";
 import { InfoCard } from "../components/cards/infocard";
 import Intro from "../components/sections/intro";
 import Layout from "../components/layouts/layout";
-import RecentPosts from "../components/sections/recentposts";
+import RecentArticles from "../components/sections/recentarticles";
 import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
@@ -251,7 +251,13 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-      <RecentPosts>
+      <RecentArticles>
+        <ArticleCard
+          src={"/blog/tech-startup-financial-services.png"}
+          href={"/blog/tech-startup-financial-services"}
+          title={"So, Your Tech Start-Up Needs Fractional Financial Services"}
+          date={"April 11, 2023"}
+        />
         <ArticleCard
           src={"/blog/from-risk-to-reward.png"}
           title={
@@ -271,15 +277,8 @@ export default function Home() {
             "You Should Leverage Outsourced CFO Services to Achieve Business Goals"
           }
           date={"February 3, 2023"}
-        ></ArticleCard>
-        <CaseStudyCard
-          src={"/case-studies/images/nex.png"}
-          alt={"Nexient NTT Data"}
-          title={"Nexient NTT Data"}
-          href={"/case-studies/nexient-ntt-data"}
-          date={"March 1, 2022"}
         />
-      </RecentPosts>
+      </RecentArticles>
     </Layout>
   );
 }

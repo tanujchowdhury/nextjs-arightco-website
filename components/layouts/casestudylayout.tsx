@@ -1,5 +1,5 @@
 import Image from "next/image";
-import RecentCaseStudies from "../sections/recentposts";
+import RecentCaseStudies from "../sections/recentarticles";
 import Head from "next/head";
 import CaseStudyCard from "../cards/casestudycard";
 

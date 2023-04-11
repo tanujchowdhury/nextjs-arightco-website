@@ -3,7 +3,7 @@ import Head from "next/head";
 import { sweepRight } from "../../components/animations";
 import ArticleCard from "../../components/cards/articlecard";
 import Layout from "../../components/layouts/layout";
-import RecentArticles from "../../components/sections/recentposts";
+import RecentArticles from "../../components/sections/recentarticles";
 
 export default function Blog() {
   return (
@@ -28,7 +28,13 @@ export default function Blog() {
       </div>
       <div className="mt-20">
         <RecentArticles>
-        <ArticleCard
+          <ArticleCard
+            src={"/blog/tech-startup-financial-services.png"}
+            href={"/blog/tech-startup-financial-services"}
+            title={"So, Your Tech Start-Up Needs Fractional Financial Services"}
+            date={"April 11, 2023"}
+          />
+          <ArticleCard
             src={"/blog/from-risk-to-reward.png"}
             title={
               "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
@@ -48,7 +54,6 @@ export default function Blog() {
             }
             date={"February 3, 2023"}
           />
-
         </RecentArticles>
       </div>
     </Layout>

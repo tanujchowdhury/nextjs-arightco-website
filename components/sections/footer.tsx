@@ -95,6 +95,20 @@ export default function Footer({}) {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
+                  href="/blog/tech-startup-financial-services"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                >
+                  So, Your Tech Start-Up Needs Fractional Financial Services
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">April 11, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/tech-startup-financial-services">Read More...</Link>
+              </div>
+            </div>
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
                   href="/blog/from-risk-to-reward"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
                 >
@@ -122,20 +136,6 @@ export default function Footer({}) {
                 <Link href="/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals">
                   Read More...
                 </Link>
-              </div>
-            </div>
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/case-studies/nexient-ntt-data"
-                  className="hover:text-orange"
-                >
-                  Nexient NTT Data
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">March 1, 2022</div>
-              <div className="text-orange text-sm">
-                <Link href="/case-studies/nexient-ntt-data">Read More...</Link>
               </div>
             </div>
           </div>
