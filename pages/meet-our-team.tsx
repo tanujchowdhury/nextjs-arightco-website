@@ -141,7 +141,7 @@ export default function MeetOurTeam() {
           <TeamCard
             src={"/team/Catherine-Phelps.png"}
             name={"Catherine Phelps"}
-            title={"Accountant"}
+            title={"HR Director"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -153,13 +153,13 @@ export default function MeetOurTeam() {
           <TeamCard
             src={"/team/Desmond-DeCaires.png"}
             name={"Desmond DeCaires"}
-            title={"Accountant"}
+            title={"Controller"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
             src={"/team/Dipanwita-Saha.png"}
             name={"Dipanwita Saha"}
-            title={"Accountant"}
+            title={"HR Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -201,7 +201,7 @@ export default function MeetOurTeam() {
           <TeamCard
             src={"/team/Sundeep-Ojha.png"}
             name={"Sundeep Ojha"}
-            title={"Accountant"}
+            title={"GM, India Operations"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
