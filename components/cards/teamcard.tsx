@@ -18,16 +18,26 @@ export default function TeamCard({
   title,
   href,
   text,
+  longTitle,
 }: {
   src: string;
   name: string;
   title: string;
   href: string;
   text?: string;
+  longTitle?: boolean;
 }) {
   const [bio, setBio] = useState(false);
   const closeBio = () => setBio(false);
   const openBio = () => setBio(true);
+
+  let namePosition: string | undefined;
+
+  if (longTitle) {
+    namePosition = "absolute text-white font-bold bottom-12"
+  } else {
+    namePosition = "absolute text-white font-bold bottom-8"
+  }
 
   return (
     <>
@@ -36,11 +46,12 @@ export default function TeamCard({
         whileInView="visible"
         viewport={{ once: true }}
         variants={sweepRight}
+        className="overflow-hidden"
       >
         <motion.div
           initial="initial"
           whileHover="hover"
-          className="mx-3 relative flex flex-col items-center justify-center rounded-3xl m-5 cursor-pointer"
+          className="mx-3 relative flex flex-col items-center justify-center rounded-3xl m-5 cursor-pointer max-w-[300px]"
           onClick={() => (bio ? closeBio() : openBio())}
         >
           <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b-white-transparent rounded-3xl" />
@@ -54,7 +65,7 @@ export default function TeamCard({
           ></Image>
           <motion.div
             variants={nameVariant}
-            className="absolute text-white font-bold bottom-12"
+            className={namePosition}
           >
             {name}
           </motion.div>
