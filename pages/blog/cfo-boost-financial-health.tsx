@@ -25,7 +25,7 @@ export default function CFOBoostFinancialHealth() {
               As a Chief Finance Officer (CFO) I understand your primary focus
               may be on developing your product or service, gaining traction in
               the market, and building a team to support your growth. While
-              these are critical aspects of any start-up, it's also important to
+              these are critical aspects of any start-up, it&apos;s also important to
               consider the role of a Chief Financial Officer (CFO) in mitigating
               risks and boosting performance. If your business is struggling
               with these areas, I&apos;d like to share three ways a CFO can help
@@ -34,7 +34,7 @@ export default function CFOBoostFinancialHealth() {
             <div className="text-xl font-bold">SWOT Analysis</div>
             <div>
               A SWOT analysis is a strategic planning tool used to assess your
-              company's current situation and plan for the future. By conducting
+              company&apos;s current situation and plan for the future. By conducting
               a SWOT analysis, a CFO can help your start-up identify potential
               risks and opportunities, then develop a plan to address them. Some
               factors considered are:
@@ -62,7 +62,7 @@ export default function CFOBoostFinancialHealth() {
                 </li>
                 <li>
                   <span className="font-bold italic">Threats:&nbsp;</span>
-                  External factors that could harm your start-up's success. Some
+                  External factors that could harm your start-up&apos;s success. Some
                   of these threats may include competition, changing
                   regulations, and economic downturns.
                 </li>
@@ -73,7 +73,7 @@ export default function CFOBoostFinancialHealth() {
               Let&apos;s face it most start-ups will not survive without outside
               funding. Raising capital is a critical part of growing any
               start-up. However, it can be challenging to secure funding in
-              today's competitive market. When it comes to negotiating financing
+              today&apos;s competitive market. When it comes to negotiating financing
               terms, you want a chief financial officer who can help you secure
               the best possible arrangement for your company - this is where a
               CFO truly shines. CFOs can work with current and potential
@@ -87,7 +87,7 @@ export default function CFOBoostFinancialHealth() {
             <div className="text-xl font-bold">Trust and Credibility</div>
             <div>
               Do not underestimate the power of trust. A CFO can help build
-              trust by ensuring that the company's financial report card is
+              trust by ensuring that the company&apos;s financial report card is
               accurate, reliable, and transparent. Building your start-up’s
               credibility at the same time; which is essential for any business
               to grow and succeed. Investors, partners, and customers need to
@@ -95,14 +95,14 @@ export default function CFOBoostFinancialHealth() {
               manner.
             </div>
             <div>
-              CFOs play a vital role in maintaining the company's financial
+              CFOs play a vital role in maintaining the company&apos;s financial
               integrity. Investors and stakeholders want to know that your
               start-up is financially stable and well-managed. A knowledgeable
               CFO can help you achieve this by implementing strong financial
               controls, developing accurate financial statements, and providing
               financial analysis and forecasting. By working with auditors and
-              regulators, CFOs help ensure that the company's financial
-              statements provide an accurate picture of the company's financial
+              regulators, CFOs help ensure that the company&apos;s financial
+              statements provide an accurate picture of the company&apos;s financial
               health.
             </div>
             <div>
