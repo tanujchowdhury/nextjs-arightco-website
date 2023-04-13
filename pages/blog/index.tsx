@@ -29,6 +29,14 @@ export default function Blog() {
       <div className="mt-20">
         <RecentArticles>
           <ArticleCard
+            src={"/blog/cfo-boost-financial-health.png"}
+            href={"/blog/cfo-boost-financial-health"}
+            title={
+              "Your Start-up's at  Risk! How A CFO Can Boost Your Company's Financial Health"
+            }
+            date={"April 13, 2023"}
+          />
+          <ArticleCard
             src={"/blog/tech-startup-financial-services.png"}
             href={"/blog/tech-startup-financial-services"}
             title={"So, Your Tech Start-Up Needs Fractional Financial Services"}

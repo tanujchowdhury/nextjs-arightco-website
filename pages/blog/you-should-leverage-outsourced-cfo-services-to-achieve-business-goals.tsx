@@ -18,7 +18,7 @@ export default function LeverageOutsourcedCFOServicesToAchieveBusinessGoals() {
               }
               alt={"You Should Leverage Outsourced CFO Services to Achieve Business Goals"}
               width={500}
-              height={500}
+              height={281}
               className="rounded-lg"
             />
             <div>

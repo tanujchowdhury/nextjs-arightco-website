@@ -253,6 +253,14 @@ export default function Home() {
       </motion.div>
       <RecentArticles>
         <ArticleCard
+          src={"/blog/cfo-boost-financial-health.png"}
+          href={"/blog/cfo-boost-financial-health"}
+          title={
+            "Your Start-up's at  Risk! How A CFO Can Boost Your Company's Financial Health"
+          }
+          date={"April 13, 2023"}
+        />
+        <ArticleCard
           src={"/blog/tech-startup-financial-services.png"}
           href={"/blog/tech-startup-financial-services"}
           title={"So, Your Tech Start-Up Needs Fractional Financial Services"}
@@ -265,18 +273,6 @@ export default function Home() {
           }
           href={"/blog/from-risk-to-reward"}
           date={"April 6, 2023"}
-        />
-        <ArticleCard
-          src={
-            "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
-          }
-          href={
-            "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"
-          }
-          title={
-            "You Should Leverage Outsourced CFO Services to Achieve Business Goals"
-          }
-          date={"February 3, 2023"}
         />
       </RecentArticles>
     </Layout>
