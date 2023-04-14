@@ -22,7 +22,7 @@ export default function ArticleCard({
       whileInView="visible"
       viewport={{ once: true }}
       variants={sweepRight}
-       className="relative flex flex-col drop-shadow-sm transition duration-300 rounded-md hover:drop-shadow-xl bg-white group">
+       className="relative flex flex-col drop-shadow-sm transition duration-300 rounded-md hover:drop-shadow-xl bg-white group max-w-[500px]">
         <div className="w-full">
           <Image src={src} alt={title} width={500} height={281} className="rounded-t-md" />
         </div>
