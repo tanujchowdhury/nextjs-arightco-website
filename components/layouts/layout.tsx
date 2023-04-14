@@ -16,6 +16,7 @@ export default function Layout({
   return (
     <>
       <Head>
+        <script src="https://cdn.pagesense.io/js/arightco/76fdcb3935684ddb9d78f0aec5aa4366.js"></script>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta name="robots" content="all" />
         <meta
@@ -27,7 +28,10 @@ export default function Layout({
       <main>{children}</main>
       <SignUp />
       <Footer />
-      <BackToTopButton startPosition={backToTopButtonStartPosition} target={backToTopButtonTarget} />
+      <BackToTopButton
+        startPosition={backToTopButtonStartPosition}
+        target={backToTopButtonTarget}
+      />
     </>
   );
 }
