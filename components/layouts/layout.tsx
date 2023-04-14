@@ -17,7 +17,6 @@ export default function Layout({
   return (
     <>
       <Head>
-        <Script src="https://cdn.pagesense.io/js/arightco/76fdcb3935684ddb9d78f0aec5aa4366.js"></Script>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta name="robots" content="all" />
         <meta
@@ -25,6 +24,7 @@ export default function Layout({
           content="Reduce costs and give your business predictability with ArightCo’s integrated Finance, Accounting, & Advisory teams."
         />
       </Head>
+      <Script src="https://cdn.pagesense.io/js/arightco/76fdcb3935684ddb9d78f0aec5aa4366.js"></Script>
       <Navbar />
       <main>{children}</main>
       <SignUp />
