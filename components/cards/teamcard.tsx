@@ -40,7 +40,7 @@ export default function TeamCard({
         <motion.div
           initial="initial"
           whileHover="hover"
-          className="mx-3 relative flex flex-col items-center justify-center rounded-3xl m-5 cursor-pointer"
+          className="mx-3 relative flex flex-col items-center justify-center rounded-3xl m-5 cursor-pointer max-w-[300px]"
           onClick={() => (bio ? closeBio() : openBio())}
         >
           <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b-white-transparent rounded-3xl" />
