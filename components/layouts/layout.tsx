@@ -3,6 +3,7 @@ import Footer from "../sections/footer";
 import SignUp from "../sections/signup";
 import Head from "next/head";
 import BackToTopButton from "../backtotopbutton";
+import Script from "next/script";
 
 export default function Layout({
   children,
@@ -16,7 +17,7 @@ export default function Layout({
   return (
     <>
       <Head>
-        <script src="https://cdn.pagesense.io/js/arightco/76fdcb3935684ddb9d78f0aec5aa4366.js"></script>
+        <Script src="https://cdn.pagesense.io/js/arightco/76fdcb3935684ddb9d78f0aec5aa4366.js"></Script>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta name="robots" content="all" />
         <meta
