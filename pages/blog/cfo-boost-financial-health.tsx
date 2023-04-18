@@ -11,7 +11,7 @@ export default function CFOBoostFinancialHealth() {
           "Your Start-up's at  Risk! How A CFO Can Boost Your Company's Financial Health"
         }
         industry={"Finance"}
-        date={"April 13, 2023"}
+        date={"April 18, 2023"}
         content={
           <div className="flex flex-col gap-4 pt-4">
             <Image

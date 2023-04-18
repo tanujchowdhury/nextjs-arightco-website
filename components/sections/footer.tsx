@@ -102,7 +102,7 @@ export default function Footer({}) {
                   Company&apos;s Financial Health
                 </Link>
               </div>
-              <div className="text-gray-light text-sm">April 13, 2023</div>
+              <div className="text-gray-light text-sm">April 18, 2023</div>
               <div className="text-orange text-sm">
                 <Link href="/blog/cfo-boost-financial-health">
                   Read More...

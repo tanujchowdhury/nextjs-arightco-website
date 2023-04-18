@@ -34,7 +34,7 @@ export default function Blog() {
             title={
               "Your Start-up's at  Risk! How A CFO Can Boost Your Company's Financial Health"
             }
-            date={"April 13, 2023"}
+            date={"April 18, 2023"}
           />
           <ArticleCard
             src={"/blog/tech-startup-financial-services.png"}
