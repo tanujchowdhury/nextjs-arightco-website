@@ -95,6 +95,23 @@ export default function Footer({}) {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
+                  href="/blog/cfo-boost-financial-health"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                >
+                  Your Start-up&apos;s at Risk! How A CFO Can Boost Your
+                  Company&apos;s Financial Health
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">April 13, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/cfo-boost-financial-health">
+                  Read More...
+                </Link>
+              </div>
+            </div>
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
                   href="/blog/tech-startup-financial-services"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
                 >
@@ -103,7 +120,9 @@ export default function Footer({}) {
               </div>
               <div className="text-gray-light text-sm">April 11, 2023</div>
               <div className="text-orange text-sm">
-                <Link href="/blog/tech-startup-financial-services">Read More...</Link>
+                <Link href="/blog/tech-startup-financial-services">
+                  Read More...
+                </Link>
               </div>
             </div>
             <div className="py-1">
@@ -119,23 +138,6 @@ export default function Footer({}) {
               <div className="text-gray-light text-sm">April 6, 2023</div>
               <div className="text-orange text-sm">
                 <Link href="/blog/from-risk-to-reward">Read More...</Link>
-              </div>
-            </div>
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
-                >
-                  You Should Leverage Outsourced CFO Services to Achieve
-                  Business Goals
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">February 3, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals">
-                  Read More...
-                </Link>
               </div>
             </div>
           </div>

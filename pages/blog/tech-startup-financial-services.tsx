@@ -16,7 +16,7 @@ export default function TechStartupFinancialServices() {
               src={"/blog/tech-startup-financial-services.png"}
               alt={"Tech Start-Up Financial Services"}
               width={500}
-              height={500}
+              height={281}
               className="rounded-lg"
             />
             <div>

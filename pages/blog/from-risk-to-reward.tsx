@@ -18,7 +18,7 @@ export default function FromRiskToReward() {
               src={"/blog/from-risk-to-reward.png"}
               alt={"From Risk To Reward"}
               width={500}
-              height={500}
+              height={281}
               className="rounded-lg"
             />
             <div>
