@@ -24,10 +24,12 @@ import Section from "../components/sections/section";
 import TestimonialCarousel from "../components/carousels/testimonialcarousel";
 import { sweepDown, sweepLeft, sweepRight } from "../components/animations";
 import Link from "next/link";
-import CaseStudyCard from "../components/cards/casestudycard";
 import ArticleCard from "../components/cards/articlecard";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-export default function Home() {
+export default function Home({ posts }: { posts: any }) {
   return (
     <Layout>
       <Head>
@@ -252,29 +254,36 @@ export default function Home() {
         </div>
       </motion.div>
       <RecentArticles>
-        <ArticleCard
-          src={"/blog/cfo-boost-financial-health.png"}
-          href={"/blog/cfo-boost-financial-health"}
-          title={
-            "Your Start-up's at  Risk! How A CFO Can Boost Your Company's Financial Health"
-          }
-          date={"April 18, 2023"}
-        />
-        <ArticleCard
-          src={"/blog/tech-startup-financial-services.png"}
-          href={"/blog/tech-startup-financial-services"}
-          title={"So, Your Tech Start-Up Needs Fractional Financial Services"}
-          date={"April 11, 2023"}
-        />
-        <ArticleCard
-          src={"/blog/from-risk-to-reward.png"}
-          title={
-            "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
-          }
-          href={"/blog/from-risk-to-reward"}
-          date={"April 6, 2023"}
-        />
+        {posts.reverse().slice(0,3).map((post: any, index: any) => (
+          <ArticleCard key={index} post={post}></ArticleCard>
+        ))}
       </RecentArticles>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join("posts"));
+
+  const posts = files.map((filename) => {
+    const slug = filename.replace(".md", "");
+
+    const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+    );
+
+    const { data: frontmatter } = matter(markdownWithMeta);
+
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }

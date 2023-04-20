@@ -4,8 +4,11 @@ import { sweepRight } from "../../components/animations";
 import ArticleCard from "../../components/cards/articlecard";
 import Layout from "../../components/layouts/layout";
 import RecentArticles from "../../components/sections/recentarticles";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-export default function Blog() {
+export default function Blog({ posts }: { posts: any }) {
   return (
     <Layout>
       <Head>
@@ -28,42 +31,37 @@ export default function Blog() {
       </div>
       <div className="mt-20">
         <RecentArticles>
-          <ArticleCard
-            src={"/blog/cfo-boost-financial-health.png"}
-            href={"/blog/cfo-boost-financial-health"}
-            title={
-              "Your Start-up's at  Risk! How A CFO Can Boost Your Company's Financial Health"
-            }
-            date={"April 18, 2023"}
-          />
-          <ArticleCard
-            src={"/blog/tech-startup-financial-services.png"}
-            href={"/blog/tech-startup-financial-services"}
-            title={"So, Your Tech Start-Up Needs Fractional Financial Services"}
-            date={"April 11, 2023"}
-          />
-          <ArticleCard
-            src={"/blog/from-risk-to-reward.png"}
-            title={
-              "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
-            }
-            href={"/blog/from-risk-to-reward"}
-            date={"April 6, 2023"}
-          />
-          <ArticleCard
-            src={
-              "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
-            }
-            title={
-              "You Should Leverage Outsourced CFO Services to Achieve Business Goals"
-            }
-            href={
-              "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals"
-            }
-            date={"February 3, 2023"}
-          />
+        {posts.reverse().map((post: any, index: any) => (
+          <ArticleCard key={index} post={post}></ArticleCard>
+        ))}
         </RecentArticles>
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join("posts"));
+
+  const posts = files.map((filename) => {
+    const slug = filename.replace(".md", "");
+
+    const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+    );
+
+    const { data: frontmatter } = matter(markdownWithMeta);
+
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
