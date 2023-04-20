@@ -81,7 +81,7 @@ export default function Intro({}) {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="w-12 h-12 md:w-16 md:h-16 xl:w-24 xl:h-24 absolute bottom-1 right-1 text-orange-dark group-hover:text-orange"
             initial={{ opacity: 0 }}

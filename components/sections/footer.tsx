@@ -6,7 +6,7 @@ import QuoteModal from "../modals/quotemodal";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-export default function Footer({}) {
+export default function Footer() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
@@ -92,10 +92,28 @@ export default function Footer({}) {
           </div>
           <div className="flex flex-col text-white text-center pt-8 lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Latest Posts</div>
+            {/* --------------------------Link 1--------------------------*/}
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
-                  href="/blog/cfo-boost-financial-health"
+                  href="/blog/blog5-startup-tax-extension"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                >
+                  Your Startup has a Tax Extension, Now What?
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">April 20, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/blog5-startup-tax-extension">
+                  Read More...
+                </Link>
+              </div>
+            </div>
+            {/* --------------------------Link 2--------------------------*/}
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
+                  href="/blog/blog4-cfo-boost-financial-health"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
                 >
                   Your Start-up&apos;s at Risk! How A CFO Can Boost Your
@@ -104,15 +122,16 @@ export default function Footer({}) {
               </div>
               <div className="text-gray-light text-sm">April 18, 2023</div>
               <div className="text-orange text-sm">
-                <Link href="/blog/cfo-boost-financial-health">
+                <Link href="/blog/blog4-cfo-boost-financial-health">
                   Read More...
                 </Link>
               </div>
             </div>
+            {/* --------------------------Link 3--------------------------*/}
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
-                  href="/blog/tech-startup-financial-services"
+                  href="/blog/blog3-tech-startup-financial-services"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
                 >
                   So, Your Tech Start-Up Needs Fractional Financial Services
@@ -120,24 +139,9 @@ export default function Footer({}) {
               </div>
               <div className="text-gray-light text-sm">April 11, 2023</div>
               <div className="text-orange text-sm">
-                <Link href="/blog/tech-startup-financial-services">
+                <Link href="/blog/blog3-tech-startup-financial-services">
                   Read More...
                 </Link>
-              </div>
-            </div>
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/from-risk-to-reward"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
-                >
-                  From Risk to Reward: 4 Ways to Mitigate Your Start-Up&apos;s
-                  Financial Risks
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">April 6, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/from-risk-to-reward">Read More...</Link>
               </div>
             </div>
           </div>
