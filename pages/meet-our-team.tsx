@@ -184,12 +184,11 @@ export default function MeetOurTeam() {
             title={"Sr Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
-
           <TeamCard
             src={"/team/Harsh-Karena.png"}
             name={"Harsh Karena"}
             title={"Sr Accounting Manager"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/harsh-karena-2a42a6a1/?originalSubdomain=in"}
           />
           <TeamCard
             src={"/team/Abhik-Datta.png"}
@@ -197,17 +196,16 @@ export default function MeetOurTeam() {
             title={"Sr Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
-
+          <TeamCard
+            src={"/team/Tapas-Kundu.png"}
+            name={"Tapas Kundu"}
+            title={"Sr Accounting Manager"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
           <TeamCard
             src={"/team/Sujata-Rajkumar.png"}
             name={"Sujata Rajkumar"}
             title={"Accounting Associate"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
-            src={"/team/Tapas-Kundu.png"}
-            name={"Tapas Kundu"}
-            title={"Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
