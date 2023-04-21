@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { sweepUp } from "../animations";
 
-export default function SignUp({}) {
+export default function SignUp() {
   return (
     <div className="bg-blue-lightest py-32">
       <motion.div

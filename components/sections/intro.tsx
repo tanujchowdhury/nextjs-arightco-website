@@ -6,7 +6,7 @@ import VideoModal from "../modals/videomodal";
 import Link from "next/link";
 import { sweepRight, sweepLeft } from "../animations";
 
-export default function Intro({}) {
+export default function Intro() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import QuoteModal from "../modals/quotemodal";
 import { hoverMenuAnimate, subMenuAnimate } from "../animations";
 
-export default function Navbar({}) {
+export default function Navbar() {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);

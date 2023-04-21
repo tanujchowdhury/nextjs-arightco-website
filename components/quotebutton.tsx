@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import QuoteModal from "./modals/quotemodal";
+import { Variant } from "../types";
 
 export default function QuoteButton({
   className,
@@ -9,7 +10,7 @@ export default function QuoteButton({
 }: {
   className: string;
   buttonText: string;
-  variants: any;
+  variants: Variant;
 }) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const closeQuoteModal = () => setQuoteModalOpen(false);

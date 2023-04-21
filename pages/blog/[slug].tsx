@@ -13,7 +13,6 @@ export default function PostPage({
   posts,
   frontmatter: { title, date, industry, cover_image },
   content,
-  slug,
 }: {
   posts: Post[];
   frontmatter: FrontMatter;
@@ -99,8 +98,6 @@ export async function getStaticProps({ params: { slug } }: ParamsType) {
   const postFilePath = path.join(postsDirectory, `${slug}.md`);
   const source = fs.readFileSync(postFilePath, "utf8");
   const { data: frontmatter, content } = matter(source);
-
-  console.log(posts);
 
   return {
     props: {

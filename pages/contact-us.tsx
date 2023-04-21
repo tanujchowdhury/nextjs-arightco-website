@@ -1,5 +1,4 @@
 import {
-  faAngleRight,
   faEnvelope,
   faLocationDot,
   faPhone,
