@@ -31,7 +31,7 @@ export default function Blog({ posts }: { posts: any }) {
       </div>
       <div className="mt-20">
         <RecentArticles>
-        {posts.reverse().map((post: any, index: any) => (
+        {posts.slice().reverse().map((post: any, index: any) => (
           <ArticleCard key={index} post={post}></ArticleCard>
         ))}
         </RecentArticles>

@@ -50,7 +50,7 @@ export default function PostPage({
         Related Articles
       </div>
       <RecentArticles>
-        {posts.reverse().slice(0,3).map((post: any, index: any) => (
+        {posts.slice().reverse().slice(0,3).map((post: any, index: any) => (
           <ArticleCard key={index} post={post}></ArticleCard>
         ))}
         </RecentArticles>

@@ -254,7 +254,7 @@ export default function Home({ posts }: { posts: any }) {
         </div>
       </motion.div>
       <RecentArticles>
-        {posts.reverse().slice(0,3).map((post: any, index: any) => (
+        {posts.slice().reverse().slice(0,3).map((post: any, index: any) => (
           <ArticleCard key={index} post={post}></ArticleCard>
         ))}
       </RecentArticles>
