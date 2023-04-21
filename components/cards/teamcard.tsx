@@ -9,7 +9,7 @@ import {
   sweepRight,
   titleVariant,
 } from "../animations";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import TeamModal from "../modals/teammodal";
 
 export default function TeamCard({
@@ -30,6 +30,10 @@ export default function TeamCard({
   const [bio, setBio] = useState(false);
   const closeBio = () => setBio(false);
   const openBio = () => setBio(true);
+
+  const handleLinkClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
+    event.stopPropagation();
+  };
 
   let namePosition: string | undefined;
 
@@ -76,7 +80,7 @@ export default function TeamCard({
             variants={iconVariant}
             className="absolute text-white bottom-1 w-6 h-6 hover:text-blue-light"
           >
-            <Link href={href} target="_blank">
+            <Link href={href} target="_blank" onClick={handleLinkClick}>
               <FontAwesomeIcon icon={faLinkedin} />
             </Link>
           </motion.div>
