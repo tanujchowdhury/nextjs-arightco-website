@@ -134,43 +134,43 @@ export default function MeetOurTeam() {
             src={"/team/Catherine-Phelps.png"}
             name={"Catherine Phelps"}
             title={"HR Director"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/catherine-phelps-shrm-scp-987a8a5/"}
           />
           <TeamCard
             src={"/team/Andrea-Gliocam.png"}
             name={"Andrea Gliocam"}
             title={"Client Partner"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/andrea-gliocam-80090a11b/"}
           />
           <TeamCard
             src={"/team/Desmond-DeCaires.png"}
             name={"Desmond DeCaires"}
             title={"Controller"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/desmond-denzel-decaires-81941a112"}
           />
           <TeamCard
             src={"/team/Elaine-Zhang.png"}
             name={"Elaine Zhang"}
             title={"Client Partner"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/elaine-zhang-876a8942/"}
           />
           <TeamCard
             src={"/team/Eva-Shen.png"}
             name={"Eva Shen"}
             title={"Client Partner"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/eva-wei-shen-cpa-3273a38/"}
           />
           <TeamCard
             src={"/team/Galina-Kuznetsova.png"}
             name={"Galina Kuznetsova"}
             title={"Client Partner"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/galina-kuznetsova-2aa2626/"}
           />
           <TeamCard
             src={"/team/Dipanwita-Saha.png"}
             name={"Dipanwita Saha"}
             title={"HR Manager"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/dipanwita-saha-052203109/"}
           />
           <TeamCard
             src={"/team/Celina-Tanyag.png"}
@@ -182,7 +182,7 @@ export default function MeetOurTeam() {
             src={"/team/Tej-Karena.png"}
             name={"Tej Karena"}
             title={"Sr Accounting Manager"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/tej-karena-59a8b4102/"}
           />
           <TeamCard
             src={"/team/Harsh-Karena.png"}
@@ -218,7 +218,7 @@ export default function MeetOurTeam() {
             src={"/team/Chandra-Genitempo.png"}
             name={"Chandra Genitempo"}
             title={"Accounting Associate"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/chandra-genitempo-7b44b842/"}
           />
         </div>
       </div>
