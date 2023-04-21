@@ -134,7 +134,9 @@ export default function MeetOurTeam() {
             src={"/team/Catherine-Phelps.png"}
             name={"Catherine Phelps"}
             title={"HR Director"}
-            href={"https://www.linkedin.com/in/catherine-phelps-shrm-scp-987a8a5/"}
+            href={
+              "https://www.linkedin.com/in/catherine-phelps-shrm-scp-987a8a5/"
+            }
           />
           <TeamCard
             src={"/team/Andrea-Gliocam.png"}
@@ -146,7 +148,9 @@ export default function MeetOurTeam() {
             src={"/team/Desmond-DeCaires.png"}
             name={"Desmond DeCaires"}
             title={"Controller"}
-            href={"https://www.linkedin.com/in/desmond-denzel-decaires-81941a112"}
+            href={
+              "https://www.linkedin.com/in/desmond-denzel-decaires-81941a112"
+            }
           />
           <TeamCard
             src={"/team/Elaine-Zhang.png"}
@@ -188,7 +192,9 @@ export default function MeetOurTeam() {
             src={"/team/Harsh-Karena.png"}
             name={"Harsh Karena"}
             title={"Sr Accounting Manager"}
-            href={"https://www.linkedin.com/in/harsh-karena-2a42a6a1/?originalSubdomain=in"}
+            href={
+              "https://www.linkedin.com/in/harsh-karena-2a42a6a1/?originalSubdomain=in"
+            }
           />
           <TeamCard
             src={"/team/Abhik-Datta.png"}
