@@ -2,23 +2,41 @@ import React from "react";
 import Slider from "react-slick";
 import Testimonial from "./testimonial";
 
-function SampleNextArrow(props: { className: any; style: any; onClick: any }) {
+function SampleNextArrow(props: {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "#002855", borderRadius: "100%",}}
+      style={{
+        ...style,
+        display: "block",
+        background: "#002855",
+        borderRadius: "100%",
+      }}
       onClick={onClick}
     />
   );
 }
 
-function SamplePrevArrow(props: { className: any; style: any; onClick: any }) {
+function SamplePrevArrow(props: {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "#002855", borderRadius: "100%", }}
+      style={{
+        ...style,
+        display: "block",
+        background: "#002855",
+        borderRadius: "100%",
+      }}
       onClick={onClick}
     />
   );

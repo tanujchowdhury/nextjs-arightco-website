@@ -21,7 +21,6 @@ export default function TeamModal({
   text?: string;
   href: string;
 }) {
-
   return (
     <Backdrop onClick={handleClose}>
       <motion.div

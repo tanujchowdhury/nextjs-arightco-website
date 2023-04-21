@@ -73,11 +73,7 @@ export default function JobPostLayout({
             Job Location:&nbsp;
             <div className="font-normal">{jobLocation}</div>
           </div>
-          <iframe
-            src={pdf}
-            width="100%"
-            height="719px"
-          ></iframe>
+          <iframe src={pdf} width="100%" height="719px"></iframe>
         </div>
         <div className="flex flex-col text-black border p-8 bg-white w-full md:basis-1/2 mt-8 md:mt-0">
           <div className="text-2xl font-bold">Apply for this position</div>

@@ -28,7 +28,11 @@ export default function PricingCard({
       </button>
       <AnimatePresence>
         {form && (
-          <PricingModal handleClose={closeForm} title={modalTitle} value={value} />
+          <PricingModal
+            handleClose={closeForm}
+            title={modalTitle}
+            value={value}
+          />
         )}
       </AnimatePresence>
     </div>

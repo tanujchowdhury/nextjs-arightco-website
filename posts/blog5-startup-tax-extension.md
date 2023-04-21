@@ -17,7 +17,7 @@ As a SaaS or IT start-up, you may have unique tax considerations that you need t
 
 Use the extra time to gather all the necessary information to complete your tax return. This may include receipts, bank statements, and other financial documents. If you use a cloud-based accounting system, ensure that all your data is up-to-date and accurate.
 
-### Hire a tax professional 
+### Hire a tax professional
 
 Consider hiring a tax professional who is familiar with the unique tax considerations of SaaS and IT start-ups. They can help ensure that your return is accurate and that you take advantage of all available deductions and credits. They can also help you navigate any complex tax situations.
 
@@ -37,4 +37,4 @@ Having a tax extension can give you more time to prepare and file your tax retur
 
 Again, know that filing for an extension does not give you extra time to pay any taxes owed, so make sure to accurately estimate and pay your taxes on time to avoid penalties and interest.
 
-*[For more information contact ArightCo today.](https://www.arightco.com/contact-us)*
+_[For more information contact ArightCo today.](https://www.arightco.com/contact-us)_

@@ -15,7 +15,6 @@ export default function Intro({}) {
   const closeVideoModal = () => setVideoModalOpen(false);
   const openVideoModal = () => setVideoModalOpen(true);
 
-
   return (
     <>
       <div className="py-36 bg-gradient-to-r from-blue-dark to-blue-light flex flex-col items-center lg:flex-row px-3 min-[1350px]:px-32 text-center lg:text-start">

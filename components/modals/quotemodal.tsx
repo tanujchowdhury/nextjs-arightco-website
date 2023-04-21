@@ -7,7 +7,6 @@ export default function QuoteModal({
 }: {
   handleClose: React.MouseEventHandler;
 }) {
-
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
@@ -47,7 +46,11 @@ export default function QuoteModal({
             action="https://formsubmit.co/62490fb5a4309c0a244d0936b1752f3a"
             method="POST"
           >
-            <input type="hidden" name="_next" value="https://arightco.vercel.app/thanks" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://arightco.vercel.app/thanks"
+            />
             <input type="hidden" name="_subject" value="New Quote Request!" />
             <div className="grid md:grid-cols-2 gap-4 md:pt-7">
               <input

@@ -7,8 +7,9 @@ import RecentArticles from "../../components/sections/recentarticles";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { Post } from "../../types";
 
-export default function Blog({ posts }: { posts: any }) {
+export default function Blog({ posts }: { posts: Post[] }) {
   return (
     <Layout>
       <Head>
@@ -31,9 +32,12 @@ export default function Blog({ posts }: { posts: any }) {
       </div>
       <div className="mt-20">
         <RecentArticles>
-        {posts.slice().reverse().map((post: any, index: any) => (
-          <ArticleCard key={index} post={post}></ArticleCard>
-        ))}
+          {posts
+            .slice()
+            .reverse()
+            .map((post: Post, index: number) => (
+              <ArticleCard key={index} post={post}></ArticleCard>
+            ))}
         </RecentArticles>
       </div>
     </Layout>

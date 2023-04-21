@@ -14,7 +14,9 @@ export default function AssociateAccountantIndia() {
         jobType={"Full Time"}
         jobLocation={"India"}
         value={"New Associate Accountant India Job Application!"}
-        pdf={"/careers/Accounting Associate- Job Profle-Mid-Level -2022.pdf#toolbar=0"}
+        pdf={
+          "/careers/Accounting Associate- Job Profle-Mid-Level -2022.pdf#toolbar=0"
+        }
       />
     </Layout>
   );

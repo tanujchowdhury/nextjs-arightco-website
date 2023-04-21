@@ -28,8 +28,9 @@ import ArticleCard from "../components/cards/articlecard";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { Post } from "../types";
 
-export default function Home({ posts }: { posts: any }) {
+export default function Home({ posts }: { posts: Post[] }) {
   return (
     <Layout>
       <Head>
@@ -254,9 +255,13 @@ export default function Home({ posts }: { posts: any }) {
         </div>
       </motion.div>
       <RecentArticles>
-        {posts.slice().reverse().slice(0,3).map((post: any, index: any) => (
-          <ArticleCard key={index} post={post}></ArticleCard>
-        ))}
+        {posts
+          .slice()
+          .reverse()
+          .slice(0, 3)
+          .map((post: Post, index: number) => (
+            <ArticleCard key={index} post={post}></ArticleCard>
+          ))}
       </RecentArticles>
     </Layout>
   );

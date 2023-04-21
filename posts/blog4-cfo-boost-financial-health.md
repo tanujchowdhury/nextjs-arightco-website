@@ -11,10 +11,10 @@ As a Chief Finance Officer (CFO) I understand your primary focus may be on devel
 
 A SWOT analysis is a strategic planning tool used to assess your company's current situation and plan for the future. By conducting a SWOT analysis, a CFO can help your start-up identify potential risks and opportunities, then develop a plan to address them. Some factors considered are:
 
-- ***Strengths:*** Internal factors that give your start-up a competitive advantage. Examples of strengths may include a unique product or service, a talented team, or a strong brand identity.
-- ***Weaknesses:*** Internal factors that can put your start-up at a disadvantage; such as a lack of experience, limited resources, or a poorly defined business model.
-- ***Opportunities:*** External factors that your start-up can take advantage of to grow and succeed. These considerations may focus on a growing market, changes in consumer behavior, or emerging technologies.
-- ***Threats:*** External factors that could harm your start-up's success. Some of these threats may include competition, changing regulations, and economic downturns.
+- **_Strengths:_** Internal factors that give your start-up a competitive advantage. Examples of strengths may include a unique product or service, a talented team, or a strong brand identity.
+- **_Weaknesses:_** Internal factors that can put your start-up at a disadvantage; such as a lack of experience, limited resources, or a poorly defined business model.
+- **_Opportunities:_** External factors that your start-up can take advantage of to grow and succeed. These considerations may focus on a growing market, changes in consumer behavior, or emerging technologies.
+- **_Threats:_** External factors that could harm your start-up's success. Some of these threats may include competition, changing regulations, and economic downturns.
 
 ### VC Fundraising
 

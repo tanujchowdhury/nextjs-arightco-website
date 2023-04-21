@@ -33,7 +33,7 @@ export default function JobCard({
           {jobType}
         </div>
         <div className="flex flex-row items-center gap-1">
-          <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3"/>
+          <FontAwesomeIcon icon={faLocationDot} className="w-3 h-3" />
           {jobLocation}
         </div>
         <div className="text-orange">More Details →</div>

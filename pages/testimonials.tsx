@@ -12,10 +12,10 @@ export default function Testimonials() {
       </Head>
       <div className="text-center text-white bg-gradient-to-r from-blue to-blue-light px-3 pt-32 lg:pt-44 lg:text-xl lg:px-32 pb-24">
         <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
         >
           <div className="font-bold text-6xl">Testimonials</div>
           <div className="px-20 py-6">See what they&apos;re saying</div>

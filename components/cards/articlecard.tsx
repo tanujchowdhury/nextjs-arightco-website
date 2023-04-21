@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { sweepRight } from "../animations";
+import { Post } from "../../types";
 
-export default function ArticleCard({ post } : { post: any }) {
+export default function ArticleCard({ post }: { post: Post }) {
   //to make {title} wrap, add this to className: whitespace-nowrap text-ellipsis overflow-hidden
   return (
     <Link href={`/blog/${post.slug}`}>

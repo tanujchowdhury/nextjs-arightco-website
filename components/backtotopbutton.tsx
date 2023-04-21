@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTurnUp } from "@fortawesome/free-solid-svg-icons";
 
-export default function BackToTopButton({startPosition=700, target=0,}:{startPosition?: number; target?: number}) {
+export default function BackToTopButton({
+  startPosition = 700,
+  target = 0,
+}: {
+  startPosition?: number;
+  target?: number;
+}) {
   const [button, setButton] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {

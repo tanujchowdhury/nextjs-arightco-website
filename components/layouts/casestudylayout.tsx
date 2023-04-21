@@ -26,13 +26,13 @@ export default function CaseStudyLayout({
         <div className="text-6xl">{title}</div>
         <div className="text-sm font-normal">{"Published on " + date}</div>
       </div>
-        <Image
-          src={imagesrc}
-          alt={title + "case study"}
-          height={600}
-          width={800}
-          className="mx-auto rounded-3xl my-10"
-        ></Image>
+      <Image
+        src={imagesrc}
+        alt={title + "case study"}
+        height={600}
+        width={800}
+        className="mx-auto rounded-3xl my-10"
+      ></Image>
 
       <iframe
         src={pdfsrc}

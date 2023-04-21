@@ -6,7 +6,9 @@ export default function PrivacyPolicy() {
   return (
     <Layout>
       <Head>
-        <title>Privacy Policy | Finance & Accounting Solutions | ArightCo</title>
+        <title>
+          Privacy Policy | Finance & Accounting Solutions | ArightCo
+        </title>
       </Head>
       <Section type={3} title1={"Privacy Policy"} />
       <div className="bg-white mx-3 xl:mx-32 rounded-xl mt-16 p-8">

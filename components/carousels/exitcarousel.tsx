@@ -2,7 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import Exit from "./exit";
 
-function SampleNextArrow(props: { className: any; style: any; onClick: any }) {
+function SampleNextArrow(props: {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}) {
   const { className, style, onClick } = props;
   return (
     <div
@@ -18,7 +22,11 @@ function SampleNextArrow(props: { className: any; style: any; onClick: any }) {
   );
 }
 
-function SamplePrevArrow(props: { className: any; style: any; onClick: any }) {
+function SamplePrevArrow(props: {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+}) {
   const { className, style, onClick } = props;
   return (
     <div
@@ -59,7 +67,7 @@ export default function ExitCarousel() {
         onClick={undefined}
       />
     ),
-    
+
     responsive: [
       {
         breakpoint: 1280,

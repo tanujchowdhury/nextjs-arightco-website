@@ -78,11 +78,12 @@ export default function ContactUs() {
           />
         </motion.div>
         <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sweepRight}
-         className="mt-10 mx-5 p-5 bg-white rounded-3xl shadow-lg lg:basis-1/2 lg:order-1 lg:shadow-2xl">
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sweepRight}
+          className="mt-10 mx-5 p-5 bg-white rounded-3xl shadow-lg lg:basis-1/2 lg:order-1 lg:shadow-2xl"
+        >
           <div className="text-sm md:text-base text-orange font-bold">
             SEND US A MESSAGE
           </div>

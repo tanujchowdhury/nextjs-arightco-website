@@ -8,7 +8,11 @@ export default function Thanks() {
       <Head>
         <title>404 Page Not Found | ArightCo</title>
       </Head>
-      <Section title1={"404"} text={"We couldn't find the page you were looking for."} type={3} />
+      <Section
+        title1={"404"}
+        text={"We couldn't find the page you were looking for."}
+        type={3}
+      />
     </Layout>
   );
 }

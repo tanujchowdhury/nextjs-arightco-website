@@ -14,7 +14,9 @@ export default function SrAssociateAccountantIndia() {
         jobType={"Full Time"}
         jobLocation={"India"}
         value={"New Sr. Associate Accountant India Job Application!"}
-        pdf={"/careers/Accounting Associate- Job Profle-Senior-Level -2022.pdf#toolbar=0"}
+        pdf={
+          "/careers/Accounting Associate- Job Profle-Senior-Level -2022.pdf#toolbar=0"
+        }
       />
     </Layout>
   );

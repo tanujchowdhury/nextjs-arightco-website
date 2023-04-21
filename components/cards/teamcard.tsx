@@ -34,9 +34,9 @@ export default function TeamCard({
   let namePosition: string | undefined;
 
   if (longTitle) {
-    namePosition = "absolute text-white font-bold bottom-12"
+    namePosition = "absolute text-white font-bold bottom-12";
   } else {
-    namePosition = "absolute text-white font-bold bottom-8"
+    namePosition = "absolute text-white font-bold bottom-8";
   }
 
   return (
@@ -63,10 +63,7 @@ export default function TeamCard({
             className="object-cover rounded-3xl"
             quality={100}
           ></Image>
-          <motion.div
-            variants={nameVariant}
-            className={namePosition}
-          >
+          <motion.div variants={nameVariant} className={namePosition}>
             {name}
           </motion.div>
           <motion.div

@@ -7,6 +7,7 @@ import Head from "next/head";
 import { marked } from "marked";
 import RecentArticles from "../../components/sections/recentarticles";
 import ArticleCard from "../../components/cards/articlecard";
+import { Post, FrontMatter } from "../../types";
 
 export default function PostPage({
   posts,
@@ -14,12 +15,11 @@ export default function PostPage({
   content,
   slug,
 }: {
-  posts: any;
-  frontmatter: any;
-  content: any;
-  slug: any;
+  posts: Post[];
+  frontmatter: FrontMatter;
+  content: string;
+  slug: string;
 }) {
-
   return (
     <Layout>
       <Head>
@@ -50,10 +50,14 @@ export default function PostPage({
         Related Articles
       </div>
       <RecentArticles>
-        {posts.slice().reverse().slice(0,3).map((post: any, index: any) => (
-          <ArticleCard key={index} post={post}></ArticleCard>
-        ))}
-        </RecentArticles>
+        {posts
+          .slice()
+          .reverse()
+          .slice(0, 3)
+          .map((post: Post, index: number) => (
+            <ArticleCard key={index} post={post}></ArticleCard>
+          ))}
+      </RecentArticles>
     </Layout>
   );
 }
@@ -73,35 +77,30 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
-  const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".md"),
-    "utf-8"
-  );
+type ParamsType = {
+  params: {
+    slug: string;
+  };
+};
 
-  const { data: frontmatter, content } = matter(markdownWithMeta);
-
-  const files = fs.readdirSync(path.join("posts"));
-
-  const posts = files.map((filename) => {
-    const slug = filename.replace(".md", "");
-
-    const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
-      "utf-8"
-    );
-
-    const { data: frontmatter } = matter(markdownWithMeta);
+export async function getStaticProps({ params: { slug } }: ParamsType) {
+  const postsDirectory = path.join(process.cwd(), "posts");
+  const postFilePaths = fs.readdirSync(postsDirectory);
+  const posts = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(postsDirectory, filePath), "utf8");
+    const { data } = matter(source);
 
     return {
-      slug,
-      frontmatter,
+      slug: filePath.replace(".md", ""),
+      frontmatter: data,
     };
   });
+
+  const postFilePath = path.join(postsDirectory, `${slug}.md`);
+  const source = fs.readFileSync(postFilePath, "utf8");
+  const { data: frontmatter, content } = matter(source);
+
+  console.log(posts);
 
   return {
     props: {

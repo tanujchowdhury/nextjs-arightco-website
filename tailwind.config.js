@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-to-b-white-transparent':
+        "gradient-to-b-white-transparent":
           "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,1))",
       },
       colors: {
@@ -36,7 +36,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

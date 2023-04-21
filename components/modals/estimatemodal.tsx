@@ -126,21 +126,23 @@ export default function EstimateModal({
             </div>
           )}
 
-          {total >= 2500 ? (detail ? (
-            <div
-              className="text-white underline text-orange-light cursor-pointer"
-              onClick={closeDetail}
-            >
-              ← Simple View
-            </div>
+          {total >= 2500 ? (
+            detail ? (
+              <div
+                className="text-white underline text-orange-light cursor-pointer"
+                onClick={closeDetail}
+              >
+                ← Simple View
+              </div>
+            ) : (
+              <div
+                className="text-white underline text-orange-light cursor-pointer"
+                onClick={openDetail}
+              >
+                Detailed View →
+              </div>
+            )
           ) : (
-            <div
-              className="text-white underline text-orange-light cursor-pointer"
-              onClick={openDetail}
-            >
-              Detailed View →
-            </div>
-          )) : (
             <></>
           )}
           {}

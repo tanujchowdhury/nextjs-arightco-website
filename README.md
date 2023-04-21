@@ -1,6 +1,6 @@
 # [ArightCo](https://www.arightco.com) Website Development
 
-Developed with [Next.js](https://nextjs.org/). Deployed on [Vercel](https://vercel.com/). This website was developed in about 1 month end-to-end with further improvements coming in the future. Currently the website does not have a database and pages are being served statically. 
+Developed with [Next.js](https://nextjs.org/). Deployed on [Vercel](https://vercel.com/). This website was developed in about 1 month end-to-end with further improvements coming in the future. Currently the website does not have a database and pages are being served statically.
 
 ## Design
 
@@ -16,15 +16,13 @@ Vercel made deploying the website very simple. I can share preview links with th
 
 ### Services Used
 
-* [Tailwind CSS](https://tailwindcss.com/) - made styling a website of this scale straightfoward
-* [Framer Motion](https://www.framer.com/motion/) - animations for cards, modals, and scroll
-* [Form Submit](https://formsubmit.co/) - emails the content of contact forms to ArightCo
-* [React-Slick](https://react-slick.neostack.com/) - testimonial and successful exits carousels
+- [Tailwind CSS](https://tailwindcss.com/) - made styling a website of this scale straightfoward
+- [Framer Motion](https://www.framer.com/motion/) - animations for cards, modals, and scroll
+- [Form Submit](https://formsubmit.co/) - emails the content of contact forms to ArightCo
+- [React-Slick](https://react-slick.neostack.com/) - testimonial and successful exits carousels
 
 ### Upcoming Features
 
-* Blog - will use [Supabase](https://supabase.com/) and [Prisma](https://www.prisma.io/)
-* Pricing page UI - make the page more intuitive to use
-* Add more team members
-
-
+- Blog - will use [Supabase](https://supabase.com/) and [Prisma](https://www.prisma.io/)
+- Pricing page UI - make the page more intuitive to use
+- Add more team members
