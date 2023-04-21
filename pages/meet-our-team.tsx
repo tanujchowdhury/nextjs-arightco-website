@@ -174,7 +174,7 @@ export default function MeetOurTeam() {
           />
           <TeamCard
             src={"/team/Celina-Tanyag.png"}
-            name={"Celina-Tanyag"}
+            name={"Celina Tanyag"}
             title={"Payroll Specialist"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
