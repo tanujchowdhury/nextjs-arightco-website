@@ -127,9 +127,15 @@ export default function MeetOurTeam() {
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full min-[1350px]:px-32 place-items-center">
           <TeamCard
+            src={"/team/Sundeep-Ojha.png"}
+            name={"Sundeep Ojha"}
+            title={"GM, India Operations"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+          <TeamCard
             src={"/team/Abhik-Datta.png"}
             name={"Abhik Datta"}
-            title={"Accountant"}
+            title={"Sr Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -142,6 +148,12 @@ export default function MeetOurTeam() {
             src={"/team/Catherine-Phelps.png"}
             name={"Catherine Phelps"}
             title={"HR Director"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+          <TeamCard
+            src={"/team/Celina-Tanyag.png"}
+            name={"Celina-Tanyag"}
+            title={"Payroll Specialist"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -183,7 +195,7 @@ export default function MeetOurTeam() {
           <TeamCard
             src={"/team/Harsh-Karena.png"}
             name={"Harsh Karena"}
-            title={"Accountant"}
+            title={"Sr Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -199,21 +211,15 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
-            src={"/team/Sundeep-Ojha.png"}
-            name={"Sundeep Ojha"}
-            title={"GM, India Operations"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
             src={"/team/Tapas-Kundu.png"}
             name={"Taps Kundu"}
-            title={"Accountant"}
+            title={"Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
             src={"/team/Tej-Karena.png"}
             name={"Tej Karena"}
-            title={"Accountant"}
+            title={"Sr Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
         </div>
