@@ -76,9 +76,8 @@ export default function MeetOurTeam() {
           variants={sweepLeft}
           className="text-center p-10 lg:basis-2/5 lg:text-start lg:order-4"
         >
-          <div className="text-orange font-semibold">LEADERSHIP</div>
           <div className="text-blue-dark text-2xl py-3 md:py-5 md:text-4xl lg:text-5xl font-bold">
-            Meet The Team
+            Leadership
           </div>
           <div className="text-gray-dark md:text-lg max-w-2xl mx-auto">
             ArightCo’s leadership team combines decades of experience to deliver
@@ -120,9 +119,8 @@ export default function MeetOurTeam() {
           variants={sweepLeft}
           className="text-center p-10"
         >
-          <div className="text-orange font-semibold">GROUP LEADERS</div>
           <div className="text-blue-dark text-2xl py-3 md:py-5 md:text-4xl lg:text-5xl font-bold">
-            Meet The Team
+            Group Leaders
           </div>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full min-[1350px]:px-32 place-items-center">
@@ -133,9 +131,9 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
-            src={"/team/Abhik-Datta.png"}
-            name={"Abhik Datta"}
-            title={"Sr Accounting Manager"}
+            src={"/team/Catherine-Phelps.png"}
+            name={"Catherine Phelps"}
+            title={"HR Director"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -145,39 +143,15 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
-            src={"/team/Catherine-Phelps.png"}
-            name={"Catherine Phelps"}
-            title={"HR Director"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
-            src={"/team/Celina-Tanyag.png"}
-            name={"Celina-Tanyag"}
-            title={"Payroll Specialist"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
-            src={"/team/Chandra-Genitempo.png"}
-            name={"Chandra Genitempo"}
-            title={"Accounting Associate"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
             src={"/team/Desmond-DeCaires.png"}
             name={"Desmond DeCaires"}
             title={"Controller"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
-            src={"/team/Dipanwita-Saha.png"}
-            name={"Dipanwita Saha"}
-            title={"HR Manager"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
             src={"/team/Elaine-Zhang.png"}
             name={"Elaine Zhang"}
-            title={"Accountant"}
+            title={"Client Partner"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -193,9 +167,47 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
+            src={"/team/Dipanwita-Saha.png"}
+            name={"Dipanwita Saha"}
+            title={"HR Manager"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+          <TeamCard
+            src={"/team/Celina-Tanyag.png"}
+            name={"Celina-Tanyag"}
+            title={"Payroll Specialist"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+          <TeamCard
+            src={"/team/Tej-Karena.png"}
+            name={"Tej Karena"}
+            title={"Sr Accounting Manager"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+
+          <TeamCard
             src={"/team/Harsh-Karena.png"}
             name={"Harsh Karena"}
             title={"Sr Accounting Manager"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+          <TeamCard
+            src={"/team/Abhik-Datta.png"}
+            name={"Abhik Datta"}
+            title={"Sr Accounting Manager"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+
+          <TeamCard
+            src={"/team/Sujata-Rajkumar.png"}
+            name={"Sujata Rajkumar"}
+            title={"Accounting Associate"}
+            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+          />
+          <TeamCard
+            src={"/team/Tapas-Kundu.png"}
+            name={"Tapas Kundu"}
+            title={"Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
@@ -205,21 +217,9 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
-            src={"/team/Sujata-Rajkumar.png"}
-            name={"Sujata Rajkumar"}
+            src={"/team/Chandra-Genitempo.png"}
+            name={"Chandra Genitempo"}
             title={"Accounting Associate"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
-            src={"/team/Tapas-Kundu.png"}
-            name={"Taps Kundu"}
-            title={"Accounting Manager"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
-          <TeamCard
-            src={"/team/Tej-Karena.png"}
-            name={"Tej Karena"}
-            title={"Sr Accounting Manager"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
         </div>
