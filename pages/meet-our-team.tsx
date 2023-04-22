@@ -200,7 +200,7 @@ export default function MeetOurTeam() {
             src={"/team/Abhik-Datta.png"}
             name={"Abhik Datta"}
             title={"Sr Accounting Manager"}
-            href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
+            href={"https://www.linkedin.com/in/abhik-datta-55abbb45/"}
           />
           <TeamCard
             src={"/team/Tapas-Kundu.png"}
