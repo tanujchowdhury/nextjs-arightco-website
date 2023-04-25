@@ -20,5 +20,5 @@ Outsourcing a CFO is an effective way for businesses to access specialized knowl
 
 Consider hiring a CFO team to help you reach your business goals. With the proper guidance and support, you will be well on your way to achieving greater success. Plus, having a partner who understands your organization's financials and strategy will give you the confidence and peace of mind to move forward with confidence.
 
-[Contact us](https://www.arightco.com/contact-us) today for more information about our outsourced CFO services.
+_[Contact us](https://www.arightco.com/contact-us)_ today for more information about our outsourced CFO services.
 This blog post has been written to provide general information only and is not intended as professional advice. Please seek legal or other professional opinions before making any decisions regarding your business operations or finances.

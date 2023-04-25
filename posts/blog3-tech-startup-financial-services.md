@@ -31,4 +31,4 @@ Don't just take our word for it, Tom Furey, CEO of Sagetech Avionics, said, “U
 
 At ArightCo, we are passionate about helping tech-based start-ups grow and succeed. We understand the challenges that SaaS and IT organizations face, and we are committed to providing the support and services you need to achieve your goals.
 
-[Contact ArightCo today,](https://www.arightco.com/contact-us) and let us help you grow and scale in this fast-paced and constantly evolving technology space.
+_[Contact ArightCo today,](https://www.arightco.com/contact-us)_ and let us help you grow and scale in this fast-paced and constantly evolving technology space.

@@ -96,6 +96,23 @@ export default function Footer() {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
+                  href="/blog/blog6-tax-professionals-specialized-expertise"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                >
+                  Taxes are Best Left to the Professionals
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">April 20, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/blog6-tax-professionals-specialized-expertise">
+                  Read More...
+                </Link>
+              </div>
+            </div>
+            {/*--------------------------Link 2--------------------------*/}
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
                   href="/blog/blog5-startup-tax-extension"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
                 >
@@ -109,7 +126,7 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            {/* --------------------------Link 2--------------------------*/}
+            {/*--------------------------Link 3--------------------------*/}
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
@@ -127,23 +144,7 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            {/* --------------------------Link 3--------------------------*/}
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/blog3-tech-startup-financial-services"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
-                >
-                  So, Your Tech Start-Up Needs Fractional Financial Services
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">April 11, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/blog3-tech-startup-financial-services">
-                  Read More...
-                </Link>
-              </div>
-            </div>
+            {/*-------------------------End Links------------------------*/}
           </div>
           <div className="flex flex-col text-white text-center pt-8 pb-5 lg:pl-10 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Company</div>

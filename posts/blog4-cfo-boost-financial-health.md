@@ -30,4 +30,4 @@ By having a qualified CFO working for your team, you can show investors, stakeho
 
 At ArightCo we have industry trusted Chief Financial Officers who provide start-ups with the financial services they need to identify and mitigate areas of risks, and avenues to better financial performance. Our CFOs are experts in analysis and reporting, strategic financial planning and forecasting, efficient financial management, proactive cash flow management, guidance on mergers and acquisitions, and fundraising.
 
-[For more information contact ArightCo today.](https://www.arightco.com/contact-us)
+_[For more information contact ArightCo today.](https://www.arightco.com/contact-us)_
