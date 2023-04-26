@@ -96,20 +96,37 @@ export default function Footer() {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
+                  href="/blog/blog7-bank-failures-what-to-do-next-for-business-owners"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
+                >
+                  Another Bank Bites The Dust!
+                </Link>
+              </div>
+              <div className="text-gray-light text-sm">April 27, 2023</div>
+              <div className="text-orange text-sm">
+                <Link href="/blog/blog7-bank-failures-what-to-do-next-for-business-owners">
+                  Read More...
+                </Link>
+              </div>
+            </div>
+            {/* --------------------------Link 2--------------------------*/}
+            <div className="py-1">
+              <div className="pt-1 lg:text-base">
+                <Link
                   href="/blog/blog6-tax-professionals-specialized-expertise"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Taxes are Best Left to the Professionals
                 </Link>
               </div>
-              <div className="text-gray-light text-sm">April 20, 2023</div>
+              <div className="text-gray-light text-sm">April 25, 2023</div>
               <div className="text-orange text-sm">
                 <Link href="/blog/blog6-tax-professionals-specialized-expertise">
                   Read More...
                 </Link>
               </div>
             </div>
-            {/*--------------------------Link 2--------------------------*/}
+            {/*--------------------------Link 3--------------------------*/}
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
@@ -122,24 +139,6 @@ export default function Footer() {
               <div className="text-gray-light text-sm">April 20, 2023</div>
               <div className="text-orange text-sm">
                 <Link href="/blog/blog5-startup-tax-extension">
-                  Read More...
-                </Link>
-              </div>
-            </div>
-            {/*--------------------------Link 3--------------------------*/}
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/blog4-cfo-boost-financial-health"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
-                >
-                  Your Start-up&apos;s at Risk! How A CFO Can Boost Your
-                  Company&apos;s Financial Health
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">April 18, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/blog4-cfo-boost-financial-health">
                   Read More...
                 </Link>
               </div>
