@@ -24,7 +24,7 @@ export function InfoCard({
         whileInView="visible"
         viewport={{ once: true }}
         variants={sweepDown}
-        className="flex flex-col items-center justify-between rounded-2xl text-center bg-white p-5 m-3 shadow-md hover:shadow-xl w-full gap-3 group md:h-96"
+        className="flex flex-col items-center justify-between rounded-2xl text-center bg-white p-5 m-3 shadow-md hover:shadow-xl w-full gap-3 group"
       >
         <div className="w-[10vh] h-[10vh] text-blue group-hover:text-orange-dark">
           {icon}
