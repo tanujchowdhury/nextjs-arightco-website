@@ -97,7 +97,7 @@ export default function Footer() {
               <div className="pt-1 lg:text-base">
                 <Link
                   href="/blog/blog6-tax-professionals-specialized-expertise"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Taxes are Best Left to the Professionals
                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <div className="pt-1 lg:text-base">
                 <Link
                   href="/blog/blog5-startup-tax-extension"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Your Startup has a Tax Extension, Now What?
                 </Link>
@@ -131,7 +131,7 @@ export default function Footer() {
               <div className="pt-1 lg:text-base">
                 <Link
                   href="/blog/blog4-cfo-boost-financial-health"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis lg:block lg:max-w-[15rem]"
+                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Your Start-up&apos;s at Risk! How A CFO Can Boost Your
                   Company&apos;s Financial Health
