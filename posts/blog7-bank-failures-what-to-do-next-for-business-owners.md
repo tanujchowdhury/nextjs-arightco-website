@@ -5,7 +5,7 @@ industry: "Banking"
 cover_image: "/blog/bank-failures-what-to-do-next-for-business-owners.png"
 ---
 
-The banking system has suffered yet another blow with the San Francisco, California based First Republic Bank announcing a catastrophic one hundred billion dollar lost in deposits during the first quarter of 2023. The bank's stock plunged nearly 50% at the close of trading on Tuesday, and has now lost nearly 90% of its value. This follows the collapse of Silicon Valley Bank and NewYork’s Signature Bank, as well the global investment bank Credit Suisse, which lost customer deposits worth $75.2 billion in the first three months of this year.. 
+The banking system has suffered yet another blow with the San Francisco, California based First Republic Bank announcing a catastrophic one hundred billion dollar lost in deposits during the first quarter of 2023. The bank's stock plunged nearly 50% at the close of trading on Tuesday, and has now lost nearly 90% of its value. This follows the collapse of Silicon Valley Bank and NewYork’s Signature Bank, as well the global investment bank Credit Suisse, which lost customer deposits worth $75.2 billion in the first three months of this year..
 
 The shakeup of these four prominent banks has raised concerns about the stability of the banking system and what you, as a customer, should do next.
 
@@ -16,17 +16,17 @@ In the US, the Federal Deposit Insurance Corporation (FDIC) insures deposits of 
 You may also want to consider using a brokerage account that is insured by the Securities Investor Protection Corporation (SIPC). The SIPC insures securities and cash held in a brokerage account up to $500,000, including up to $250,000 in cash.
 It is essential for you to stay informed (as possible) about the financial stability of your bank. You should regularly check your bank's financial statements and ratings to ensure that it is stable and has a good credit rating. A bank's credit rating is an assessment of its creditworthiness, and it indicates the likelihood of whether or not the bank will default on its debts. Monitoring news about your bank may help you stay informed about any changes that could affect your deposits.
 
-Finally, you should consider diversifying your investments to spread your risk across multiple asset classes. Diversification can help to protect your investments from market volatility and reduce the impact of any one investment's failure. 
+Finally, you should consider diversifying your investments to spread your risk across multiple asset classes. Diversification can help to protect your investments from market volatility and reduce the impact of any one investment's failure.
 
 While it's true that the continued struggles of prominent banks have raised concerns about the stability of the banking system, it's also important to note that the Federal Reserve issued its inaugural report on U.S. financial stability, and the report shows the nation's banking system is strong, resilient, and positioned to support the instability that comes with economic downturns.
 
 We leave you with a few things you can do to be proactive in protecting your company’s finances and handling risks:
 
-1. Work with federally insured institutions. 
+1. Work with federally insured institutions.
 2. Spread your deposits across multiple banks.
 3. Stay as well informed as possible about your bank's financial stability.
 4. Diversify, diversify, diversify your investments.
 5. Regularly consult with your financial advisory team.
 6. If you need assistance with your finances contact our team at ArightCo.
 
-*[For more information contact ArightCo today.](https://www.arightco.com/contact-us)*
+_[For more information contact ArightCo today.](https://www.arightco.com/contact-us)_
