@@ -8,6 +8,7 @@ import { marked } from "marked";
 import RecentArticles from "../../components/sections/recentarticles";
 import ArticleCard from "../../components/cards/articlecard";
 import { Post, FrontMatter } from "../../types";
+import { sortByDate } from "../../utils";
 
 export default function PostPage({
   posts,
@@ -50,8 +51,6 @@ export default function PostPage({
       </div>
       <RecentArticles>
         {posts
-          .slice()
-          .reverse()
           .slice(0, 3)
           .map((post: Post, index: number) => (
             <ArticleCard key={index} post={post}></ArticleCard>
@@ -85,13 +84,14 @@ type ParamsType = {
 export async function getStaticProps({ params: { slug } }: ParamsType) {
   const postsDirectory = path.join(process.cwd(), "posts");
   const postFilePaths = fs.readdirSync(postsDirectory);
-  const posts = postFilePaths.map((filePath) => {
+
+  const posts: Post[] = postFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(postsDirectory, filePath), "utf8");
     const { data } = matter(source);
 
     return {
       slug: filePath.replace(".md", ""),
-      frontmatter: data,
+      frontmatter: data as FrontMatter, // type assertion
     };
   });
 
@@ -101,7 +101,7 @@ export async function getStaticProps({ params: { slug } }: ParamsType) {
 
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
       frontmatter,
       slug,
       content,

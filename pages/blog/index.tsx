@@ -7,7 +7,8 @@ import RecentArticles from "../../components/sections/recentarticles";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Post } from "../../types";
+import { FrontMatter, Post } from "../../types";
+import { sortByDate } from "../../utils";
 
 export default function Blog({ posts }: { posts: Post[] }) {
   return (
@@ -32,12 +33,9 @@ export default function Blog({ posts }: { posts: Post[] }) {
       </div>
       <div className="mt-20">
         <RecentArticles>
-          {posts
-            .slice()
-            .reverse()
-            .map((post: Post, index: number) => (
-              <ArticleCard key={index} post={post}></ArticleCard>
-            ))}
+          {posts.map((post: Post, index: number) => (
+            <ArticleCard key={index} post={post}></ArticleCard>
+          ))}
         </RecentArticles>
       </div>
     </Layout>
@@ -47,7 +45,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("posts"));
 
-  const posts = files.map((filename) => {
+  const posts:Post[] = files.map((filename) => {
     const slug = filename.replace(".md", "");
 
     const markdownWithMeta = fs.readFileSync(
@@ -59,13 +57,13 @@ export async function getStaticProps() {
 
     return {
       slug,
-      frontmatter,
+      frontmatter: frontmatter as FrontMatter, // type assertion
     };
   });
 
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
     },
   };
 }
