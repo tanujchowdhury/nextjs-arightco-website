@@ -5,7 +5,7 @@ import { sweepRight } from "../animations";
 import { Post } from "../../types";
 
 export default function ArticleCard({ post }: { post: Post }) {
-  //to make {title} wrap, add this to className: whitespace-nowrap text-ellipsis overflow-hidden
+  // to make {title} wrap, add this to className: whitespace-nowrap text-ellipsis overflow-hidden
   return (
     <Link href={`/blog/${post.slug}`}>
       <motion.div
