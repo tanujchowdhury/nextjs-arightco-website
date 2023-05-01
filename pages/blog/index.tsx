@@ -45,7 +45,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("posts"));
 
-  const posts:Post[] = files.map((filename) => {
+  const posts: Post[] = files.map((filename) => {
     const slug = filename.replace(".md", "");
 
     const markdownWithMeta = fs.readFileSync(
