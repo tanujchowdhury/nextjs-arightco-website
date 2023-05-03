@@ -5,6 +5,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import QuoteModal from "../modals/quotemodal";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import ArticleFooterLink from "./articlefooterlink";
 
 export default function Footer() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -93,56 +94,23 @@ export default function Footer() {
           <div className="flex flex-col text-white text-center pt-8 lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Latest Posts</div>
             {/* --------------------------Link 1--------------------------*/}
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/blog7-bank-failures-what-to-do-next-for-business-owners"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
-                >
-                  Another Bank Bites The Dust!
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">April 27, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/blog7-bank-failures-what-to-do-next-for-business-owners">
-                  Read More...
-                </Link>
-              </div>
-            </div>
+            <ArticleFooterLink
+              href={"/blog/exit-plan-for-startups"}
+              title={"Is Your Startup Prepared for Departure?"}
+              date={"May 3, 2023"}
+            />
             {/* --------------------------Link 2--------------------------*/}
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/blog6-tax-professionals-specialized-expertise"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
-                >
-                  Taxes are Best Left to the Professionals
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">April 25, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/blog6-tax-professionals-specialized-expertise">
-                  Read More...
-                </Link>
-              </div>
-            </div>
+            <ArticleFooterLink
+              href="/blog/bank-failures-what-to-do-next-for-business-owners"
+              title="Another Bank Bites The Dust!"
+              date="April 27, 2023"
+            />
             {/*--------------------------Link 3--------------------------*/}
-            <div className="py-1">
-              <div className="pt-1 lg:text-base">
-                <Link
-                  href="/blog/blog5-startup-tax-extension"
-                  className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
-                >
-                  Your Startup has a Tax Extension, Now What?
-                </Link>
-              </div>
-              <div className="text-gray-light text-sm">April 20, 2023</div>
-              <div className="text-orange text-sm">
-                <Link href="/blog/blog5-startup-tax-extension">
-                  Read More...
-                </Link>
-              </div>
-            </div>
+            <ArticleFooterLink
+              href="/blog/tax-professionals-specialized-expertise"
+              title="Taxes are Best Left to the Professionals"
+              date="April 25, 2023"
+            />
             {/*-------------------------End Links------------------------*/}
           </div>
           <div className="flex flex-col text-white text-center pt-8 pb-5 lg:pl-10 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
