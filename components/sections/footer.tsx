@@ -96,7 +96,7 @@ export default function Footer() {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
-                  href="/blog/blog7-bank-failures-what-to-do-next-for-business-owners"
+                  href="/blog/bank-failures-what-to-do-next-for-business-owners"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Another Bank Bites The Dust!
@@ -104,7 +104,7 @@ export default function Footer() {
               </div>
               <div className="text-gray-light text-sm">April 27, 2023</div>
               <div className="text-orange text-sm">
-                <Link href="/blog/blog7-bank-failures-what-to-do-next-for-business-owners">
+                <Link href="/blog/bank-failures-what-to-do-next-for-business-owners">
                   Read More...
                 </Link>
               </div>
@@ -113,7 +113,7 @@ export default function Footer() {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
-                  href="/blog/blog6-tax-professionals-specialized-expertise"
+                  href="/blog/tax-professionals-specialized-expertise"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Taxes are Best Left to the Professionals
@@ -121,7 +121,7 @@ export default function Footer() {
               </div>
               <div className="text-gray-light text-sm">April 25, 2023</div>
               <div className="text-orange text-sm">
-                <Link href="/blog/blog6-tax-professionals-specialized-expertise">
+                <Link href="/blog/tax-professionals-specialized-expertise">
                   Read More...
                 </Link>
               </div>
@@ -130,7 +130,7 @@ export default function Footer() {
             <div className="py-1">
               <div className="pt-1 lg:text-base">
                 <Link
-                  href="/blog/blog5-startup-tax-extension"
+                  href="/blog/startup-tax-extension"
                   className="hover:text-orange whitespace-nowrap overflow-hidden text-ellipsis block lg:max-w-[15rem]"
                 >
                   Your Startup has a Tax Extension, Now What?
@@ -138,7 +138,7 @@ export default function Footer() {
               </div>
               <div className="text-gray-light text-sm">April 20, 2023</div>
               <div className="text-orange text-sm">
-                <Link href="/blog/blog5-startup-tax-extension">
+                <Link href="/blog/startup-tax-extension">
                   Read More...
                 </Link>
               </div>
