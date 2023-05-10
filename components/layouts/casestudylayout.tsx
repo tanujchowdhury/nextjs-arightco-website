@@ -67,6 +67,7 @@ export default function CaseStudyLayout({
           date={"March 1, 2022"}
         />
       </RecentCaseStudies>
+      
     </>
   );
 }
