@@ -97,9 +97,12 @@ export async function getStaticProps({ params: { slug } }: ParamsType) {
   const source = fs.readFileSync(postFilePath, "utf8");
   const { data: frontmatter, content } = matter(source);
 
+  // Remove the current article from the list of related articles
+  const filteredPosts = posts.filter((post) => post.slug !== slug);
+
   return {
     props: {
-      posts: posts.sort(sortByDate),
+      posts: filteredPosts.sort(sortByDate),
       frontmatter,
       slug,
       content,
