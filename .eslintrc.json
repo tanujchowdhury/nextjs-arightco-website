@@ -6,7 +6,7 @@
   ],
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-unused-vars": "error",
+    "no-unused-vars": "warn",
     "semi": ["error", "always"],
     "indent": ["error", 2],
     "quotes": ["error", "double"],

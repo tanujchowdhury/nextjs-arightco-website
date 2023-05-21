@@ -1,25 +1,33 @@
 import { faAngleDown, faArrowUpLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function FAQ({ q, a }: { q: string; a: string }) {
-  const [ans, setAns] = useState(false);
-  const handleAns = () => setAns(!ans);
+type FAQProps = {
+  q: string;
+  a: string;
+  isOpen: boolean;
+  index: number;
+  handleToggle: (index: number) => void;
+};
+
+export default function FAQ({ q, a, isOpen, index, handleToggle }: FAQProps) {
+  const handleItemClick = () => {
+    handleToggle(index);
+  };
 
   return (
     <motion.div className="p-5">
       <div
-        onClick={handleAns}
+        onClick={handleItemClick}
         className={
-          ans
+          isOpen
             ? "flex flex-row items-center justify-between border-b cursor-pointer rounded-t-xl p-5 md:text-xl bg-blue-dark text-white"
             : "flex flex-row items-center justify-between border-b cursor-pointer rounded-t-xl p-5 md:text-xl"
         }
       >
         <div className="font-bold">{q}</div>
         <div>
-          {ans ? (
+          {isOpen ? (
             <FontAwesomeIcon icon={faArrowUpLong} className="w-6 h-6 block" />
           ) : (
             <FontAwesomeIcon icon={faAngleDown} className="w-6 h-6 block" />
@@ -28,8 +36,9 @@ export default function FAQ({ q, a }: { q: string; a: string }) {
       </div>
 
       <AnimatePresence>
-        {ans && (
+        {isOpen && (
           <motion.div
+            key="content"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
