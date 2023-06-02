@@ -1,6 +1,7 @@
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PricingCard from "../cards/pricingcard";
+import { motion } from "framer-motion";
 
 export default function PricingModel({
   title,
@@ -13,9 +14,18 @@ export default function PricingModel({
   plans: number;
   planinfo: string[][];
 }) {
+
+  const variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <>
-      <div
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
         id={title}
         className="flex flex-col items-center justify-center gap-4 pt-20"
       >
@@ -65,7 +75,7 @@ export default function PricingModel({
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
