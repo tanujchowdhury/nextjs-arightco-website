@@ -58,31 +58,50 @@ export default function Pricing() {
           </div>
         </motion.div>
       </div>
-      <div className="flex flex-col items-center justify-center gap-4 pt-20 lg:flex-row">
+      <div className="text-sm text-orange-dark font-bold text-center pt-16">
+        SERVICES AND PRICING
+      </div>
+      <div className="flex flex-col items-center justify-center gap-4 pt-5 lg:flex-row">
         <button
           onClick={() => setActiveTab("tab1")}
-          className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          className={`h-12 w-48 rounded-full text-white font-bold ${
+            activeTab === "tab1"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
+          } cursor-pointer`}
         >
           SAAS
         </button>
 
         <button
           onClick={() => setActiveTab("tab2")}
-          className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          className={`h-12 w-48 rounded-full text-white font-bold ${
+            activeTab === "tab2"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
+          } cursor-pointer`}
         >
           IT
         </button>
 
         <button
           onClick={() => setActiveTab("tab3")}
-          className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          className={`h-12 w-48 rounded-full text-white font-bold ${
+            activeTab === "tab3"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
+          } cursor-pointer`}
         >
           MANUFACTURING
         </button>
 
         <button
           onClick={() => setActiveTab("tab4")}
-          className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          className={`h-12 w-48 rounded-full text-white font-bold ${
+            activeTab === "tab4"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
+          } cursor-pointer`}
         >
           NON-PROFIT
         </button>
@@ -91,89 +110,130 @@ export default function Pricing() {
           onClick={() =>
             estimateModalOpen ? closeEstimateModal() : openEstimateModal()
           }
-          className="h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer"
+          className={`h-12 w-48 rounded-full text-white font-bold ${
+            activeTab === "tab5"
+              ? "bg-blue"
+              : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
+          } cursor-pointer`}
         >
           OTHERS
         </button>
       </div>
+
       {activeTab === "tab1" && (
         <PricingModel
-          title={"SAAS"}
-          services={[
-            "Transactional Entry",
-            "Monthly Financial Statement & KPI Preparation",
-            "Client Invoicing",
-            "Vendor Payments",
-            "Budget Creation",
-            "Cash Flow Planning",
-            "Controller Services",
-          ]}
-          plans={3}
+          title={"SaaS"}
           planinfo={[
-            ["Seed Round", "$3,000+/month"],
-            ["Series A", "$5,000+/month"],
-            ["Series B", "Custom Pricing"],
+            [
+              "Seed Round",
+              "$3,000+/month",
+              "Transactional Entry",
+              "Monthly Financial Statement & KPI Preparation",
+              "Client Invoicing",
+            ],
+            [
+              "Series A",
+              "$5,000+/month",
+              "Includes everything in the previous package",
+              "Vendor Payments",
+              "Budget Creation",
+            ],
+            [
+              "Series B",
+              "Custom Pricing",
+              "Includes everything in the previous package",
+              "Cash Flow Planning",
+              "Controller Services",
+            ],
           ]}
         />
       )}
       {activeTab === "tab2" && (
         <PricingModel
           title={"IT"}
-          services={[
-            "Transactional Entry",
-            "Monthly Financial Statement & KPI Preparation",
-            "Client Invoicing",
-            "Vendor Payments",
-            "Budget Creation",
-            "Cash Flow Planning",
-            "Controller Services",
-          ]}
-          plans={4}
           planinfo={[
-            ["Headcount 0-9", "$2,500+/month"],
-            ["Headcount 10-19", "$3,500+/month"],
-            ["Headcount 20-49", "$5,000+/month"],
-            ["Headcount 50+", "Custom Pricing"],
+            [
+              "Headcount 0-9",
+              "$2,500+/month",
+              "Transactional Entry",
+              "Monthly Financial Statement & KPI Preparation",
+            ],
+            [
+              "Headcount 10-19",
+              "$3,500+/month",
+              "Includes everything in the previous package",
+              "Client Invoicing",
+              "Vendor Payments",
+            ],
+            [
+              "Headcount 20-49",
+              "$5,000+/month",
+              "Includes everything in the previous package",
+              "Budget Creation",
+              "Cash Flow Planning",
+            ],
+            [
+              "Headcount 50+",
+              "Custom Pricing",
+              "Includes everything in the previous package",
+              "Controller Services",
+            ],
           ]}
         />
       )}
       {activeTab === "tab3" && (
         <PricingModel
           title={"Manufacturing"}
-          services={[
-            "Transactional Entry",
-            "Financial Statements & KPI Prep",
-            "Budget Creation | Cash Flow Planning",
-            "Invoicing | Vendor Payments",
-            "Controller Services",
-            "Payroll Services",
-            "Inventory Reconciliation",
-          ]}
-          plans={3}
           planinfo={[
-            ["Base", "$2,500+/month"],
-            ["Pro", "$5,000+/month"],
-            ["Premium", "Custom Pricing"],
+            [
+              "Base",
+              "$2,500+/month",
+              "Transactional Entry",
+              "Financial Statements & KPI Prep",
+              "Budget Creation | Cash Flow Planning",
+            ],
+            [
+              "Pro",
+              "$5,000+/month",
+              "Includes everything in the previous package",
+              "Invoicing | Vendor Payments",
+              "Controller Services",
+            ],
+            [
+              "Premium",
+              "Custom Pricing",
+              "Includes everything in the previous package",
+              "Payroll Services",
+              "Inventory Reconciliation",
+            ],
           ]}
         />
       )}
       {activeTab === "tab4" && (
         <PricingModel
-          title={"Non-Profit"}
-          services={[
-            "Transactional Entry",
-            "Payroll",
-            "Cash Flow Planning",
-            "Invoicing | Vendor Payments",
-            "990 Prep",
-            "Audit Assistance",
-            "Functional Areas Tracking | Grant Tracking",
-          ]}
-          plans={3}
+          title={"SaaS"}
           planinfo={[
-            ["Starter", "$2,500+/month"],
-            ["Starter Plus", "$5,000+/month"],
-            ["Complex", "$8,000+/month"],
+            [
+              "Starter",
+              "$2,500+/month",
+              "Transactional Entry",
+              "Payroll",
+              "Cash Flow Planning",
+            ],
+            [
+              "Starter Plus",
+              "$5,000+/month",
+              "Includes everything in the previous package",
+              "Invoicing | Vendor Payments",
+              "990 Prep",
+            ],
+            [
+              "Complex",
+              "$8,000+/month",
+              "Includes everything in the previous package",
+              "Audit Assistance",
+              "Functional Areas Tracking | Grant Tracking",
+            ],
           ]}
         />
       )}

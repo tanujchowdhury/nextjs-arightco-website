@@ -1,81 +1,26 @@
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PricingCard from "../cards/pricingcard";
-import { motion } from "framer-motion";
 
 export default function PricingModel({
   title,
-  services,
-  plans,
   planinfo,
 }: {
   title: string;
-  services: string[];
-  plans: number;
   planinfo: string[][];
 }) {
-
-  const variants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
-    <>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        id={title}
-        className="flex flex-col items-center justify-center gap-4 pt-20"
-      >
-        <div className="text-sm text-orange-dark font-bold">
-          SERVICES AND PRICING
-        </div>
-        <div className="text-2xl md:text-4xl lg:text-5xl text-blue font-bold">
-          {title}
-        </div>
-        <table className="text-center p-20 shadow-xl w-4/5">
-          <thead>
-            <tr className="bg-gradient-to-r from-blue-dark to-blue-light text-white text-xl">
-              <th className="px-20 py-5">Services</th>
-            </tr>
-          </thead>
-          <tbody>
-            {services.map((service: string) => (
-              <tr key={service}>
-                <td className="px-20 py-5 border-b border-gray-light bg-white">
-                  {service}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="flex flex-row w-4/5 justify-around text-orange-dark">
-          <FontAwesomeIcon
-            icon={faCaretDown}
-            className="w-16 h-16 block lg:hidden"
+    <div className="flex flex-col justify-center w-full pt-6 gap-4 px-10 sm:px-15 md:px-32 lg:px-20 min-[1350px]:px-32 lg:flex-row ">
+      {planinfo.map((items: string[], index) => (
+        <div className="flex-1" key={items[0]}>
+          <PricingCard
+            title={items[0]}
+            price={items[1]}
+            modalTitle={`${title}: ${items[0]}`}
+            value={`New ${title}: ${items[0]} Quote Request!`}
+            services={items.slice(2)}
+            delay={index * 0.1}
           />
-          {[...Array(plans)].map(() => (
-            <FontAwesomeIcon
-              icon={faCaretDown}
-              className="w-16 h-16 hidden lg:block"
-              key={plans}
-            />
-          ))}
         </div>
-        <div className="flex flex-col items-center justify-center w-4/5 lg:flex-row">
-          {planinfo.map((items: string[]) => (
-            <PricingCard
-              title={items[0]}
-              price={items[1]}
-              modalTitle={`${title}: ${items[0]}`}
-              value={`New ${title}: ${items[0]} Quote Request!`}
-              key={items[0]}
-            />
-          ))}
-        </div>
-      </motion.div>
-    </>
+      ))}
+    </div>
   );
 }
