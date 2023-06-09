@@ -24,8 +24,8 @@ export default function PricingCard({
   const openForm = () => setForm(true);
 
   const variants = {
-    hidden: { opacity: 0, x: -50, y: -20 },
-    visible: { opacity: 1, x: 0, y: 0, transition: { delay: delay } },
+    hidden: { opacity: 0, x: -50, y: -500, scale: 0 },
+    visible: { opacity: 1, x: 0, y: 0, scale: 1, transition: { delay: delay } },
   };
 
   return (
