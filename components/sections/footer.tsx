@@ -75,6 +75,7 @@ export default function Footer() {
                 onClick={() =>
                   quoteModalOpen ? closeQuoteModal() : openQuoteModal()
                 }
+                tabIndex={0}
               >
                 Get A Quote
               </p>

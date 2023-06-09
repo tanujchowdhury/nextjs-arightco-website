@@ -63,10 +63,11 @@ export default function Pricing() {
       </div>
       <div className="flex flex-col items-center justify-center gap-4 pt-5 lg:flex-row">
         <button
+          autoFocus
           onClick={() => setActiveTab("tab1")}
           className={`h-12 w-48 rounded-full text-white font-bold ${
             activeTab === "tab1"
-              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark ring ring-orange"
               : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
           } cursor-pointer`}
         >
@@ -77,7 +78,7 @@ export default function Pricing() {
           onClick={() => setActiveTab("tab2")}
           className={`h-12 w-48 rounded-full text-white font-bold ${
             activeTab === "tab2"
-              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark ring ring-orange"
               : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
           } cursor-pointer`}
         >
@@ -88,7 +89,7 @@ export default function Pricing() {
           onClick={() => setActiveTab("tab3")}
           className={`h-12 w-48 rounded-full text-white font-bold ${
             activeTab === "tab3"
-              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark ring ring-orange"
               : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
           } cursor-pointer`}
         >
@@ -99,7 +100,7 @@ export default function Pricing() {
           onClick={() => setActiveTab("tab4")}
           className={`h-12 w-48 rounded-full text-white font-bold ${
             activeTab === "tab4"
-              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark"
+              ? "bg-gradient-to-r from-blue-dark to-blue-light hover:from-blue-light hover:to-blue-dark ring ring-orange"
               : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
           } cursor-pointer`}
         >
@@ -110,11 +111,9 @@ export default function Pricing() {
           onClick={() =>
             estimateModalOpen ? closeEstimateModal() : openEstimateModal()
           }
-          className={`h-12 w-48 rounded-full text-white font-bold ${
-            activeTab === "tab5"
-              ? "bg-blue"
-              : "bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark"
-          } cursor-pointer`}
+          className={
+            "h-12 w-48 rounded-full text-white font-bold bg-gradient-to-r from-orange-dark to-orange-light hover:from-orange-light hover:to-orange-dark cursor-pointer focus:ring focus:ring-blue-dark"
+          }
         >
           OTHERS
         </button>
