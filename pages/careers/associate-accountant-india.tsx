@@ -17,6 +17,7 @@ export default function AssociateAccountantIndia() {
         pdf={
           "/careers/Accounting Associate- Job Profle-Mid-Level -2022.pdf#toolbar=0"
         }
+        action="https://formsubmit.co/el/milizi"
       />
     </Layout>
   );
