@@ -183,12 +183,6 @@ export default function MeetOurTeam() {
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
           <TeamCard
-            src={"/team/Tej-Karena.png"}
-            name={"Tej Karena"}
-            title={"Sr Accounting Manager"}
-            href={"https://www.linkedin.com/in/tej-karena-59a8b4102/"}
-          />
-          <TeamCard
             src={"/team/Harsh-Karena.png"}
             name={"Harsh Karena"}
             title={"Sr Accounting Manager"}
