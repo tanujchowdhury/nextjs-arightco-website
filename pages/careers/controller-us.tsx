@@ -15,7 +15,7 @@ export default function ControllerUS() {
         jobLocation={"US"}
         value={"New Controller US Job Application!"}
         pdf={"/careers/Controller- Sr Level- Job Profile-2022.pdf#toolbar=0"}
-        action={"https://formsubmit.co/dipanwita@arightco.com"}
+        action={"https://formsubmit.co/71bf94915cca9b128e6c9fbb3de5f642"}
       />
     </Layout>
   );
