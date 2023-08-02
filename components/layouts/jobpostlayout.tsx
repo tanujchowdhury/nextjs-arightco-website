@@ -15,6 +15,7 @@ export default function JobPostLayout({
   value,
   pdf,
   action,
+  cc,
 }: {
   jobTitle: string;
   jobCategory: string;
@@ -23,6 +24,7 @@ export default function JobPostLayout({
   value: string;
   pdf?: string;
   action: string;
+  cc?: string;
 }) {
   return (
     <>
@@ -88,6 +90,7 @@ export default function JobPostLayout({
             method="POST"
             encType="multipart/form-data"
           >
+            {cc && <input type="hidden" name="_cc" value={cc} />}
             <input
               type="hidden"
               name="_next"
