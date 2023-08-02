@@ -14,6 +14,7 @@ export default function JobPostLayout({
   jobLocation,
   value,
   pdf,
+  action,
 }: {
   jobTitle: string;
   jobCategory: string;
@@ -21,6 +22,7 @@ export default function JobPostLayout({
   jobLocation: string;
   value: string;
   pdf?: string;
+  action: string;
 }) {
   return (
     <>
@@ -82,7 +84,7 @@ export default function JobPostLayout({
           </div>
           <form
             target="_blank"
-            action="https://formsubmit.co/71bf94915cca9b128e6c9fbb3de5f642"
+            action={action}
             method="POST"
             encType="multipart/form-data"
           >

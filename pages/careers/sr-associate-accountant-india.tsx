@@ -17,6 +17,7 @@ export default function SrAssociateAccountantIndia() {
         pdf={
           "/careers/Accounting Associate- Job Profle-Senior-Level -2022.pdf#toolbar=0"
         }
+        action={"https://formsubmit.co/dipanwita@arightco.com"}
       />
     </Layout>
   );
