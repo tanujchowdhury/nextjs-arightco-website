@@ -17,7 +17,7 @@ export default function AssociateAccountantIndia() {
         pdf={
           "/careers/Accounting Associate- Job Profle-Mid-Level -2022.pdf#toolbar=0"
         }
-        action={"https://formsubmit.co/jagari@arightco.com"}
+        action={"https://formsubmit.co/e5eac80f0877bf70742016af4e851c09"}
         cc={"dipanwita@arightco.com"}
       />
     </Layout>
