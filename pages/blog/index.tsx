@@ -25,9 +25,10 @@ export default function Blog({ posts }: { posts: Post[] }) {
         >
           <div className="font-bold text-6xl">Blog</div>
           <div className="px-20 py-6">
-            Access expert advice on startup accounting and bookkeeping, download
-            key resources and checklists, and get a better grasp of your
-            business finances.
+            Explore insightful articles on startup finance, delve into tips and
+            best practices, and stay updated with the latest trends in
+            accounting and bookkeeping. Enhance your knowledge and empower your
+            business decisions.
           </div>
         </motion.div>
       </div>
