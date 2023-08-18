@@ -34,6 +34,22 @@ export default function Careers() {
             jobTitle={"Associate Accountant"}
             jobCategory={"Finance & Accounting"}
             jobType={"Full Time"}
+            jobLocation={"US"}
+            href={"/careers/associate-accountant-us"}
+          />
+
+          <JobCard
+            jobTitle={"Sr. Associate Accountant"}
+            jobCategory={"Finance & Accounting"}
+            jobType={"Full Time"}
+            jobLocation={"US"}
+            href={"/careers/sr-associate-accountant-us"}
+          />
+
+          <JobCard
+            jobTitle={"Associate Accountant"}
+            jobCategory={"Finance & Accounting"}
+            jobType={"Full Time"}
             jobLocation={"India"}
             href={"/careers/associate-accountant-india"}
           />
