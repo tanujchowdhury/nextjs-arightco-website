@@ -1,28 +1,33 @@
-# [ArightCo](https://www.arightco.com) Website Development
+# ArightCo Website Development
 
-Developed with [Next.js](https://nextjs.org/). Deployed on [Vercel](https://vercel.com/). This website was developed in about 1 month end-to-end with further improvements coming in the future. Currently the website does not have a database and pages are being served statically.
+Developed using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/).
 
 ## Design
 
-The UI was replicated from a previous version from a different team of developers. Animations for modals, hover effects, and scroll were tweaked but the overall look and content of the website was kept the same.
+The UI is based on its previous iteration. Animations for modals, hover effects, and scrolling have been updated for enhanced user interaction.
 
-## Review
+## Collaboration
 
-I worked with the leadership and marketing teams to get feedback. Upcoming features include a blog page with CRUD functionallity and a UI overhaul for the pricing page.
+Feedback from ArightCo's leadership and marketing teams has been integral in shaping the website's development and planned updates.
 
-## Ship
+## Deployment
 
-Vercel made deploying the website very simple. I can share preview links with the ArightCo team to get feedback on big changes while fixing bugs at any time.
+Vercel has streamlined the deployment process. It allows for sharing preview links with the ArightCo team and provides tools for quick issue resolution.
 
-### Services Used
+### Core Technologies & Services
 
-- [Tailwind CSS](https://tailwindcss.com/) - made styling a website of this scale straightfoward
-- [Framer Motion](https://www.framer.com/motion/) - animations for cards, modals, and scroll
-- [Form Submit](https://formsubmit.co/) - emails the content of contact forms to ArightCo
-- [React-Slick](https://react-slick.neostack.com/) - testimonial and successful exits carousels
+- [Tailwind CSS](https://tailwindcss.com/) - For website styling.
+- [Framer Motion](https://www.framer.com/motion/) - Used for animations.
+- [Form Submit](https://formsubmit.co/) - Manages the content of contact forms.
+- [React-Slick](https://react-slick.neostack.com/) - For testimonial and exit carousels.
 
-### Upcoming Features
+### Ongoing and Upcoming Features
 
-- Blog - will use [Supabase](https://supabase.com/) and [Prisma](https://www.prisma.io/)
-- Pricing page UI - make the page more intuitive to use
-- Add more team members
+- **Blog Integration** - Utilizing flat file storage with markdown (.md) files for content management.
+- **Pricing Page Update** - Revamping for improved user interaction.
+- **Team Expansion** - Adding more team member profiles.
+- **Intranet System** - An internal system for ArightCo using Amazon Amplify, S3, Cognito, and IAM.
+
+---
+
+**Contact**: For any inquiries or ideas for improvement, reach out to [chowdhury.tanuj@gmail.com](mailto:chowdhury.tanuj@gmail.com).
