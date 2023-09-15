@@ -42,13 +42,14 @@ const Login = ({ onLogin }) => {
   return (
     <div className="relative min-h-screen">
       {/* The background image */}
-      <div className="fixed inset-0 z-[-1] overflow-hidden">
+      <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#5f6b77]">
         <Image
           src="/background.jpg"
           alt="Background Image"
           fill
           style={{ objectFit: "cover" }}
           quality={100}
+          priority={true}
         />
       </div>
 
