@@ -3,6 +3,7 @@ title: "Is Your Startup Prepared for Departure?"
 date: "May 3, 2023"
 industry: "Finance"
 cover_image: "/blog/exit-plan-for-startups.png"
+placeholder: "#a99f98"
 ---
 
 Your company is up and running, this is an exciting and busy time for you. However, it's important to consider your end-game. What’s your plan for when you eventually need to step away from the company? Do you have a plan for departure? Your Exit Plan is a crucial aspect of business planning that can decide your company’s future success.

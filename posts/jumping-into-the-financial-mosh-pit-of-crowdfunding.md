@@ -3,6 +3,7 @@ title: "Jumping Into The Financial Mosh Pit of Crowdfunding"
 date: "September 13, 2023"
 industry: "Business"
 cover_image: "/blog/jumping-into-the-financial-mosh-pit-of-crowdfunding.png"
+placeholder: "#9c9794"
 ---
 
 Crowdfunding has emerged as an innovative way for startups to source capital, democratizing access to funds. However, the journey is far from straightforward. Startups often find themselves grappling with a spectrum of financial and accounting challenges. By understanding and anticipating these pitfalls, startups can optimize their crowdfunding campaigns to ensure success, transparency, and trustworthiness.
