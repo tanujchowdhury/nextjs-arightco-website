@@ -27,20 +27,19 @@ function Dashboard() {
   useEffect(() => {
     Amplify.configure({
       Auth: {
-        region: "us-east-2",
-        userPoolId: "us-east-2_oZTHfDSkN",
-        userPoolWebClientId: "68mbdpulosjsaup315v2qeobab",
-        identityPoolId: "us-east-2:ac306a72-057e-454b-b6d7-048fc0e772a9",
+        region: process.env.NEXT_PUBLIC_AWS_REGION,
+        userPoolId: process.env.NEXT_PUBLIC_AWS_USER_POOL_ID,
+        userPoolWebClientId: process.env.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
+        identityPoolId: process.env.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID,
       },
       Storage: {
         AWSS3: {
-          bucket: "react-bucket-tanuj",
-          region: "us-east-2",
+          bucket: process.env.NEXT_PUBLIC_AWS_S3_BUCKET,
+          region: process.env.NEXT_PUBLIC_AWS_S3_REGION,
           pageSize: 100,
         },
       },
     });
-    loadFiles();
   }, []);
 
   const createNewFolder = (folderName) => {
