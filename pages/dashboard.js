@@ -6,6 +6,7 @@ import { Auth } from "aws-amplify";
 import { AccountContext } from "../components/intranet/Account";
 import Signup from "../components/intranet/Signup";
 import ChangePassword from "../components/intranet/ChangePassword";
+import { useRouter } from "next/router";
 
 function Dashboard() {
   const ref = useRef(null);
@@ -23,13 +24,15 @@ function Dashboard() {
   const [isGridView, setIsGridView] = useState(true);
   const [currentView, setCurrentView] = useState("default");
   const { authenticated } = useContext(AccountContext);
+  const router = useRouter();
 
   useEffect(() => {
     Amplify.configure({
       Auth: {
         region: process.env.NEXT_PUBLIC_AWS_REGION,
         userPoolId: process.env.NEXT_PUBLIC_AWS_USER_POOL_ID,
-        userPoolWebClientId: process.env.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
+        userPoolWebClientId:
+          process.env.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
         identityPoolId: process.env.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID,
       },
       Storage: {
@@ -41,6 +44,12 @@ function Dashboard() {
       },
     });
   }, []);
+
+  useEffect(() => {
+    if (!authenticated) {
+      router.push('/login');
+    }
+  }, [authenticated, router]);
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");

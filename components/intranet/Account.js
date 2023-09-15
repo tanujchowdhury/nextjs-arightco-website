@@ -94,7 +94,7 @@ const Account = (props) => {
     }
     destroyCookie(null, "userAuthenticated");
     console.log("Logged out")
-    router.push("/");
+    router.push("/login");
 };
 
 
