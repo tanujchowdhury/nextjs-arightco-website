@@ -3,6 +3,7 @@ title: "Your Business Can Remain Standing This Fall"
 date: "August 30, 2023"
 industry: "Business"
 cover_image: "/blog/navigating-fall-obstacles-for-startups.png"
+placeholder: "#989689"
 ---
 
 As we step into the Fall months, many tangible product startups will face challenges that impact their growth, operations, and overall success. From labor shortages to market turbulence, the fall months present hurdles that call for smart strategies and adaptable approaches.

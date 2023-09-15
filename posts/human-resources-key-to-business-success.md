@@ -3,6 +3,7 @@ title: "Behind Every Great Company is a Great HR Team"
 date: "July 19, 2023"
 industry: "HR"
 cover_image: "/blog/human-resources-key-to-business-success.png"
+placeholder: "#82888f"
 ---
 
 ### *Human Resources: Its function, significance, and when to implement it.*

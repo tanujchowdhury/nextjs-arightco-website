@@ -3,6 +3,7 @@ title: "Artificial Intelligence vs Human Insight: The Battle in Business Account
 date: "May 17, 2023"
 industry: "Accounting"
 cover_image: "/blog/ai-vs-human-expertise-in-accounting.png"
+placeholder: "#2d3230"
 ---
 
 In the rapidly evolving digital era, artificial intelligence (AI) has gained significant prominence across various industries, including financial services. AI's potential to automate and streamline complex tasks has made it an attractive option for businesses looking to optimize their financial operations.

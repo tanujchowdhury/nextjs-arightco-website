@@ -3,6 +3,7 @@ title: "Your Start-up's at Risk! How A CFO Can Boost Your Company's Financial He
 date: "April 18, 2023"
 industry: "Finance"
 cover_image: "/blog/cfo-boost-financial-health.png"
+placeholder: "#505357"
 ---
 
 As a Chief Finance Officer (CFO) I understand your primary focus may be on developing your product or service, gaining traction in the market, and building a team to support your growth. While these are critical aspects of any start-up, it's also important to consider the role of a Chief Financial Officer (CFO) in mitigating risks and boosting performance. If your business is struggling with these areas, I'd like to share three ways a CFO can help your company thrive.

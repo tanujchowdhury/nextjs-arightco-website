@@ -3,6 +3,7 @@ title: "So, Your Tech Start-Up Needs Fractional Financial Services"
 date: "April 11, 2023"
 industry: "IT SaaS"
 cover_image: "/blog/tech-startup-financial-services.png"
+placeholder: "#939ba0"
 ---
 
 As a tech-based business, you face unique financial requirements that set your start-up apart from other industries. It can be challenging to find a financial services provider who can understand your specific needs, and provide tailored services that meet your requirements. But how do you choose the right provider?

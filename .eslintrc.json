@@ -5,11 +5,4 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "plugins": ["@typescript-eslint"],
-  "rules": {
-    "no-unused-vars": "warn",
-    "semi": ["error", "always"],
-    "indent": ["error", 2],
-    "quotes": ["error", "double"],
-    "no-console": "error"
-  }
 }

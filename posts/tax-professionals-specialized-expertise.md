@@ -3,6 +3,7 @@ title: "Taxes are Best Left to the Professionals"
 date: "April 25, 2023"
 industry: "Finance"
 cover_image: "/blog/tax-professionals-specialized-expertise.png"
+placeholder: "#c3bfc2"
 ---
 
 If you’re a startup in the SaaS and IT space, you may know firsthand how overwhelming filing taxes can be. Completing your taxes on your own can seem like an insurmountable task with so many regulations and deadlines to keep track of. However, there is a solution. Outsourcing. By partnering with a reliable financial services company you can ease the mental burdens that often come with tax preparation for new business ventures. Here are 5 reasons why outsourcing your tax services can be beneficial for startups.

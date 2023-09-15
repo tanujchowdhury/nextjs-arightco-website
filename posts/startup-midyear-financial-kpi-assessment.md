@@ -3,6 +3,7 @@ title: "Don’t Miss Your Startup’s Solstice: Time to Take a Focused Look at Y
 date: "May 31, 2023"
 industry: "Finance"
 cover_image: "/blog/startup-midyear-financial-kpi-assessment.png"
+placeholder: "#8191b1"
 ---
 
 It’s June! That means it’s Summer Solstice time, and also time for startups to fine-tune their fiscal strategies. One crucial aspect of this is ensuring you have up to date monthly financial statements and short term Key Performance Indicator (KPI) metrics.

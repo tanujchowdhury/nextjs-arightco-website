@@ -12,7 +12,7 @@ import { sortByDate } from "../../utils";
 
 export default function PostPage({
   posts,
-  frontmatter: { title, date, industry, cover_image },
+  frontmatter: { title, date, industry, cover_image, placeholder },
   content,
 }: {
   posts: Post[];
@@ -33,13 +33,18 @@ export default function PostPage({
         </div>
       </div>
       <div className="px-3 lg:px-32 flex flex-col place-items-center">
-        <Image
-          src={cover_image}
-          alt={title}
-          width={500}
-          height={281}
-          className="my-3 rounded-lg"
-        />
+        <div
+          className="my-3 w-[500px] h-[281px] flex items-center justify-center rounded-lg"
+          style={{ backgroundColor: placeholder }}
+        >
+          <Image
+            src={cover_image}
+            alt={title}
+            width={500}
+            height={281}
+            className="rounded-lg object-cover"
+          />
+        </div>
 
         <article
           className="prose"

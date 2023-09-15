@@ -2,7 +2,8 @@
 title: "You Should Leverage Outsourced CFO Services to Achieve Business Goals"
 date: "February 3, 2023"
 industry: "Finance"
-cover_image: "/blog/you-should-leverage-outsourced-cfo-services-to-achieve-business-goals.jpg"
+cover_image: "/blog/leverage-outsourced-cfo-services-achieve-business-goals.jpg"
+placeholder: "#6c7279"
 ---
 
 As a business owner or CEO, it is your responsibility to ensure you are utilizing all the resources at your disposal. One of the best ways to ensure that you are on track and maximizing your business's potential is outsourcing CFO services. Let's explore why outsourcing a CFO can be beneficial for your organization.

@@ -3,6 +3,7 @@ title: "Bookkeeping and Controlling Your Company Finances"
 date: "August 16, 2023"
 industry: "Accounting"
 cover_image: "/blog/bookkeeping-and-controlling-company-finances.png"
+placeholder: "#5c515b"
 ---
 As a business owner or financial manager, maintaining a firm grip on your company's finances is paramount to its success. Effective financial management requires a clear understanding of the roles played by key professionals, such as bookkeepers and controllers. While both are vital to the financial well-being of an organization, there are distinct differences between their responsibilities and expertise. Let’s explore the roles of bookkeepers and controllers, and highlight why growing companies need the latter to achieve not only optimal financial control, but also continued success.
 
