@@ -3,6 +3,7 @@ title: "Cracking the Code of Form 990: Building Trust and Transparency in Your N
 date: "June 28, 2023"
 industry: "Non-Profit"
 cover_image: "/blog/nonprofit-guide-understanding-form-990.png"
+placeholder: "#7f8b92"
 ---
 
 Helping nonprofits decipher the enigma that is Form 990. We’ve seen firsthand the furrowed brows and the raised eyebrows that often come with tackling this beast of a tax document. This article is born out of those experiences and is designed to aid in  understanding the purpose of this nonprofit tax form. We hope this clears some of the confusion and answers many of the “whys” and makes  Form 990 a more manageable task, while helping you safeguard your organization's tax-exempt status and bolster its financial transparency.

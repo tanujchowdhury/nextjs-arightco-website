@@ -3,6 +3,7 @@ title: "Your Startup has a Tax Extension, Now What?"
 date: "April 20, 2023"
 industry: "Finance"
 cover_image: "/blog/startup-tax-extension.png"
+placeholder: "#626263"
 ---
 
 If you're a SaaS or IT start-up and have filed for a tax extension, there are a few things you need to keep in mind to make the most of the extra time. First of all, let's discuss what a tax extension means for your start-up.

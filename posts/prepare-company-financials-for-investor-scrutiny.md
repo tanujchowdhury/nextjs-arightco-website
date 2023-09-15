@@ -3,6 +3,7 @@ title: "Preparing Your Company’s Financials For Investor Scrutiny"
 date: "August 2, 2023"
 industry: "Finance"
 cover_image: "/blog/prepare-company-financials-for-investor-scrutiny.png"
+placeholder: ""
 ---
 The degree to which potential investors scrutinize a company's finances depends greatly on factors such as the company's industry, the potential investor's due diligence process, and the size of the investment. However, more often than not, investors will dig deep to understand the company's financial health, revenue streams, cost structures, growth rates, and more. 
 

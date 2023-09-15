@@ -3,6 +3,7 @@ title: "Another Bank Bites The Dust!"
 date: "April 27, 2023"
 industry: "Banking"
 cover_image: "/blog/bank-failures-what-to-do-next-for-business-owners.png"
+placeholder: "#8f5839"
 ---
 
 The banking system has suffered yet another blow with the San Francisco, California based First Republic Bank announcing a catastrophic one hundred billion dollar lost in deposits during the first quarter of 2023. The bank's stock plunged nearly 50% at the close of trading on Tuesday, and has now lost nearly 90% of its value. This follows the collapse of Silicon Valley Bank and NewYork’s Signature Bank, as well the global investment bank Credit Suisse, which lost customer deposits worth $75.2 billion in the first three months of this year..

@@ -2,7 +2,8 @@
 title: "From Risk to Reward: 4 Ways to Mitigate Your Start-Up's Financial Risks"
 date: "April 6, 2023"
 industry: "Banking"
-cover_image: "/blog/from-risk-to-reward.png"
+cover_image: "/blog/risk-to-reward-mitigate-financial-risk.png"
+placeholder: "#a0a0a0"
 ---
 
 Starting a new business is an exciting journey, but it can also be a daunting one, especially when it comes to managing finances. As a new entrepreneur, you know that launching a new venture requires taking risks, but those risks can be managed effectively with the right financial strategies in place. At ArightCo we know that mitigating financial risks is crucial for new business owners. Our team of experienced certified public accountants and chartered accountants are committed to helping new start-ups navigate financial uncertainties with ease. We understand that financial management can be intimidating, and we're here to guide you every step of the way. With ArightCo you can turn financial risks into rewards and achieve your business goals.

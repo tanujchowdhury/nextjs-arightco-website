@@ -179,6 +179,11 @@ export default function Navbar() {
               Blog
             </Link>
           </div>
+          <div className="mx-2 px-3 max-[1100px]:text-sm">
+            <Link className="hover:text-orange-dark" href="/login">
+              Intranet
+            </Link>
+          </div>
         </div>
 
         <div className="hidden md:flex min-[1350px]:mr-32">

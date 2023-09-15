@@ -3,6 +3,7 @@ title: "Declutter Your Business: Spring Cleaning Challenge for Small Businesses"
 date: "May 10, 2023"
 industry: "Finance"
 cover_image: "/blog/spring-cleaning-tips-for-your-business.png"
+placeholder: "#4c4e54"
 ---
 
 Spring is in full swing, which means it's time to freshen up your business and make some changes to clear the air. Just as you might declutter and deep-clean your home, it's important to do the same for your business. Spring cleaning your business can help you streamline your processes, increase productivity, improve your bottom line, connect with staff, build loyalty with clients, and _aaah_, relax; knowing that everything is as it should be.
