@@ -70,3 +70,9 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.custom-centering {
+  top: calc(
+    50% - 8px
+  ); /* 50% of the switch's height minus half of the circle's height */
+}
