@@ -5,7 +5,14 @@ import { destroyCookie } from 'nookies';
 import { useRouter } from 'next/router';
 
 
-const AccountContext = createContext();
+const AccountContext = createContext({
+  authenticate: () => {},
+  authenticated: false,
+  getSession: () => {},
+  logout: () => {},
+  checkAuthState: () => {},
+  setAuthentication: () => {}
+});
 
 const Account = (props) => {
   const [authenticated, setAuthenticated] = useState(false);

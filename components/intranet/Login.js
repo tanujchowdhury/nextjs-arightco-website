@@ -36,7 +36,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className="relative min-h-screen">
       {/* The background image */}
-      <div className="absolute inset-0 z-[-1] overflow-hidden">
+      <div className="fixed inset-0 z-[-1] overflow-hidden">
         <Image
           src="/background.jpg"
           alt="Background Image"
@@ -46,14 +46,10 @@ const Login = ({ onLogin }) => {
         />
       </div>
       
-
-      <h1 className="text-6xl pt-16 p-6 text-center font-semibold">
-        ArightCo Intranet
-      </h1>
-      <div className="p-16 flex flex-row justify-evenly items-center">
+      <div className="p-32 flex flex-row justify-evenly items-center">
         <form
           onSubmit={onSubmit}
-          className="space-y-8 bg-gray-50 shadow-md p-8 rounded-lg w-96"
+          className="space-y-8 bg-blue shadow-md p-8 rounded-lg w-96 mt-20 text-orange bg-opacity-75"
         >
           <h3 className="text-center text-3xl font-semibold">Client Portal</h3>
           <div className="space-y-4">
@@ -91,12 +87,12 @@ const Login = ({ onLogin }) => {
           </div>
           <button
             type="submit"
-            className="mt-4 w-full py-2 rounded text-xl bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-150"
+            className="mt-4 w-full py-2 rounded text-xl bg-orange text-white hover:bg-orange-dark transition-colors duration-150"
           >
             Log In
           </button>
         </form>
-        <div className="space-y-8 bg-gray-50 shadow-md p-8 rounded-lg w-96">
+        <div className="space-y-8 bg-gray-50 shadow-md p-8 rounded-lg w-96 mt-20 bg-blue text-orange bg-opacity-80">
           <h3 className="text-center text-3xl font-semibold">
             Employee Portal
           </h3>
