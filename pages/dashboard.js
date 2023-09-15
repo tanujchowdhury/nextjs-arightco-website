@@ -47,9 +47,13 @@ function Dashboard() {
 
   useEffect(() => {
     if (!authenticated) {
-      router.push('/login');
+      router.push("/login");
     }
   }, [authenticated, router]);
+
+  if (!authenticated) {
+    return <div>Loading...</div>;
+  }
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
