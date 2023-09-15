@@ -23,6 +23,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
           viewport={{ once: true }}
           variants={sweepRight}
         >
+          
           <div className="font-bold text-6xl">Blog</div>
           <div className="px-20 py-6">
             Explore insightful articles on startup finance, delve into tips and
