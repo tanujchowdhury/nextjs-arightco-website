@@ -1,8 +1,8 @@
 import React, { useState, createContext, useEffect } from "react";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import Pool from "./UserPool";
-import { destroyCookie } from 'nookies';
-import { useRouter } from 'next/router';
+import { destroyCookie } from "nookies";
+import { useRouter } from "next/router";
 
 
 const AccountContext = createContext({
@@ -92,9 +92,9 @@ const Account = (props) => {
     if (user) {
         user.signOut();
     }
-    destroyCookie(null, 'userAuthenticated');
+    destroyCookie(null, "userAuthenticated");
     console.log("Logged out")
-    router.push('/');
+    router.push("/");
 };
 
 
