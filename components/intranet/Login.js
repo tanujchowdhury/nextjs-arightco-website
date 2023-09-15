@@ -42,7 +42,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className="relative min-h-screen">
       {/* The background image */}
-      <div className="fixed inset-0 overflow-hidden bg-[#5f6b77]">
+      <div className="inset-0 overflow-hidden bg-[#5f6b77]">
         <Image
           src="/background.jpg"
           alt="Background Image"
