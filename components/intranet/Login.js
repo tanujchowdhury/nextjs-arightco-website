@@ -23,7 +23,7 @@ const Login = ({ onLogin }) => {
 
     authenticate(email, password)
       .then((data) => {
-        console.log("Logged in!", data);
+        // console.log("Logged in!", data);
         setAuthentication(true);
         setAuthFailed(false);
         setCookie(null, "userAuthenticated", "true", {
@@ -34,7 +34,7 @@ const Login = ({ onLogin }) => {
         router.push("/dashboard");
       })
       .catch((data) => {
-        console.log("Failed to login", data);
+        // console.log("Failed to login", data);
         setAuthFailed(true);
       });
   };

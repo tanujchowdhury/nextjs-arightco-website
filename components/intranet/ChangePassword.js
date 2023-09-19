@@ -28,11 +28,11 @@ export default () => {
     getSession().then(({ user }) => {
       user.changePassword(password, newPassword, (err, result) => {
         if (err) {
-          console.error(err);
+          // console.error(err);
           setPasswordMessage(err.message);
           setMessageColor("red");
         } else {
-          console.log(result);
+          // console.log(result);
           setPasswordMessage("Password updated successfully");
           setMessageColor("green");
         }

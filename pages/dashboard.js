@@ -23,37 +23,6 @@ function Dashboard() {
   const [refreshTrigger, setRefreshTrigger] = useState(false);
   const [isGridView, setIsGridView] = useState(true);
   const [currentView, setCurrentView] = useState("default");
-  const { authenticated } = useContext(AccountContext);
-  const router = useRouter();
-
-  useEffect(() => {
-    Amplify.configure({
-      Auth: {
-        region: process.env.NEXT_PUBLIC_AWS_REGION,
-        userPoolId: process.env.NEXT_PUBLIC_AWS_USER_POOL_ID,
-        userPoolWebClientId:
-          process.env.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
-        identityPoolId: process.env.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID,
-      },
-      Storage: {
-        AWSS3: {
-          bucket: process.env.NEXT_PUBLIC_AWS_S3_BUCKET,
-          region: process.env.NEXT_PUBLIC_AWS_S3_REGION,
-          pageSize: 100,
-        },
-      },
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!authenticated) {
-      router.push("/login");
-    }
-  }, [authenticated, router]);
-
-  if (!authenticated) {
-    return <div>Loading...</div>;
-  }
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
@@ -80,7 +49,7 @@ function Dashboard() {
         setCurrentPath(newCurrentPath);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
@@ -123,7 +92,7 @@ function Dashboard() {
         setGroupedFiles(groupFiles(files));
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -139,7 +108,7 @@ function Dashboard() {
     fullPath += file;
     Storage.remove(fullPath)
       .then((resp) => {
-        console.log(resp);
+        // console.log(resp);
         setFeedbackMessage({
           artifactName: file,
           fullPath: fullPath,
@@ -148,7 +117,7 @@ function Dashboard() {
         loadFiles(currentPath.slice(1).join("/"));
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
     setRefreshTrigger((prev) => !prev);
   };
@@ -210,10 +179,10 @@ function Dashboard() {
       },
     })
       .then((resp) => {
-        console.log(resp);
+        // console.log(resp);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
     setRefreshTrigger((prev) => !prev);
   };
@@ -258,7 +227,7 @@ function Dashboard() {
         setSrc(url);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
@@ -283,7 +252,7 @@ function Dashboard() {
   const sortedEntries = [...sortedFolders, ...sortedFiles];
 
   const handleDefaultView = () => {
-    console.log(currentPath.slice(-1));
+    // console.log(currentPath.slice(-1));
     if (currentView != "default") {
       setCurrentView("default");
     }

@@ -70,17 +70,17 @@ const Account = (props) => {
 
       user.authenticateUser(authDetails, {
         onSuccess: (data) => {
-          console.log("onSuccess: ", data);
+          // console.log("onSuccess: ", data);
           setAuthenticated(true);
           resolve(data);
         },
         onFailure: (err) => {
-          console.error("onFailure: ", err);
+          // console.error("onFailure: ", err);
           setAuthenticated(false);
           reject(err);
         },
         newPasswordRequired: (data) => {
-          console.log("newPasswordRequired: ", data);
+          // console.log("newPasswordRequired: ", data);
           resolve(data);
         },
       });
@@ -93,7 +93,7 @@ const Account = (props) => {
         user.signOut();
     }
     destroyCookie(null, "userAuthenticated");
-    console.log("Logged out")
+    // console.log("Logged out")
     router.push("/login");
 };
 
