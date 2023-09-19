@@ -297,12 +297,15 @@ function Dashboard() {
                 Add New User
               </button>
             )}
-            <button
-              onClick={handleAccountSettings}
-              className="text-blue-500 px-4 py-2 border border-blue-500 rounded hover:bg-blue-100 focus:outline-none focus:bg-blue-200 transition-colors duration-150"
-            >
-              Account Settings
-            </button>
+            {userGroup !== "" && (
+              <button
+                onClick={handleAccountSettings}
+                className="text-blue-500 px-4 py-2 border border-blue-500 rounded hover:bg-blue-100 focus:outline-none focus:bg-blue-200 transition-colors duration-150"
+              >
+                Account Settings
+              </button>
+            )}
+
             <Status />
           </div>
         </header>

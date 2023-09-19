@@ -62,10 +62,10 @@ const Login = ({ onLogin }) => {
         >
           <form
             onSubmit={onSubmit}
-            className="space-y-8 bg-gradient-to-r from-blue-dark to-blue-light shadow-md p-8 rounded-lg w-96 mt-20 text-orange"
+            className="space-y-8 bg-gradient-to-r from-blue-dark to-blue-light shadow-md p-8 rounded-lg w-[50vw] mt-20 text-orange"
           >
             <h3 className="text-center text-3xl font-semibold">
-              Client Portal
+              Intranet Login
             </h3>
             <div className="space-y-4">
               <label htmlFor="email" className="block font-medium text-lg">
@@ -111,47 +111,6 @@ const Login = ({ onLogin }) => {
               Log In
             </button>
           </form>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sweepLeft}
-        >
-          <div className="space-y-8 bg-gradient-to-r from-blue-dark to-blue-light shadow-md p-8 rounded-lg w-96 mt-20 text-orange">
-            <h3 className="text-center text-3xl font-semibold">
-              Employee Portal
-            </h3>
-            <div className="space-y-4">
-              <label htmlFor="email" className="block font-medium text-lg">
-                Email
-              </label>
-              <input
-                type="text"
-                className="p-2 border rounded w-full"
-                disabled
-                placeholder="Coming Soon"
-              />
-
-              <label htmlFor="password" className="block font-medium text-lg">
-                Password
-              </label>
-              <input
-                type="password"
-                className="p-2 border rounded w-full"
-                disabled
-                placeholder="Coming Soon"
-              />
-            </div>
-            <button
-              type="button"
-              disabled
-              className="mt-4 w-full py-2 rounded text-xl bg-gray-300 text-white cursor-not-allowed"
-            >
-              Coming Soon!
-            </button>
-          </div>
         </motion.div>
       </div>
     </div>
