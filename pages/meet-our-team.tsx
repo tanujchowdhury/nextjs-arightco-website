@@ -33,7 +33,7 @@ export default function MeetOurTeam() {
             <div className="text-white md:text-lg max-w-2xl">
               Sushama and Tanmoy Chowdhury founded ArightCo, Inc. in 2008 with a
               mission to provide outstanding customer service and professional
-              quality finance & accounting solutiuons to small & medium sized
+              quality finance & accounting solutions to small & medium sized
               businesses.
             </div>
           </motion.div>
