@@ -100,6 +100,30 @@ function Dashboard() {
     loadFiles();
   }, [key]);
 
+  const handleFileRename = (oldFileName, newFileName) => {
+    const fileExtension = oldFileName.split(".")[1];
+    console.log(fileExtension)
+    let oldPath = currentPath.slice(1).join("/");
+    let newPath = currentPath.slice(1).join("/");
+    if (oldPath) {
+      oldPath += "/";
+      newPath += "/";
+    }
+    oldPath += oldFileName;
+    newPath += newFileName;
+    Storage.copy({ key: oldPath }, {key: newPath})
+      .then(() => {
+        return Storage.remove(oldPath);
+      })
+      .then(() => {
+        console.log(`Renamed file from ${oldFileName} to ${newFileName}`);
+      })
+      .catch(err => {
+        console.error("Error during file rename:", err);
+      });
+
+  }
+
   const handleDelete = (file) => {
     let fullPath = currentPath.slice(1).join("/");
     if (fullPath) {
@@ -121,6 +145,30 @@ function Dashboard() {
       });
     setRefreshTrigger((prev) => !prev);
   };
+
+  const handleFolderDelete = (event, folder) => {
+    event.stopPropagation();
+    let fullPath = currentPath.slice(1).join("/")
+    if (fullPath) {
+      fullPath += "/"
+    }
+    fullPath += folder;
+    console.log(fullPath);
+    Storage.list(fullPath)
+      .then(resp => {
+        console.log(resp.results);
+        resp.results.forEach(item => {
+          Storage.remove(item.key).catch(err => console.log("Error removing item:", err));
+        });
+        setFeedbackMessage({
+          artifactName: folder,
+          fullPath: fullPath,
+          message: "Folder deleted, refresh recommended",
+        });
+      })
+      .catch(err => { console.log(err) })
+  };
+
 
   const handleFileLoad = () => {
     const filename = ref.current.files[0].name;
@@ -342,18 +390,16 @@ function Dashboard() {
                   <div>Change View:</div>
                   <div
                     onClick={() => setIsGridView(!isGridView)}
-                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${
-                      isGridView
-                        ? "border-blue-500 bg-blue-500"
-                        : "border-gray-300 bg-gray-200"
-                    }`}
+                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${isGridView
+                      ? "border-blue-500 bg-blue-500"
+                      : "border-gray-300 bg-gray-200"
+                      }`}
                   >
                     <div
-                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${
-                        isGridView
-                          ? "translate-x-6 bg-white"
-                          : "translate-x-0 bg-white"
-                      } rounded-full`}
+                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${isGridView
+                        ? "translate-x-6 bg-white"
+                        : "translate-x-0 bg-white"
+                        } rounded-full`}
                     ></div>
                   </div>
                 </div>
@@ -489,12 +535,25 @@ function Dashboard() {
                             Download
                           </button>
                           {userGroup === "Admins" && (
-                            <button
-                              onClick={() => handleDelete(name)}
-                              className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
-                            >
-                              Delete
-                            </button>
+                            <>
+                              <button
+                                onClick={() => {
+                                  const newName = prompt("Rename file to:");
+                                  if (newName && newName !== name) {
+                                    handleFileRename(name, newName);
+                                  }
+                                }}
+                                className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                              >
+                                Rename
+                              </button>
+                              <button
+                                onClick={() => handleDelete(name)}
+                                className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                              >
+                                Delete
+                              </button>
+                            </>
                           )}
                         </div>
                       );
@@ -510,6 +569,14 @@ function Dashboard() {
                           <div className="text-sm md:font-semibold text-blue-700">
                             {name}
                           </div>
+                          {userGroup === "Admins" && (
+                            <button
+                              onClick={(e) => handleFolderDelete(e, name)}
+                              className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                            >
+                              Delete
+                            </button>
+                          )}
                         </div>
                       );
                     }
