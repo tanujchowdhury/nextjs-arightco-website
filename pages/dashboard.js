@@ -379,9 +379,11 @@ function Dashboard() {
       .then(result => {
         setSelectedFile(result);
         setSelectedFileType(fileType);
-        console.log(result)
+        // console.log(result)
       })
-      .catch(err => console.log(err));
+      .catch(
+      // err => console.log(err)
+    );
 
   };
 
@@ -545,8 +547,8 @@ function Dashboard() {
                     <div>
                       <button
                         onClick={() => {
-                          console.log(groupedFiles);
-                          console.log(currentPath);
+                          // console.log(groupedFiles);
+                          // console.log(currentPath);
                         }}
                         className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
                       >
