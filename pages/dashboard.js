@@ -10,7 +10,6 @@ import ActionDropdown from "../components/intranet/ActionDropdown";
 function Dashboard() {
   const ref = useRef(null);
   const [files, setFiles] = useState([]);
-  const [src, setSrc] = useState(null);
   const [progress, setProgress] = useState();
   const [key, setKey] = useState(Math.random());
   const [currentDirectory, setCurrentDirectory] = useState(null);
@@ -22,6 +21,9 @@ function Dashboard() {
   const [refreshTrigger, setRefreshTrigger] = useState(false);
   const [isGridView, setIsGridView] = useState(true);
   const [currentView, setCurrentView] = useState("default");
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFileType, setSelectedFileType] = useState(null);
+
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
@@ -208,8 +210,8 @@ function Dashboard() {
         });
       })
       .catch(
-        // err => { console.log(err) }
-        )
+      // err => { console.log(err) }
+    )
   };
 
   const handleMultipleFileLoad = () => {
@@ -397,18 +399,47 @@ function Dashboard() {
 
   const handleDownload = (file) => {
     Storage.get(file)
-    .then((url) => {
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = file; // This sets the downloaded file's name
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    })
-    .catch((err) => {
-      // handle the error
-    });
+      .then((url) => {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = file; // This sets the downloaded file's name
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      })
+      .catch((err) => {
+        // handle the error
+      });
+  };
+
+  const ImageViewer = ({ imageUrl }) => {
+    return (
+      <div>
+        <img src={imageUrl} alt="Preview" />
+      </div>
+    );
+  };
+
+  const PDFViewer = ({ pdfUrl }) => {
+    return (
+      <iframe src={pdfUrl} width="100%" height="500px"></iframe>
+    );
+  };
+
+  const FileViewer = ({ fileUrl, fileType }) => {
+    if (['jpg', 'jpeg', 'png', 'gif'].includes(fileType)) {
+      return <ImageViewer imageUrl={fileUrl} />;
+    } else if (fileType === 'pdf') {
+      return <PDFViewer pdfUrl={fileUrl} />;
+    } else {
+      return <div>File type not supported for preview.</div>;
+    }
+  };
+
+  const handleFileClick = (fileUrl, fileType) => {
+    setSelectedFile(fileUrl);
+    setSelectedFileType(fileType);
   };
 
   useEffect(() => {
@@ -652,8 +683,11 @@ function Dashboard() {
                   {sortedEntries.map(([name, content]) => {
                     if ("size" in content) {
                       // If it is a file
+
+                      // Extracting the file extension
+                      const fileType = content.key.split('.').pop();
                       return (
-                        <div key={name} className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer">
+                        <div key={name} onClick={() => handleFileClick(content.key, fileType)} className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer">
                           <span className="text-xl md:text-2xl mb-2">📄</span>
                           <div className="text-sm md:font-semibold text-gray-700 mb-2">{name}</div>
 
@@ -811,6 +845,12 @@ function Dashboard() {
                   </tbody>
                 </table>
               )}
+              {
+                selectedFile ?
+                  <FileViewer fileUrl={selectedFile} fileType={selectedFileType} /> :
+                  <div>Click on a file to view</div>
+              }
+
             </main>
           )}
         </div>
