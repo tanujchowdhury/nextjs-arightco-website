@@ -290,77 +290,10 @@ function Dashboard() {
         fullPath: "Multiple paths",
         message: "Files uploaded, refresh recommended",
       });
-
-      setRefreshTrigger((prev) => !prev);
     }).catch((err) => {
       // Handle any errors that occurred during upload
       // console.error("Error uploading a file:", err);
     });
-  };
-
-  const handleFileLoad = () => {
-    const filename = ref.current.files[0].name;
-    let fullPath = currentPath.slice(1).join("/");
-    if (fullPath) {
-      fullPath += "/";
-    }
-    fullPath += filename;
-
-    // Initiate feedback as null (no message yet)
-    setFeedbackMessage(null);
-
-    setProgress("0");
-    let showProgressTimeout;
-    let hideProgressTimeout;
-    let previousProgress = 0;
-
-    const showProgress = () => {
-      showProgressTimeout = setTimeout(() => {
-        setProgress("0");
-      }, 200);
-    };
-
-    const hideProgress = () => {
-      hideProgressTimeout = setTimeout(() => {
-        setProgress(null);
-      }, 1000);
-    };
-    Storage.put(fullPath, ref.current.files[0], {
-      progressCallback: (progress) => {
-        const currentProgress = Math.round(
-          (progress.loaded / progress.total) * 100
-        );
-        clearTimeout(showProgressTimeout);
-        clearTimeout(hideProgressTimeout);
-        if (
-          currentProgress !== previousProgress &&
-          currentProgress - previousProgress >= 5
-        ) {
-          setProgress(currentProgress);
-          showProgress();
-        }
-        previousProgress = currentProgress;
-        if (currentProgress === 100) {
-          hideProgress();
-          loadFiles();
-          setKey(Math.random());
-
-          // Set feedback message after successful upload
-          setFeedbackMessage({
-            artifactName: filename,
-            fullPath: fullPath,
-            message: "File uploaded, refresh recommended",
-          });
-        }
-      },
-    })
-      .then((resp) => {
-        // console.log(resp);
-      })
-      .catch((err) => {
-        // console.log(err);
-      });
-    setRefreshTrigger((prev) => !prev);
   };
 
   const handleFolderClick = (folderName) => {
@@ -421,30 +354,36 @@ function Dashboard() {
     );
   };
 
-  const PDFViewer = ({ pdfUrl }) => {
-    return (
-      <iframe src={pdfUrl} width="100%" height="500px"></iframe>
-    );
-  };
+  // const PDFViewer = ({ pdfUrl }) => {
+  //   return (
+  //     <object data={pdfUrl} type="application/pdf" width="100%" height="500px">
+  //       <p>It appears you don't have a PDF plugin for this browser. You can <a href={pdfUrl}>click here to download the PDF file.</a></p>
+  //     </object>
+  //   );
+  // }
 
   const FileViewer = ({ fileUrl, fileType }) => {
     if (['jpg', 'jpeg', 'png', 'gif'].includes(fileType)) {
       return <ImageViewer imageUrl={fileUrl} />;
-    } else if (fileType === 'pdf') {
-      return <PDFViewer pdfUrl={fileUrl} />;
-    } else {
+    }
+    // else if (fileType === 'pdf') {
+    //   return <PDFViewer pdfUrl={fileUrl} />;
+    // } 
+    else {
       return <div>File type not supported for preview.</div>;
     }
   };
 
-  const handleFileClick = (fileUrl, fileType) => {
-    setSelectedFile(fileUrl);
-    setSelectedFileType(fileType);
-  };
+  const handleFileClick = (fileKey, fileType) => {
+    Storage.get(fileKey, { download: false })
+      .then(result => {
+        setSelectedFile(result);
+        setSelectedFileType(fileType);
+        console.log(result)
+      })
+      .catch(err => console.log(err));
 
-  useEffect(() => {
-    loadFiles(currentPath.slice(1).join("/"));
-  }, [refreshTrigger]);
+  };
 
   // Step 1: Separate entries into folders and files.
   const entries = Object.entries(groupedFiles).slice(
@@ -602,6 +541,18 @@ function Dashboard() {
                         Create Folder in {currentPath[currentPath.length - 1]}
                       </button>
                     </div>
+                    {/* Testing */}
+                    <div>
+                      <button
+                        onClick={() => {
+                          console.log(groupedFiles);
+                          console.log(currentPath);
+                        }}
+                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
+                      >
+                        Do Something
+                      </button>
+                    </div>
                   </>
                 )}
               </div>
@@ -687,7 +638,9 @@ function Dashboard() {
                       // Extracting the file extension
                       const fileType = content.key.split('.').pop();
                       return (
-                        <div key={name} onClick={() => handleFileClick(content.key, fileType)} className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer">
+                        <div key={name}
+                          onClick={() => handleFileClick(content.key, fileType)}
+                          className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer">
                           <span className="text-xl md:text-2xl mb-2">📄</span>
                           <div className="text-sm md:font-semibold text-gray-700 mb-2">{name}</div>
 
