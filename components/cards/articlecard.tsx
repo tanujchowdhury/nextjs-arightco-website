@@ -15,7 +15,7 @@ export default function ArticleCard({ post }: { post: Post }) {
         variants={sweepRight}
         className="relative flex flex-col drop-shadow-sm transition duration-300 rounded-md hover:drop-shadow-xl bg-white group max-w-[500px]"
       >
-        <div className="w-full" style={{ backgroundColor: post.frontmatter.placeholder }}>
+        <div className="w-full rounded-t-md" style={{ backgroundColor: post.frontmatter.placeholder }}>
           <Image
             src={post.frontmatter.cover_image}
             alt={post.frontmatter.title}
