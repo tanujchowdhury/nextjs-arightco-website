@@ -62,7 +62,7 @@ function Dashboard() {
     return tree;
   };
 
-  const loadFiles = async (path = "") => {
+  const loadFiles = async () => {
     try {
       const user = await Auth.currentAuthenticatedUser();
       const userGroups =
@@ -71,18 +71,20 @@ function Dashboard() {
       setUserGroup(userGroup);
       let files;
       if (userGroup === "Admins") {
-        files = path ? await Storage.list(path) : await Storage.list("");
+        files = await Storage.list("");
+        console.log(files)
       } else {
         const userFolder = userGroup;
-        files = path
-          ? await Storage.list(`${userFolder}/${path}`)
-          : await Storage.list(userFolder);
+        files = await Storage.list(userFolder);
+        console.log(userFolder);
+        console.log(files)
       }
+      console.log(userGroup);
 
       if (files) {
         setFiles(files);
         setGroupedFiles(groupFiles(files));
-        setCurrentPath(["Home"])
+        setCurrentPath(["Home"]);
       }
     } catch (err) {
       // console.log(err);
@@ -91,7 +93,7 @@ function Dashboard() {
 
   useEffect(() => {
     loadFiles();
-  }, []);
+  }, [key]);
 
   const handleFolderRename = async (oldFolderName, newFolderName) => {
     // Create the old and new folder paths (prefixes)
@@ -124,6 +126,7 @@ function Dashboard() {
         fullPath: oldPath,
         message: `Folder renamed to ${newFolderName}, refresh recommended`,
       });
+      loadFiles();
       // console.log(`Renamed folder from ${oldFolderName} to ${newFolderName}`);
     } catch (err) {
       // console.error("Error during folder rename:", err);
@@ -152,6 +155,7 @@ function Dashboard() {
             newFileName + "." + fileExtension
           }, refresh recommended`,
         });
+        loadFiles();
         // console.log(`Renamed file from ${oldFileName} to ${newFileName + "." + fileExtension}`);
       })
       .catch((err) => {
@@ -173,7 +177,7 @@ function Dashboard() {
           fullPath: fullPath,
           message: "File deleted, refresh recommended",
         });
-        loadFiles(currentPath.slice(1).join("/"));
+        loadFiles();
       })
       .catch((err) => {
         // console.log(err);
@@ -200,6 +204,7 @@ function Dashboard() {
           fullPath: fullPath,
           message: "Folder deleted, refresh recommended",
         });
+        loadFiles();
       })
       .catch
       // err => { console.log(err) }
@@ -268,6 +273,7 @@ function Dashboard() {
         })
           .then(() => {
             resolve();
+            loadFiles();
           })
           .catch((err) => {
             reject(err); // Reject the promise indicating this file had an error
@@ -384,9 +390,11 @@ function Dashboard() {
       ();
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     // Step 1: Separate entries into folders and files.
-    const entries = Object.entries(groupedFiles).slice(1);
+    const entries = Object.entries(groupedFiles).slice(
+      currentPath.length > 1 ? 1 : 0
+    );
     const folderEntries = entries.filter(
       ([name, content]) => !("size" in content)
     );
@@ -563,7 +571,7 @@ function Dashboard() {
               </div>
 
               {/* Feedback Modal */}
-              {feedbackMessage && (
+              {/* {feedbackMessage && (
                 <div className="fixed inset-0 flex items-center justify-center z-50">
                   <div className="relative z-10 bg-white p-8 rounded-lg shadow-xl max-w-lg transform transition-transform duration-150">
                     <h2 className="text-3xl font-bold mb-6">Feedback</h2>
@@ -594,14 +602,14 @@ function Dashboard() {
                         Close
                       </button>
                     </div>
-                  </div>
+                  </div> */}
                   {/* Overlay */}
-                  <div
+                  {/* <div
                     className="absolute inset-0 bg-black opacity-50 transition-opacity duration-150"
                     onClick={() => setFeedbackMessage(null)}
                   ></div>
                 </div>
-              )}
+              )} */}
 
               {/* Progress Bar */}
               {progress && (
