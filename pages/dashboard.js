@@ -18,12 +18,11 @@ function Dashboard() {
   const [userGroup, setUserGroup] = useState("");
   const [currentPath, setCurrentPath] = useState(["Home"]);
   const [feedbackMessage, setFeedbackMessage] = useState(null);
-  const [refreshTrigger, setRefreshTrigger] = useState(false);
   const [isGridView, setIsGridView] = useState(true);
   const [currentView, setCurrentView] = useState("default");
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedFileType, setSelectedFileType] = useState(null);
-
+  const [sortedEntries, setSortedEntries] = useState([]);
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
@@ -39,15 +38,7 @@ function Dashboard() {
           fullPath: fullPath,
           message: "Folder created, refresh recommended",
         });
-
-        // Add the new folder to the current path
-        const newCurrentPath = [...currentPath, folderName];
-
-        // Navigate to the new folder
-        loadFiles(newCurrentPath.slice(1).join("/"));
-
-        // Update the currentPath state
-        setCurrentPath(newCurrentPath);
+        loadFiles();
       })
       .catch((err) => {
         // console.log(err);
@@ -91,6 +82,7 @@ function Dashboard() {
       if (files) {
         setFiles(files);
         setGroupedFiles(groupFiles(files));
+        setCurrentPath(["Home"])
       }
     } catch (err) {
       // console.log(err);
@@ -99,7 +91,7 @@ function Dashboard() {
 
   useEffect(() => {
     loadFiles();
-  }, [key]);
+  }, []);
 
   const handleFolderRename = async (oldFolderName, newFolderName) => {
     // Create the old and new folder paths (prefixes)
@@ -109,8 +101,8 @@ function Dashboard() {
       oldPath += "/";
       newPath += "/";
     }
-    oldPath += oldFolderName + '/';
-    newPath += newFolderName + '/';
+    oldPath += oldFolderName + "/";
+    newPath += newFolderName + "/";
 
     try {
       // List all objects in the old folder
@@ -136,8 +128,7 @@ function Dashboard() {
     } catch (err) {
       // console.error("Error during folder rename:", err);
     }
-  }
-
+  };
 
   const handleFileRename = (oldFileName, newFileName) => {
     const fileExtension = oldFileName.split(".")[1];
@@ -157,14 +148,16 @@ function Dashboard() {
         setFeedbackMessage({
           artifactName: oldFileName,
           fullPath: oldPath,
-          message: `File renamed to ${newFileName + "." + fileExtension}, refresh recommended`,
+          message: `File renamed to ${
+            newFileName + "." + fileExtension
+          }, refresh recommended`,
         });
         // console.log(`Renamed file from ${oldFileName} to ${newFileName + "." + fileExtension}`);
       })
-      .catch(err => {
+      .catch((err) => {
         // console.error("Error during file rename:", err);
       });
-  }
+  };
 
   const handleDelete = (file) => {
     let fullPath = currentPath.slice(1).join("/");
@@ -185,22 +178,21 @@ function Dashboard() {
       .catch((err) => {
         // console.log(err);
       });
-    setRefreshTrigger((prev) => !prev);
   };
 
   const handleFolderDelete = (event, folder) => {
     event.stopPropagation();
-    let fullPath = currentPath.slice(1).join("/")
+    let fullPath = currentPath.slice(1).join("/");
     if (fullPath) {
-      fullPath += "/"
+      fullPath += "/";
     }
     fullPath += folder;
     // console.log(fullPath);
     Storage.list(fullPath)
-      .then(resp => {
+      .then((resp) => {
         // console.log(resp.results);
-        resp.results.forEach(item => {
-          Storage.remove(item.key)
+        resp.results.forEach((item) => {
+          Storage.remove(item.key);
           // .catch(err => console.log("Error removing item:", err));
         });
         setFeedbackMessage({
@@ -209,13 +201,13 @@ function Dashboard() {
           message: "Folder deleted, refresh recommended",
         });
       })
-      .catch(
+      .catch
       // err => { console.log(err) }
-    )
+      ();
   };
 
   const handleMultipleFileLoad = () => {
-    const files = Array.from(ref.current.files);  // Convert the FileList object to an array
+    const files = Array.from(ref.current.files); // Convert the FileList object to an array
 
     if (!files.length) return;
 
@@ -238,7 +230,7 @@ function Dashboard() {
       }, 1000);
     };
 
-    const uploadedFiles = [];  // To track successfully uploaded files for feedback
+    const uploadedFiles = []; // To track successfully uploaded files for feedback
 
     const uploadFile = (file) => {
       return new Promise((resolve, reject) => {
@@ -266,8 +258,11 @@ function Dashboard() {
 
             if (currentProgress === 100) {
               hideProgress();
-              uploadedFiles.push({ artifactName: filename, fullPath: fullPath });
-              resolve();  // Resolve the promise indicating this file is uploaded
+              uploadedFiles.push({
+                artifactName: filename,
+                fullPath: fullPath,
+              });
+              resolve(); // Resolve the promise indicating this file is uploaded
             }
           },
         })
@@ -275,25 +270,28 @@ function Dashboard() {
             resolve();
           })
           .catch((err) => {
-            reject(err);  // Reject the promise indicating this file had an error
+            reject(err); // Reject the promise indicating this file had an error
           });
       });
     };
 
     // Sequential upload using reduce
-    files.reduce((promiseChain, file) => {
-      return promiseChain.then(() => uploadFile(file));
-    }, Promise.resolve()).then(() => {
-      // All files are uploaded, update feedback message
-      setFeedbackMessage({
-        artifactName: "Mulitple files",
-        fullPath: "Multiple paths",
-        message: "Files uploaded, refresh recommended",
+    files
+      .reduce((promiseChain, file) => {
+        return promiseChain.then(() => uploadFile(file));
+      }, Promise.resolve())
+      .then(() => {
+        // All files are uploaded, update feedback message
+        setFeedbackMessage({
+          artifactName: "Mulitple files",
+          fullPath: "Multiple paths",
+          message: "Files uploaded, refresh recommended",
+        });
+      })
+      .catch((err) => {
+        // Handle any errors that occurred during upload
+        // console.error("Error uploading a file:", err);
       });
-    }).catch((err) => {
-      // Handle any errors that occurred during upload
-      // console.error("Error uploading a file:", err);
-    });
   };
 
   const handleFolderClick = (folderName) => {
@@ -333,10 +331,10 @@ function Dashboard() {
   const handleDownload = (file) => {
     Storage.get(file)
       .then((url) => {
-        const a = document.createElement('a');
+        const a = document.createElement("a");
         a.href = url;
         a.download = file; // This sets the downloaded file's name
-        a.style.display = 'none';
+        a.style.display = "none";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -363,12 +361,12 @@ function Dashboard() {
   // }
 
   const FileViewer = ({ fileUrl, fileType }) => {
-    if (['jpg', 'jpeg', 'png', 'gif'].includes(fileType)) {
+    if (["jpg", "jpeg", "png", "gif"].includes(fileType)) {
       return <ImageViewer imageUrl={fileUrl} />;
     }
     // else if (fileType === 'pdf') {
     //   return <PDFViewer pdfUrl={fileUrl} />;
-    // } 
+    // }
     else {
       return <div>File type not supported for preview.</div>;
     }
@@ -376,32 +374,35 @@ function Dashboard() {
 
   const handleFileClick = (fileKey, fileType) => {
     Storage.get(fileKey, { download: false })
-      .then(result => {
+      .then((result) => {
         setSelectedFile(result);
         setSelectedFileType(fileType);
         // console.log(result)
       })
-      .catch(
+      .catch
       // err => console.log(err)
-    );
-
+      ();
   };
 
-  // Step 1: Separate entries into folders and files.
-  const entries = Object.entries(groupedFiles).slice(
-    currentPath.length > 1 ? 1 : 0
-  );
-  const folderEntries = entries.filter(
-    ([name, content]) => !("size" in content)
-  );
-  const fileEntries = entries.filter(([name, content]) => "size" in content);
+  useEffect(() => {
+    // Step 1: Separate entries into folders and files.
+    const entries = Object.entries(groupedFiles).slice(1);
+    const folderEntries = entries.filter(
+      ([name, content]) => !("size" in content)
+    );
+    const fileEntries = entries.filter(([name, content]) => "size" in content);
 
-  // Step 2: Sort the folders and files individually (alphabetically).
-  const sortedFolders = folderEntries.sort((a, b) => a[0].localeCompare(b[0]));
-  const sortedFiles = fileEntries.sort((a, b) => a[0].localeCompare(b[0]));
+    // Step 2: Sort the folders and files individually (alphabetically).
+    const sortedFolders = folderEntries.sort((a, b) =>
+      a[0].localeCompare(b[0])
+    );
+    const sortedFiles = fileEntries.sort((a, b) => a[0].localeCompare(b[0]));
 
-  // Step 3: Merge the sorted arrays.
-  const sortedEntries = [...sortedFolders, ...sortedFiles];
+    // Step 3: Merge the sorted arrays.
+    const newSortedEntries = [...sortedFolders, ...sortedFiles];
+
+    setSortedEntries(newSortedEntries);
+  }, [groupedFiles, currentPath]);
 
   const handleDefaultView = () => {
     // console.log(currentPath.slice(-1));
@@ -494,16 +495,18 @@ function Dashboard() {
                   <div>Change View:</div>
                   <div
                     onClick={() => setIsGridView(!isGridView)}
-                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${isGridView
-                      ? "border-blue-500 bg-blue-500"
-                      : "border-gray-300 bg-gray-200"
-                      }`}
+                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${
+                      isGridView
+                        ? "border-blue-500 bg-blue-500"
+                        : "border-gray-300 bg-gray-200"
+                    }`}
                   >
                     <div
-                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${isGridView
-                        ? "translate-x-6 bg-white"
-                        : "translate-x-0 bg-white"
-                        } rounded-full`}
+                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${
+                        isGridView
+                          ? "translate-x-6 bg-white"
+                          : "translate-x-0 bg-white"
+                      } rounded-full`}
                     ></div>
                   </div>
                 </div>
@@ -638,13 +641,17 @@ function Dashboard() {
                       // If it is a file
 
                       // Extracting the file extension
-                      const fileType = content.key.split('.').pop();
+                      const fileType = content.key.split(".").pop();
                       return (
-                        <div key={name}
+                        <div
+                          key={name}
                           onClick={() => handleFileClick(content.key, fileType)}
-                          className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer">
+                          className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer"
+                        >
                           <span className="text-xl md:text-2xl mb-2">📄</span>
-                          <div className="text-sm md:font-semibold text-gray-700 mb-2">{name}</div>
+                          <div className="text-sm md:font-semibold text-gray-700 mb-2">
+                            {name}
+                          </div>
 
                           <ActionDropdown
                             actions={[
@@ -654,32 +661,38 @@ function Dashboard() {
                               },
                               ...(userGroup === "Admins"
                                 ? [
-                                  {
-                                    label: "Rename",
-                                    handler: () => {
-                                      const newName = prompt("Rename file to:");
-                                      if (newName && newName !== name) {
-                                        handleFileRename(name, newName);
-                                      }
+                                    {
+                                      label: "Rename",
+                                      handler: () => {
+                                        const newName =
+                                          prompt("Rename file to:");
+                                        if (newName && newName !== name) {
+                                          handleFileRename(name, newName);
+                                        }
+                                      },
                                     },
-                                  },
-                                  {
-                                    label: "Delete",
-                                    handler: () => handleDelete(name),
-                                  },
-                                ]
+                                    {
+                                      label: "Delete",
+                                      handler: () => handleDelete(name),
+                                    },
+                                  ]
                                 : []),
                             ]}
                           />
                         </div>
-
                       );
                     } else {
                       // If it is a folder
                       return (
-                        <div key={name} onClick={() => handleFolderClick(name)} className="flex items-center justify-between m-2 p-2 border border-blue-400 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors duration-150">
+                        <div
+                          key={name}
+                          onClick={() => handleFolderClick(name)}
+                          className="flex items-center justify-between m-2 p-2 border border-blue-400 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors duration-150"
+                        >
                           <span className="text-xl md:text-2xl mr-2">📁</span>
-                          <div className="text-sm md:font-semibold text-blue-700">{name}</div>
+                          <div className="text-sm md:font-semibold text-blue-700">
+                            {name}
+                          </div>
 
                           {userGroup === "Admins" && (
                             <div className="ml-2">
@@ -689,11 +702,16 @@ function Dashboard() {
                                     label: "Rename",
                                     handler: (e) => {
                                       e.preventDefault();
-                                      const newFolderName = prompt("Enter new folder name:");
-                                      if (newFolderName && newFolderName !== name) {
+                                      const newFolderName = prompt(
+                                        "Enter new folder name:"
+                                      );
+                                      if (
+                                        newFolderName &&
+                                        newFolderName !== name
+                                      ) {
                                         handleFolderRename(name, newFolderName);
                                       }
-                                    }
+                                    },
                                   },
                                   {
                                     label: "Delete",
@@ -704,7 +722,6 @@ function Dashboard() {
                             </div>
                           )}
                         </div>
-
                       );
                     }
                   })}
@@ -714,7 +731,9 @@ function Dashboard() {
                   <thead>
                     <tr className="bg-gray-200">
                       <th className="border-b p-2 font-semibold">Name</th>
-                      <th className="border-b p-2 font-semibold w-2/5">Action</th>
+                      <th className="border-b p-2 font-semibold w-2/5">
+                        Action
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -728,7 +747,8 @@ function Dashboard() {
                               <div className="flex items-center space-x-2">
                                 <button
                                   onClick={() => handleDownload(content.key)}
-                                  className="bg-blue-500 hover:bg-blue-600 border border-blue-700 px-2 py-1 mb-1 rounded text-white transition-colors duration-150">
+                                  className="bg-blue-500 hover:bg-blue-600 border border-blue-700 px-2 py-1 mb-1 rounded text-white transition-colors duration-150"
+                                >
                                   Download
                                 </button>
 
@@ -736,18 +756,21 @@ function Dashboard() {
                                   <>
                                     <button
                                       onClick={() => {
-                                        const newName = prompt("Rename file to:");
+                                        const newName =
+                                          prompt("Rename file to:");
                                         if (newName && newName !== name) {
                                           handleFileRename(name, newName);
                                         }
                                       }}
-                                      className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150">
+                                      className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                    >
                                       Rename
                                     </button>
 
                                     <button
                                       onClick={() => handleDelete(name)}
-                                      className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150">
+                                      className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                    >
                                       Delete
                                     </button>
                                   </>
@@ -768,7 +791,10 @@ function Dashboard() {
                             </td>
                             <td className="border p-2">
                               <div className="flex items-center space-x-2">
-                                <button className="bg-purple-200 border-purple-400 px-3 py-1 m-1 rounded" onClick={() => handleFolderClick(name)}>
+                                <button
+                                  className="bg-purple-200 border-purple-400 px-3 py-1 m-1 rounded"
+                                  onClick={() => handleFolderClick(name)}
+                                >
                                   Open Folder
                                 </button>
 
@@ -776,17 +802,29 @@ function Dashboard() {
                                   <>
                                     <button
                                       onClick={() => {
-                                        const newFolderName = prompt("Enter new folder name:");
-                                        if (newFolderName && newFolderName !== name) {
-                                          handleFolderRename(name, newFolderName);
+                                        const newFolderName = prompt(
+                                          "Enter new folder name:"
+                                        );
+                                        if (
+                                          newFolderName &&
+                                          newFolderName !== name
+                                        ) {
+                                          handleFolderRename(
+                                            name,
+                                            newFolderName
+                                          );
                                         }
                                       }}
-                                      className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150">
+                                      className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                    >
                                       Rename
                                     </button>
                                     <button
-                                      onClick={(e) => handleFolderDelete(e, name)}
-                                      className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150">
+                                      onClick={(e) =>
+                                        handleFolderDelete(e, name)
+                                      }
+                                      className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                    >
                                       Delete
                                     </button>
                                   </>
@@ -800,12 +838,14 @@ function Dashboard() {
                   </tbody>
                 </table>
               )}
-              {
-                selectedFile ?
-                  <FileViewer fileUrl={selectedFile} fileType={selectedFileType} /> :
-                  <div>Click on a file to view</div>
-              }
-
+              {selectedFile ? (
+                <FileViewer
+                  fileUrl={selectedFile}
+                  fileType={selectedFileType}
+                />
+              ) : (
+                <div>Click on a file to view</div>
+              )}
             </main>
           )}
         </div>
