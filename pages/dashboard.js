@@ -72,14 +72,14 @@ function Dashboard() {
       let files;
       if (userGroup === "Admins") {
         files = await Storage.list("");
-        console.log(files)
+        // console.log(files);
       } else {
         const userFolder = userGroup;
         files = await Storage.list(userFolder);
-        console.log(userFolder);
-        console.log(files)
+        // console.log(userFolder);
+        // console.log(files);
       }
-      console.log(userGroup);
+      // console.log(userGroup);
 
       if (files) {
         setFiles(files);
@@ -163,7 +163,7 @@ function Dashboard() {
       });
   };
 
-  const handleDelete = (file) => {
+  const handleFileDelete = (file) => {
     let fullPath = currentPath.slice(1).join("/");
     if (fullPath) {
       fullPath += "/";
@@ -249,6 +249,8 @@ function Dashboard() {
         // Reset progress for each file
         setProgress("0");
 
+        const contentType = getMimeType(filename);
+
         Storage.put(fullPath, file, {
           progressCallback: (progress) => {
             const currentProgress = Math.round(
@@ -270,6 +272,7 @@ function Dashboard() {
               resolve(); // Resolve the promise indicating this file is uploaded
             }
           },
+          contentType: contentType
         })
           .then(() => {
             resolve();
@@ -280,6 +283,20 @@ function Dashboard() {
           });
       });
     };
+
+    const getMimeType = (filename) => {
+      const extension = filename.split(".").pop().toLowerCase();
+      const mimeTypes = {
+        'jpg': 'image/jpeg',
+        'jpeg': 'image/jpeg',
+        'png': 'image/png',
+        'gif': 'image/gif',
+        'pdf': 'application/pdf',
+        // ... add more file extensions and their MIME types as needed
+      };
+    
+      return mimeTypes[extension] || 'binary/octet-stream';
+    }    
 
     // Sequential upload using reduce
     files
@@ -358,31 +375,32 @@ function Dashboard() {
     );
   };
 
-  // const PDFViewer = ({ pdfUrl }) => {
-  //   return (
-  //     <object data={pdfUrl} type="application/pdf" width="100%" height="500px">
-  //       <p>It appears you don't have a PDF plugin for this browser. You can <a href={pdfUrl}>click here to download the PDF file.</a></p>
-  //     </object>
-  //   );
-  // }
+  const PDFViewer = ({ pdfUrl }) => {
+    return (
+      <object data={pdfUrl} type="application/pdf" width="100%" height="500px">
+        <p>It appears you don't have a PDF plugin for this browser. You can <a href={pdfUrl}>click here to download the PDF file.</a></p>
+      </object>
+    );
+  }
 
   const FileViewer = ({ fileUrl, fileType }) => {
     if (["jpg", "jpeg", "png", "gif"].includes(fileType)) {
       return <ImageViewer imageUrl={fileUrl} />;
     }
-    // else if (fileType === 'pdf') {
-    //   return <PDFViewer pdfUrl={fileUrl} />;
-    // }
+    else if (fileType === 'pdf') {
+      return <PDFViewer pdfUrl={fileUrl} />;
+    }
     else {
       return <div>File type not supported for preview.</div>;
     }
   };
 
-  const handleFileClick = (fileKey, fileType) => {
+  const handleFileClick = (fileKey) => {
+    // console.log(fileKey)
     Storage.get(fileKey, { download: false })
       .then((result) => {
         setSelectedFile(result);
-        setSelectedFileType(fileType);
+        setSelectedFileType(fileKey.split(".").pop().toLowerCase());
         // console.log(result)
       })
       .catch
@@ -390,7 +408,7 @@ function Dashboard() {
       ();
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     // Step 1: Separate entries into folders and files.
     const entries = Object.entries(groupedFiles).slice(
       currentPath.length > 1 ? 1 : 0
@@ -434,6 +452,10 @@ function Dashboard() {
       setCurrentView("addNewUser");
     }
   };
+
+  useEffect(() => {
+    // console.log(currentPath);
+  }, [currentPath]);
 
   return (
     <Account>
@@ -537,7 +559,7 @@ function Dashboard() {
                         onClick={() => ref.current.click()}
                         className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-md transition-colors duration-150"
                       >
-                        Upload File to {currentPath[currentPath.length - 1]}
+                        Upload Files to {currentPath[currentPath.length - 1]}
                       </button>
                     </div>
                     {/* "Create Folder" button */}
@@ -603,8 +625,8 @@ function Dashboard() {
                       </button>
                     </div>
                   </div> */}
-                  {/* Overlay */}
-                  {/* <div
+              {/* Overlay */}
+              {/* <div
                     className="absolute inset-0 bg-black opacity-50 transition-opacity duration-150"
                     onClick={() => setFeedbackMessage(null)}
                   ></div>
@@ -647,13 +669,10 @@ function Dashboard() {
                   {sortedEntries.map(([name, content]) => {
                     if ("size" in content) {
                       // If it is a file
-
-                      // Extracting the file extension
-                      const fileType = content.key.split(".").pop();
                       return (
                         <div
                           key={name}
-                          onClick={() => handleFileClick(content.key, fileType)}
+                          onClick={() => handleFileClick(content.key)}
                           className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer"
                         >
                           <span className="text-xl md:text-2xl mb-2">📄</span>
@@ -681,7 +700,7 @@ function Dashboard() {
                                     },
                                     {
                                       label: "Delete",
-                                      handler: () => handleDelete(name),
+                                      handler: () => handleFileDelete(name),
                                     },
                                   ]
                                 : []),
@@ -776,7 +795,7 @@ function Dashboard() {
                                     </button>
 
                                     <button
-                                      onClick={() => handleDelete(name)}
+                                      onClick={() => handleFileDelete(name)}
                                       className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
                                     >
                                       Delete
@@ -847,10 +866,15 @@ function Dashboard() {
                 </table>
               )}
               {selectedFile ? (
-                <FileViewer
-                  fileUrl={selectedFile}
-                  fileType={selectedFileType}
-                />
+                <>
+                  <button onClick={() => setSelectedFile(null)}>
+                    Close Preview
+                  </button>
+                  <FileViewer
+                    fileUrl={selectedFile}
+                    fileType={selectedFileType}
+                  />
+                </>
               ) : (
                 <div>Click on a file to view</div>
               )}
