@@ -627,7 +627,7 @@ function Dashboard() {
                       />
                       <button
                         onClick={() => ref.current.click()}
-                        className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-md transition-colors duration-150"
+                        className="px-4 py-2 bg-orange-dark hover:bg-orange-light text-white hover:text-blue-dark rounded-lg shadow-md transition-colors duration-150"
                       >
                         Upload Files to {currentPath[currentPath.length - 1]}
                       </button>
@@ -641,13 +641,13 @@ function Dashboard() {
                             createNewFolder(folderName);
                           }
                         }}
-                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
+                        className="px-4 py-2 bg-orange-dark hover:bg-orange-light text-white hover:text-blue-dark rounded-lg shadow-md transition-colors duration-150"
                       >
                         Create Folder in {currentPath[currentPath.length - 1]}
                       </button>
                     </div>
                     {/* Testing */}
-                    <div>
+                    {/* <div>
                       <button
                         onClick={() => {
                           // console.log(groupedFiles);
@@ -657,7 +657,7 @@ function Dashboard() {
                       >
                         Do Something
                       </button>
-                    </div>
+                    </div> */}
                   </>
                 )}
               </div>
