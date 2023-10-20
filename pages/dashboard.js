@@ -24,6 +24,7 @@ function Dashboard() {
   const [selectedFileType, setSelectedFileType] = useState(null);
   const [sortedEntries, setSortedEntries] = useState([]);
 
+  // test commit
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
     if (fullPath) {
