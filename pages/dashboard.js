@@ -6,6 +6,8 @@ import { Auth } from "aws-amplify";
 import Signup from "../components/intranet/Signup";
 import ChangePassword from "../components/intranet/ChangePassword";
 import ActionDropdown from "../components/intranet/ActionDropdown";
+import Link from "next/link";
+import Image from "next/image";
 
 function Dashboard() {
   const ref = useRef(null);
@@ -151,9 +153,8 @@ function Dashboard() {
         setFeedbackMessage({
           artifactName: oldFileName,
           fullPath: oldPath,
-          message: `File renamed to ${
-            newFileName + "." + fileExtension
-          }, refresh recommended`,
+          message: `File renamed to ${newFileName + "." + fileExtension
+            }, refresh recommended`,
         });
         loadFiles();
         // console.log(`Renamed file from ${oldFileName} to ${newFileName + "." + fileExtension}`);
@@ -294,9 +295,9 @@ function Dashboard() {
         'pdf': 'application/pdf',
         // ... add more file extensions and their MIME types as needed
       };
-    
+
       return mimeTypes[extension] || 'binary/octet-stream';
-    }    
+    }
 
     // Sequential upload using reduce
     files
@@ -460,22 +461,23 @@ function Dashboard() {
   return (
     <Account>
       <div className="flex flex-col h-screen">
-        <header className="flex items-center justify-between p-6 bg-slate-200">
-          <div
-            onClick={handleDefaultView}
-            className="flex items-center space-x-4 cursor-pointer"
-          >
-            <img src="/favicon.png" alt="Logo" className="w-12 h-12" />{" "}
-            {/* Adjust as per your logo's aspect ratio */}
-            <h1 className="text-2xl font-semibold text-black">
-              ArightCo Client Portal
-            </h1>
+        <header className="h-20 flex justify-between items-center bg-white font-medium text-blue-dark fixed top-0 left-0 right-0 z-20 drop-shadow-md">
+          <div className="ml-10 shrink-0">
+            <Link href="/">
+              <Image
+                src="/logo-blue.png"
+                alt="ArightCo Logo"
+                width={200}
+                height={64}
+                priority
+              />
+            </Link>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex text-lg space-x-4 mr-10">
             {userGroup === "Admins" && (
               <button
                 onClick={handleAddNewUser}
-                className="text-green-500 px-4 py-2 border border-green-500 rounded hover:bg-green-100 focus:outline-none focus:bg-green-200 transition-colors duration-150"
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
               >
                 Add New User
               </button>
@@ -483,7 +485,7 @@ function Dashboard() {
             {userGroup !== "" && (
               <button
                 onClick={handleAccountSettings}
-                className="text-blue-500 px-4 py-2 border border-blue-500 rounded hover:bg-blue-100 focus:outline-none focus:bg-blue-200 transition-colors duration-150"
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
               >
                 Change Password
               </button>
@@ -493,10 +495,20 @@ function Dashboard() {
           </div>
         </header>
 
-        <div className="flex flex-grow">
-          {currentView === "addNewUser" && <Signup />}
+        <div className="flex flex-grow mt-20">
+          {currentView === "addNewUser" &&
+            <div className="flex flex-col ml-3">
+              <button className="text-left p-4 text-3xl text-blue-dark hover:text-orange-dark" onClick={() => setCurrentView("default")}>← Return to dashboard</button>
+              <Signup />
+            </div>
+          }
 
-          {currentView === "accountSettings" && <ChangePassword />}
+          {currentView === "accountSettings" &&
+            <div className="flex flex-col ml-3">
+              <button className="text-left p-4 text-3xl text-blue-dark hover:text-orange-dark" onClick={() => setCurrentView("default")}>← Return to dashboard</button>
+              <ChangePassword />
+            </div>
+          }
 
           {currentView === "default" && (
             <main className="flex-grow p-4">
@@ -507,12 +519,12 @@ function Dashboard() {
                     <React.Fragment key={folder}>
                       <button
                         onClick={() => handlePathClick(index)}
-                        className="text-sm md:text-base hover:bg-gray-200 px-2 py-1 rounded-full bg-gray-100 hover:text-gray-700 transition-colors duration-150"
+                        className="text-white text-4xl hover:bg-blue-dark px-5 pt-2 pb-3 rounded-full bg-blue-light transition-colors duration-150 mb-3"
                       >
                         {folder}
                       </button>
                       {index !== currentPath.length - 1 && (
-                        <span className="hidden md:inline text-gray-500">
+                        <span className="text-4xl text-orange mb-3">
                           ＞
                         </span>
                       )}
@@ -521,75 +533,23 @@ function Dashboard() {
                 </div>
                 {/* Switch for Grid and List Views */}
 
-                <div className="flex items-center space-x-2 mb-6">
-                  <div>Change View:</div>
+                <div className="flex items-center space-x-2 mb-6 text-lg text-blue-dark font-medium">
+                  <div className="mb-1">Change View:</div>
                   <div
                     onClick={() => setIsGridView(!isGridView)}
-                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${
-                      isGridView
-                        ? "border-blue-500 bg-blue-500"
-                        : "border-gray-300 bg-gray-200"
-                    }`}
+                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${isGridView
+                      ? "border-blue-light bg-blue-light"
+                      : "border-orange bg-orange"
+                      }`}
                   >
                     <div
-                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${
-                        isGridView
-                          ? "translate-x-6 bg-white"
-                          : "translate-x-0 bg-white"
-                      } rounded-full`}
+                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${isGridView
+                        ? "translate-x-6 bg-white"
+                        : "translate-x-0 bg-white"
+                        } rounded-full`}
                     ></div>
                   </div>
                 </div>
-              </div>
-
-              {/* Admin Actions */}
-              <div className="flex items-center space-x-4 mb-4">
-                {userGroup === "Admins" && (
-                  <>
-                    {/* "Upload File" button */}
-                    <div>
-                      <input
-                        ref={ref}
-                        type="file"
-                        onChange={handleMultipleFileLoad}
-                        multiple
-                        className="hidden"
-                      />
-                      <button
-                        onClick={() => ref.current.click()}
-                        className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-md transition-colors duration-150"
-                      >
-                        Upload Files to {currentPath[currentPath.length - 1]}
-                      </button>
-                    </div>
-                    {/* "Create Folder" button */}
-                    <div>
-                      <button
-                        onClick={() => {
-                          const folderName = prompt("Enter the folder name:");
-                          if (folderName) {
-                            createNewFolder(folderName);
-                          }
-                        }}
-                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
-                      >
-                        Create Folder in {currentPath[currentPath.length - 1]}
-                      </button>
-                    </div>
-                    {/* Testing */}
-                    <div>
-                      <button
-                        onClick={() => {
-                          // console.log(groupedFiles);
-                          // console.log(currentPath);
-                        }}
-                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
-                      >
-                        Do Something
-                      </button>
-                    </div>
-                  </>
-                )}
               </div>
 
               {/* Feedback Modal */}
@@ -649,9 +609,58 @@ function Dashboard() {
                   </div>
                 </div>
               )}
-              <h2 className="mt-10 text-2xl md:text-3xl font-semibold mb-6 border-b-2 border-gray-300">
-                {currentPath.slice(-1)}
-              </h2>
+              {/* <h2 className="text-2xl md:text-3xl font-semibold mb-6 border-b-2 border-blue text-orange-dark">
+                Current Folder: {currentPath.slice(-1)}
+              </h2> */}
+              {/* Admin Actions */}
+              <div className="flex items-center space-x-4 mb-4">
+                {userGroup === "Admins" && (
+                  <>
+                    {/* "Upload File" button */}
+                    <div>
+                      <input
+                        ref={ref}
+                        type="file"
+                        onChange={handleMultipleFileLoad}
+                        multiple
+                        className="hidden"
+                      />
+                      <button
+                        onClick={() => ref.current.click()}
+                        className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-md transition-colors duration-150"
+                      >
+                        Upload Files to {currentPath[currentPath.length - 1]}
+                      </button>
+                    </div>
+                    {/* "Create Folder" button */}
+                    <div>
+                      <button
+                        onClick={() => {
+                          const folderName = prompt("Enter the folder name:");
+                          if (folderName) {
+                            createNewFolder(folderName);
+                          }
+                        }}
+                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
+                      >
+                        Create Folder in {currentPath[currentPath.length - 1]}
+                      </button>
+                    </div>
+                    {/* Testing */}
+                    <div>
+                      <button
+                        onClick={() => {
+                          // console.log(groupedFiles);
+                          // console.log(currentPath);
+                        }}
+                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
+                      >
+                        Do Something
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
               {sortedEntries.length === 0 ? (
                 <>
                   <div className="mt-10 text-xl md:text-2xl text-gray-600 mb-4">
@@ -688,21 +697,21 @@ function Dashboard() {
                               },
                               ...(userGroup === "Admins"
                                 ? [
-                                    {
-                                      label: "Rename",
-                                      handler: () => {
-                                        const newName =
-                                          prompt("Rename file to:");
-                                        if (newName && newName !== name) {
-                                          handleFileRename(name, newName);
-                                        }
-                                      },
+                                  {
+                                    label: "Rename",
+                                    handler: () => {
+                                      const newName =
+                                        prompt("Rename file to:");
+                                      if (newName && newName !== name) {
+                                        handleFileRename(name, newName);
+                                      }
                                     },
-                                    {
-                                      label: "Delete",
-                                      handler: () => handleFileDelete(name),
-                                    },
-                                  ]
+                                  },
+                                  {
+                                    label: "Delete",
+                                    handler: () => handleFileDelete(name),
+                                  },
+                                ]
                                 : []),
                             ]}
                           />

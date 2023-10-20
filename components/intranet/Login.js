@@ -89,12 +89,12 @@ const Login = ({ onLogin }) => {
                 />
                 <span
                   onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                  className="absolute right-2 top-12 transform -translate-y-1/2 text-xl cursor-pointer"
+                  className="absolute right-2 top-12 transform -translate-y-1/2 text-xl cursor-pointer text-orange"
                 >
                   {isPasswordVisible ? (
-                    <FontAwesomeIcon icon={faEye} />
+                    <FontAwesomeIcon icon={faEye} className="w-6 h-6"/>
                   ) : (
-                    <FontAwesomeIcon icon={faEyeSlash} />
+                    <FontAwesomeIcon icon={faEyeSlash} className="w-6 h-6"/>
                   )}
                 </span>
                 {authFailed && (

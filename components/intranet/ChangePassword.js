@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AccountContext } from "./Account";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default () => {
   const [password, setPassword] = useState("");
@@ -41,7 +44,7 @@ export default () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-blue-dark">
       <h1 className="text-2xl font-semibold mb-2">Change your password here</h1>
       <form
         onSubmit={onSubmit}
@@ -67,7 +70,11 @@ export default () => {
             }
             className="absolute right-2 top-11 transform -translate-y-1/2 text-xl cursor-pointer"
           >
-            {isCurrentPasswordVisible ? "👁️" : "🙈"}
+            {isCurrentPasswordVisible ? (
+              <FontAwesomeIcon icon={faEye} className="w-6 h-6" />
+            ) : (
+              <FontAwesomeIcon icon={faEyeSlash} className="w-6 h-6" />
+            )}
           </span>
         </div>
 
@@ -89,7 +96,11 @@ export default () => {
             onClick={() => setIsNewPasswordVisible(!isNewPasswordVisible)}
             className="absolute right-2 top-11 transform -translate-y-1/2 text-xl cursor-pointer"
           >
-            {isNewPasswordVisible ? "👁️" : "🙈"}
+            {isNewPasswordVisible ? (
+              <FontAwesomeIcon icon={faEye} className="w-6 h-6" />
+            ) : (
+              <FontAwesomeIcon icon={faEyeSlash} className="w-6 h-6" />
+            )}
           </span>
         </div>
 
@@ -113,13 +124,17 @@ export default () => {
             }
             className="absolute right-2 top-11 transform -translate-y-1/2 text-xl cursor-pointer"
           >
-            {isConfirmPasswordVisible ? "👁️" : "🙈"}
+            {isConfirmPasswordVisible ? (
+              <FontAwesomeIcon icon={faEye} className="w-6 h-6" />
+            ) : (
+              <FontAwesomeIcon icon={faEyeSlash} className="w-6 h-6" />
+            )}
           </span>
         </div>
 
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200"
+          className="w-full py-2 px-3 rounded-md bg-blue-dark text-white hover:bg-blue-light focus:outline-none focus:ring focus:ring-blue-light focus:ring-opacity-50"
         >
           Change password
         </button>

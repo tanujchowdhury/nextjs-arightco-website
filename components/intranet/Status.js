@@ -19,14 +19,14 @@ const Status = () => {
     <div>
       {status ? (
         <button
-          className="text-orange-500 px-4 py-2 border border-orange-500 rounded hover:bg-orange-100 focus:outline-none focus:bg-orange-200 transition-colors duration-150"
+          className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
           onClick={logout}
         >
           Logout
         </button>
       ) : (
         <button
-        className="text-red-500 px-4 py-2 border border-red-500 rounded hover:bg-red-100 focus:outline-none focus:bg-red-200 transition-colors duration-150"
+        className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
         onClick={logout}
       >
         Please Login

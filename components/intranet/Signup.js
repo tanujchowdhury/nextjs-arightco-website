@@ -25,7 +25,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-blue-dark">
       <h1 className="text-2xl font-semibold mb-2">Add new users here</h1>
       <h3 className="text-base font-semibold leading-7">
         Step 1: Contact a client for their preferred email. For security
@@ -81,7 +81,7 @@ const Signup = () => {
         <div>
           <button
             type="submit"
-            className="w-full py-2 px-3 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+            className="w-full py-2 px-3 rounded-md bg-blue-dark text-white hover:bg-blue-light focus:outline-none focus:ring focus:ring-blue-light focus:ring-opacity-50"
           >
             Sign Up
           </button>
