@@ -8,6 +8,9 @@ import ChangePassword from "../components/intranet/ChangePassword";
 import ActionDropdown from "../components/intranet/ActionDropdown";
 import Link from "next/link";
 import Image from "next/image";
+import { faFolder } from "@fortawesome/free-solid-svg-icons";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Dashboard() {
   const ref = useRef(null);
@@ -18,6 +21,7 @@ function Dashboard() {
   const [groupedFiles, setGroupedFiles] = useState({});
   const [directoryStack, setDirectoryStack] = useState([]);
   const [userGroup, setUserGroup] = useState("");
+  const [userGroups, setUserGroups] = useState([]);
   const [currentPath, setCurrentPath] = useState(["Home"]);
   const [feedbackMessage, setFeedbackMessage] = useState(null);
   const [isGridView, setIsGridView] = useState(true);
@@ -69,19 +73,26 @@ function Dashboard() {
       const user = await Auth.currentAuthenticatedUser();
       const userGroups =
         user.signInUserSession.accessToken.payload["cognito:groups"];
-      const userGroup = userGroups ? userGroups[0] : null;
+      setUserGroups(userGroups)
+
+
+      let userGroup;
+      // Check if "Client-Partner" is in the array
+      if (userGroups.includes("Client-Partner")) {
+        // Filter out "Client-Partner" and get the other group
+        userGroup = userGroups.find(group => group !== "Client-Partner");
+      } else {
+        userGroup = userGroups ? userGroups[0] : null;
+      }
+
       setUserGroup(userGroup);
       let files;
       if (userGroup === "Admins") {
         files = await Storage.list("");
-        // console.log(files);
       } else {
         const userFolder = userGroup;
         files = await Storage.list(userFolder);
-        // console.log(userFolder);
-        // console.log(files);
       }
-      // console.log(userGroup);
 
       if (files) {
         setFiles(files);
@@ -371,14 +382,14 @@ function Dashboard() {
   const ImageViewer = ({ imageUrl }) => {
     return (
       <div>
-        <img src={imageUrl} alt="Preview" />
+        <img src={imageUrl} alt="Preview" width="100%" height="100%" />
       </div>
     );
   };
 
   const PDFViewer = ({ pdfUrl }) => {
     return (
-      <object data={pdfUrl} type="application/pdf" width="100%" height="500px">
+      <object data={pdfUrl} type="application/pdf" width="100%" height="100%">
         <p>It appears you don't have a PDF plugin for this browser. You can <a href={pdfUrl}>click here to download the PDF file.</a></p>
       </object>
     );
@@ -474,7 +485,7 @@ function Dashboard() {
             </Link>
           </div>
           <div className="flex text-lg space-x-4 mr-10">
-            {userGroup === "Admins" && (
+            {(userGroup === "Admins" ||  userGroups.includes("Client-Partner")) && (
               <button
                 onClick={handleAddNewUser}
                 className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
@@ -519,7 +530,7 @@ function Dashboard() {
                     <React.Fragment key={folder}>
                       <button
                         onClick={() => handlePathClick(index)}
-                        className="text-white text-4xl hover:bg-blue-dark px-5 pt-2 pb-3 rounded-full bg-blue-light transition-colors duration-150 mb-3"
+                        className="text-white text-4xl hover:bg-blue-dark px-5 pt-2 pb-3 rounded-full bg-blue-light transition-colors duration-150 mb-3 shadow-xl"
                       >
                         {folder}
                       </button>
@@ -595,14 +606,14 @@ function Dashboard() {
 
               {/* Progress Bar */}
               {progress && (
-                <div className="fixed bottom-0 left-1/4 w-1/2 p-4 bg-white border-t border-gray-300 shadow-md">
+                <div className="fixed bottom-0 left-1/4 w-1/2 p-4 bg-white border-t border-blue-light shadow-md">
                   <label className="block font-semibold mb-2">
                     File Upload Progress:
                   </label>
-                  <div className="bg-gray-200 rounded">
+                  <div className="bg-gray-500 rounded">
                     <div
                       style={{ width: `${progress}%` }}
-                      className="bg-blue-500 text-xs text-white text-center py-1 rounded"
+                      className="bg-blue-light text-xs text-white text-center p-1 rounded"
                     >
                       {progress}%
                     </div>
@@ -614,7 +625,7 @@ function Dashboard() {
               </h2> */}
               {/* Admin Actions */}
               <div className="flex items-center space-x-4 mb-4">
-                {userGroup === "Admins" && (
+                {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
                   <>
                     {/* "Upload File" button */}
                     <div>
@@ -682,10 +693,13 @@ function Dashboard() {
                         <div
                           key={name}
                           onClick={() => handleFileClick(content.key)}
-                          className="flex items-center justify-between m-2 p-2 border border-gray-400 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-150 cursor-pointer"
+                          className="flex items-center justify-between m-2 p-2 rounded-lg cursor-pointer bg-white shadow border-2 border-orange-dark"
+                          title={name}
                         >
-                          <span className="text-xl md:text-2xl mb-2">📄</span>
-                          <div className="text-sm md:font-semibold text-gray-700 mb-2">
+                          <span>
+                            <FontAwesomeIcon icon={faFile} className="w-6 h-6 text-blue-light" />
+                          </span>
+                          <div className="flex-1 mx-2 text-2xl truncate">
                             {name}
                           </div>
 
@@ -695,7 +709,7 @@ function Dashboard() {
                                 label: "Download",
                                 handler: () => handleDownload(content.key),
                               },
-                              ...(userGroup === "Admins"
+                              ...((userGroup === "Admins" || userGroups.includes("Client-Partner"))
                                 ? [
                                   {
                                     label: "Rename",
@@ -723,14 +737,17 @@ function Dashboard() {
                         <div
                           key={name}
                           onClick={() => handleFolderClick(name)}
-                          className="flex items-center justify-between m-2 p-2 border border-blue-400 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors duration-150"
+                          className="flex items-center justify-between m-2 p-2 rounded-lg cursor-pointer bg-white shadow border-2 border-blue-light"
+                          title={name}
                         >
-                          <span className="text-xl md:text-2xl mr-2">📁</span>
-                          <div className="text-sm md:font-semibold text-blue-700">
+                          <span>
+                            <FontAwesomeIcon icon={faFolder} className="w-6 h-6 text-orange" />
+                          </span>
+                          <div className="flex-1 mx-2 text-2xl truncate">
                             {name}
                           </div>
 
-                          {userGroup === "Admins" && (
+                          {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
                             <div className="ml-2">
                               <ActionDropdown
                                 actions={[
@@ -763,9 +780,9 @@ function Dashboard() {
                   })}
                 </div>
               ) : (
-                <table className="w-full text-left border-collapse mt-2">
+                <table className="w-full text-left border-collapse mt-2 border border-blue">
                   <thead>
-                    <tr className="bg-gray-200">
+                    <tr className="bg-blue-light text-orange">
                       <th className="border-b p-2 font-semibold">Name</th>
                       <th className="border-b p-2 font-semibold w-2/5">
                         Action
@@ -777,18 +794,19 @@ function Dashboard() {
                       if ("size" in content) {
                         // It's a file
                         return (
-                          <tr key={name} className="hover:bg-gray-100">
-                            <td className="border p-2">📄 {name}</td>
-                            <td className="border p-2">
+                          <tr key={name} className="hover:bg-gray-100 border border-blue bg-white">
+                            <td onClick={() => handleFileClick(content.key)}
+                              className="p-2 flex space-x-4"><FontAwesomeIcon icon={faFile} className="w-6 h-6 text-blue-light" /><div>{name}</div></td>
+                            <td className="border border-blue p-2">
                               <div className="flex items-center space-x-2">
                                 <button
                                   onClick={() => handleDownload(content.key)}
-                                  className="bg-blue-500 hover:bg-blue-600 border border-blue-700 px-2 py-1 mb-1 rounded text-white transition-colors duration-150"
+                                  className="bg-orange-light hover:bg-orange border-2 border-blue-light px-2 py-1 rounded text-white transition-colors duration-150"
                                 >
                                   Download
                                 </button>
 
-                                {userGroup === "Admins" && (
+                                {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
                                   <>
                                     <button
                                       onClick={() => {
@@ -798,14 +816,14 @@ function Dashboard() {
                                           handleFileRename(name, newName);
                                         }
                                       }}
-                                      className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                      className="bg-orange-light hover:bg-orange border-2 border-blue-light px-2 py-1 rounded text-white transition-colors duration-150"
                                     >
                                       Rename
                                     </button>
 
                                     <button
                                       onClick={() => handleFileDelete(name)}
-                                      className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                      className="bg-orange-light hover:bg-orange border-2 border-blue-light px-2 py-1 rounded text-white transition-colors duration-150"
                                     >
                                       Delete
                                     </button>
@@ -818,23 +836,19 @@ function Dashboard() {
                       } else {
                         // It's a folder
                         return (
-                          <tr key={name} className="hover:bg-gray-100">
-                            <td className="border p-2">
-                              <div className="flex items-center space-x-2">
-                                <span className="text-xl md:text-2xl">📁</span>
-                                <span>{name}</span>
-                              </div>
-                            </td>
-                            <td className="border p-2">
+                          <tr key={name} className="hover:bg-gray-100 border border-blue bg-white">
+                            <td onClick={() => handleFolderClick(name)}
+                              className="p-2 flex space-x-4"><FontAwesomeIcon icon={faFolder} className="w-6 h-6 text-orange" /><div>{name}</div></td>
+                            <td className="p-2 border border-blue">
                               <div className="flex items-center space-x-2">
                                 <button
-                                  className="bg-purple-200 border-purple-400 px-3 py-1 m-1 rounded"
+                                  className="bg-orange-light hover:bg-orange border-2 border-blue-light px-2 py-1 rounded text-white transition-colors duration-150"
                                   onClick={() => handleFolderClick(name)}
                                 >
                                   Open Folder
                                 </button>
 
-                                {userGroup === "Admins" && (
+                                {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
                                   <>
                                     <button
                                       onClick={() => {
@@ -851,7 +865,7 @@ function Dashboard() {
                                           );
                                         }
                                       }}
-                                      className="bg-green-500 hover:bg-green-600 border border-green-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                      className="bg-orange-light hover:bg-orange border-2 border-blue-light px-2 py-1 rounded text-white transition-colors duration-150"
                                     >
                                       Rename
                                     </button>
@@ -859,7 +873,7 @@ function Dashboard() {
                                       onClick={(e) =>
                                         handleFolderDelete(e, name)
                                       }
-                                      className="bg-red-500 hover:bg-red-600 border border-red-700 px-2 py-1 rounded text-white transition-colors duration-150"
+                                      className="bg-orange-light hover:bg-orange border-2 border-blue-light px-2 py-1 rounded text-white transition-colors duration-150"
                                     >
                                       Delete
                                     </button>
@@ -876,7 +890,8 @@ function Dashboard() {
               )}
               {selectedFile ? (
                 <>
-                  <button onClick={() => setSelectedFile(null)}>
+                  <button onClick={() => setSelectedFile(null)}
+                    className="py-2 px-3 rounded-md bg-blue-dark text-white hover:bg-blue-light focus:outline-none focus:ring focus:ring-blue-light focus:ring-opacity-50 my-5">
                     Close Preview
                   </button>
                   <FileViewer
@@ -885,7 +900,7 @@ function Dashboard() {
                   />
                 </>
               ) : (
-                <div>Click on a file to view</div>
+                <div className="text-sm mt-5">Click on a file to preview</div>
               )}
             </main>
           )}
