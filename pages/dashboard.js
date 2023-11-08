@@ -530,7 +530,7 @@ function Dashboard() {
                     <React.Fragment key={folder}>
                       <button
                         onClick={() => handlePathClick(index)}
-                        className="text-white text-4xl hover:bg-blue-dark px-5 pt-2 pb-3 rounded-full bg-blue-light transition-colors duration-150 mb-3 shadow-xl"
+                        className="text-white text-4xl hover:bg-blue-dark px-5 pt-2 pb-3 rounded-full bg-blue-light transition-colors duration-150 mb-3 shadow hover:shadow-xl"
                       >
                         {folder}
                       </button>
