@@ -88,10 +88,10 @@ function Dashboard() {
       setUserGroup(userGroup);
       let files;
       if (userGroup === "Admins") {
-        files = await Storage.list("");
+        files = await Storage.list("", { pageSize: 'ALL' });
       } else {
         const userFolder = userGroup;
-        files = await Storage.list(userFolder);
+        files = await Storage.list(userFolder, { pageSize: 'ALL' });
       }
 
       if (files) {
