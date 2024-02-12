@@ -4,6 +4,7 @@ import SignUp from "../sections/signup";
 import Head from "next/head";
 import BackToTopButton from "../backtotopbutton";
 import Script from "next/script";
+import HelpButton from "../helpbutton";
 
 export default function Layout({
   children,
@@ -29,10 +30,11 @@ export default function Layout({
       <main>{children}</main>
       <SignUp />
       <Footer />
-      <BackToTopButton
+      <HelpButton />
+      {/* <BackToTopButton
         startPosition={backToTopButtonStartPosition}
         target={backToTopButtonTarget}
-      />
+      /> */}
     </>
   );
 }
