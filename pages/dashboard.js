@@ -29,6 +29,7 @@ function Dashboard() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedFileType, setSelectedFileType] = useState(null);
   const [sortedEntries, setSortedEntries] = useState([]);
+  const [employeeFilesShowing, setEmployeeFilesShowing] = useState(false);
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
@@ -73,30 +74,34 @@ function Dashboard() {
       const user = await Auth.currentAuthenticatedUser();
       const userGroups =
         user.signInUserSession.accessToken.payload["cognito:groups"];
-      setUserGroups(userGroups)
-
+      setUserGroups(userGroups);
 
       let userGroup;
       // Check if "Client-Partner" is in the array
       if (userGroups.includes("Client-Partner")) {
         // Filter out "Client-Partner" and get the other group
-        userGroup = userGroups.find(group => group !== "Client-Partner");
+        userGroup = userGroups.find((group) => group !== "Client-Partner");
       } else {
         userGroup = userGroups ? userGroups[0] : null;
       }
-
       setUserGroup(userGroup);
       let files;
-      if (userGroup === "Admins") {
-        files = await Storage.list("", { pageSize: 'ALL' });
+      if (userGroups.includes("Admins")) {
+        files = await Storage.list("", { pageSize: "ALL" });
       } else {
         const userFolder = userGroup;
-        files = await Storage.list(userFolder, { pageSize: 'ALL' });
+        files = await Storage.list(userFolder, { pageSize: "ALL" });
       }
-
       if (files) {
-        setFiles(files);
-        setGroupedFiles(groupFiles(files));
+        const filteredResults = files.results.filter(
+          (file) => !file.key.includes("Employees/")
+        );
+        const filteredFiles = {
+          results: filteredResults,
+          hasNextToken: files.hasNextToken,
+        };
+        setFiles(filteredFiles);
+        setGroupedFiles(groupFiles(filteredFiles));
         setCurrentPath(["Home"]);
       }
     } catch (err) {
@@ -164,8 +169,9 @@ function Dashboard() {
         setFeedbackMessage({
           artifactName: oldFileName,
           fullPath: oldPath,
-          message: `File renamed to ${newFileName + "." + fileExtension
-            }, refresh recommended`,
+          message: `File renamed to ${
+            newFileName + "." + fileExtension
+          }, refresh recommended`,
         });
         loadFiles();
         // console.log(`Renamed file from ${oldFileName} to ${newFileName + "." + fileExtension}`);
@@ -284,7 +290,7 @@ function Dashboard() {
               resolve(); // Resolve the promise indicating this file is uploaded
             }
           },
-          contentType: contentType
+          contentType: contentType,
         })
           .then(() => {
             resolve();
@@ -299,16 +305,16 @@ function Dashboard() {
     const getMimeType = (filename) => {
       const extension = filename.split(".").pop().toLowerCase();
       const mimeTypes = {
-        'jpg': 'image/jpeg',
-        'jpeg': 'image/jpeg',
-        'png': 'image/png',
-        'gif': 'image/gif',
-        'pdf': 'application/pdf',
+        jpg: "image/jpeg",
+        jpeg: "image/jpeg",
+        png: "image/png",
+        gif: "image/gif",
+        pdf: "application/pdf",
         // ... add more file extensions and their MIME types as needed
       };
 
-      return mimeTypes[extension] || 'binary/octet-stream';
-    }
+      return mimeTypes[extension] || "binary/octet-stream";
+    };
 
     // Sequential upload using reduce
     files
@@ -390,19 +396,20 @@ function Dashboard() {
   const PDFViewer = ({ pdfUrl }) => {
     return (
       <object data={pdfUrl} type="application/pdf" width="100%" height="100%">
-        <p>It appears you don't have a PDF plugin for this browser. You can <a href={pdfUrl}>click here to download the PDF file.</a></p>
+        <p>
+          It appears you don't have a PDF plugin for this browser. You can{" "}
+          <a href={pdfUrl}>click here to download the PDF file.</a>
+        </p>
       </object>
     );
-  }
+  };
 
   const FileViewer = ({ fileUrl, fileType }) => {
     if (["jpg", "jpeg", "png", "gif"].includes(fileType)) {
       return <ImageViewer imageUrl={fileUrl} />;
-    }
-    else if (fileType === 'pdf') {
+    } else if (fileType === "pdf") {
       return <PDFViewer pdfUrl={fileUrl} />;
-    }
-    else {
+    } else {
       return <div>File type not supported for preview.</div>;
     }
   };
@@ -442,10 +449,19 @@ function Dashboard() {
     setSortedEntries(newSortedEntries);
   }, [groupedFiles, currentPath]);
 
-  const handleDefaultView = () => {
-    // console.log(currentPath.slice(-1));
-    if (currentView != "default") {
-      setCurrentView("default");
+  const handleClientDashboard = async () => {
+    setEmployeeFilesShowing(false);
+    loadFiles();
+  };
+
+  const handleEmployeeDashboard = async () => {
+    setEmployeeFilesShowing(true);
+    let files;
+    files = await Storage.list("Employees/", { pageSize: "ALL" });
+    if (files) {
+      setFiles(files);
+      setGroupedFiles(groupFiles(files));
+      setCurrentPath(["Home"]);
     }
   };
 
@@ -485,7 +501,24 @@ function Dashboard() {
             </Link>
           </div>
           <div className="flex text-lg space-x-4 mr-10">
-            {(userGroup === "Admins" ||  userGroups.includes("Client-Partner")) && (
+            {userGroups.includes("Employees") && employeeFilesShowing && (
+              <button
+                onClick={handleClientDashboard}
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
+              >
+                Client Dashboard
+              </button>
+            )}
+            {userGroups.includes("Employees") && !employeeFilesShowing && (
+              <button
+                onClick={handleEmployeeDashboard}
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
+              >
+                Employee Dashboard
+              </button>
+            )}
+            {(userGroups.includes("Admins") ||
+              userGroups.includes("Client-Partner")) && (
               <button
                 onClick={handleAddNewUser}
                 className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
@@ -507,19 +540,29 @@ function Dashboard() {
         </header>
 
         <div className="flex flex-grow mt-20">
-          {currentView === "addNewUser" &&
+          {currentView === "addNewUser" && (
             <div className="flex flex-col ml-3">
-              <button className="text-left p-4 text-3xl text-blue-dark hover:text-orange-dark" onClick={() => setCurrentView("default")}>← Return to dashboard</button>
+              <button
+                className="text-left p-4 text-3xl text-blue-dark hover:text-orange-dark"
+                onClick={() => setCurrentView("default")}
+              >
+                ← Return to dashboard
+              </button>
               <Signup />
             </div>
-          }
+          )}
 
-          {currentView === "accountSettings" &&
+          {currentView === "accountSettings" && (
             <div className="flex flex-col ml-3">
-              <button className="text-left p-4 text-3xl text-blue-dark hover:text-orange-dark" onClick={() => setCurrentView("default")}>← Return to dashboard</button>
+              <button
+                className="text-left p-4 text-3xl text-blue-dark hover:text-orange-dark"
+                onClick={() => setCurrentView("default")}
+              >
+                ← Return to dashboard
+              </button>
               <ChangePassword />
             </div>
-          }
+          )}
 
           {currentView === "default" && (
             <main className="flex-grow p-4">
@@ -535,9 +578,7 @@ function Dashboard() {
                         {folder}
                       </button>
                       {index !== currentPath.length - 1 && (
-                        <span className="text-4xl text-orange mb-3">
-                          ＞
-                        </span>
+                        <span className="text-4xl text-orange mb-3">＞</span>
                       )}
                     </React.Fragment>
                   ))}
@@ -548,16 +589,18 @@ function Dashboard() {
                   <div className="mb-1">Change View:</div>
                   <div
                     onClick={() => setIsGridView(!isGridView)}
-                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${isGridView
-                      ? "border-blue-light bg-blue-light"
-                      : "border-orange bg-orange"
-                      }`}
+                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${
+                      isGridView
+                        ? "border-blue-light bg-blue-light"
+                        : "border-orange bg-orange"
+                    }`}
                   >
                     <div
-                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${isGridView
-                        ? "translate-x-6 bg-white"
-                        : "translate-x-0 bg-white"
-                        } rounded-full`}
+                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${
+                        isGridView
+                          ? "translate-x-6 bg-white"
+                          : "translate-x-0 bg-white"
+                      } rounded-full`}
                     ></div>
                   </div>
                 </div>
@@ -625,7 +668,8 @@ function Dashboard() {
               </h2> */}
               {/* Admin Actions */}
               <div className="flex items-center space-x-4 mb-4">
-                {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
+                {(userGroups.includes("Admins") ||
+                  userGroups.includes("Client-Partner")) && (
                   <>
                     {/* "Upload File" button */}
                     <div>
@@ -697,7 +741,10 @@ function Dashboard() {
                           title={name}
                         >
                           <span>
-                            <FontAwesomeIcon icon={faFile} className="w-6 h-6 text-blue-light" />
+                            <FontAwesomeIcon
+                              icon={faFile}
+                              className="w-6 h-6 text-blue-light"
+                            />
                           </span>
                           <div className="flex-1 mx-2 text-2xl truncate">
                             {name}
@@ -709,23 +756,24 @@ function Dashboard() {
                                 label: "Download",
                                 handler: () => handleDownload(content.key),
                               },
-                              ...((userGroup === "Admins" || userGroups.includes("Client-Partner"))
+                              ...(userGroups.includes("Admins") ||
+                              userGroups.includes("Client-Partner")
                                 ? [
-                                  {
-                                    label: "Rename",
-                                    handler: () => {
-                                      const newName =
-                                        prompt("Rename file to:");
-                                      if (newName && newName !== name) {
-                                        handleFileRename(name, newName);
-                                      }
+                                    {
+                                      label: "Rename",
+                                      handler: () => {
+                                        const newName =
+                                          prompt("Rename file to:");
+                                        if (newName && newName !== name) {
+                                          handleFileRename(name, newName);
+                                        }
+                                      },
                                     },
-                                  },
-                                  {
-                                    label: "Delete",
-                                    handler: () => handleFileDelete(name),
-                                  },
-                                ]
+                                    {
+                                      label: "Delete",
+                                      handler: () => handleFileDelete(name),
+                                    },
+                                  ]
                                 : []),
                             ]}
                           />
@@ -741,13 +789,17 @@ function Dashboard() {
                           title={name}
                         >
                           <span>
-                            <FontAwesomeIcon icon={faFolder} className="w-6 h-6 text-orange" />
+                            <FontAwesomeIcon
+                              icon={faFolder}
+                              className="w-6 h-6 text-orange"
+                            />
                           </span>
                           <div className="flex-1 mx-2 text-2xl truncate">
                             {name}
                           </div>
 
-                          {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
+                          {(userGroups.includes("Admins") ||
+                            userGroups.includes("Client-Partner")) && (
                             <div className="ml-2">
                               <ActionDropdown
                                 actions={[
@@ -794,9 +846,20 @@ function Dashboard() {
                       if ("size" in content) {
                         // It's a file
                         return (
-                          <tr key={name} className="hover:bg-gray-100 border border-blue bg-white">
-                            <td onClick={() => handleFileClick(content.key)}
-                              className="p-2 flex space-x-4"><FontAwesomeIcon icon={faFile} className="w-6 h-6 text-blue-light" /><div>{name}</div></td>
+                          <tr
+                            key={name}
+                            className="hover:bg-gray-100 border border-blue bg-white"
+                          >
+                            <td
+                              onClick={() => handleFileClick(content.key)}
+                              className="p-2 flex space-x-4"
+                            >
+                              <FontAwesomeIcon
+                                icon={faFile}
+                                className="w-6 h-6 text-blue-light"
+                              />
+                              <div>{name}</div>
+                            </td>
                             <td className="border border-blue p-2">
                               <div className="flex items-center space-x-2">
                                 <button
@@ -806,7 +869,8 @@ function Dashboard() {
                                   Download
                                 </button>
 
-                                {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
+                                {(userGroups.includes("Admins") ||
+                                  userGroups.includes("Client-Partner")) && (
                                   <>
                                     <button
                                       onClick={() => {
@@ -836,9 +900,20 @@ function Dashboard() {
                       } else {
                         // It's a folder
                         return (
-                          <tr key={name} className="hover:bg-gray-100 border border-blue bg-white">
-                            <td onClick={() => handleFolderClick(name)}
-                              className="p-2 flex space-x-4"><FontAwesomeIcon icon={faFolder} className="w-6 h-6 text-orange" /><div>{name}</div></td>
+                          <tr
+                            key={name}
+                            className="hover:bg-gray-100 border border-blue bg-white"
+                          >
+                            <td
+                              onClick={() => handleFolderClick(name)}
+                              className="p-2 flex space-x-4"
+                            >
+                              <FontAwesomeIcon
+                                icon={faFolder}
+                                className="w-6 h-6 text-orange"
+                              />
+                              <div>{name}</div>
+                            </td>
                             <td className="p-2 border border-blue">
                               <div className="flex items-center space-x-2">
                                 <button
@@ -848,7 +923,8 @@ function Dashboard() {
                                   Open Folder
                                 </button>
 
-                                {(userGroup === "Admins" || userGroups.includes("Client-Partner")) && (
+                                {(userGroups.includes("Admins") ||
+                                  userGroups.includes("Client-Partner")) && (
                                   <>
                                     <button
                                       onClick={() => {
@@ -890,8 +966,10 @@ function Dashboard() {
               )}
               {selectedFile ? (
                 <>
-                  <button onClick={() => setSelectedFile(null)}
-                    className="py-2 px-3 rounded-md bg-blue-dark text-white hover:bg-blue-light focus:outline-none focus:ring focus:ring-blue-light focus:ring-opacity-50 my-5">
+                  <button
+                    onClick={() => setSelectedFile(null)}
+                    className="py-2 px-3 rounded-md bg-blue-dark text-white hover:bg-blue-light focus:outline-none focus:ring focus:ring-blue-light focus:ring-opacity-50 my-5"
+                  >
                     Close Preview
                   </button>
                   <FileViewer
