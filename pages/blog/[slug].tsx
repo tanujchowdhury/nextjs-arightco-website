@@ -12,7 +12,7 @@ import { sortByDate } from "../../utils";
 
 export default function PostPage({
   posts,
-  frontmatter: { title, date, industry, cover_image, placeholder },
+  frontmatter: { title, date, industry, cover_image, placeholder, show_date },
   content,
 }: {
   posts: Post[];
@@ -29,7 +29,9 @@ export default function PostPage({
         <div className="basis-1/2">
           <div className="text-sm">{"Article | " + industry}</div>
           <div className="text-6xl">{title}</div>
-          <div className="text-sm font-normal">{"Published on " + date}</div>
+          {!show_date && (
+            <div className="text-sm font-normal">{"Published on " + date}</div>
+          )}
         </div>
       </div>
       <div className="px-3 lg:px-32 flex flex-col place-items-center">

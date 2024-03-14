@@ -20,6 +20,7 @@ export interface FrontMatter {
   industry: string;
   cover_image: string;
   placeholder: string;
+  show_date?: string;
 }
 
 export interface Post {
