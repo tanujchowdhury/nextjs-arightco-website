@@ -27,7 +27,7 @@ export default function Careers() {
             jobCategory={"Finance & Accounting"}
             jobType={"Full Time"}
             jobLocation={"US"}
-            href={"https://www.indeed.com/cmp/Arightco-Inc/jobs"}
+            href={"/careers/controller-us"}
           />
 
           <JobCard
@@ -35,7 +35,7 @@ export default function Careers() {
             jobCategory={"Finance & Accounting"}
             jobType={"Full Time"}
             jobLocation={"US"}
-            href={"https://www.indeed.com/cmp/Arightco-Inc/jobs"}
+            href={"/careers/sr-associate-accountant-us"}
           />
 
           <JobCard
@@ -43,7 +43,7 @@ export default function Careers() {
             jobCategory={"Finance & Accounting"}
             jobType={"Full Time"}
             jobLocation={"US"}
-            href={"https://www.indeed.com/cmp/Arightco-Inc/jobs"}
+            href={"/careers/sr-associate-accountant-us"}
           />
 
           <JobCard
