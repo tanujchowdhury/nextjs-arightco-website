@@ -181,7 +181,7 @@ export default function Navbar() {
           </div>
           <div className="mx-2 px-3 max-[1100px]:text-sm">
             <Link className="hover:text-orange-dark" href="/login">
-              Intranet
+              Login
             </Link>
           </div>
         </div>

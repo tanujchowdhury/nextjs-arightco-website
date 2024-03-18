@@ -90,29 +90,7 @@ export default function Footer() {
                 Privacy Policy
               </Link>
             </div>
-          </div>
-          <div className="flex flex-col text-white text-center pt-8 lg:pl-20 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
-            <div className="font-bold py-3 lg:text-2xl">Latest Posts</div>
-            {/* --------------------------Link 1--------------------------*/}
-            <ArticleFooterLink
-              href={"/blog/exit-plan-for-startups"}
-              title={"Is Your Startup Prepared for Departure?"}
-              date={"May 3, 2023"}
-            />
-            {/* --------------------------Link 2--------------------------*/}
-            <ArticleFooterLink
-              href="/blog/bank-failures-what-to-do-next-for-business-owners"
-              title="Another Bank Bites The Dust!"
-              date="April 27, 2023"
-            />
-            {/*--------------------------Link 3--------------------------*/}
-            <ArticleFooterLink
-              href="/blog/tax-professionals-specialized-expertise"
-              title="Taxes are Best Left to the Professionals"
-              date="April 25, 2023"
-            />
-            {/*-------------------------End Links------------------------*/}
-          </div>
+          </div>  
           <div className="flex flex-col text-white text-center pt-8 pb-5 lg:pl-10 lg:basis-1/4 lg:justify-start lg:items-start lg:text-left lg:pt-5">
             <div className="font-bold py-3 lg:text-2xl">Company</div>
             <div className="text-sm py-1 lg:text-base">

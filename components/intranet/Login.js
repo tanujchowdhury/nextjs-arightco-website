@@ -63,7 +63,7 @@ const Login = ({ onLogin }) => {
             onSubmit={onSubmit}
             className="space-y-8 bg-gradient-to-r from-blue-dark to-blue-light shadow-md p-8 rounded-lg w-[40vw] mt-20 text-orange"
           >
-            <h3 className="text-center text-3xl font-semibold">Intranet Login</h3>
+            <h3 className="text-center text-3xl font-semibold">Login</h3>
             <div className="space-y-4">
               <label htmlFor="email" className="block font-medium text-lg">
                 Email
