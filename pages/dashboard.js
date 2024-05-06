@@ -11,6 +11,11 @@ import Image from "next/image";
 import { faFolder } from "@fortawesome/free-solid-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSWR from "swr";
+import axios from "axios";
+import BasicDashboard from "../components/basicdashboard";
+
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 function Dashboard() {
   const ref = useRef(null);
@@ -30,6 +35,7 @@ function Dashboard() {
   const [selectedFileType, setSelectedFileType] = useState(null);
   const [sortedEntries, setSortedEntries] = useState([]);
   const [employeeFilesShowing, setEmployeeFilesShowing] = useState(false);
+  const { data: items, error } = useSWR("./api/items", fetcher);
 
   const createNewFolder = (folderName) => {
     let fullPath = currentPath.slice(1).join("/");
@@ -485,6 +491,20 @@ function Dashboard() {
     // console.log(currentPath);
   }, [currentPath]);
 
+  const getLatestAcante = (items) => {
+    if (!items) return null;
+    const acanteItems = items.filter((item) => item.name === "Acante, Inc");
+    acanteItems.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date in descending order
+    return acanteItems[0]; // Return the most recent item
+  };
+
+  const acanteItem = getLatestAcante(items);
+
+  if (error)
+    return <div className="text-red-500 text-center">Failed to load data</div>;
+  if (!items)
+    return <div className="text-blue-500 text-center">Loading...</div>;
+
   return (
     <Account>
       <div className="flex flex-col h-screen">
@@ -716,6 +736,7 @@ function Dashboard() {
                   </>
                 )}
               </div>
+              {currentPath.includes("Acante") && acanteItem ? (<BasicDashboard item={acanteItem} />) : (<>Acante error</>)}
               {sortedEntries.length === 0 ? (
                 <>
                   <div className="mt-10 text-xl md:text-2xl text-gray-600 mb-4">
