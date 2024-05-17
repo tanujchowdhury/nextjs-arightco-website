@@ -509,7 +509,7 @@ function Dashboard() {
     <Account>
       <div className="flex flex-col h-screen">
         <header className="h-20 flex justify-between items-center bg-white font-medium text-blue-dark fixed top-0 left-0 right-0 z-20 drop-shadow-md">
-          <div className="ml-10 shrink-0">
+          <div className="ml-10 shrink-0 max-[800px]:ml-2">
             <Link href="/">
               <Image
                 src="/logo-blue.png"
@@ -517,14 +517,15 @@ function Dashboard() {
                 width={200}
                 height={64}
                 priority
+                className="max-[800px]:max-w-[150px] max-[510px]:max-w-[100px]"
               />
             </Link>
           </div>
-          <div className="flex text-lg space-x-4 mr-10">
+          <div className="flex text-lg space-x-4 mr-10 max-[800px]:mr-2">
             {userGroups.includes("Employees") && employeeFilesShowing && (
               <button
                 onClick={handleClientDashboard}
-                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[800px]:p-0 max-[1100px]:text-sm"
               >
                 Client Dashboard
               </button>
@@ -532,7 +533,7 @@ function Dashboard() {
             {userGroups.includes("Employees") && !employeeFilesShowing && (
               <button
                 onClick={handleEmployeeDashboard}
-                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[800px]:p-0 max-[1100px]:text-sm"
               >
                 Employee Dashboard
               </button>
@@ -541,7 +542,7 @@ function Dashboard() {
               userGroups.includes("Client-Partner")) && (
               <button
                 onClick={handleAddNewUser}
-                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[800px]:hidden max-[1100px]:text-sm"
               >
                 Add New User
               </button>
@@ -549,7 +550,7 @@ function Dashboard() {
             {userGroup !== "" && (
               <button
                 onClick={handleAccountSettings}
-                className="hover:text-orange-dark flex items-center cursor-pointer max-[1100px]:text-sm"
+                className="hover:text-orange-dark flex items-center cursor-pointer max-[800px]:p-0 max-[1100px]:text-sm"
               >
                 Change Password
               </button>
@@ -586,44 +587,26 @@ function Dashboard() {
 
           {currentView === "default" && (
             <main className="flex-grow p-4">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center max-[510px]:flex-col max-[510px]:items-start">
                 {/* File path as Breadcrumbs */}
-                <div className="flex flex-wrap items-center space-x-2 mb-6">
+                <div className="flex flex-wrap items-center space-x-2x">
                   {currentPath.map((folder, index) => (
                     <React.Fragment key={folder}>
                       <button
                         onClick={() => handlePathClick(index)}
-                        className="text-white text-4xl hover:bg-blue-dark px-5 pt-2 pb-3 rounded-full bg-blue-light transition-colors duration-150 mb-3 shadow hover:shadow-xl"
+                        className="text-white text-4xl max-[800px]:text-xl hover:bg-blue-dark px-5 max-[800px]:px-3 pt-2 max-[800px]:pt-1 pb-3 max-[800px]:pt-2 rounded-full bg-blue-light transition-colors duration-150 mb-3 shadow hover:shadow-xl"
                       >
                         {folder}
                       </button>
                       {index !== currentPath.length - 1 && (
-                        <span className="text-4xl text-orange mb-3">＞</span>
+                        <span className="text-4xl max-[800px]:text-xl text-orange mb-3">
+                          ＞
+                        </span>
                       )}
                     </React.Fragment>
                   ))}
                 </div>
                 {/* Switch for Grid and List Views */}
-
-                <div className="flex items-center space-x-2 mb-6 text-lg text-blue-dark font-medium">
-                  <div className="mb-1">Change View:</div>
-                  <div
-                    onClick={() => setIsGridView(!isGridView)}
-                    className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${
-                      isGridView
-                        ? "border-blue-light bg-blue-light"
-                        : "border-orange bg-orange"
-                    }`}
-                  >
-                    <div
-                      className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${
-                        isGridView
-                          ? "translate-x-6 bg-white"
-                          : "translate-x-0 bg-white"
-                      } rounded-full`}
-                    ></div>
-                  </div>
-                </div>
               </div>
 
               {/* Feedback Modal */}
@@ -702,7 +685,7 @@ function Dashboard() {
                       />
                       <button
                         onClick={() => ref.current.click()}
-                        className="px-4 py-2 bg-orange-dark hover:bg-orange-light text-white hover:text-blue-dark rounded-lg shadow-md transition-colors duration-150"
+                        className="px-4 py-2 bg-orange-dark hover:bg-orange-light text-white hover:text-blue-dark rounded-lg shadow-md transition-colors duration-150 max-[540px]:hidden"
                       >
                         Upload Files to {currentPath[currentPath.length - 1]}
                       </button>
@@ -716,7 +699,7 @@ function Dashboard() {
                             createNewFolder(folderName);
                           }
                         }}
-                        className="px-4 py-2 bg-orange-dark hover:bg-orange-light text-white hover:text-blue-dark rounded-lg shadow-md transition-colors duration-150"
+                        className="px-4 py-2 bg-orange-dark hover:bg-orange-light text-white hover:text-blue-dark rounded-lg shadow-md transition-colors duration-150 max-[540px]:hidden"
                       >
                         Create Folder in {currentPath[currentPath.length - 1]}
                       </button>
@@ -729,7 +712,7 @@ function Dashboard() {
                           </Link>
                         </button>
                       )}
-                    ˝{/* Testing */}
+                    {/* Testing */}
                     {/* <div>
                       <button
                         onClick={() => {
@@ -749,6 +732,25 @@ function Dashboard() {
               ) : (
                 <></>
               )}
+              <div className="flex items-center space-x-2 mb-6 text-lg text-blue-dark font-medium">
+                <div className="mb-1">Change View:</div>
+                <div
+                  onClick={() => setIsGridView(!isGridView)}
+                  className={`relative cursor-pointer w-12 h-6 transition-all duration-200 ease-in-out rounded-full border ${
+                    isGridView
+                      ? "border-blue-light bg-blue-light"
+                      : "border-orange bg-orange"
+                  }`}
+                >
+                  <div
+                    className={`absolute custom-centering left-1 w-4 h-4 transition-transform duration-200 ease-in-out transform ${
+                      isGridView
+                        ? "translate-x-6 bg-white"
+                        : "translate-x-0 bg-white"
+                    } rounded-full`}
+                  ></div>
+                </div>
+              </div>
               {sortedEntries.length === 0 ? (
                 <>
                   <div className="mt-10 text-xl md:text-2xl text-gray-600 mb-4">
