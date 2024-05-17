@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function BillTraining() {
   return (
     <>
-      <Link className="fixed top-0 left-0 p-4" href="/training/day-1-training">
+      <Link className="absolute top-0 left-0 p-4" href="/training/day-1-training">
         ← Back to Day 1 Training
       </Link>
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen pt-16 pb-8 px-3">
         <div className="flex flex-col w-[500px] gap-2">
           <h3 className="text-3xl">Bill Training (Formally Bill.com)</h3>
 

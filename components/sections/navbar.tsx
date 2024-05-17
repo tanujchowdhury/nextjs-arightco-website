@@ -4,6 +4,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import QuoteModal from "../modals/quotemodal";
 import { hoverMenuAnimate, subMenuAnimate } from "../animations";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -31,6 +33,7 @@ export default function Navbar() {
               width={200}
               height={64}
               priority
+              className="max-[540px]:w-[150px]"
             />
           </Link>
         </div>
@@ -210,8 +213,11 @@ export default function Navbar() {
         {/* Mobile Button*/}
         <div
           onClick={handleNav}
-          className="block lg:hidden mr-3 cursor-pointer"
+          className="block lg:hidden mr-3 cursor-pointer flex flex-row items-center gap-4"
         >
+          <Link href="/login">
+            <FontAwesomeIcon icon={faUser} className="w-6 h-6" />
+          </Link>
           {nav ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"

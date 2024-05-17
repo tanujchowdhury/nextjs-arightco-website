@@ -3,10 +3,13 @@ import Link from "next/link";
 export default function QBOTrainingPart1() {
   return (
     <>
-      <Link className="fixed top-0 left-0 p-4" href="/training/day-2-training">
+      <Link
+        className="absolute top-0 left-0 p-4"
+        href="/training/day-2-training"
+      >
         ← Back to Day 2 Training
       </Link>
-      <div className="flex justify-center items-center min-h-screen p-10">
+      <div className="flex justify-center items-center min-h-screen pt-16 pb-8 px-3">
         <div className="flex flex-col w-[500px] gap-2">
           <h3 className="text-3xl">QBO Training Part 1</h3>
 
@@ -123,7 +126,7 @@ export default function QBOTrainingPart1() {
               className="text-blue-500"
               href="https://drive.google.com/file/d/1bZcwEO2IeE2zboXT1Bx8Y26z4-HXamrR/view?usp=drive_link"
             >
-              QBO video 
+              QBO video
             </Link>
             . 
           </p>
@@ -179,10 +182,7 @@ export default function QBOTrainingPart1() {
             reach out directly to the Training Manager on Slack or by email.
           </p>
           <div className="flex flex-row justify-between">
-            <Link
-              href="/training/day-2-training"
-              className="text-xl mt-4"
-            >
+            <Link href="/training/day-2-training" className="text-xl mt-4">
               ← Previous Step
             </Link>
             {/* <Link href="/training/day-2-training" className="text-xl mt-4">
