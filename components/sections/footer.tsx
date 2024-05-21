@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col justify-center items-center text-white pt-4 pb-5 border-t border-gray-dark/50 w-11/12">
           <div className="text-sm">
-            Copyright © 2023 ArightCo. All Rights Reserved.
+            Copyright © 2024 ArightCo. All Rights Reserved.
           </div>
         </div>
       </div>
