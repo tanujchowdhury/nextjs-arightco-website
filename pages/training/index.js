@@ -8,7 +8,10 @@ export default function TrainingHomePage() {
       </Link>
       <h1 className="text-3xl pt-10 ">Training Manual</h1>
       <Link href="/training/day-1-training">Day 1 Training</Link>
-      <Link href="/training/day-1-training">Day 2 Training</Link>
+      <Link href="/training/day-2-training">Day 2 Training</Link>
+      <Link href="/training/day-3-training">Day 3 Training</Link>
+      <Link href="/training/day-4and5-training">Day 4 & 5 Training</Link>
+      <Link href="/training/guides-slack">Guides - Slack</Link>
     </div>
   );
 }

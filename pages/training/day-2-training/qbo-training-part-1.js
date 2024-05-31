@@ -185,9 +185,9 @@ export default function QBOTrainingPart1() {
             <Link href="/training/day-2-training" className="text-xl mt-4">
               ← Previous Step
             </Link>
-            {/* <Link href="/training/day-2-training" className="text-xl mt-4">
+            <Link href="/training/day-3-training" className="text-xl mt-4">
               Next Step →
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
