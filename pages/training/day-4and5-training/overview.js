@@ -63,6 +63,8 @@ export default function Overview2() {
             quickly.
           </p>
 
+          <p>Visit <Link className="text-blue-500" href="https://www.arightco.com">arightco.com</Link> to see the products and services that we offer and see the prices associated with each. This way you can become familiar with the types of services that we perform.</p>
+
           <div className="flex flex-row justify-between">
             <Link href="/training/day-4and5-training" className="text-xl mt-4">
               ← Previous Step
