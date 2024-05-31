@@ -75,6 +75,11 @@ export default function ChannelGuide() {
             </tbody>
           </table>
 
+          <p className="font-bold text-red-600">
+            NOTE: Before creating a new channel, please reach out to our IT
+            Manager, Training Manager, or Katie Nelson.
+          </p>
+
           <div className="flex flex-row justify-between">
             <Link
               href="/training/guides-slack/setting-your-status"
@@ -83,7 +88,7 @@ export default function ChannelGuide() {
               ← Previous Step
             </Link>
             <Link
-              href="/training/guides-slack/channel-guide"
+              href="/training/keeper-security-guide"
               className="text-xl mt-4"
             >
               Next Step →

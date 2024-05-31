@@ -54,13 +54,13 @@ export default function QBOTrainingPart2() {
             On day 2 of your training, the Training Manager sent you the
             step-by-step guide for QBO that is found in the shared Google
             Training & Templates Drive under Training and in the{" "}
-            <Link className="text-red-500" href="">
+            <Link className="text-blue-500" href="https://drive.google.com/drive/folders/1V0qHHSGCpVs8LMw207jA-I-pd1El8M5y?usp=drive_link">
               Recorded Training Folder
             </Link>
             . After the training, if you need to review any parts of what the
             Training Manager went over, you can watch the QBO Training Videos
             that are in the Shared Google Drive under Training and in the{" "}
-            <Link className="text-red-500" href="">
+            <Link className="text-blue-500" href="https://drive.google.com/drive/folders/1V0qHHSGCpVs8LMw207jA-I-pd1El8M5y?usp=drive_link">
               Recorded Training Folder
             </Link>
             .
@@ -96,11 +96,11 @@ export default function QBOTrainingPart2() {
             reference on how each of these tasks are done. This guide provides
             step-by-step instructions on how to do each item. You can also watch
             the{" "}
-            <Link className="text-red-500" href="">
+            <Link className="text-blue-500" href="https://drive.google.com/file/d/1mImtvHVXzX7hnnR5MQ4wO_VoB9W05uxY/view?usp=drive_link">
               Bank Feed & Reconciliation Video
             </Link>{" "}
             as well as the{" "}
-            <Link className="text-red-500" href="">
+            <Link className="text-blue-500" href="https://drive.google.com/file/d/1mImtvHVXzX7hnnR5MQ4wO_VoB9W05uxY/view?usp=drive_link">
               P&L Review Video
             </Link>
             .

@@ -12,6 +12,7 @@ export default function TrainingHomePage() {
       <Link href="/training/day-3-training">Day 3 Training</Link>
       <Link href="/training/day-4and5-training">Day 4 & 5 Training</Link>
       <Link href="/training/guides-slack">Guides - Slack</Link>
+      <Link href="/training/keeper-security-guide">Keeper Security Guide</Link>
     </div>
   );
 }
