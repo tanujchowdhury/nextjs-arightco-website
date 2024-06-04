@@ -40,7 +40,7 @@ export default function GoogleDriveFAQs() {
               Can I add a client or an employee of the client to a shared Google
               Drive?
             </span>{" "}
-            Yes. They do need to have a Google account to access it though. 
+            Yes. They do need to have a Google account to access it though.
           </p>
           <p>
             <span className="font-bold">
@@ -52,12 +52,12 @@ export default function GoogleDriveFAQs() {
           <p>
             <span className="font-bold">Can I remove access for a user?</span>{" "}
             Yes. You can remove users by following the steps in the guide. Who
-            can I reach out to if 
+            can I reach out to if
           </p>
           <p>
             <span className="font-bold">I have issues with Google Drive?</span>{" "}
             You can reach out on the Slack channel #itsupport or send a direct
-            message to the IT Manager. 
+            message to the IT Manager.
           </p>
           <p>
             <span className="font-bold">
@@ -68,7 +68,7 @@ export default function GoogleDriveFAQs() {
             file explorer. As when some documents are opened through the browser
             it changes them to a Google file type (i.e., Google Sheets, Google
             Slides, Google Docs). This can cause issues with what has been saved
-            to the file sometimes. 
+            to the file sometimes.
           </p>
           <p>
             <span className="font-bold">

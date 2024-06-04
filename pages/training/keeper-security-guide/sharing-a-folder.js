@@ -35,12 +35,12 @@ export default function SharingAFolder() {
 
           <p>
             To share a folder, first, click on the folder you want to share.
-            Next, Click on Users 
+            Next, Click on Users
           </p>
-          <p>Next, click on Edit. </p>
+          <p>Next, click on Edit.</p>
           <p>
             Type in the email addresses of the team members you want to share
-            with. 
+            with.
           </p>
           <p className="font-bold text-red-600"></p>
 

@@ -47,11 +47,11 @@ export default function MovingARecord() {
           </p>
           <p>
             Next, Select the folder you want the record moved to. Next, click
-            "Choose". 
+            "Choose".
           </p>
           <p>
             Next, click "Move". You will now see the record in the folder it was
-            moved to. 
+            moved to.
           </p>
 
           <div className="flex flex-row justify-between">

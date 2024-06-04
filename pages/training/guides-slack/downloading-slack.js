@@ -41,7 +41,7 @@ export default function DownloadingSlack() {
             Manager for assistance. First, Go to www.slack.com and scroll to the
             bottom of the page and click on Download Slack.
           </p>
-          <p>Next, Click on "Download for Windows 10". </p>
+          <p>Next, Click on "Download for Windows 10".</p>
           <p>Next, click on "Get" and it will start to download.</p>
           <p>Finally, once it has been downloaded you will be asked to sign in.</p>
 

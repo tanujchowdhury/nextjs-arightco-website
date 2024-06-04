@@ -46,7 +46,7 @@ export default function SettingYourStatus() {
           </p>
           <p>
             To set your status, first, click on your picture in the top left of
-            the Slack screen. 
+            the Slack screen.
           </p>
           <p>
             Next, you can use the Update Your Status field to type in or by
@@ -54,20 +54,20 @@ export default function SettingYourStatus() {
           </p>
           <p>
             Below is a description of the available preset statuses that can be
-            selected: 
+            selected:
           </p>
           <ul>
             <li>
               ⋅ <span className="font-bold">In A Meeting</span> – will show
-              automatically if Google Calendar has been linked. 
+              automatically if Google Calendar has been linked.
             </li>
             <li>
               ⋅ <span className="font-bold">Appointment</span> – Use this when
-              you have a personal appointment. 
+              you have a personal appointment.
             </li>
             <li>
               ⋅ <span className="font-bold">Out Sick</span> – Use this when you
-              are out due to illness. 
+              are out due to illness.
             </li>
             <li>
               ⋅ <span className="font-bold">Vacationing</span> – Use this when
@@ -85,7 +85,7 @@ export default function SettingYourStatus() {
             situations:
           </p>
           <ul>
-            <li className="font-bold">⋅ Taking lunch or a break </li>
+            <li className="font-bold">⋅ Taking lunch or a break</li>
             <li className="font-bold">
               ⋅ Running Client/Arightco Related Errands
             </li>
@@ -105,10 +105,10 @@ export default function SettingYourStatus() {
           </p>
           <ul>
             <li className="font-bold">
-              ⋅ Food Item – Shows you are eating lunch or on a break. 
+              ⋅ Food Item – Shows you are eating lunch or on a break.
             </li>
             <li className="font-bold">
-              ⋅ Do Not Disturb – Shows you are not available. 
+              ⋅ Do Not Disturb – Shows you are not available.
             </li>
             <li className="font-bold">
               ⋅ Vehicle – Running Company or Personal Errands
@@ -127,7 +127,7 @@ export default function SettingYourStatus() {
             </Link>{" "}
             for more in-depth help. Feel free to reach out to our IT Manager,
             Training Manager, or Katie Nelson for any questions or help that you
-            need as well. 
+            need as well.
           </p>
 
           <div className="flex flex-row justify-between">

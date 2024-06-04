@@ -48,15 +48,15 @@ export default function AddingOrRemovingUser() {
             When adding a new user to a shared drive you can set different
             permissions for them.
           </p>
-          <p>Below are the permissions that can be selected. </p>
+          <p>Below are the permissions that can be selected.</p>
           <ul>
             <li>⋅ Managers – Can add and remove users.</li>
-            <li>⋅ Content Managers – Can add, edit, and delete files. </li>
-            <li>⋅ Contributor – Can ONLY add or edit files. </li>
+            <li>⋅ Content Managers – Can add, edit, and delete files.</li>
+            <li>⋅ Contributor – Can ONLY add or edit files.</li>
             <li>
-              ⋅ Commentor – Can Only comment on shared Google Document files. 
+              ⋅ Commentor – Can Only comment on shared Google Document files.
             </li>
-            <li>⋅ Viewer – Can ONLY View or download a file. </li>
+            <li>⋅ Viewer – Can ONLY View or download a file.</li>
           </ul>
           <p className="font-bold text-red-600">
             NOTE: Please ensure when giving access to a shared Google Drive that
@@ -70,7 +70,7 @@ export default function AddingOrRemovingUser() {
           </p>
           <p>
             Finally, click on Send. This will send a notification to the person
-            they have been added to the drive. 
+            they have been added to the drive.
           </p>
           <p>
             To remove a member from a Shared drive, First follow the steps to

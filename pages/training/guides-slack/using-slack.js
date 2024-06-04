@@ -45,7 +45,7 @@ export default function UsingSlack() {
           </p>
           <p>
             Starting a conversation is easy! Select the person or channel you
-            would like to chat with from your contact list and begin typing. 
+            would like to chat with from your contact list and begin typing.
           </p>
           <p>
             If you are on a channel, you can start a “thread”. Threads are
@@ -54,16 +54,16 @@ export default function UsingSlack() {
             do not notify everyone else on the channel. Additionally, creating
             threads is great for keeping the channel and conversation much more
             organized, since you will be able to find all responses in a single
-            thread. You can see an example of a threaded conversation. 
+            thread. You can see an example of a threaded conversation.
           </p>
           <p>
             To start a threaded conversation, hover over the message and click
-            on Start Thread on the right side. 
+            on Start Thread on the right side.
           </p>
           <p>
             If you want to view a thread, click on the replies and a new window
             containing the threaded conversation will appear on the right-hand
-            side. This is where you will directly respond to the thread. 
+            side. This is where you will directly respond to the thread.
           </p>
           <p>If you need to call a person in Slack, you have two options:</p>
           <ul>
@@ -83,7 +83,7 @@ export default function UsingSlack() {
           <p>
             To use the Slack Huddle feature, click on the headphone icon at the
             bottom of the screen. You can have group huddles and screen share
-            directly through Slack. 
+            directly through Slack.
           </p>
 
           <div className="flex flex-row justify-between">

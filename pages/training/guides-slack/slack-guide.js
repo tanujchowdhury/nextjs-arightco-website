@@ -35,7 +35,7 @@ export default function SlackGuide() {
           <p>
             Arightco, Inc. has decided to use Slack as the primary communication
             tool. You will need to download the Slack app to your desktop and
-            follow the steps on the invite. 
+            follow the steps on the invite.
           </p>
 
           <p>

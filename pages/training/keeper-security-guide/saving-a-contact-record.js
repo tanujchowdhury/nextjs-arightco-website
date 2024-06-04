@@ -49,29 +49,29 @@ export default function SavingAContactRecord() {
             Enter a title for the Contact Record i.e., Sushama Chowdhury –
             Arightco. Next, click "Next".
           </p>
-          <p>Next, fill in all "contact information" for the owner. </p>
-          <p>Next, click on Custom Field. Next, select "Hidden Field". </p>
+          <p>Next, fill in all "contact information" for the owner.</p>
+          <p>Next, click on Custom Field. Next, select "Hidden Field".</p>
           <p>
-            Next, click Edit. Next, enter the "Social Security Number" for the
-            title. 
+            Next, click Edit. Next, enter the"Social Security Number" for the
+            title.
           </p>
           <p>
             Next, Repeat the steps to add a custom field and select "Text"
-            Field. 
+            Field.
           </p>
           <p>
             Repeat the steps to Edit the name and name the field "Ownership %""
             and "Date".
           </p>
-          <p>Repeat the steps to add a custom field and select "Date". </p>
+          <p>Repeat the steps to add a custom field and select "Date".</p>
           <p>Edit and rename this as "Date of Birth".</p>
           <p>
             Fill in the information for "Social Security Number", "Ownership %"
-            and the "Date of Birth". Next Click "Save" 
+            and the "Date of Birth". Next Click "Save"
           </p>
           <p>
             The contact should look like the below once saved. If you need to
-            see the "Social Security Number" click on the Eye Symbol. 
+            see the "Social Security Number" click on the Eye Symbol.
           </p>
 
           <div className="flex flex-row justify-between">

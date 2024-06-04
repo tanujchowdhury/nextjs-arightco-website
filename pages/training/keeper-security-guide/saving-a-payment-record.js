@@ -51,10 +51,10 @@ export default function SavingAContactRecord() {
           </p>
           <p>
             Select or add a new Billing Address. To add a new Billing address,
-            click on "New Address". 
+            click on "New Address".
           </p>
           <p>"Title the address" so that you know which client it is for. Fill in all the information. Next, click "Save".</p>
-          <p>You will see all saved Payment cards under the Identity & Payments Tab in Keeper. If you need to share the card with a team member, click the Card you want to share. Next, click on the eye icon to unmask the card number and Security Code. Take a screenshot and share it in Slack. Once they have saved it to their own keeper account delete the screenshot in Slack. </p>
+          <p>You will see all saved Payment cards under the Identity & Payments Tab in Keeper. If you need to share the card with a team member, click the Card you want to share. Next, click on the eye icon to unmask the card number and Security Code. Take a screenshot and share it in Slack. Once they have saved it to their own keeper account delete the screenshot in Slack.</p>
           <p className="font-bold text-red-600">NOTE: Do NOT Share credit card information via email, word docs, or other means. Always share in Slack and delete once used.</p>
 
           <div className="flex flex-row justify-between">

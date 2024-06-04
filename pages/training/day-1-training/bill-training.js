@@ -38,7 +38,7 @@ export default function BillTraining() {
 
           <p>
             The Training Manager will send you an email with additional
-            information and guides for Bill. 
+            information and guides for Bill.
           </p>
 
           <p>
@@ -60,25 +60,25 @@ export default function BillTraining() {
               Bill video{" "}
             </Link>
             in the Shared Google Drive under Training and in the Recorded
-            Training Folder. 
+            Training Folder.
           </p>
 
           <p>
             During the Bill training we will cover how to do the following tasks
-            in Bill: 
+            in Bill:
           </p>
 
           <ul>
-            <li className="font-bold">⋅ Logging In </li>
-            <li className="font-bold">⋅ Managing the Inbox </li>
+            <li className="font-bold">⋅ Logging In</li>
+            <li className="font-bold">⋅ Managing the Inbox</li>
             <li className="font-bold">
-              ⋅ Entering, Editing, & Adding Documents to a Bill 
+              ⋅ Entering, Editing, & Adding Documents to a Bill
             </li>
             <li className="font-bold">
-              ⋅ Entering, Editing & Adding Documents to a Vendor 
+              ⋅ Entering, Editing & Adding Documents to a Vendor
             </li>
-            <li className="font-bold">⋅ Saving Documents </li>
-            <li className="font-bold">⋅ Using the Help feature </li>
+            <li className="font-bold">⋅ Saving Documents</li>
+            <li className="font-bold">⋅ Using the Help feature</li>
             <li className="font-bold">⋅ Zoho</li>
           </ul>
 
@@ -92,7 +92,7 @@ export default function BillTraining() {
             </Link>
             will be provided to you as a guide that you can reference how each
             of the above tasks are done. This guide provides step-by-step
-            instructions on how to do each item. 
+            instructions on how to do each item.
           </p>
           <p>
             After the training call you will be able to practice doing each of

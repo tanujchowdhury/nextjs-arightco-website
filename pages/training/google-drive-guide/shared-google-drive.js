@@ -44,12 +44,12 @@ export default function SharedGoogleDrive() {
           <ul>
             <li className="font-bold">Arightco Client Mail And Filings</li>
             <li>⋅ 1099 Filings</li>
-            <li>⋅ DE Annual Filings </li>
-            <li>⋅ Client Scanned Mail </li>
+            <li>⋅ DE Annual Filings</li>
+            <li>⋅ Client Scanned Mail</li>
           </ul>
           <ul>
             <li className="font-bold">
-              Arightco Training, Templates, & Other Misc. Items 
+              Arightco Training, Templates, & Other Misc. Items
             </li>
             <li>⋅ Training Guides</li>
             <li>⋅ Templates</li>
@@ -59,8 +59,8 @@ export default function SharedGoogleDrive() {
           <ul>
             <li className="font-bold">Arightco US & India HR Resources</li>
             <li>⋅ Labor Law Updates</li>
-            <li>⋅ Labor Law Posters </li>
-            <li>⋅ Arightco Employee HR Documents </li>
+            <li>⋅ Labor Law Posters</li>
+            <li>⋅ Arightco Employee HR Documents</li>
           </ul>
           <p>
             Arightco, Inc. Maintains shared drives for its clients. Your Client

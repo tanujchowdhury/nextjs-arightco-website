@@ -41,24 +41,24 @@ export default function DownloadingGoogleDrive() {
             can access them at any time and can remove access at any time. Some
             clients may use another cloud-based document storage like Dropbox,
             SharePoint, box, etc. If the client uses a different
-            document storage system, the Client Partner will provide you with
-            access to it. 
+            documentstorage system, the Client Partner will provide you with
+            access to it.
           </p>
           <p>
             The primary reason why{" "}
             <span className="font-bold">
-              we do <span className="text-red-600">NOT</span> store anything
+              we do<span className="text-red-600">NOT</span>store anything
               directly on our laptops
             </span>{" "}
             is so that our client’s information stays secure. Should your laptop
             be lost, stolen, or compromised in any way, we can remotely remove
-            access to all files and ensure the security of our client’s data. 
+            access to all files and ensure the security of our client’s data.
           </p>
           <p>
             During your first days with Arightco, Inc. you will be given access
             to your Google Drive account and the client folders that you will
             need access to. You will need to download the Google Drive
-            application to your desktop. 
+            application to your desktop.
           </p>
           <p>
             This guide will walk you through the steps of downloading the Google
@@ -86,7 +86,7 @@ export default function DownloadingGoogleDrive() {
           <p>
             During the setup, you will need to enter your Arightco, Inc. email
             address and the password for it. Once it has been downloaded, you
-            will see it in your file explorer under This PC. 
+            will see it in your file explorer under This PC.
           </p>
           <p>
             To make it easier to access you can right-click on the drive and

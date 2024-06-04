@@ -35,7 +35,7 @@ export default function HRManagerCall() {
           <p>
             The second call you will have on your first day will be with the HR
             Manager to go over all onboarding and to answer any questions you
-            may have. 
+            may have.
           </p>
 
           <p>This call will cover the below items:</p>
@@ -45,9 +45,9 @@ export default function HRManagerCall() {
               ⋅ Onboarding Documents – US Team: I9, W4, etc. India Team: From
               12BB, ESIC -MED 37, PF Form, etc.
             </li>
-            <li className="font-bold">⋅ Benefits Enrollment </li>
+            <li className="font-bold">⋅ Benefits Enrollment</li>
             <li className="font-bold">
-              ⋅ Company Handbook and Important Company Policies 
+              ⋅ Company Handbook and Important Company Policies
             </li>
             <li className="font-bold">
               ⋅ Mandatory Training – Computer Security & Sexual Harassment.

@@ -37,16 +37,16 @@ export default function CreatingASharedFolder() {
           <p>
             Keeper Security is the password-sharing system Arightco, Inc. uses
             to securely share login information with all team members. Keeper
-            can also be used to save client payment details for credit cards. 
+            can also be used to save client payment details for credit cards.
           </p>
           <p>
             Login information should not be stored in any other location i.e.,
             excel file, word document, email, etc. All records should be in the
-            Shared folder for the client. 
+            Shared folder for the client.
           </p>
           <p>
             The entire client folder should be shared. Individual records should{" "}
-            <span className="font-bold text-red-600">NOT</span> be shared. 
+            <span className="font-bold text-red-600">NOT</span> be shared.
           </p>
           <p className="font-bold text-red-600">
             Please note that your keeper account can NOT be reset if you lose
@@ -55,7 +55,7 @@ export default function CreatingASharedFolder() {
           </p>
           <p>
             To create a shared folder, click on Create New, then click on Shared
-            Folder. 
+            Folder.
           </p>
           <p>
             Next, name the folder and select the appropriate settings. Finally,

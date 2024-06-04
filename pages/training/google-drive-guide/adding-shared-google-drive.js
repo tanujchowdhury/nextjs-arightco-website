@@ -41,7 +41,7 @@ export default function AddingSharedGoogleDrive() {
             used to create any type of shared drive. Before creating a new
             shared drive for a client please check with your Client Partner or
             manager as it might be that they just need to add you to an existing
-            one. 
+            one.
           </p>
           <p>
             First, you will access your Google Drive through a web browser
@@ -51,7 +51,7 @@ export default function AddingSharedGoogleDrive() {
           </p>
           <p>
             Next, right-click on "Shared Drives". Next, click on "New Shared
-            Drives". 
+            Drives".
           </p>
           <p>
             On the next screen, you will type in the Name of the new shared

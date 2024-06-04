@@ -45,7 +45,7 @@ export default function QBOTrainingPart1() {
           </p>
 
           <p>
-            On day 2 of your training, you will cover the below areas of QBO: 
+            On day 2 of your training, you will cover the below areas of QBO:
           </p>
 
           <ul>
@@ -93,7 +93,7 @@ export default function QBOTrainingPart1() {
             >
               Recorded Training Folder
             </Link>
-            . 
+            .
           </p>
 
           <p>
@@ -150,13 +150,13 @@ export default function QBOTrainingPart1() {
             >
               QBO video
             </Link>
-            . 
+            .
           </p>
 
           <p>
             When the training call has been completed, you should select 5-10
             documents from the below practice document folders to practice what
-            was shown on the training call: 
+            was shown on the training call:
           </p>
 
           <ul>
@@ -192,7 +192,7 @@ export default function QBOTrainingPart1() {
             You will want to practice each one until you are fully comfortable
             doing each in QBO. While we do have you practice Accounts Payable in
             QBO, you will want to note that it is only used for entry when the
-            client does NOT use Bill. 
+            client does NOT use Bill.
           </p>
 
           <p>

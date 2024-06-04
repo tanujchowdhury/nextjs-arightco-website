@@ -34,12 +34,12 @@ export default function TrainingManagerCall() {
 
           <p>
             The third call you will have on your first day will be with the
-            Training Manager. 
+            Training Manager.
           </p>
 
           <p>
             The Training Manager will provide you with in-depth training on the
-            following systems: 
+            following systems:
           </p>
 
           <ul>

@@ -37,19 +37,19 @@ export default function SavingARecord() {
 
           <p>
             When setting up a new record you will want to ensure that you save
-            the following information for the record. 
+            the following information for the record.
           </p>
           <ul>
-            <li className="font-bold">⋅ Login ID/User ID </li>
-            <li className="font-bold">⋅ Password </li>
-            <li className="font-bold">⋅ Security Questions & Answers </li>
+            <li className="font-bold">⋅ Login ID/User ID</li>
+            <li className="font-bold">⋅ Password</li>
+            <li className="font-bold">⋅ Security Questions & Answers</li>
             <li className="font-bold">
               ⋅ Contact information – email, phone number, contact name, etc.
             </li>
           </ul>
           <p>First, click on + "Create new" and then select "New Record".</p>
-          <p>Next, select the "type of record" you are saving. </p>
-          <p>Create a title for the record then click "Next". </p>
+          <p>Next, select the "type of record" you are saving.</p>
+          <p>Create a title for the record then click "Next".</p>
           <p className="font-bold text-red-600">
             NOTE: When setting up the title please put what the login is for and
             the client it is for. This makes it much easier to identify
@@ -60,9 +60,9 @@ export default function SavingARecord() {
           </p>
           <p>
             To select a custom Field, click on the + "Custom Field" and select
-            the "custom field" needed. 
+            the"custom field" needed.
           </p>
-          <p>Once all information is entered, click on" "Save". </p>
+          <p>Once all information is entered, click on""Save".</p>
 
           <div className="flex flex-row justify-between">
             <Link

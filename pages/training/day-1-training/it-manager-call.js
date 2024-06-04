@@ -43,18 +43,18 @@ export default function ITManagerCall() {
             to ask questions during each call on any area that you are unsure of
             or need more information on. If after the calls or training, you
             have additional questions you can reach out directly to each Manager
-            on Slack or by emailing them. 
+            on Slack or by emailing them.
           </p>
 
           <p>
             The first call you will have on your first day with Arightco, Inc.
             will be with the IT Manager getting all the major systems loaded
-            onto your company-provided laptop. 
+            onto your company-provided laptop.
           </p>
 
           <p>
             This will include making sure the following systems are set up and
-            operating properly. 
+            operating properly.
           </p>
 
           <ul>

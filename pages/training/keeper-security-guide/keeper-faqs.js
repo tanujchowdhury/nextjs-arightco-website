@@ -37,33 +37,33 @@ export default function KeeperFAQs() {
           <p>
             Can my keeper account be reset if I forget my password? NO. The
             account cannot be reset. An entirely new account would need to be
-            created. 
+            created.
           </p>
           <p>
             Can I share an individual record? NO. You should share the entire
-            client folder and not individual records. 
+            client folder and not individual records.
           </p>
           <p>
             What access should be given to those needing to be added to a
             folder? All folders should be set up so that users can edit records
-            and manage users. 
+            and manage users.
           </p>
           <p>
             Can I share a payment card in keeper? No. Payment cards are not
             shareable in Keeper. Please follow the process of sharing a
             screenshot in Slack and then deleting it from Slack once it has been
-            used. 
+            used.
           </p>
           <p>
             How can I organize the records under a client? Create folders like
             how you have your Google Drive folders set up and move the records
-            to the appropriate folder. 
+            to the appropriate folder.
           </p>
           <p>
             Who can I reach out to if I have issues with my Keeper account? IT
             Support can help with some issues. You can reach out to them
             directly on Slack or send a message on the #ITSupport channel in
-            Slack. 
+            Slack.
           </p>
           <p>
             Where can I keep my personal logins? Create a folder for your
