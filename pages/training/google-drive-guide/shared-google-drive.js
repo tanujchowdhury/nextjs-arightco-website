@@ -1,6 +1,28 @@
 import Link from "next/link";
+import React, { useContext, useEffect, useState } from "react";
+import { AccountContext } from "../../../components/intranet/Account";
+import { useRouter } from "next/router";
 
 export default function SharedGoogleDrive() {
+  const { getSession } = useContext(AccountContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    getSession()
+      .then(() => {
+        setIsAuthenticated(true);
+      })
+      .catch(() => {
+        setIsAuthenticated(false);
+      });
+  }, []);
+
+  if (!isAuthenticated) {
+    return (
+      <div></div>
+    );
+  }
   return (
     <>
       <Link

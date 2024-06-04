@@ -1,6 +1,28 @@
 import Link from "next/link";
+import React, { useContext, useEffect, useState } from "react";
+import { AccountContext } from "../../../components/intranet/Account";
+import { useRouter } from "next/router";
 
 export default function Day4and5TrainingHomePage() {
+  const { getSession } = useContext(AccountContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    getSession()
+      .then(() => {
+        setIsAuthenticated(true);
+      })
+      .catch(() => {
+        setIsAuthenticated(false);
+      });
+  }, []);
+
+  if (!isAuthenticated) {
+    return (
+      <div></div>
+    );
+  }
   return (
     <div className="p-10 flex flex-col gap-6">
       <Link className="absolute top-0 left-0 p-4" href="/training">

@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AccountContext } from "./Account";
-import { destroyCookie } from 'nookies';
 
 
 const Status = () => {

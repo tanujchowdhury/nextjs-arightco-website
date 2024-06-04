@@ -1,6 +1,34 @@
 import Link from "next/link";
+import React, { useContext, useEffect, useState } from "react";
+import { AccountContext } from "../../components/intranet/Account";
+import { useRouter } from "next/router";
 
 export default function TrainingHomePage() {
+  const { getSession } = useContext(AccountContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    getSession()
+      .then(() => {
+        setIsAuthenticated(true);
+      })
+      .catch(() => {
+        setIsAuthenticated(false);
+      });
+  }, []);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="p-10 flex flex-col items-center justify-center">
+        <h1>Please Login to access this page</h1>
+        <button onClick={() => router.push('/login')} className="mt-4 px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-700">
+          Go to Login
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="p-10 flex flex-col gap-6">
       <Link className="absolute top-0 left-0 p-4" href="/dashboard">

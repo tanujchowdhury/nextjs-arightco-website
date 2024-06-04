@@ -1,9 +1,35 @@
 import Link from "next/link";
+import React, { useContext, useEffect, useState } from "react";
+import { AccountContext } from "../../../components/intranet/Account";
+import { useRouter } from "next/router";
 
 export default function BillTraining() {
+  const { getSession } = useContext(AccountContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    getSession()
+      .then(() => {
+        setIsAuthenticated(true);
+      })
+      .catch(() => {
+        setIsAuthenticated(false);
+      });
+  }, []);
+
+  if (!isAuthenticated) {
+    return (
+      <div></div>
+    );
+  }
+
   return (
     <>
-      <Link className="absolute top-0 left-0 p-4" href="/training/day-1-training">
+      <Link
+        className="absolute top-0 left-0 p-4"
+        href="/training/day-1-training"
+      >
         ← Back to Day 1 Training
       </Link>
       <div className="flex justify-center items-center min-h-screen pt-16 pb-8 px-3">
@@ -75,7 +101,7 @@ export default function BillTraining() {
               className="text-blue-500"
               href="https://drive.google.com/file/d/1IQ5LsWyQFj_tuMpP9lxVMNN6gQrOYx7U/view?usp=drive_link"
             >
-              Bill Practice Document    
+              Bill Practice Document
             </Link>
             . If you have questions while practicing the tasks, you can reach
             out to the Training Manager on Slack, review the{" "}
@@ -90,7 +116,7 @@ export default function BillTraining() {
               className="text-blue-500"
               href="https://drive.google.com/file/d/1L_VO97ndN7JJd-I75hTcga78raaeacUg/view?usp=drive_link"
             >
-              Bill video    
+              Bill video
             </Link>
             . On day two of your training, prior to starting the QBO training,
             the Training Manager will review any questions you have about Bill.
