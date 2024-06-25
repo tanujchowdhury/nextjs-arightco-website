@@ -11,9 +11,9 @@ export default function Intro() {
   const closeQuoteModal = () => setQuoteModalOpen(false);
   const openQuoteModal = () => setQuoteModalOpen(true);
 
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
-  const closeVideoModal = () => setVideoModalOpen(false);
-  const openVideoModal = () => setVideoModalOpen(true);
+  // const [videoModalOpen, setVideoModalOpen] = useState(false);
+  // const closeVideoModal = () => setVideoModalOpen(false);
+  // const openVideoModal = () => setVideoModalOpen(true);
 
   return (
     <>
@@ -63,10 +63,10 @@ export default function Intro() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sweepLeft}
-          className="cursor-pointer group"
-          onClick={() =>
-            videoModalOpen ? closeVideoModal() : openVideoModal()
-          }
+          // className="cursor-pointer group"
+          // onClick={() =>
+          //   videoModalOpen ? closeVideoModal() : openVideoModal()
+          // }
         >
           <Image
             src="/thumbnail.jpg"
@@ -87,7 +87,7 @@ export default function Intro() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
-            <path
+            {/* <path
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
@@ -96,13 +96,13 @@ export default function Intro() {
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
-            />
+            /> */}
           </motion.svg>
         </motion.div>
       </div>
       <AnimatePresence>
         {quoteModalOpen && <QuoteModal handleClose={closeQuoteModal} />}
-        {videoModalOpen && <VideoModal handleClose={closeVideoModal} />}
+        {/* {videoModalOpen && <VideoModal handleClose={closeVideoModal} />} */}
       </AnimatePresence>
     </>
   );
