@@ -83,9 +83,14 @@ export default function Overview() {
             The client-specific training will go into detail about the
             day-to-day work that you will be doing for Arightco, Inc.’s client.
           </p>
-          <Link href="/training/day-1-training/it-manager-call" className="text-xl self-end mt-4">
-            Next Step →
-          </Link>
+          <div className="flex flex-row justify-between">
+            <Link href="/training/day-1-training" className="text-xl mt-4">
+              ← Previous Step
+            </Link>
+            <Link href="/training/day-1-training/it-manager-call" className="text-xl mt-4">
+              Next Step →
+            </Link>
+          </div>
         </div>
       </div>
     </>

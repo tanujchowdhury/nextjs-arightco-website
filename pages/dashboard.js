@@ -704,28 +704,27 @@ function Dashboard() {
                         Create Folder in {currentPath[currentPath.length - 1]}
                       </button>
                     </div>
-                    {userGroups.includes("Employees") &&
-                      currentPath.includes("Employees") && (
-                        <button className="px-4 py-2 bg-blue-light hover:bg-blue-dark text-white rounded-lg shadow-md transition-colors duration-150">
-                          <Link className="" href="/training">
-                            Employee Training Manual
-                          </Link>
-                        </button>
-                      )}
-                    {/* Testing */}
-                    {/* <div>
-                      <button
-                        onClick={() => {
-                          // console.log(groupedFiles);
-                          // console.log(currentPath);
-                        }}
-                        className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
-                      >
-                        Do Something
-                      </button>
-                    </div> */}
                   </>
                 )}
+                {userGroups.includes("Employees") &&
+                  currentPath.includes("Employees") && (
+                    <button className="px-4 py-2 bg-blue-light hover:bg-blue-dark text-white rounded-lg shadow-md transition-colors duration-150">
+                      <Link className="" href="/training">
+                        Employee Training Manual
+                      </Link>
+                    </button>
+                  )}
+                {/* Testing */}
+                {/* <div>
+                  <button
+                    onClick={() => {
+                      console.log(userGroups);
+                    }}
+                    className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white rounded-lg shadow-md transition-colors duration-150"
+                  >
+                    Do Something
+                  </button>
+                </div> */}
               </div>
               {currentPath.includes("Acante") && acanteItem ? (
                 <BasicDashboard item={acanteItem} />
