@@ -152,24 +152,24 @@ export default function MeetOurTeam() {
               "https://www.linkedin.com/in/desmond-denzel-decaires-81941a112"
             }
           />
-          <TeamCard
+          {/* <TeamCard
             src={"/team/Elaine-Zhang.png"}
             name={"Elaine Zhang"}
             title={"Client Partner"}
             href={"https://www.linkedin.com/in/elaine-zhang-876a8942/"}
-          />
+          /> */}
           <TeamCard
             src={"/team/Eva-Shen.png"}
             name={"Eva Shen"}
             title={"Client Partner"}
             href={"https://www.linkedin.com/in/eva-wei-shen-cpa-3273a38/"}
           />
-          <TeamCard
+          {/* <TeamCard
             src={"/team/Galina-Kuznetsova.png"}
             name={"Galina Kuznetsova"}
             title={"Client Partner"}
             href={"https://www.linkedin.com/in/galina-kuznetsova-2aa2626/"}
-          />
+          /> */}
           <TeamCard
             src={"/team/Dipanwita-Saha.png"}
             name={"Dipanwita Saha"}
@@ -208,12 +208,12 @@ export default function MeetOurTeam() {
             title={"Accounting Associate"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
           />
-          <TeamCard
+          {/* <TeamCard
             src={"/team/Hector-Arreola.png"}
             name={"Hector Arreola"}
             title={"Accountant"}
             href={"https://www.linkedin.com/company/arightco-inc./mycompany/"}
-          />
+          /> */}
           <TeamCard
             src={"/team/Chandra-Genitempo.png"}
             name={"Chandra Genitempo"}
