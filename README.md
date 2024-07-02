@@ -2,7 +2,6 @@
 
 Developed using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/).
 
-### Core Dependencies, Libraries, and Frameworks
 - Frontend:
   - [Tailwind CSS](https://tailwindcss.com/) - General website styling
   - [Framer Motion](https://www.framer.com/motion/) - Animations
