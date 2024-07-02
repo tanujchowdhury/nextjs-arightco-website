@@ -3,7 +3,7 @@
 Developed using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/)
 
 - Frontend:
-  - [Tailwind CSS](https://tailwindcss.com/) - General website styling
+  - [Tailwind CSS](https://tailwindcss.com/) - Styling
   - [Framer Motion](https://www.framer.com/motion/) - Animations
   - [React-Slick](https://react-slick.neostack.com/) - Carousels
   - [Form Submit](https://formsubmit.co/) - Confirmation emails
