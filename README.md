@@ -1,6 +1,6 @@
-# ArightCo Website
+# ArightCo Website [link](https://arightco.com)
 
-Developed using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/).
+Developed using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/)
 
 - Frontend:
   - [Tailwind CSS](https://tailwindcss.com/) - General website styling
@@ -13,7 +13,8 @@ Developed using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://
   - [Gray Matter](https://www.npmjs.com/package/gray-matter) - Blogs
   - [Supabase](https://supabase.com/) - Postgres
   - [AWS S3](https://aws.amazon.com/pm/serv-s3/) - BLOB storage
+  - [AWS Cognito](https://aws.amazon.com/cognito/) - Auth
 
 ---
 
-**Contact**: For any inquiries or ideas for improvement, reach out to [chowdhury.tanuj@gmail.com](mailto:chowdhury.tanuj@gmail.com).
+**Contact**: For any inquiries or ideas for improvement, reach out to [chowdhury.tanuj@gmail.com](mailto:chowdhury.tanuj@gmail.com)
